@@ -1,0 +1,11 @@
+[
+  { "id":"observateur","name":"Observateur","emoji":"🔎" },
+  { "id":"esprit-critique","name":"Esprit critique","emoji":"🧠" },
+  { "id":"coequipier","name":"Coéquipier","emoji":"🤝" },
+  { "id":"explorateur","name":"Explorateur","emoji":"🧭" },
+  { "id":"inventeur","name":"Inventeur","emoji":"💡" },
+  { "id":"mediateur","name":"Médiateur","emoji":"🗣️" },
+  { "id":"experimentateur","name":"Expérimentateur","emoji":"🧪" },
+  { "id":"je-sais-pas","name":"Je ne sais pas encore","emoji":"❓" },
+  { "id":"maitre-du-terrain","name":"Maître du terrain","emoji":"🏆" }
+]

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CURI🧭S × CEMÉA — Le terrain est à nous</title>
+  <link rel="stylesheet" href="/css/cemea.css">
+</head>
+<body class="cemea">
+  <main class="hero">
+    <header class="brand">CURI🧭S × CEMÉA</header>
+    <h1 class="subtitle">LE TERRAIN EST À NOUS</h1>
+    <button id="startBtn" class="start">[COMMENCER L'EXPÉDITION]</button>
+    <div id="offline" class="indicator offline">Hors-ligne</div>
+    <nav class="mini-nav" aria-label="Navigation principale">
+      <button data-screen="home" class="active">Accueil</button>
+      <button data-screen="mission">Mission</button>
+      <button data-screen="map">Carte</button>
+      <button data-screen="progress">Progression</button>
+      <button data-screen="help">Aide</button>
+    </nav>
+    <div class="organizer">
+      <button id="organizerBtn" title="Organisateur">☰</button>
+      <div id="organizerMenu" class="menu hidden">
+        <button id="editTags">Éditer les balises (Google My Maps)</button>
+      </div>
+    </div>
+  </main>
+
+  <section id="app" class="app hidden">
+    <aside class="left-panel">
+      <div class="gps">GPS: <span id="gpsStatus">—</span></div>
+      <div class="qr">QR: <button id="qrBtn">Scanner</button></div>
+      <div class="manual">Balise manuelle: <input id="manualTag" placeholder="Entrer id balise"></div>
+      <div class="badges">
+        <h3>Badges</h3>
+        <ul id="badgesList"></ul>
+      </div>
+    </aside>
+    <article class="screen" id="screenContent"></article>
+  </section>
+
+  <template id="debriefTpl">
+    <h2>Débriefing final</h2>
+    <ul>
+      <li>OBSERVÉ</li>
+      <li>QUESTIONNÉ</li>
+      <li>VÉRIFIÉ</li>
+      <li>DÉBATTU</li>
+      <li>EXPÉRIMENTÉ</li>
+      <li>DÉCIDÉ</li>
+    </ul>
+  </template>
+
+  <script src="/js/cemea.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw-cemea.js').catch(()=>{});
+    }
+  </script>
+</body>
+</html>

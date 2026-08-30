@@ -1,0 +1,9 @@
+{
+  "edition": "CEMEA",
+  "title": "CURI🧭S × CEMÉA",
+  "nav": ["Accueil","Mission","Carte","Progression","Aide"],
+  "organizerMenu": {
+    "editTags": true,
+    "googleMyMaps": true
+  }
+}

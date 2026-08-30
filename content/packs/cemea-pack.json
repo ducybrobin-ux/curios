@@ -1,0 +1,15 @@
+{
+  "id": "cemea-edition",
+  "title": "Pack CEMÉA — Éducation populaire",
+  "description": "Scénario CEMÉA chargé automatiquement pour une interface jeu épurée.",
+  "scenario": {
+    "intro": "Partez sur le terrain, observez, questionnez, vérifiez, débattez, expérimentez et décidez tous ensemble.",
+    "steps": [
+      { "id":"S1","title":"Accueil et consignes"},
+      { "id":"S2","title":"Observation et collecte"},
+      { "id":"S3","title":"Expérimentation"},
+      { "id":"S4","title":"Débriefing"}
+    ]
+  },
+  "precache": ["/cemea.html","/js/cemea.js","/css/cemea.css","/content/config/cemea-badges.json","/content/packs/cemea-pack.json"]
+}
