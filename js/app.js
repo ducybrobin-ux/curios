@@ -2224,8 +2224,8 @@
     $("gb-remove-btn").addEventListener("click", removeSelfie);
 
     // Reco
-    $("btn-reco-record").addEventListener("click", onRecoRecord);
-    $("btn-reco-stop").addEventListener("click", () => { BirdReco.stopRecording(); $("btn-reco-record").disabled = false; $("btn-reco-stop").disabled = true; BirdReco.setStatus("Enregistrement arrêté."); });
+    const _btnRecoRecord = $("btn-reco-record"); if (_btnRecoRecord) _btnRecoRecord.addEventListener("click", onRecoRecord);
+    const _btnRecoStop = $("btn-reco-stop"); if (_btnRecoStop) _btnRecoStop.addEventListener("click", () => { BirdReco.stopRecording(); const _r = $("btn-reco-record"); if (_r) _r.disabled = false; _btnRecoStop.disabled = true; BirdReco.setStatus("Enregistrement arrêté."); });
 
     // Réglages
     $("set-night").addEventListener("change", (e) => { Store.setSettings({ night: e.target.checked }); applySettings(); });

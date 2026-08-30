@@ -93,10 +93,6 @@
           <span class="tile-ico">🏆</span>
           <span data-i18n="home_tile_palmares">Palmarès des familles</span>
         </button>
-        <button class="home-tile" data-go="reco">
-          <span class="tile-ico">🎙️</span>
-          <span data-i18n="home_tile_reco">Reconnaître un son</span>
-        </button>
         <button class="home-tile" data-go="settings">
           <span class="tile-ico">⚙️</span>
           <span data-i18n="home_tile_settings">Réglages</span>
@@ -360,17 +356,14 @@
       <p class="note" id="palmares-note"></p>
     </section>
 
-    <!-- ================= RECONNAISSANCE (Shazam des ambiances) ================= -->
+    <!-- ================= RECONNAISSANCE (désactivée) ================= -->
     <section class="screen" id="screen-reco" data-title="reco">
       <div class="reco-card">
-        <p class="screen-intro" data-i18n="reco_intro">Enregistre un son ambiant : l'analyse t'aidera à l'identifier ! (Analyse en ligne — hors connexion, fais confiance à tes oreilles ! 🧠)</p>
-        <div class="reco-meter" id="reco-meter"><div class="reco-meter-fill" id="reco-meter-fill"></div></div>
-        <div class="reco-status" id="reco-status" data-i18n="reco_ready">Prêt à écouter.</div>
+        <p class="screen-intro">La fonctionnalité de reconnaissance sonore est désactivée pour l'instant.</p>
+        <p class="note">Contactez l'administrateur pour la réactiver si nécessaire.</p>
         <div class="reco-actions">
-          <button class="btn btn-primary" id="btn-reco-record" data-i18n="reco_btn_record">🎙️ Enregistrer</button>
-          <button class="btn btn-outline" id="btn-reco-stop" data-i18n="reco_btn_stop" disabled>Arrêter</button>
+          <button class="btn btn-outline" data-go="home">← Retour</button>
         </div>
-        <div id="reco-result" class="reco-result"></div>
       </div>
     </section>
 
