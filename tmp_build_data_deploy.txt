@@ -1,0 +1,2 @@
+﻿bundle : content\bundles\packdemo.json
+js/data.js régénéré : 2 découvertes, 2 notions, 24 balises (packs : packdemo)

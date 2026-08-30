@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title-nature">
+  <title id="title-nature">Nature</title>
+  <g fill="none" stroke="#5FD68F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 55V24"/><path d="M32 38C19 37 11 29 12 17c12-1 20 7 20 21z"/><path d="M32 45c13-1 21-9 20-21-12-1-20 7-20 21z"/>
+  </g>
+</svg>

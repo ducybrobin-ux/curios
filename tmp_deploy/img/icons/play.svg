@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title-play">
+  <title id="title-play">Jouer</title>
+  <g fill="none" stroke="#7DDDE5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="32" cy="32" r="24"/><path d="m27 22 15 10-15 10z" fill="#7DDDE5" stroke="none"/>
+  </g>
+</svg>

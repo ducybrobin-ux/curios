@@ -1,0 +1,7 @@
+﻿git : Switched to a new branch 'deploy-site'
+Au caractère Ligne:11 : 1
++ git checkout -b deploy-site 2>&1 | Out-File .\tmp_checkout_branch.txt ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Switched to a new branch 'deploy-site':String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

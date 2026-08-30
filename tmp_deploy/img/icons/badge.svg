@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title-badge">
+  <title id="title-badge">Badge</title>
+  <g fill="none" stroke="#E7B77A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m32 7 8 8 11 1-1 11 6 9-9 6-2 11-13-3-13 3-2-11-9-6 6-9-1-11 11-1z"/><path d="m25 32 5 5 10-11"/>
+  </g>
+</svg>

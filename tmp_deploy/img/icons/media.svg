@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title-media">
+  <title id="title-media">Média</title>
+  <g fill="none" stroke="#D99678" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="9" y="12" width="46" height="40" rx="4"/><circle cx="22" cy="25" r="4"/><path d="m12 46 13-13 9 8 7-7 11 12"/>
+  </g>
+</svg>

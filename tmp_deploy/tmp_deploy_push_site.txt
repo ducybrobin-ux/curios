@@ -1,0 +1,8 @@
+﻿git : To https://github.com/ducybrobin-ux/RobinduCyb.github.io.git
+Au caractère Ligne:8 : 1
++ git push site deploy-site:main --force 2>&1 | Out-File .\tmp_deploy_p ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (To https://gith...b.github.io.git:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ + 38c387d...c3ed63a deploy-site -> main (forced update)

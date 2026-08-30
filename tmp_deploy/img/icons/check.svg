@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title-check">
+  <title id="title-check">Validé</title>
+  <g fill="none" stroke="#5FD68F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="32" cy="32" r="24"/><path d="m20 32 8 8 16-18"/>
+  </g>
+</svg>

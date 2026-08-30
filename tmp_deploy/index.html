@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0c3b2e" id="meta-theme">
+  <meta name="description" content="Curi🧭s — Créez des expériences qui font apprendre. Moteur universel de parcours éducatifs : jeux de piste, chasses au trésor, enquêtes, escape games.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Curi🧭s">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="img/icon.svg">
+  <link rel="apple-touch-icon" href="img/icon-180.png">
+  <title>Curi🧭s — Créez des expériences qui font apprendre</title>
+  <link rel="stylesheet" href="css/curios-tokens.css">
+  <link rel="stylesheet" href="css/curios-design-system.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <script>
+    /* Anti-flash : applique le thème mis en cache avant le premier rendu. */
+    (function () {
+      try {
+        var c = JSON.parse(localStorage.getItem("jdp_theme_cache") || "null");
+        if (c && c.id && c.id !== "defaut" && c.vars) {
+          Object.keys(c.vars).forEach(function (k) { document.body.style.setProperty(k, c.vars[k]); });
+          var m = document.getElementById("meta-theme");
+          if (m && c.meta) m.content = c.meta;
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <a class="skip-link" href="#app" data-i18n="skip_link">Aller au contenu</a>
+
+  <header id="topbar" class="topbar">
+    <button id="btn-home" class="icon-btn" data-i18n-aria="btn_home" aria-label="Accueil">⌂</button>
+    <img id="topbar-logo" class="topbar-logo" src="img/logo.svg" alt="Curi🧭s — Créez des expériences qui font apprendre">
+    <h1 id="page-title">Curi🧭s</h1>
+    <button id="btn-voice" class="icon-btn" data-i18n-aria="btn_voice" aria-label="Lire l'écran à voix haute" data-i18n-title="btn_voice" title="Lire l'écran à voix haute">🔊</button>
+    <button id="btn-night" class="icon-btn" data-i18n-aria="btn_night" title="Mode nuit" data-i18n-title="btn_night">☾</button>
+  </header>
+
+  <main id="app">
+
+    <!-- ================= ACCUEIL ================= -->
+    <section class="screen" id="screen-home" data-title="home">
+      <div class="hero-card">
+        <img class="hero-logo" src="img/logo.svg" alt="Curi🧭s — Créez des expériences qui font apprendre">
+        <p class="hero-kicker" data-i18n="home_kicker">Les jeux de piste éducatifs</p>
+        <h2 class="hero-title">Curi🧭s</h2>
+        <p class="hero-slogan" data-i18n="home_slogan">Suis le sentier, résous les énigmes, deviens passeur·se de savoirs&nbsp;!</p>
+        <p class="hero-baseline" data-i18n="home_baseline">Explorer. Jouer. Comprendre.</p>
+        <div id="home-offline" class="status-pill hidden" data-i18n="home_offline">Hors-ligne — tout est prêt</div>
+        <button class="btn btn-primary btn-big" id="btn-play" data-i18n="home_play">▶ Commencer le jeu</button>
+        <div class="hero-actions">
+          <button class="btn btn-ghost" id="btn-choose-parcours" data-i18n="btn_choose_parcours">📦 Choisir un parcours</button>
+          <button class="btn btn-ghost" id="btn-catalogue" title="Parcourir les expéditions Curi🧭s">🎨 Catalogue</button>
+          <button class="btn btn-ghost" id="btn-administer" data-i18n="btn_administer">⚙️ Administrer</button>
+        </div>
+        <button class="btn btn-ghost" id="btn-open-carnet-home" data-i18n="home_carnet_btn">📔 Mon carnet d'observation</button>
+        <p class="hero-meta" id="home-progress"></p>
+        <div class="setting-row" id="row-home-theme">
+          <span data-i18n="home_theme">🎨 Thème du jeu</span>
+          <select id="home-theme"></select>
+        </div>
+        <p class="note hidden" id="row-home-lock-hint" data-i18n="theme_lock_hint">🔒 Changement de thème protégé par le mot de passe organisateur (défaut : Sam).</p>
+        <div class="setting-row hidden" id="row-home-theme-pass">
+          <input type="password" id="home-theme-pass" data-i18n-placeholder="theme_pass_ph" placeholder="Mot de passe organisateur…" autocomplete="off">
+          <button type="button" class="btn btn-ghost btn-mini" id="btn-home-unlock" data-i18n="btn_theme_unlock">🔓 Déverrouiller</button>
+        </div>
+        <button class="btn btn-ghost btn-big hidden" id="btn-home-logout" data-i18n="prof_logout">🚪 Se déconnecter</button>
+      </div>
+
+      <div class="home-grid">
+        <button class="home-tile hidden" data-go="god" id="tile-god">
+          <span class="tile-ico">🛠️</span>
+          <span data-i18n="home_tile_god">Mode admin</span>
+        </button>
+        <button class="home-tile" data-go="dashboard">
+          <span class="tile-ico">🗺️</span>
+          <span data-i18n="home_tile_dashboard">Tableau de bord</span>
+        </button>
+        <button class="home-tile" data-go="catalogue">
+          <span class="tile-ico">🎨</span>
+          <span>🧭 Catalogue des expéditions</span>
+        </button>
+        <button class="home-tile" data-go="carnet">
+          <span class="tile-ico">📔</span>
+          <span data-i18n="home_tile_carnet">Carnet d'observation</span>
+        </button>
+        <button class="home-tile" data-go="palmares">
+          <span class="tile-ico">🏆</span>
+          <span data-i18n="home_tile_palmares">Palmarès des familles</span>
+        </button>
+        <button class="home-tile" data-go="settings">
+          <span class="tile-ico">⚙️</span>
+          <span data-i18n="home_tile_settings">Réglages</span>
+        </button>
+      </div>
+
+      <div id="net-panel" class="net-panel hidden">
+        <p class="net-title" data-i18n="net_title">📶 Connecter un autre appareil</p>
+        <p class="note" data-i18n="net_note">Sur un autre téléphone du même réseau, ouvre cette adresse (ou scanne ce code)&nbsp;:</p>
+        <code id="net-url" class="net-url"></code>
+        <div id="net-qr" class="net-qr"></div>
+      </div>
+
+      <div class="home-footer-tip" id="home-tip"></div>
+      <p class="author-note" data-i18n="author_note">🤝 Des jeux pour transmettre et apprendre ensemble.</p>
+        <!-- ================= PARCOURS (Choisir un parcours) ================= -->
+    <section class="screen" id="screen-parcours" data-title="parcours">
+      <div class="space-card">
+        <p class="space-kicker">📦 Parcours</p>
+        <h2 class="space-title" data-i18n="parcours_title">Tes expéditions</h2>
+        <p class="space-lede" data-i18n="parcours_lede">Choisis l’aventure à explorer. Chaque parcours déroule son sentier d’énigmes et de découvertes.</p>
+        <div id="parcours-list" class="space-list"></div>
+        <button class="btn btn-ghost" id="btn-parcours-back" data-i18n="parcours_back">← Retour à l’accueil</button>
+      </div>
+    </section>
+
+    <!-- ================= ADMINISTRER (zone formateur / pilote) ================= -->
+    <section class="screen" id="screen-admin" data-title="admin">
+      <div class="space-card">
+        <p class="space-kicker">⚙️ Administrer</p>
+        <h2 class="space-title" data-i18n="admin_title">Piloter une session</h2>
+        <p class="space-lede" data-i18n="admin_lede">Outils pour préparer et animer : tableau de bord, éditeur, mode admin et réglages.</p>
+        <div class="space-grid">
+          <button class="home-tile" data-go="dashboard"><span class="tile-ico">📊</span><span data-i18n="home_tile_dashboard">Tableau de bord</span></button>
+          <button class="home-tile" id="btn-admin-edit"><span class="tile-ico">🛠️</span><span data-i18n="admin_edit">Éditeur de parcours</span></button>
+          <button class="home-tile" data-go="god"><span class="tile-ico">🗝️</span><span data-i18n="home_tile_god">Mode admin</span></button>
+          <button class="home-tile" data-go="settings"><span class="tile-ico">⚙️</span><span data-i18n="home_tile_settings">Réglages</span></button>
+        </div>
+        <button class="btn btn-ghost" id="btn-admin-back" data-i18n="admin_back">← Retour à l’accueil</button>
+      </div>
+    </section>
+
+</section>
+
+    <!-- ================= INTRODUCTION (histoire + règlement + sécurité) ================= -->
+    <section class="screen" id="screen-intro" data-title="intro">
+      <div class="intro-card">
+        <div class="big-emoji">🔥</div>
+        <h2 class="intro-title" data-i18n="intro_title">Curi🧭s</h2>
+        <div class="intro-story" id="intro-story" data-i18n="intro_story">
+          La nuit tombe sur le site. Autour du feu de camp, la veillée commence…
+          Sur le sentier se cachent des découvertes de tous horizons — pièges de l'esprit,
+          éducation populaire et bien plus. Une énigme s'est glissée sur chaque balise :
+          à votre famille de la résoudre, de reconnaître les signatures sonores et
+          d'inscrire son nom dans la légende de la semaine.
+        </div>
+
+        <h3 class="intro-h" data-i18n="intro_rules_title">📜 Règlement du jeu</h3>
+        <ul class="intro-list" id="intro-rules">
+          <li id="rule-classic-1" data-i18n="rule_1">Suivez le sentier dans l'ordre : la carte indique toujours la prochaine balise.</li>
+          <li id="rule-classic-2" data-i18n="rule_2">Chaque balise cache une énigme : répondez juste pour découvrir l'idée cachée.</li>
+          <li id="rule-classic-3" data-i18n="rule_3">Écoutez sa signature sonore puis réussissez le quiz pour valider l'étape.</li>
+          <li id="rule-classic-4" data-i18n="rule_4">Vos graines sont à planter : utilisez-les à bon escient.</li>
+          <li id="rule-classic-5" data-i18n="rule_5">Le palmarès récompense les familles les plus observatrices.</li>
+          <li id="rule-random-1" class="hidden" data-i18n="rule_random_1">Les balises arrivent dans le désordre : la carte indique toujours la prochaine étape.</li>
+          <li id="rule-race-1" class="hidden" data-i18n="rule_race_1">Chaque balise est validée en scannant son QR code : aucune question, aucune énigme.</li>
+          <li id="rule-race-2" class="hidden" data-i18n="rule_race_2">Le parcours est tiré au sort : toutes les équipes passent toutes les balises.</li>
+          <li id="rule-race-3" class="hidden" data-i18n="rule_race_3">Le chronomètre tourne : la famille la plus rapide remporte la course !</li>
+        </ul>
+
+        <h3 class="intro-h" data-i18n="intro_safety_title">🦺 Sécurité &amp; bonnes pratiques</h3>
+        <ul class="intro-list" id="intro-safety">
+          <li data-i18n="safety_1">Restez sur le sentier balisé, en groupe, et toujours à l'écoute d'un adulte.</li>
+          <li data-i18n="safety_2">Ne grimpez pas sur les poteaux et restez sur le sentier balisé.</li>
+          <li data-i18n="safety_3">À la tombée de la nuit, allumez vos lampes et restez dans les zones éclairées.</li>
+          <li data-i18n="safety_4">Buvez, chapeau si le soleil tape, et prévenez un adulte si quelqu'un s'éloigne.</li>
+          <li data-i18n="safety_5">Respectez le calme du lieu : on chuchote pour mieux écouter la nature.</li>
+        </ul>
+
+        <button class="btn btn-primary btn-big" id="btn-intro-start" data-i18n="intro_start">🌙 C'est parti, en route !</button>
+      </div>
+    </section>
+
+    <!-- ================= CONCLUSION (fin du parcours) ================= -->
+    <section class="screen" id="screen-end" data-title="end">
+      <div class="intro-card end-card">
+        <div class="big-emoji">🏆</div>
+        <h2 class="intro-title" data-i18n="end_title">Le sentier est bouclé !</h2>
+        <div class="intro-story" id="end-story" data-i18n="end_story">
+          Toutes les étapes du sentier ont été parcourues par votre famille. Chaque
+          découverte partagée a rendu votre groupe plus fort, et votre nom rejoint la
+          galerie des passeurs. Bravo, explorateurs !
+        </div>
+        <div id="end-stats" class="end-stats"></div>
+        <div id="end-race" class="end-race hidden">
+          <h3 class="end-race-title" data-i18n="race_leaderboard">🏁 Classement de la course</h3>
+          <div id="race-standings" class="race-standings"><p class="empty" data-i18n="race_wait_others">En attente des autres équipes…</p></div>
+          <div class="dash-actions">
+            <button class="btn btn-outline" id="btn-race-refresh" data-i18n="race_btn_refresh">🔄 Rafraîchir</button>
+            <button class="btn btn-primary" id="btn-race-guestbook" data-i18n="race_btn_msg_selfie">📸 Laisser un message et un selfie</button>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-big" id="btn-end-palmares" data-i18n="end_palmares">🏆 Voir le palmarès</button>
+        <button class="btn btn-ghost" id="btn-end-map" data-i18n="end_map">🗺️ Revenir à la carte</button>
+      </div>
+    </section>
+
+    <!-- ================= PROFIL ================= -->
+    <section class="screen" id="screen-profile" data-title="profile">
+      <p class="screen-intro" data-i18n="prof_intro">Crée le profil de ta famille pour sauvegarder votre aventure.</p>
+      <form id="profile-form" class="form" autocomplete="off">
+        <label for="profile-name" data-i18n="prof_name_label">Nom de la famille</label>
+        <div class="dict-row">
+          <input id="profile-name" name="name" type="text" maxlength="24" placeholder="Ex : Famille Dupont" data-i18n-placeholder="prof_name_placeholder" required>
+          <button type="button" id="btn-dict-profile" class="dict-btn" data-i18n-aria="dict_start" aria-label="Dicter" title="🎤 Dicter">🎤</button>
+        </div>
+        <label for="profile-kids" data-i18n="prof_kids_label">Nombre d'enfants</label>
+        <input id="profile-kids" name="kids" type="number" min="0" max="10" value="2">
+        <label for="profile-avatar" data-i18n="prof_avatar_label">Couleur / emblème</label>
+        <div class="avatar-row" id="avatar-row"></div>
+        <label for="profile-emoji" data-i18n="prof_emoji_label">Emoji de la famille</label>
+        <div class="emoji-pick-row" id="emoji-pick-row"></div>
+        <label data-i18n="prof_mode_label">Mode de jeu</label>
+        <div class="mode-row" id="mode-row">
+          <button type="button" class="mode-btn" data-mode="classic">🌿 <span data-i18n="prof_mode_classic">Classique</span></button>
+          <button type="button" class="mode-btn" data-mode="random">🎲 <span data-i18n="prof_mode_random">Parcours aléatoire</span></button>
+          <button type="button" class="mode-btn" data-mode="race">🏁 <span data-i18n="prof_mode_race">Course</span></button>
+        </div>
+        <p class="note" id="mode-hint"></p>
+        <button class="btn btn-primary" type="submit" data-i18n="prof_submit">Créer le profil</button>
+      </form>
+      <h3 class="subtitle" data-i18n="prof_week">Profil de cette semaine</h3>
+      <div id="profile-list" class="profile-list"></div>
+      <button class="btn btn-outline hidden" id="btn-logout" data-i18n="prof_logout">🚪 Se déconnecter</button>
+    </section>
+
+    <!-- ================= CARTE ================= -->
+    <section class="screen" id="screen-map" data-title="map">
+      <div id="race-timer" class="race-timer hidden"></div>
+      <div id="map-welcome" class="banner"></div>
+      <div class="map-stage">
+        <svg id="site-map" viewBox="0 0 480 620" role="img" aria-label="Carte du sentier des découvertes">
+          <!-- décor et sentier dessinés par le JS -->
+        </svg>
+      </div>
+      <div class="map-actions">
+        <button class="btn btn-primary" id="btn-scan" data-i18n="map_scan_btn">📷 Scanner une balise</button>
+        <button class="btn btn-outline" id="btn-gps" data-i18n="map_gps_btn">📍 Ma position</button>
+        <button class="btn btn-danger" id="btn-urgency" data-i18n="urgency_open_btn">🚨 Urgence</button>
+        <a class="btn btn-outline hidden" id="btn-map-open" href="#" target="_blank" rel="noopener" data-i18n="map_open_btn">🗺️ Voir le parcours</a>
+      </div>
+      <div id="compass-panel" class="compass-panel hidden">
+        <div class="compass-panel-btns">
+          <button class="btn btn-outline" id="btn-compass">🧭 Boussole</button>
+          <button class="btn btn-ghost hidden" id="btn-compass-cal" data-i18n="compass_cal">🎯 Étalonner</button>
+        </div>
+        <div id="compass-body" class="compass-body hidden">
+          <div class="compass-head" id="compass-head">…</div>
+          <div class="compass-dial">
+            <div class="compass-rose" id="compass-rose">
+              <span class="compass-card compass-n">N</span>
+              <span class="compass-card compass-ne">NE</span>
+              <span class="compass-card compass-e">E</span>
+              <span class="compass-card compass-se">SE</span>
+              <span class="compass-card compass-s">S</span>
+              <span class="compass-card compass-so">SO</span>
+              <span class="compass-card compass-w">O</span>
+              <span class="compass-card compass-no">NO</span>
+            </div>
+            <div class="compass-lubber"></div>
+            <div class="compass-dest" id="compass-dest"></div>
+            <div class="compass-needle" id="compass-needle"></div>
+            <div class="compass-pin"></div>
+          </div>
+          <div class="compass-emoji" id="compass-emoji">😢</div>
+          <div class="compass-guide" id="compass-guide" data-i18n="compass_guide_wait">…</div>
+          <div class="compass-light-row">
+            <span class="compass-light" id="compass-light"></span>
+            <span class="compass-light-label" data-i18n="compass_light">Approche</span>
+          </div>
+          <p class="compass-light-hint" data-i18n="compass_light_hint">Noir : on s'éloigne · Blanc : cible · IR → UV en approchant</p>
+          <p class="compass-status" id="compass-status"></p>
+          <div class="compass-info">
+            <div class="compass-row"><span data-i18n="compass_here">📍 Ma position</span><b id="compass-here">—</b></div>
+            <div class="compass-row"><span data-i18n="compass_target">🎯 Balise</span><b id="compass-target">—</b></div>
+            <div class="compass-row"><span data-i18n="compass_dist">📏 Distance</span><b id="compass-distance">—</b></div>
+            <div class="compass-row"><span data-i18n="compass_azimut">🧭 Azimut</span><b id="compass-azimut">—</b></div>
+            <div class="compass-row"><span data-i18n="compass_dir">🧭 Direction</span><b id="compass-direction">—</b></div>
+          </div>
+        </div>
+      </div>
+      <div id="map-note" class="note"></div>
+    </section>
+
+    <!-- ================= SCAN QR ================= -->
+    <section class="screen" id="screen-scan" data-title="scan">
+      <button class="btn btn-outline" id="btn-scan-back" data-i18n="scan_back">← Retour à la carte</button>
+      <div class="scan-box">
+        <video id="scanner" class="scan-video" muted playsinline></video>
+        <div class="scan-frame"></div>
+        <p class="scan-hint" data-i18n="scan_intro_camera">Vise le QR code gravé sur la balise en bois&nbsp;!</p>
+      </div>
+      <button class="btn btn-primary" id="btn-start-camera" data-i18n="scan_btn_camera">📷 Allumer la caméra</button>
+      <button class="btn btn-outline" id="btn-stop-camera" data-i18n="scan_btn_stop">Arrêter</button>
+      <hr class="sep">
+      <p class="screen-intro" data-i18n="scan_intro_manual">Pas de caméra ou code illisible&nbsp;? Tape le code inscrit sous le QR&nbsp;:</p>
+      <form id="code-form" class="form" autocomplete="off">
+        <div class="dict-row">
+          <input id="code-input" name="code" type="text" placeholder="Ex : JDP-B1" data-i18n-placeholder="scan_placeholder" autocomplete="off">
+          <button type="button" id="btn-dict-code" class="dict-btn" data-i18n-aria="dict_start" aria-label="Dicter" title="🎤 Dicter">🎤</button>
+        </div>
+        <button class="btn btn-primary" type="submit" data-i18n="scan_btn_validate">Valider le code</button>
+      </form>
+      <p class="note" id="scan-status"></p>
+    </section>
+
+    <!-- ================= ÉNIGME ================= -->
+    <section class="screen" id="screen-riddle" data-title="riddle">
+      <div class="riddle-card">
+        <p class="kicker" data-i18n="riddle_kicker">Énigme</p>
+        <div class="riddle-img-wrap hidden" id="riddle-img-wrap">
+          <img id="riddle-img" class="riddle-img" alt="">
+        </div>
+        <p id="riddle-text" class="riddle-text"></p>
+        <form id="riddle-form" class="form" autocomplete="off">
+          <label for="riddle-input" id="riddle-label" data-i18n="riddle_label">Ta réponse</label>
+          <div class="dict-row">
+            <input id="riddle-input" name="answer" type="text" placeholder="..." data-i18n-placeholder="riddle_placeholder" autocomplete="off">
+            <button type="button" id="btn-dict-riddle" class="dict-btn" data-i18n-aria="dict_start" aria-label="Dicter ma réponse" title="🎤 Dicter ma réponse">🎤</button>
+          </div>
+          <button class="btn btn-primary" type="submit" data-i18n="riddle_btn_try">Essayer</button>
+        </form>
+        <button class="btn btn-ghost" id="btn-riddle-hint" data-i18n="riddle_btn_hint">💡 Un indice</button>
+        <p class="note" id="riddle-status"></p>
+        <div class="saviez" id="riddle-saviez"></div>
+      </div>
+    </section>
+
+    <!-- ================= FICHE OISEAU ================= -->
+    <section class="screen" id="screen-bird" data-title="bird">
+      <div class="bird-card" id="bird-card"></div>
+    </section>
+
+    <!-- ================= QUIZ ================= -->
+    <section class="screen" id="screen-quiz" data-title="quiz">
+      <div class="quiz-card" id="quiz-card"></div>
+    </section>
+
+    <!-- ================= CARNET ================= -->
+    <section class="screen" id="screen-carnet" data-title="carnet">
+      <p class="screen-intro" id="carnet-summary"></p>
+      <div id="carnet-grid" class="carnet-grid"></div>
+    </section>
+
+    <!-- ================= PALMARÈS ================= -->
+    <section class="screen" id="screen-palmares" data-title="palmares">
+      <p class="screen-intro" data-i18n="palmares_intro">Les familles qui ont joué cette semaine&nbsp;:</p>
+      <div id="palmares-list" class="palmares-list"></div>
+      <button class="btn btn-outline" id="btn-message">✍️ Laisser un message à la postérité</button>
+      <button class="btn btn-outline" id="btn-share" data-i18n="palmares_btn_share">📤 Partager notre résultat</button>
+      <p class="note" id="palmares-note"></p>
+    </section>
+
+    <!-- ================= RECONNAISSANCE (Shazam des ambiances) ================= -->
+    <section class="screen" id="screen-reco" data-title="reco">
+      <div class="reco-card">
+        <p class="screen-intro">La fonctionnalité de reconnaissance sonore est désactivée pour l'instant.</p>
+        <p class="note">Contactez l'administrateur pour la réactiver si nécessaire.</p>
+        <div class="reco-actions">
+          <button class="btn btn-outline" data-go="home">← Retour</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RÉGLAGES ================= -->
+    <section class="screen" id="screen-settings" data-title="settings">
+      <div class="settings-list">
+        <h3 class="subtitle" data-i18n="set_lang_title">Pays / Langue</h3>
+        <div class="lang-row" id="lang-row"></div>
+        <h3 class="subtitle" data-i18n="set_diff_title">Difficulté des énigmes</h3>
+        <div class="diff-row" id="diff-row">
+          <button class="diff-btn" data-diff="facile" data-i18n="set_diff_facile">Facile</button>
+          <button class="diff-btn" data-diff="moyen" data-i18n="set_diff_moyen">Moyen</button>
+          <button class="diff-btn" data-diff="difficile" data-i18n="set_diff_difficile">Difficile</button>
+        </div>
+        <label class="setting-row">
+          <span data-i18n="set_night">Thème nuit (idée : soirée = espèces nocturnes 🌙)</span>
+          <input type="checkbox" id="set-night">
+        </label>
+        <h3 class="subtitle" data-i18n="set_theme_title">Thème visuel</h3>
+        <label class="setting-row">
+          <span data-i18n="set_theme">🎨 Thème du jeu</span>
+          <select id="set-theme"></select>
+        </label>
+        <p class="note hidden" id="row-theme-lock-hint" data-i18n="theme_lock_hint">🔒 Changement de thème protégé par le mot de passe organisateur (défaut : Sam).</p>
+        <div class="setting-row hidden" id="row-theme-pass">
+          <input type="password" id="set-theme-pass" data-i18n-placeholder="theme_pass_ph" placeholder="Mot de passe organisateur…" autocomplete="off">
+          <button type="button" class="btn btn-ghost btn-mini" id="btn-theme-unlock" data-i18n="btn_theme_unlock">🔓 Déverrouiller</button>
+        </div>
+        <div class="setting-row hidden" id="row-theme-admin">
+          <span data-i18n="theme_pass_admin">🔐 Mot de passe des thèmes (vide = protection désactivée)</span>
+          <input type="text" id="set-theme-newpass" placeholder="••••" autocomplete="off">
+        </div>
+        <label class="setting-row">
+          <span data-i18n="set_sound">Sons et ambiances</span>
+          <input type="checkbox" id="set-sound">
+        </label>
+        <label class="setting-row">
+          <span data-i18n="set_hints">Indices sonores quand on s'approche d'une balise</span>
+          <input type="checkbox" id="set-hints">
+        </label>
+        <label class="setting-row">
+          <span data-i18n="set_alert">🔔 Avertisseur d'approche</span>
+          <select id="set-alert">
+            <option value="signature" data-i18n="alert_signature">Signature de la découverte</option>
+            <option value="radar" data-i18n="alert_radar">Radar</option>
+            <option value="bip" data-i18n="alert_bip">Bip-bip</option>
+            <option value="pulse" data-i18n="alert_pulse">Pulsation</option>
+            <option value="custom" data-i18n="alert_custom">Mon enregistrement</option>
+          </select>
+        </label>
+        <div class="setting-row" id="row-alert-actions">
+          <button class="btn btn-ghost btn-mini" id="btn-alert-rec" data-i18n="alert_rec">🎤 Enregistrer le mien (5 s max)</button>
+          <button class="btn btn-ghost btn-mini" id="btn-alert-test" data-i18n="alert_test">▶️ Tester</button>
+        </div>
+        <label class="setting-row">
+          <span data-i18n="set_race">Mode course (chronomètre sur la carte)</span>
+          <input type="checkbox" id="set-race">
+        </label>
+        <p class="note hidden" id="race-warning-note" data-i18n="race_warn_points">⚠️ Sans les énigmes ni les quiz, vos points (⭐) risquent de ne pas suffire pour apparaître dans le palmarès classique.</p>
+        <button class="btn btn-outline hidden" id="btn-race-setup" data-i18n="race_btn_setup">🏁 Configurer la course (équipes adverses)</button>
+        <label class="setting-row">
+          <span data-i18n="set_volume">Volume</span>
+          <input type="range" id="set-volume" min="0" max="100" value="80">
+        </label>
+        <label class="setting-row" id="row-admin-toggle">
+          <span data-i18n="set_admin_toggle">Mode admin (profil Admin)</span>
+          <input type="checkbox" id="set-admin-off">
+        </label>
+        <h3 class="subtitle" data-i18n="set_emoji_title">Emoji de proximité</h3>
+        <div class="emoji-row" id="emoji-row"></div>
+      </div>
+      <h3 class="subtitle" data-i18n="set_offline_title">Contenu hors-ligne</h3>
+      <p class="note" data-i18n="set_offline_note">Les cartes, sons et fiches sont déjà dans l'application : rien à télécharger à l'arrivée. Une fois la page ouverte sur le Wi-Fi du site, tout est disponible ensuite en zone blanche.</p>
+      <div id="offline-status" class="status-pill" data-i18n="set_status_checking">État : vérification…</div>
+      <button class="btn btn-outline" id="btn-cache" data-i18n="set_btn_cache">⬇️ Préparer le mode hors-ligne</button>
+      <button class="btn btn-outline" id="btn-update" data-i18n="set_btn_update">🔄 Vérifier et mettre à jour</button>
+      <p class="note" id="update-status"></p>
+      <h3 class="subtitle" data-i18n="set_game_title">Jeu</h3>
+      <button class="btn btn-outline" id="btn-intro-again" data-i18n="intro_again">🧠 Revoir l'introduction</button>
+      <button class="btn btn-danger" id="btn-reset" data-i18n="set_btn_reset">🗑️ Recommencer le parcours</button>
+      <p class="note" data-i18n="set_reset_note">Réinitialise les balises validées du profil actif (les profils sont conservés).</p>
+      <button class="btn btn-outline" id="btn-logout-settings" data-i18n="prof_logout">🚪 Se déconnecter</button>
+      <h3 class="subtitle" data-i18n="set_info_title">Informations</h3>
+      <p class="note" id="info-version"></p>
+      <button class="btn btn-outline" id="btn-troubleshoot" data-i18n="set_btn_trouble">🛠️ Résolution de problème</button>
+      <div id="trouble-results" class="trouble-results hidden"></div>
+      <h3 class="subtitle" data-i18n="set_tester_title">🧪 Espace testeur bêta</h3>
+      <label class="setting-row" id="row-tester-q">
+        <span data-i18n="set_tester_q_toggle">Je participe au questionnaire testeur bêta</span>
+        <input type="checkbox" id="set-tester-q">
+      </label>
+      <button class="btn btn-outline" id="btn-tester" data-i18n="set_tester_btn">🧪 Menu testeur bêta</button>
+      <div id="tester-panel" class="hidden">
+        <p class="note" data-i18n="set_tester_note">Vous aidez à tester l'application ? Merci ! Répondez au questionnaire ou joignez un rapport technique à votre retour.</p>
+        <button class="btn btn-outline" id="btn-tester-questionnaire" data-i18n="set_tester_btn_q">📋 Questionnaire de test</button>
+        <button class="btn btn-outline" id="btn-tester-report" data-i18n="set_tester_btn_report">🛠️ Générer un rapport technique</button>
+        <pre id="tester-report" class="tester-report hidden"></pre>
+        <button class="btn btn-primary hidden" id="btn-tester-copy" data-i18n="set_tester_btn_copy">📋 Copier le rapport</button>
+        <button class="btn btn-outline hidden" id="btn-tester-share" data-i18n="set_tester_btn_share">📤 Partager le rapport</button>
+      </div>
+      <h3 class="subtitle" data-i18n="contact_title">📮 Contact</h3>
+      <p class="note" data-i18n="contact_note">Une question, une idée ou un bug ? Écrivez au créateur du jeu : contact@exemple.fr</p>
+      <button class="btn btn-outline" id="btn-contact" data-i18n="contact_btn">✉️ Contacter le créateur</button>
+      <p class="note" id="contact-status"></p>
+    </section>
+
+    <!-- ================= MODE ADMIN / GOD ================= -->
+    <section class="screen" id="screen-god" data-title="god">
+      <button class="btn btn-outline" id="btn-god-back" data-i18n="god_back">← Retour</button>
+      <p class="screen-intro" data-i18n="god_intro">Toutes les balises : codes, QR codes et accès direct.</p>
+      <p class="note" data-i18n="god_sam_only">Mode admin visible uniquement pour le profil « Admin » (0 enfant).</p>
+      <div class="god-actions">
+        <button class="btn btn-outline" id="btn-god-dashboard" data-i18n="god_dashboard">🗺️ Tableau de bord</button>
+        <button class="btn btn-outline" id="btn-god-edit" data-i18n="god_edit">✏️ Éditer le jeu</button>
+        <button class="btn btn-outline" id="btn-god-report" data-i18n="god_report">📧 Rapport</button>
+        <button class="btn btn-outline" id="btn-god-all-done" data-i18n="god_all_done">✅ Tout valider</button>
+        <button class="btn btn-danger" id="btn-god-all-reset" data-i18n="god_all_reset">♻️ Tout réinitialiser</button>
+      </div>
+      <button class="btn btn-danger" id="btn-god-exit" data-i18n="god_quit">🚪 Quitter le mode admin</button>
+      <div id="god-photos" class="god-photos"></div>
+      <div id="god-list" class="god-list"></div>
+    </section>
+
+    <!-- ================= GUIDE DES DÉCOUVERTES ================= -->
+    <section class="screen" id="screen-guide" data-title="guide">
+      <button class="btn btn-outline" id="btn-guide-back" data-i18n="guide_back">← Retour</button>
+      <p class="screen-intro" data-i18n="guide_intro">Les notions du parcours et des outils pour transmettre. Touchez une carte pour en savoir plus.</p>
+      <div id="guide-grid" class="guide-grid"></div>
+      <a class="btn btn-outline" id="btn-fiche-pdf" href="docs/fiche-pedagogique-JDP_BC.pdf" target="_blank" rel="noopener" data-i18n="guide_fiche_pdf">📄 Fiche pédagogique (PDF)</a>
+    </section>
+
+  </main>
+
+  <!-- ================= BANNIÈRE ORGANISATEUR (message diffusé) ================= -->
+  <div id="board-banner" class="board-banner hidden" role="status"></div>
+
+  <nav id="bottombar" class="bottombar" aria-label="Navigation principale">
+    <button class="nav-btn" data-go="map"><span>🗺️</span><span data-i18n="nav_map">Carte</span></button>
+    <button class="nav-btn" data-go="carnet"><span>📔</span><span data-i18n="nav_carnet">Carnet</span></button>
+    <button class="nav-btn" data-go="palmares"><span>🏆</span><span data-i18n="nav_palmares">Palmarès</span></button>
+    <button class="nav-btn" data-go="settings"><span>⚙️</span><span data-i18n="nav_settings">Réglages</span></button>
+  </nav>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- ================= LIVRE D'OR (selfie + note, fin de parcours) ================= -->
+  <div id="guestbook" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="guestbook-title">
+    <div class="guestbook-card">
+      <button type="button" class="overlay-close" id="gb-close" data-i18n-aria="guestbook_btn_cancel" aria-label="Fermer">✕</button>
+      <h3 id="guestbook-title" data-i18n="guestbook_title">Votre souvenir</h3>
+      <p class="note" data-i18n="guestbook_intro">Un selfie et un mot pour la postérité&nbsp;: ils seront visibles dans le palmarès.</p>
+
+      <div class="gb-selfie">
+        <video id="gb-video" class="gb-video hidden" playsinline muted></video>
+        <div id="gb-preview" class="gb-preview hidden"><img id="gb-preview-img" alt=""></div>
+        <div id="gb-placeholder" class="gb-placeholder">📸</div>
+      </div>
+      <div class="gb-actions">
+        <button type="button" class="btn btn-outline" id="gb-selfie-btn" data-i18n="guestbook_btn_selfie">📸 Prendre un selfie</button>
+        <button type="button" class="btn btn-outline hidden" id="gb-capture-btn" data-i18n="guestbook_btn_capture">📷 Capturer</button>
+        <button type="button" class="btn btn-outline" id="gb-file-btn" data-i18n="guestbook_btn_file">🖼️ Choisir une photo</button>
+        <button type="button" class="btn btn-danger hidden" id="gb-remove-btn" data-i18n="guestbook_btn_remove">🗑️ Retirer</button>
+      </div>
+      <input type="file" id="gb-file" accept="image/*" class="hidden">
+
+      <label class="gb-label" for="gb-note" data-i18n="guestbook_note_label">Votre message</label>
+      <div class="dict-row">
+        <textarea id="gb-note" rows="3" data-i18n-placeholder="guestbook_note_placeholder" placeholder="Un mot pour la postérité…"></textarea>
+        <button type="button" id="btn-dict-gb" class="dict-btn" data-i18n-aria="dict_start" aria-label="Dicter" title="🎤 Dicter">🎤</button>
+      </div>
+
+      <div class="gb-save-row">
+        <button type="button" class="btn btn-primary" id="gb-save" data-i18n="guestbook_btn_save">💾 Enregistrer</button>
+        <button type="button" class="btn btn-ghost" id="gb-cancel" data-i18n="guestbook_btn_cancel">Annuler</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= ALERTE URGENCE (participant) ================= -->
+  <div id="urgency-modal" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="urgency-title">
+    <div class="guestbook-card urgency-card">
+      <button type="button" class="overlay-close" id="urg-close" data-i18n-aria="guestbook_btn_cancel" aria-label="Fermer">✕</button>
+      <h3 id="urgency-title" data-i18n="urgency_title">🚨 Urgence</h3>
+      <p class="note" data-i18n="urgency_intro">Besoin d'aide ? L'organisateur est prévenu immédiatement avec votre position.</p>
+      <div class="urgency-options">
+        <button type="button" class="btn btn-outline urgency-opt" id="urg-lost" data-i18n="urgency_lost_btn">😱 Nous sommes perdus</button>
+        <button type="button" class="btn btn-danger urgency-opt" id="urg-emergency" data-i18n="urgency_emergency_btn">🚨 Appeler les secours</button>
+      </div>
+      <div id="urgency-emergency-panel" class="urgency-emergency hidden">
+        <p class="urgency-phone-label" data-i18n="urgency_phone_label">Numéros d'urgence</p>
+        <div class="urgency-phones">
+          <a class="btn btn-outline" href="tel:112">📞 112</a>
+          <a class="btn btn-outline" href="tel:15">🚑 15</a>
+          <a class="btn btn-outline" href="tel:17">🚓 17</a>
+          <a class="btn btn-outline" href="tel:18">🔥 18</a>
+        </div>
+      </div>
+      <div class="urgency-message">
+        <label for="urgency-msg" data-i18n="urgency_msg_label">✉️ Message à l'organisateur</label>
+        <div class="dict-row">
+          <textarea id="urgency-msg" rows="2" data-i18n-placeholder="urgency_msg_placeholder" placeholder="Ex : Nous arrivons en retard, attendez-nous."></textarea>
+          <button type="button" id="btn-dict-urgency" class="dict-btn" data-i18n-aria="dict_start" aria-label="Dicter" title="🎤 Dicter">🎤</button>
+        </div>
+        <button type="button" class="btn btn-outline urgency-opt" id="urg-message" data-i18n="urgency_msg_btn">✉️ Envoyer le message</button>
+      </div>
+      <p class="urgency-status" id="urgency-status" role="status" aria-live="polite"></p>
+      <div class="gb-save-row">
+        <button type="button" class="btn btn-ghost" id="urg-cancel" data-i18n="guestbook_btn_cancel">Annuler</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODE COURSE : choix des équipes adverses ================= -->
+  <div id="race-overlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="race-title">
+    <div class="guestbook-card">
+      <button type="button" class="overlay-close" id="race-close" data-i18n-aria="guestbook_btn_cancel" aria-label="Fermer">✕</button>
+      <h3 id="race-title" data-i18n="race_title">🏁 Mode course</h3>
+      <p class="note race-warn" data-i18n="race_warn_points">⚠️ Sans les énigmes ni les quiz, vos points (⭐) risquent de ne pas suffire pour apparaître dans le palmarès classique.</p>
+      <p class="note" data-i18n="race_opp_question">Contre quelles équipes connectées au serveur voulez-vous courir ?</p>
+      <div id="race-opponents" class="race-opponents"><p class="empty" data-i18n="race_opp_loading">Recherche des équipes connectées…</p></div>
+      <p class="note race-rule" data-i18n="race_rule">Aucune question : validez chaque balise par QR code. Le parcours est tiré au sort — toutes les équipes valident toutes les balises, et le plus rapide gagne.</p>
+      <div class="gb-save-row">
+        <button type="button" class="btn btn-primary" id="btn-race-start" data-i18n="race_btn_start">🚀 C'est parti !</button>
+        <button type="button" class="btn btn-ghost" id="btn-race-cancel" data-i18n="guestbook_btn_cancel">Annuler</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= ÉPREUVE DE L'ORGANISATEUR (tableau de bord) ================= -->
+  <div id="challenge-overlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="challenge-title">
+    <div class="challenge-card">
+      <button type="button" class="overlay-close" id="chal-close" data-i18n-aria="guestbook_btn_cancel" aria-label="Fermer">✕</button>
+      <h3 id="challenge-title"></h3>
+      <span class="chal-tag" id="challenge-tag"></span>
+      <p class="challenge-question" id="challenge-question"></p>
+      <div class="dict-row">
+        <textarea id="challenge-answer" rows="3" data-i18n-placeholder="chal_placeholder" placeholder="Votre réponse…"></textarea>
+        <button type="button" id="btn-dict-chal" class="dict-btn" data-i18n-aria="dict_start" aria-label="Dicter" title="🎤 Dicter">🎤</button>
+      </div>
+      <div class="gb-save-row">
+        <button type="button" class="btn btn-primary" id="chal-send" data-i18n="chal_send">📮 Envoyer notre réponse</button>
+      </div>
+      <p class="note" id="challenge-status"></p>
+    </div>
+  </div>
+
+    <script src="js/engine.js"></script>
+    <script src="js/geo.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/declination.js"></script>
+  <script src="js/compass.js"></script>
+  <script src="js/qr.js"></script>
+  <script src="js/jsqr.js"></script>
+  <script src="js/qrcode.js"></script>
+  <script src="js/dict.js"></script>
+  <script src="js/birdnet.js"></script>
+  <script src="js/board.js"></script>
+  <script src="js/game-flow.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/screens/palmares.js"></script>
+  <script src="js/screens/god.js"></script>
+  <script src="js/screens/guide.js"></script>
+  <script src="js/screens/bird.js"></script>
+  <script src="js/services/compass-ui.js"></script>
+  <script src="js/catalogue-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

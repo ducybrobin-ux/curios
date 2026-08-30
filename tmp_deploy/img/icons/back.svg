@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title-back">
+  <title id="title-back">Retour</title>
+  <g fill="none" stroke="#7DDDE5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M52 32H14M28 16 12 32l16 16"/>
+  </g>
+</svg>

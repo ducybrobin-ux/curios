@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title-help">
+  <title id="title-help">Aide</title>
+  <g fill="none" stroke="#7DDDE5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="32" cy="32" r="24"/><path d="M24 24c1-8 15-10 18-2 2 6-6 9-8 12v3"/><circle cx="34" cy="44" r="2" fill="#7DDDE5" stroke="none"/>
+  </g>
+</svg>

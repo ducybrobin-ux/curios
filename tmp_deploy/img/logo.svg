@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" width="200" height="40" role="img" aria-labelledby="title desc">
+
+  <title id="title">CURIOS</title>
+  <desc id="desc">Logo CURIOS, un parcours formant la lettre C et se terminant par un repère.</desc>
+
+  <defs>
+    <linearGradient id="route" x1="4" y1="4" x2="34" y2="36" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00A6A6"></stop>
+      <stop offset="0.55" stop-color="#20B878"></stop>
+      <stop offset="1" stop-color="#F5A623"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- C / parcours -->
+  <path d="M34 9
+       C29 4 21 3 14 6
+       C6 10 3 17 4 24
+       C5 32 12 37 20 37
+       C27 37 32 34 35 29" fill="none" stroke="#073B5C" stroke-width="5" stroke-linecap="round"></path>
+
+  <!-- trajectoire -->
+  <path d="M7 27
+       C11 31 17 33 22 31
+       C27 29 29 25 29 21
+       C29 16 26 12 22 10
+       C18 8 14 9 11 11" fill="none" stroke="url(#route)" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 0"></path>
+
+  <!-- point de départ -->
+  <circle cx="8" cy="27" r="2.5" fill="#073B5C"></circle>
+
+  <!-- destination / repère -->
+  <path d="M34 5
+       C30.7 5 28 7.5 28 10.5
+       C28 14.8 34 19 34 19
+       C34 19 40 14.8 40 10.5
+       C40 7.5 37.3 5 34 5Z" fill="#F5A623"></path>
+
+  <circle cx="34" cy="10.5" r="2" fill="#073B5C"></circle>
+
+  <!-- nom -->
+  <text x="48" y="28" font-family="Inter, Poppins, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="1.8" fill="#073B5C">
+    CURIOS
+  </text>
+
+</svg>

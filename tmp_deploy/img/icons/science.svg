@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title-science">
+  <title id="title-science">Sciences</title>
+  <g fill="none" stroke="#7DDDE5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M25 10h14M28 10v15L14 48a5 5 0 0 0 4 6h28a5 5 0 0 0 4-6L36 25V10"/><path d="M19 41h26"/><circle cx="30" cy="34" r="3" fill="#7DDDE5" stroke="none"/>
+  </g>
+</svg>

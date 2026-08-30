@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0c3b2e">
+  <title>Curi🧭s — Éditeur de contenu</title>
+  <link rel="icon" href="img/icon.svg">
+  <link rel="stylesheet" href="css/curios-tokens.css">
+  <link rel="stylesheet" href="css/curios-design-system.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body { padding-bottom: 40px; }
+    .topbar h1 { font-size: 17px; }
+    .ed-title { margin: 0 0 4px; font-size: 24px; }
+    .ed-sub { color: var(--text-muted); margin: 0 0 16px; font-size: 15px; }
+    .ed-card {
+      background: var(--card); border: 2px solid var(--line); border-radius: var(--radius);
+      padding: 14px 16px; box-shadow: var(--shadow); margin-bottom: 14px;
+    }
+    .ed-card h2 { margin: 0 0 4px; font-size: 17px; }
+    .ed-card .ed-id { color: var(--text-muted); font-size: 13px; font-weight: 700; margin: 0 0 12px; }
+    .field { margin-bottom: 10px; }
+    .field label { display: block; font-weight: 800; font-size: 13px; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.03em; }
+    .field input[type="text"], .field input[type="number"], .field textarea, .field input[type="color"], .field select {
+      width: 100%; padding: 10px 12px; border-radius: 10px; box-sizing: border-box;
+      border: 2px solid var(--line); background: var(--card);
+      color: var(--ink); font-family: inherit; font-size: 15px;
+    }
+    .field input[type="color"] { height: 44px; padding: 4px; }
+    .field textarea { resize: vertical; min-height: 60px; }
+    .field input:focus, .field textarea:focus { outline: 3px solid var(--primary); border-color: var(--primary); }
+    .field small { display: block; margin-top: 4px; }
+    .field-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .field-row .field { flex: 1 1 auto; min-width: 110px; }
+    .img-box { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .img-box img { width: 72px; height: 72px; object-fit: cover; border-radius: 10px; border: 2px solid var(--line); background: var(--card-soft); }
+    .img-box .btn { margin: 0; }
+    .diff-block { border: 2px dashed var(--line); border-radius: 12px; padding: 10px 12px; margin-top: 12px; background: var(--card-soft); }
+    .diff-block h3 { margin: 0 0 8px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--primary); }
+    .quiz-q { border: 2px solid var(--line); border-radius: 12px; padding: 10px 12px; margin: 10px 0; background: var(--card); }
+    .quiz-q .q-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .quiz-q .q-head b { font-size: 14px; }
+    .quiz-q .btn { margin: 0; padding: 6px 10px; font-size: 13px; }
+    .ed-adv { border: 2px dashed var(--line); border-radius: 10px; padding: 8px 12px; margin: 10px 0; background: var(--card-soft); }
+    .ed-adv summary { cursor: pointer; font-weight: 800; font-size: 13px; color: var(--text-muted); }
+    .ed-adv[open] summary { margin-bottom: 8px; }
+    .ed-actions { display: flex; gap: 8px; flex-wrap: wrap; position: sticky; bottom: 8px; background: var(--card); border: 2px solid var(--line); border-radius: 14px; padding: 10px 12px; box-shadow: var(--shadow); }
+    .ed-actions .btn { flex: 1 1 auto; min-width: 0; margin: 0; }
+    .ed-toolbar { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0; }
+    .ed-toolbar .btn { margin: 0; padding: 8px 12px; font-size: 13px; }
+    details.ed-card summary .ed-remove-btn { float: right; margin: 0 0 0 8px; padding: 4px 8px; font-size: 13px; background: var(--err); }
+    details.ed-card summary .ed-remove-btn:hover { filter: brightness(1.1); }
+    #ed-filter { flex: 1 1 180px; padding: 9px 12px; border-radius: 10px; border: 2px solid var(--line); background: var(--card); color: var(--ink); font-family: inherit; font-size: 14px; }
+    #ed-status { min-height: 24px; font-weight: 700; margin: 10px 0 0; white-space: pre-line; }
+    #ed-status.ok { color: var(--primary); }
+    #ed-status.err { color: var(--err); }
+    details.ed-card summary { cursor: pointer; font-size: 17px; font-weight: 800; }
+    details.ed-card[open] summary { margin-bottom: 10px; }
+    details.ed-card .ed-status-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-left: 6px; }
+    .changed .ed-status-dot { background: var(--gold); }
+    .img-browser-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.55); z-index: 9998; display: flex; align-items: center; justify-content: center; padding: 16px; }
+    .img-browser-overlay.hidden { display: none; }
+    .img-browser-panel { background: var(--card); border: 2px solid var(--line); border-radius: 14px; width: 100%; max-width: 740px; max-height: 88vh; display: flex; flex-direction: column; box-shadow: var(--shadow); }
+    .img-browser-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 14px; border-bottom: 2px solid var(--line); flex-wrap: wrap; }
+    .img-browser-tools { display: flex; gap: 8px; flex-wrap: wrap; padding: 10px 14px; }
+    .img-browser-tools input[type="search"] { flex: 1 1 180px; padding: 9px 12px; border-radius: 10px; border: 2px solid var(--line); background: var(--card); color: var(--ink); font-family: inherit; font-size: 14px; }
+    .img-browser-grid { overflow-y: auto; padding: 12px 14px; display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 10px; }
+    .img-cell { border: 2px solid var(--line); border-radius: 10px; overflow: hidden; cursor: pointer; background: var(--card-soft); }
+    .img-cell:hover { border-color: var(--primary); }
+    .img-cell img { width: 100%; height: 90px; object-fit: cover; display: block; background: #fff; }
+    .img-cell span { display: block; padding: 4px 6px; font-size: 11px; word-break: break-all; color: var(--text-muted); }
+    .img-browser-foot { padding: 10px 14px; border-top: 2px solid var(--line); display: flex; gap: 8px; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .img-browser-target { font-size: 13px; color: var(--text-muted); }
+    /* --- Éditeur de carte (Leaflet / OpenStreetMap) --- */
+    .map-editor-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.55); z-index: 9998; display: flex; align-items: center; justify-content: center; padding: 12px; }
+    .map-editor-overlay.hidden { display: none; }
+    .map-editor-panel { background: var(--card); border: 2px solid var(--line); border-radius: 14px; width: 100%; max-width: 1200px; height: 96vh; display: flex; flex-direction: column; box-shadow: var(--shadow); }
+    .map-editor-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 14px; border-bottom: 2px solid var(--line); flex-wrap: wrap; }
+    .map-editor-head .note { flex: 1 1 200px; }
+    .map-editor-map { flex: 1 1 auto; min-height: 0; width: 100%; }
+    .map-editor-map .note { padding: 24px 16px; }
+    .map-editor-foot { padding: 10px 14px; border-top: 2px solid var(--line); display: flex; gap: 8px; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .map-ed-pin { width: 26px; height: 26px; border-radius: 50%; color: #fff; font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.4); }
+    .map-ed-marker { background: transparent; border: none; }
+    .map-pop { font-family: inherit; font-size: 14px; }
+    .map-pop-bird { color: var(--text-muted); font-size: 13px; margin: 2px 0 6px; }
+    .map-pop-photo img { width: 100%; max-height: 130px; object-fit: cover; border-radius: 10px; border: 2px solid var(--line); background: var(--card-soft); margin-bottom: 8px; display: block; }
+    .map-pop-actions { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+    .map-pop-actions .btn { margin: 0; font-size: 12px; padding: 6px 8px; }
+    .leaflet-container { font-family: inherit; font-size: 14px; }
+    #btn-map-add.active { background: var(--gold); color: #222; border-color: var(--gold); }
+    .map-editor-head .btn, .map-editor-foot .btn { font-size: 12px; padding: 5px 9px; }
+    /* Plein écran dans une fenêtre séparée (?map=1) */
+    body.map-only .topbar, body.map-only .ed-title, body.map-only .ed-sub,
+    body.map-only .ed-toolbar, body.map-only .ed-actions,
+    body.map-only #site-root, body.map-only #trail-root, body.map-only #balises-root,
+    body.map-only #birds-root, body.map-only #guide-root, body.map-only #img-browser { display: none; }
+    body.map-only main { max-width: none; margin: 0; padding: 0; }
+    body.map-only .map-editor-overlay { background: #eef1f0; padding: 0; }
+    body.map-only .map-editor-panel { max-width: none; width: 100vw; height: 100vh; border: none; border-radius: 0; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <img class="topbar-logo" src="img/logo.svg" alt="Curi🧭s">
+    <h1>Curi🧭s — Éditeur de contenu</h1>
+    <button id="btn-dashboard" class="icon-btn" title="Tableau de bord" onclick="location.href='/dashboard'">🎛️</button>
+    <button id="btn-reload" class="icon-btn" title="Recharger depuis le serveur" onclick="location.reload()">🔄</button>
+  </header>
+
+  <main style="max-width:680px; margin:0 auto; padding:16px;">
+
+    <h2 class="ed-title">🖊️ Tout éditer : site, sentier, balises, découvertes, guide</h2>
+    <p class="ed-sub">Les modifications sont enregistrées sur le serveur (admin-data.json) et appliquées à tous les appareils au prochain chargement de l'application. Ne pas oublier d'actualiser l'app après enregistrement.</p>
+
+    <div id="ed-status" class="status-pill"></div>
+
+    <div class="ed-toolbar">
+      <button id="btn-add-balise" class="btn btn-outline">➕ Ajouter une balise</button>
+       <button id="btn-add-bird" class="btn btn-outline">➕ Ajouter une découverte</button>
+      <button id="btn-images" class="btn btn-outline">🖼️ Images</button>
+      <button id="btn-terrain" class="btn btn-outline" onclick="openTerrainPanel()">📏 Terrain</button>
+            <button id="btn-map" class="btn btn-outline">🗺️ Carte des balises</button>
+      <button id="btn-ai" class="btn btn-outline">🤖 IA</button>
+      <button id="btn-report" class="btn btn-outline">📧 Rapport</button>
+      <button id="btn-export" class="btn btn-outline">📥 Exporter JSON</button>
+      <button id="btn-import" class="btn btn-outline">📤 Importer</button>
+      <input type="file" id="import-file" accept="application/json,.json" class="hidden">
+      <button id="btn-check" class="btn btn-outline">🔎 Vérifier</button>
+      <button id="btn-stats" class="btn btn-outline">📊 Statistiques</button>
+      <a class="btn btn-outline" href="./atelier.html">🧩 Atelier de packs</a>
+      <button id="btn-open-all" class="btn btn-outline">🗂️ Tout ouvrir</button>
+      <button id="btn-close-all" class="btn btn-outline">🗂️ Tout fermer</button>
+      <a class="btn btn-outline" href="./">👀 Aperçu app</a>
+      <input type="search" id="ed-filter" placeholder="🔍 Filtrer les cartes…">
+    </div>
+
+    <div id="site-root"></div>
+
+    <div id="trail-root"></div>
+
+    <div id="balises-root"></div>
+
+    <div id="birds-root"></div>
+
+    <div id="guide-root"></div>
+
+    <div id="img-browser" class="img-browser-overlay hidden">
+      <div class="img-browser-panel">
+        <div class="img-browser-head">
+          <b>🖼️ Images du site</b>
+          <span class="img-browser-target" id="img-browser-target"></span>
+          <button class="btn btn-outline" id="img-browser-close" onclick="closeImgBrowser()">✖ Fermer</button>
+        </div>
+        <div class="img-browser-tools">
+          <input type="search" id="img-browser-filter" placeholder="🔍 Filtrer les images…">
+          <input type="file" id="img-browser-upload" accept="image/*" class="hidden">
+          <button class="btn btn-primary" id="img-browser-upload-btn">➕ Ajouter une image</button>
+        </div>
+        <div class="img-browser-grid" id="img-browser-grid"></div>
+        <div class="img-browser-foot">
+          <span class="note" id="img-browser-hint">Cliquez sur une image pour l'attribuer.</span>
+          <span class="note" id="img-browser-count"></span>
+        </div>
+      </div>
+    </div>
+
+    <div id="map-editor" class="map-editor-overlay hidden">
+      <div class="map-editor-panel">
+        <div class="map-editor-head">
+          <b>🗺️ Carte des balises</b>
+          <span class="note">Glissez les pastilles pour déplacer une balise (lat/lng). Cliquez sur une pastille pour voir/changer sa photo.</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+            <input type="search" id="map-ed-search" placeholder="🔎 Rechercher une balise (n°, code, nom)…" style="flex:1 1 200px;padding:8px 12px;border-radius:10px;border:2px solid var(--line);background:var(--card);color:var(--text)">
+            <div id="map-ed-results" class="hidden" style="position:absolute;z-index:1200;max-height:180px;overflow:auto;background:var(--card);border:2px solid var(--line);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.35)"></div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button id="btn-map-add" class="btn btn-outline" onclick="mapEdToggleAdd()">➕ Ajouter une balise</button>
+            <button class="btn btn-outline" onclick="mapEdFitAll()">🔍 Tout afficher</button>
+            <button class="btn btn-outline" onclick="mapEdLocateMe()">📍 Me localiser</button>
+            <button id="btn-map-chain" class="btn btn-outline" onclick="mapEdChainToggle()">⛓️ Mode terrain</button>
+            <button class="btn btn-outline" onclick="openMapFullscreen()">🖥️ Plein écran</button>
+            <button id="btn-map-import" class="btn btn-outline" onclick="mapEdToggleImport()">⬇️ Importer KML / My Maps</button>
+            <button class="btn btn-outline" onclick="mapEdAutoLayout()">🧭 Ajuster la carte du jeu</button>
+            <button class="btn btn-outline" onclick="closeMapEditor()">✖ Fermer</button>
+          </div>
+          <div id="map-ed-import" class="hidden" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:6px">
+            <input type="text" id="map-ed-kml-url" placeholder="Collez l'adresse de votre carte Google My Maps…" style="flex:1 1 260px;padding:8px 12px;border-radius:10px;border:2px solid var(--line);background:var(--card);color:var(--text)">
+            <button class="btn btn-primary" onclick="mapEdImportKmlUrl()">🌐 Importer l'URL</button>
+            <button class="btn btn-outline" onclick="document.getElementById('map-ed-kml-file').click()">📄 Fichier .kml…</button>
+            <input type="file" id="map-ed-kml-file" accept=".kml,.xml,application/vnd.google-earth.kml+xml,text/xml" class="hidden">
+            <span class="note">Les repères sont attribués dans l'ordre aux balises existantes, puis la carte du jeu est ajustée.</span>
+          </div>
+        </div>
+        <div id="map-editor-map" class="map-editor-map"></div>
+        <div class="map-editor-foot">
+          <span class="note">Les modifications (position + photo) sont reportées dans le formulaire. Cliquez ensuite sur 💾 Enregistrer.</span>
+          <button class="btn btn-primary" onclick="__mapOnly ? mapOnlySave() : saveAll()">💾 Enregistrer</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="ed-actions">
+      <button id="btn-save" class="btn btn-primary" onclick="saveAll()">💾 Enregistrer</button>
+      <button id="btn-reset" class="btn" style="--btn-bg:var(--err)" onclick="resetAll()">🗑️ Tout réinitialiser</button>
+      <button id="btn-ed-dict" class="btn btn-outline" title="Dicter dans le champ sélectionné">🎤 Dicter</button>
+    </div>
+
+  </main>
+
+  <script src="js/engine.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/dict.js"></script>
+  <script src="js/editeur.js"></script>
+
+</body>
+</html>

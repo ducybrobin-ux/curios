@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title-brand-compass">
+  <title id="title-brand-compass">Curi🧭s — symbole boussole</title>
+  <g fill="none" stroke="#E7B77A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="32" cy="32" r="24"/><path d="M39 25 34 37 22 42l5-12z"/><circle cx="32" cy="32" r="3" fill="#E7B77A" stroke="none"/>
+  </g>
+</svg>

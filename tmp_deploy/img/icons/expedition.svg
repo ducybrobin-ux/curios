@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title-expedition">
+  <title id="title-expedition">Expédition</title>
+  <g fill="none" stroke="#E7B77A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M11 47V17l21-7 21 7v30l-21 7z"/><path d="M11 17l21 8 21-8"/><path d="M32 25v29"/><path d="m24 36 8-4 8 4-8 5z"/>
+  </g>
+</svg>

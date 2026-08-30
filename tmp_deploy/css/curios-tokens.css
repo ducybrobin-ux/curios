@@ -1,0 +1,79 @@
+/* =========================================================
+   CURIOS — Design Tokens
+   Couche visuelle officielle. Point de vérité unique.
+   Spécification : docs/CURIOS_DESIGN_SYSTEM.md
+   ========================================================= */
+
+:root {
+  /* ---- Couleurs (palette officielle) ---- */
+  --cur-bg-primary:    #061522;
+  --cur-bg-secondary:  #092235;
+  --cur-blue:          #073B5C;
+  --cur-cyan:          #7DDDE5;
+  --cur-cyan-light:    #B8F5F3;
+  --cur-copper:        #D99678;
+  --cur-copper-glow:   #FFB58F;
+  --cur-gold:          #E7B77A;
+  --cur-text:          #E9F0F2;
+  --cur-text-dim:      #8DA8B3;
+  --cur-line:          #315468;
+
+  /* ---- Couleurs sémantiques ---- */
+  --cur-success:       #5FD68F;
+  --cur-warning:       var(--cur-gold);
+  --cur-danger:        #FF7B7B;
+  --cur-info:          var(--cur-cyan);
+
+  /* ---- Espacement ---- */
+  --cur-space-1: 4px;
+  --cur-space-2: 8px;
+  --cur-space-3: 12px;
+  --cur-space-4: 16px;
+  --cur-space-5: 24px;
+  --cur-space-6: 32px;
+  --cur-space-7: 48px;
+
+  /* ---- Rayons ---- */
+  --cur-radius-sm:   6px;
+  --cur-radius:      10px;
+  --cur-radius-lg:   16px;
+  --cur-radius-pill: 999px;
+
+  /* ---- Bordures ---- */
+  --cur-line-thin:   1px;
+  --cur-line:        2px;
+  --cur-line-thick:  3px;
+
+  /* ---- Typographie ---- */
+  --cur-font:      'Inter', 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+  --cur-font-mono: 'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace;
+  --cur-fs-xs:   12px;
+  --cur-fs-sm:   13px;
+  --cur-fs-base: 15px;
+  --cur-fs-md:   17px;
+  --cur-fs-lg:   20px;
+  --cur-fs-xl:   26px;
+  --cur-fs-2xl:  34px;
+  --cur-fw-normal: 400;
+  --cur-fw-medium: 600;
+  --cur-fw-bold:   800;
+
+  /* ---- Ombres & lueur ---- */
+  --cur-shadow-sm: 0 1px 3px rgba(6,21,34,.4);
+  --cur-shadow:    0 4px 16px rgba(6,21,34,.5);
+  --cur-shadow-lg: 0 12px 40px rgba(6,21,34,.65);
+  --cur-glow-cyan: 0 0 0 3px rgba(125,221,229,.18);
+  --cur-glow-gold: 0 0 16px rgba(231,183,122,.35);
+
+  /* ---- Animation ---- */
+  --cur-ease:    cubic-bezier(.4,0,.2,1);
+  --cur-dur-sm:  120ms;
+  --cur-dur:     220ms;
+  --cur-dur-lg:  380ms;
+
+  /* ---- Surfaces dérivées ---- */
+  --cur-surface:      var(--cur-bg-secondary);
+  --cur-surface-alt:  rgba(7,59,92,.28);
+  --cur-border:       var(--cur-line);
+  --cur-focus-ring:   var(--cur-glow-cyan);
+}

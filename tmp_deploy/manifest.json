@@ -1,0 +1,38 @@
+{
+  "name": "Curi🧭s — Créez des expériences qui font apprendre",
+  "short_name": "Curi🧭s",
+  "description": "Moteur universel de parcours éducatifs : jeux de piste, chasses au trésor, enquêtes, escape games. Packs modulaires, thèmes personnalisables, hors-ligne.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0c2a3b",
+  "theme_color": "#0c2a3b",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "img/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

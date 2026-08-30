@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title-gps">
+  <title id="title-gps">GPS</title>
+  <g fill="none" stroke="#7DDDE5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="32" cy="32" r="18"/><circle cx="32" cy="32" r="5"/><path d="M32 8v9M32 47v9M8 32h9M47 32h9"/>
+  </g>
+</svg>

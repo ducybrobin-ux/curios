@@ -26,9 +26,9 @@
       "img": "",
       "audioFile": null,
       "anecdotes": [
-        "Curi>s est un jeu de dÃ©couverte qui mÃªle balises, Ã©nigmes et notions pÃ©dagogiques.",
-        "Le jeu fonctionne hors-ligne : une fois tÃ©lÃ©chargÃ©, il joue partout.",
-        "Chaque balise raconte une histoire et invite Ã  chercher la rÃ©ponse sur le terrain."
+        "Le Professeur Curi🧭s a créé la Machine à Comprendre la France : ses fragments sont dispersés à travers la France et les territoires ultramarins.",
+        "Prologue : « Bonjour, jeune explorateur. Si tu entends ce message, c’est que la situation est… légèrement catastrophique. »",
+        "Mission : retrouver les fragments en observant, mesurant et expérimentant avec ton smartphone."
       ],
       "chant": {
         "tempo": 100,
@@ -182,7 +182,7 @@
       "version": 1,
       "id": "jeu-balises",
       "nom": "Le jeu de balises",
-      "description": "Comment fonctionne une partie : balises Ã  trouver, Ã©nigmes Ã  rÃ©soudre et niveaux de difficultÃ©.",
+      "description": "Prologue & fonctionnement : le Professeur Curi🧭s explique que la Machine à Comprendre la France est en panne. Le joueur doit OBSERVER, MESURER, RÉFLÉCHIR et EXPÉRIMENTER pour retrouver les fragments. Le guide détaille balises, niveaux de difficulté, validation et exemples de missions.",
       "pedagogie": {
         "objectif": "Comprendre le dÃ©roulement d'une partie de Curi>s",
         "ages": [

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title-score">
+  <title id="title-score">Score</title>
+  <g fill="none" stroke="#E7B77A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 8 39 23l17 2-12 12 3 17-15-8-15 8 3-17L8 25l17-2z"/><path d="m25 32 5 5 10-11"/>
+  </g>
+</svg>

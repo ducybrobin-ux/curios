@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title-magnetometer">
+  <title id="title-magnetometer">Magnétomètre</title>
+  <g fill="none" stroke="#E7B77A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 45V25a14 14 0 0 1 28 0v20"/><path d="M18 45h10V30h8v15h10"/><path d="M25 20h14"/>
+  </g>
+</svg>

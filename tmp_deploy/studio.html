@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Curios Studio</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #1e293b;
+      --card: #1e293b;
+      --ink: #e2e8f0;
+      --ink-dim: #94a3b8;
+      --primary: #38bdf8;
+      --primary-dim: #0ea5e9;
+      --gold: #fbbf24;
+      --err: #f87171;
+      --ok: #34d399;
+      --line: #334155;
+      --radius: 12px;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    /* Topbar */
+    .topbar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 20px;
+      background: var(--bg-soft);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar h1 { font-size: 18px; font-weight: 700; }
+    .topbar h1 span { color: var(--primary); }
+    .topbar-actions { margin-left: auto; display: flex; gap: 8px; }
+
+    /* Steps */
+    .steps {
+      display: flex;
+      gap: 2px;
+      padding: 16px 20px;
+      background: var(--bg-soft);
+      border-bottom: 1px solid var(--line);
+      overflow-x: auto;
+    }
+    .step-btn {
+      flex: 1;
+      min-width: 120px;
+      padding: 10px 12px;
+      background: var(--card);
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--ink-dim);
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s;
+      font-size: 13px;
+    }
+    .step-btn:hover { border-color: var(--primary); color: var(--ink); }
+    .step-btn.active {
+      border-color: var(--primary);
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--primary);
+      font-weight: 600;
+    }
+    .step-btn.completed {
+      border-color: var(--ok);
+      color: var(--ok);
+    }
+    .step-btn .icon { font-size: 20px; display: block; margin-bottom: 4px; }
+
+    /* Main */
+    .main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 20px;
+    }
+
+    .step-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .step-desc {
+      color: var(--ink-dim);
+      margin-bottom: 24px;
+    }
+
+    /* Form */
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink-dim);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px 14px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+      font-size: 15px;
+      font-family: inherit;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    .form-group textarea { min-height: 80px; resize: vertical; }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .card-header h3 { font-size: 16px; }
+
+    /* Buttons */
+    .btn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-primary { background: var(--primary); color: #0f172a; }
+    .btn-primary:hover { background: var(--primary-dim); }
+    .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+    .btn-secondary { background: var(--line); color: var(--ink); }
+    .btn-secondary:hover { background: #475569; }
+    .btn-danger { background: var(--err); color: white; }
+    .btn-danger:hover { opacity: 0.8; }
+    .btn-success { background: var(--ok); color: #0f172a; }
+    .btn-sm { padding: 4px 10px; font-size: 12px; }
+    .btn-icon { width: 36px; height: 36px; padding: 0; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+
+    /* Bottom bar */
+    .bottombar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      background: var(--bg-soft);
+      border-top: 1px solid var(--line);
+      z-index: 100;
+    }
+    .bottombar-left, .bottombar-right { display: flex; gap: 8px; }
+
+    /* Validation */
+    .validation-list { list-style: none; }
+    .validation-list li {
+      padding: 8px 12px;
+      margin-bottom: 4px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .validation-list li.error {
+      background: rgba(248, 113, 113, 0.1);
+      color: var(--err);
+      border-left: 3px solid var(--err);
+    }
+    .validation-list li.warning {
+      background: rgba(251, 191, 36, 0.1);
+      color: var(--gold);
+      border-left: 3px solid var(--gold);
+    }
+
+    /* Empty state */
+    .empty {
+      text-align: center;
+      padding: 40px;
+      color: var(--ink-dim);
+    }
+    .empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+    /* Balise card */
+    .balise-card { border-left: 3px solid var(--primary); }
+    .balise-card .remove-btn { float: right; }
+
+    /* Discovery card */
+    .discovery-card { border-left: 3px solid var(--gold); }
+
+    /* Spacer for bottom bar */
+    .spacer { height: 80px; }
+
+    /* Hidden sections */
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <h1><span>🧭</span> Curios Studio</h1>
+    <div class="topbar-actions">
+      <a href="/editeur" class="btn btn-secondary btn-sm">Éditeur classique</a>
+      <a href="/dashboard" class="btn btn-secondary btn-sm">Dashboard</a>
+    </div>
+  </div>
+
+  <div class="steps" id="steps-bar"></div>
+
+  <div class="main" id="main-content"></div>
+
+  <div class="spacer"></div>
+
+  <div class="bottombar">
+    <div class="bottombar-left">
+      <button class="btn btn-secondary" id="btn-undo" disabled>↩ Annuler</button>
+      <button class="btn btn-secondary" id="btn-redo" disabled>↪ Refaire</button>
+    </div>
+    <div class="bottombar-right">
+      <button class="btn btn-secondary" id="btn-prev" disabled>← Précédent</button>
+      <button class="btn btn-primary" id="btn-next" disabled>Suivant →</button>
+    </div>
+  </div>
+
+  <script type="module">
+    import { createWorkflow, STEPS } from "../packages/studio/src/workflow.js";
+    import { createHistory } from "../packages/studio/src/history.js";
+
+    const wf = createWorkflow();
+    const hist = createHistory(50);
+
+    // Save initial state
+    hist.push(JSON.parse(JSON.stringify(wf.state)));
+
+    const $ = (sel) => document.querySelector(sel);
+    const $$ = (sel) => document.querySelectorAll(sel);
+
+    function render() {
+      renderSteps();
+      renderContent();
+      renderButtons();
+    }
+
+    function renderSteps() {
+      const bar = $("#steps-bar");
+      bar.innerHTML = STEPS.map((step, i) => {
+        const active = i === wf.state.currentStep;
+        const completed = wf.state.completedSteps.has(i);
+        const cls = active ? "active" : completed ? "completed" : "";
+        return `<button class="step-btn ${cls}" data-step="${i}">
+          <span class="icon">${step.icon}</span>
+          ${step.label}
+        </button>`;
+      }).join("");
+
+      bar.querySelectorAll(".step-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const idx = parseInt(btn.dataset.step);
+          if (wf.goToStep(idx)) {
+            hist.push(JSON.parse(JSON.stringify(wf.state)));
+            render();
+          }
+        });
+      });
+    }
+
+    function renderContent() {
+      const main = $("#main-content");
+      const step = STEPS[wf.state.currentStep];
+
+      let html = `
+        <h2 class="step-title">${step.icon} ${step.label}</h2>
+        <p class="step-desc">${step.description}</p>
+      `;
+
+      switch (wf.state.currentStep) {
+        case 0: html += renderObjectifs(); break;
+        case 1: html += renderPublic(); break;
+        case 2: html += renderTerritoire(); break;
+        case 3: html += renderMissions(); break;
+        case 4: html += renderEvenements(); break;
+        case 5: html += renderDebriefing(); break;
+        case 6: html += renderTests(); break;
+        case 7: html += renderPublication(); break;
+      }
+
+      main.innerHTML = html;
+      bindEvents();
+    }
+
+    function renderObjectifs() {
+      const d = wf.state.data;
+      return `
+        <div class="form-group">
+          <label>Titre du parcours</label>
+          <input type="text" id="f-title" value="${esc(d.title)}" placeholder="Ex: Les secrets de la forêt">
+        </div>
+        <div class="form-group">
+          <label>Thématique</label>
+          <input type="text" id="f-theme" value="${esc(d.theme)}" placeholder="Ex: Nature, Histoire, Sciences...">
+        </div>
+        <div class="form-group">
+          <label>Objectifs pédagogiques (un par ligne)</label>
+          <textarea id="f-objectives" placeholder="Ex: Découvrir la faune locale\nComprendre l'écosystème forestier">${(d.objectives || []).join("\n")}</textarea>
+        </div>
+      `;
+    }
+
+    function renderPublic() {
+      const d = wf.state.data;
+      return `
+        <div class="form-row">
+          <div class="form-group">
+            <label>Âge minimum</label>
+            <input type="number" id="f-minage" value="${d.audience.minAge}" min="0" max="99">
+          </div>
+          <div class="form-group">
+            <label>Âge maximum</label>
+            <input type="number" id="f-maxage" value="${d.audience.maxAge}" min="0" max="99">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Difficulté</label>
+            <select id="f-difficulty">
+              <option value="facile" ${d.difficulty === "facile" ? "selected" : ""}>Facile</option>
+              <option value="moyen" ${d.difficulty === "moyen" ? "selected" : ""}>Moyen</option>
+              <option value="difficile" ${d.difficulty === "difficile" ? "selected" : ""}>Difficile</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Durée estimée (minutes)</label>
+            <input type="number" id="f-duration" value="${d.duration}" min="10" max="480">
+          </div>
+        </div>
+      `;
+    }
+
+    function renderTerritoire() {
+      const d = wf.state.data;
+      const balises = d.balises.map((b, i) => `
+        <div class="card balise-card">
+          <div class="card-header">
+            <h3>${b.id} — ${esc(b.label)}</h3>
+            <button class="btn btn-danger btn-sm remove-btn" data-remove-balise="${b.id}">✕</button>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Code QR</label>
+              <input type="text" data-balise="${i}.code" value="${esc(b.code)}">
+            </div>
+            <div class="form-group">
+              <label>Label</label>
+              <input type="text" data-balise="${i}.label" value="${esc(b.label)}">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Latitude</label>
+              <input type="number" step="any" data-balise="${i}.lat" value="${b.lat}">
+            </div>
+            <div class="form-group">
+              <label>Longitude</label>
+              <input type="number" step="any" data-balise="${i}.lng" value="${b.lng}">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>X (schématique)</label>
+              <input type="number" data-balise="${i}.x" value="${b.x}">
+            </div>
+            <div class="form-group">
+              <label>Y (schématique)</label>
+              <input type="number" data-balise="${i}.y" value="${b.y}">
+            </div>
+          </div>
+        </div>
+      `).join("");
+
+      return `
+        <div class="form-group">
+          <label>Nom du lieu</label>
+          <input type="text" id="f-location-name" value="${esc(d.location.name)}" placeholder="Ex: Forêt de Tronçais">
+        </div>
+        <div class="form-group">
+          <label>Région</label>
+          <input type="text" id="f-location-region" value="${esc(d.location.region)}" placeholder="Ex: Allier, Auvergne">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Centre GPS (lat)</label>
+            <input type="number" step="any" id="f-center-lat" value="${d.location.center.lat}">
+          </div>
+          <div class="form-group">
+            <label>Centre GPS (lng)</label>
+            <input type="number" step="any" id="f-center-lng" value="${d.location.center.lng}">
+          </div>
+        </div>
+        <h3 style="margin: 20px 0 12px">Balises (${d.balises.length})</h3>
+        <button class="btn btn-primary btn-sm" id="btn-add-balise">+ Ajouter une balise</button>
+        <div style="margin-top: 12px">${balises || '<div class="empty"><div class="icon">📍</div>Ajoutez des balises pour votre parcours</div>'}</div>
+      `;
+    }
+
+    function renderMissions() {
+      const d = wf.state.data;
+      const discoveries = d.discoveries.map((disc, i) => `
+        <div class="card discovery-card">
+          <div class="card-header">
+            <h3>${disc.emoji} ${esc(disc.nom) || disc.id}</h3>
+            <button class="btn btn-danger btn-sm" data-remove-discovery="${disc.id}">✕</button>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nom</label>
+              <input type="text" data-discovery="${i}.nom" value="${esc(disc.nom)}">
+            </div>
+            <div class="form-group">
+              <label>Emoji</label>
+              <input type="text" data-discovery="${i}.emoji" value="${esc(disc.emoji)}">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Référence latine</label>
+            <input type="text" data-discovery="${i}.latin" value="${esc(disc.latin)}">
+          </div>
+        </div>
+      `).join("");
+
+      return `
+        <h3 style="margin-bottom: 12px">Découvertes (${d.discoveries.length})</h3>
+        <button class="btn btn-primary btn-sm" id="btn-add-discovery">+ Ajouter une découverte</button>
+        <div style="margin-top: 12px">${discoveries || '<div class="empty"><div class="icon">🔍</div>Ajoutez des découvertes pour vos balises</div>'}</div>
+      `;
+    }
+
+    function renderEvenements() {
+      const d = wf.state.data;
+      const eventTypes = [
+        { value: "BALISE_FOUND", label: "Balise trouvée" },
+        { value: "RIDDLE_SOLVED", label: "Énigme résolue" },
+        { value: "QUIZ_COMPLETED", label: "Quiz terminé" },
+        { value: "BIRD_REVEALED", label: "Oiseau révélé" },
+        { value: "SEED_OFFERED", label: "Graine offerte" },
+        { value: "RUN_FINISHED", label: "Parcours terminé" },
+      ];
+
+      const events = d.events.map((ev, i) => `
+        <div class="card event-card">
+          <div class="card-header">
+            <h3>${esc(ev.id)}</h3>
+            <button class="btn btn-danger btn-sm" data-remove-event="${ev.id}">✕</button>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Type d'événement</label>
+              <select data-event="${i}.type">
+                ${eventTypes.map((t) => `<option value="${t.value}" ${ev.type === t.value ? "selected" : ""}>${t.label}</option>`).join("")}
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Déclencheur</label>
+              <select data-event="${i}.trigger">
+                <option value="always" ${ev.trigger === "always" ? "selected" : ""}>Toujours</option>
+                <option value="first_time" ${ev.trigger === "first_time" ? "selected" : ""}>Première fois</option>
+                <option value="daily" ${ev.trigger === "daily" ? "selected" : ""}>Une fois par jour</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <input type="text" data-event="${i}.description" value="${esc(ev.description)}" placeholder="Description de l'événement">
+          </div>
+        </div>
+      `).join("");
+
+      return `
+        <p class="step-desc">Les événements permettent de déclencher des actions dynamiques (sons, indices, récompenses) en réponse aux actions du joueur.</p>
+        <button class="btn btn-primary btn-sm" id="btn-add-event">+ Ajouter un événement</button>
+        <div style="margin-top: 12px">${events || '<div class="empty"><div class="icon">⚡</div>Ajoutez des événements pour dynamiser le parcours</div>'}</div>
+      `;
+    }
+
+    function renderDebriefing() {
+      const d = wf.state.data;
+      const questions = d.debriefing.questions.map((q, i) => `
+        <div class="card">
+          <div class="card-header">
+            <h3>${esc(q.id)}</h3>
+            <button class="btn btn-danger btn-sm" data-remove-debrief-q="${q.id}">✕</button>
+          </div>
+          <div class="form-row">
+            <div class="form-group" style="flex:3">
+              <label>Question</label>
+              <input type="text" data-debrief-q="${i}.text" value="${esc(q.text)}" placeholder="Ex: Qu'avez-vous découvert aujourd'hui ?">
+            </div>
+            <div class="form-group">
+              <label>Catégorie</label>
+              <select data-debrief-q="${i}.category">
+                <option value="reflection" ${q.category === "reflection" ? "selected" : ""}>Réflexion</option>
+                <option value="observation" ${q.category === "observation" ? "selected" : ""}>Observation</option>
+                <option value="teamwork" ${q.category === "teamwork" ? "selected" : ""}>Travail d'équipe</option>
+                <option value="knowledge" ${q.category === "knowledge" ? "selected" : ""}>Connaissances</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      `).join("");
+
+      const competences = d.debriefing.competences.map((c, i) => `
+        <div class="card">
+          <div class="card-header">
+            <h3>Compétence ${i + 1}</h3>
+            <button class="btn btn-danger btn-sm" data-remove-competence="${i}">✕</button>
+          </div>
+          <div class="form-group">
+            <label>Nom</label>
+            <input type="text" data-competence="${i}.name" value="${esc(c.name)}" placeholder="Ex: Observation scientifique">
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <input type="text" data-competence="${i}.description" value="${esc(c.description)}">
+          </div>
+        </div>
+      `).join("");
+
+      return `
+        <p class="step-desc">Préparez le bilan pédagogique : questions de réflexion et compétences évaluées.</p>
+        <h3 style="margin: 16px 0 8px">Questions de réflexion</h3>
+        <button class="btn btn-primary btn-sm" id="btn-add-debrief-q">+ Ajouter une question</button>
+        <div style="margin-top: 12px">${questions || '<div class="empty"><div class="icon">📋</div>Ajoutez des questions pour le débriefing</div>'}</div>
+        <h3 style="margin: 24px 0 8px">Compétences évaluées</h3>
+        <button class="btn btn-primary btn-sm" id="btn-add-competence">+ Ajouter une compétence</button>
+        <div style="margin-top: 12px">${competences || '<div class="empty"><div class="icon">🎓</div>Ajoutez les compétences développées</div>'}</div>
+        <div class="form-group" style="margin-top: 20px">
+          <label>Modèle de résumé</label>
+          <textarea id="f-debrief-summary" placeholder="Template du résumé...">${esc(d.debriefing.summaryTemplate)}</textarea>
+        </div>
+      `;
+    }
+
+    function renderTests() {
+      wf.validate();
+      const v = wf.state.data.validation;
+      const errors = v.errors.map((e) => `<li class="error">❌ ${esc(e)}</li>`).join("");
+      const warnings = v.warnings.map((w) => `<li class="warning">⚠️ ${esc(w)}</li>`).join("");
+
+      return `
+        <div class="card">
+          <h3 style="margin-bottom: 12px">${v.passed ? "✅ Valide" : "❌ Non valide"}</h3>
+          <ul class="validation-list">
+            ${errors || warnings || '<li class="warning">Aucun problème détecté</li>'}
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom: 12px">Résumé</h3>
+          <p>📍 ${wf.state.data.balises.length} balise(s)</p>
+          <p>🔍 ${wf.state.data.discoveries.length} découverte(s)</p>
+          <p>🎯 ${wf.state.data.objectives.length} objectif(s)</p>
+          <p>⚡ ${wf.state.data.events.length} événement(s)</p>
+          <p>📋 ${wf.state.data.debriefing.questions.length} question(s) de débriefing</p>
+          <p>🎓 ${wf.state.data.debriefing.competences.length} compétence(s)</p>
+        </div>
+      `;
+    }
+
+    function renderPublication() {
+      const doc = wf.toParcours();
+      return `
+        <div class="card">
+          <h3 style="margin-bottom: 12px">Aperçu du document</h3>
+          <pre style="background:var(--bg);padding:12px;border-radius:8px;overflow-x:auto;font-size:12px;max-height:400px;overflow-y:auto">${esc(JSON.stringify(doc, null, 2))}</pre>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button class="btn btn-primary" id="btn-export-json">📥 Exporter JSON</button>
+          <button class="btn btn-success" id="btn-copy-json">📋 Copier</button>
+        </div>
+      `;
+    }
+
+    function renderButtons() {
+      const step = STEPS[wf.state.currentStep];
+      $("#btn-prev").disabled = !wf.canGoPrev();
+      $("#btn-next").disabled = !wf.canGoNext();
+      $("#btn-next").textContent = wf.state.currentStep === STEPS.length - 1 ? "Terminer ✓" : "Suivant →";
+      $("#btn-undo").disabled = !hist.canUndo();
+      $("#btn-redo").disabled = !hist.canRedo();
+    }
+
+    function esc(str) {
+      if (str == null) return "";
+      return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    }
+
+    function bindEvents() {
+      // Objectifs
+      bindInput("f-title", "title");
+      bindInput("f-theme", "theme");
+      bindTextarea("f-objectives", "objectives", true);
+
+      // Public
+      bindInput("f-minage", "audience.minAge", true);
+      bindInput("f-maxage", "audience.maxAge", true);
+      bindInput("f-difficulty", "difficulty");
+      bindInput("f-duration", "duration", true);
+
+      // Territoire
+      bindInput("f-location-name", "location.name");
+      bindInput("f-location-region", "location.region");
+      bindInput("f-center-lat", "location.center.lat", true);
+      bindInput("f-center-lng", "location.center.lng", true);
+
+      // Balises
+      $$("[data-balise]").forEach((el) => {
+        el.addEventListener("input", () => {
+          const path = `balises.${el.dataset.balise}`;
+          wf.updateData(path, el.type === "number" ? Number(el.value) : el.value);
+          saveSnapshot();
+        });
+      });
+
+      // Discoveries
+      $$("[data-discovery]").forEach((el) => {
+        el.addEventListener("input", () => {
+          const path = `discoveries.${el.dataset.discovery}`;
+          wf.updateData(path, el.value);
+          saveSnapshot();
+        });
+      });
+
+      // Buttons
+      const addBalise = $("#btn-add-balise");
+      if (addBalise) addBalise.addEventListener("click", () => {
+        wf.addBalise();
+        saveSnapshot();
+        render();
+      });
+
+      const addDiscovery = $("#btn-add-discovery");
+      if (addDiscovery) addDiscovery.addEventListener("click", () => {
+        wf.addDiscovery();
+        saveSnapshot();
+        render();
+      });
+
+      $$("[data-remove-balise]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          wf.removeBalise(btn.dataset.removeBalise);
+          saveSnapshot();
+          render();
+        });
+      });
+
+      $$("[data-remove-discovery]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          wf.removeDiscovery(btn.dataset.removeDiscovery);
+          saveSnapshot();
+          render();
+        });
+      });
+
+      // Events
+      $$("[data-event]").forEach((el) => {
+        el.addEventListener("input", () => {
+          const path = `events.${el.dataset.event}`;
+          wf.updateData(path, el.value);
+          saveSnapshot();
+        });
+      });
+      $$("[data-event]").forEach((el) => {
+        if (el.tagName === "SELECT") {
+          el.addEventListener("change", () => {
+            const path = `events.${el.dataset.event}`;
+            wf.updateData(path, el.value);
+            saveSnapshot();
+          });
+        }
+      });
+
+      const addEvent = $("#btn-add-event");
+      if (addEvent) addEvent.addEventListener("click", () => {
+        wf.addEvent();
+        saveSnapshot();
+        render();
+      });
+
+      $$("[data-remove-event]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          wf.removeEvent(btn.dataset.removeEvent);
+          saveSnapshot();
+          render();
+        });
+      });
+
+      // Debriefing
+      $$("[data-debrief-q]").forEach((el) => {
+        el.addEventListener("input", () => {
+          const path = `debriefing.questions.${el.dataset.debriefQ}`;
+          wf.updateData(path, el.value);
+          saveSnapshot();
+        });
+      });
+      $$("[data-debrief-q]").forEach((el) => {
+        if (el.tagName === "SELECT") {
+          el.addEventListener("change", () => {
+            const path = `debriefing.questions.${el.dataset.debriefQ}`;
+            wf.updateData(path, el.value);
+            saveSnapshot();
+          });
+        }
+      });
+
+      const addDebriefQ = $("#btn-add-debrief-q");
+      if (addDebriefQ) addDebriefQ.addEventListener("click", () => {
+        wf.addDebriefQuestion();
+        saveSnapshot();
+        render();
+      });
+
+      $$("[data-remove-debrief-q]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          wf.removeDebriefQuestion(btn.dataset.removeDebriefQ);
+          saveSnapshot();
+          render();
+        });
+      });
+
+      $$("[data-competence]").forEach((el) => {
+        el.addEventListener("input", () => {
+          const path = `debriefing.competences.${el.dataset.competence}`;
+          wf.updateData(path, el.value);
+          saveSnapshot();
+        });
+      });
+
+      const addCompetence = $("#btn-add-competence");
+      if (addCompetence) addCompetence.addEventListener("click", () => {
+        wf.addCompetence();
+        saveSnapshot();
+        render();
+      });
+
+      $$("[data-remove-competence]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          wf.removeCompetence(parseInt(btn.dataset.removeCompetence));
+          saveSnapshot();
+          render();
+        });
+      });
+
+      const debriefSummary = $("#f-debrief-summary");
+      if (debriefSummary) {
+        debriefSummary.addEventListener("input", () => {
+          wf.updateData("debriefing.summaryTemplate", debriefSummary.value);
+          saveSnapshot();
+        });
+      }
+
+      // Export
+      const exportBtn = $("#btn-export-json");
+      if (exportBtn) exportBtn.addEventListener("click", () => {
+        const doc = wf.toParcours();
+        const blob = new Blob([JSON.stringify(doc, null, 2)], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `${doc.id || "parcours"}.json`;
+        a.click();
+        URL.revokeObjectURL(url);
+      });
+
+      const copyBtn = $("#btn-copy-json");
+      if (copyBtn) copyBtn.addEventListener("click", () => {
+        const doc = wf.toParcours();
+        navigator.clipboard.writeText(JSON.stringify(doc, null, 2));
+        copyBtn.textContent = "✓ Copié !";
+        setTimeout(() => copyBtn.textContent = "📋 Copier", 1500);
+      });
+    }
+
+    function bindInput(id, path, isNumber) {
+      const el = $(`#${id}`);
+      if (!el) return;
+      el.addEventListener("input", () => {
+        wf.updateData(path, isNumber ? Number(el.value) : el.value);
+        saveSnapshot();
+      });
+    }
+
+    function bindTextarea(id, path, isArray) {
+      const el = $(`#${id}`);
+      if (!el) return;
+      el.addEventListener("input", () => {
+        const val = isArray ? el.value.split("\n").filter((l) => l.trim()) : el.value;
+        wf.updateData(path, val);
+        saveSnapshot();
+      });
+    }
+
+    function saveSnapshot() {
+      hist.push(JSON.parse(JSON.stringify(wf.state)));
+      renderButtons();
+    }
+
+    // Navigation
+    $("#btn-next").addEventListener("click", () => {
+      if (wf.goNext()) {
+        hist.push(JSON.parse(JSON.stringify(wf.state)));
+        render();
+      }
+    });
+
+    $("#btn-prev").addEventListener("click", () => {
+      if (wf.goPrev()) {
+        render();
+      }
+    });
+
+    $("#btn-undo").addEventListener("click", () => {
+      const snap = hist.undo();
+      if (snap) {
+        Object.assign(wf.state, snap);
+        render();
+      }
+    });
+
+    $("#btn-redo").addEventListener("click", () => {
+      const snap = hist.redo();
+      if (snap) {
+        Object.assign(wf.state, snap);
+        render();
+      }
+    });
+
+    // Keyboard shortcuts
+    document.addEventListener("keydown", (e) => {
+      if (e.ctrlKey && e.key === "z") { e.preventDefault(); $("#btn-undo").click(); }
+      if (e.ctrlKey && e.key === "y") { e.preventDefault(); $("#btn-redo").click(); }
+    });
+
+    // Initial render
+    render();
+  </script>
+</body>
+</html>

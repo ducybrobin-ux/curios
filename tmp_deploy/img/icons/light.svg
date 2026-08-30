@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title-light">
+  <title id="title-light">Luminosité</title>
+  <g fill="none" stroke="#E7B77A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="32" cy="29" r="10"/><path d="M32 7v8M32 43v8M10 29h8M46 29h8M16 13l6 6M42 39l6 6M48 13l-6 6M22 39l-6 6"/><path d="M27 48h10"/>
+  </g>
+</svg>

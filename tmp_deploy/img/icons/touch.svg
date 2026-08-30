@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title-touch">
+  <title id="title-touch">Toucher et gestes</title>
+  <g fill="none" stroke="#7DDDE5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 30V15a4 4 0 0 1 8 0v13-7a4 4 0 0 1 8 0v8-5a4 4 0 0 1 8 0v8c0 14-7 22-19 22-7 0-12-4-17-10l-6-8a4 4 0 0 1 6-5z"/>
+  </g>
+</svg>

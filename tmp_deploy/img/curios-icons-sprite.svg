@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <style>
+    .curios-icon-cyan{stroke:#7DDDE5}
+    .curios-icon-gold{stroke:#E7B77A}
+    .curios-icon-copper{stroke:#D99678}
+    .curios-icon-success{stroke:#5FD68F}
+    .curios-icon-danger{stroke:#FF7B7B}
+    .curios-icon-dim{stroke:#8DA8B3}
+  </style>
+</defs>
+<symbol id="curios-brand-compass" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="24"/><path d="M39 25 34 37 22 42l5-12z"/><circle cx="32" cy="32" r="3" fill="#E7B77A" stroke="none"/>
+  </symbol><symbol id="curios-home" viewBox="0 0 64 64">
+    <path d="m10 29 22-18 22 18"/><path d="M15 27v25h34V27"/><path d="M27 52V38h10v14"/>
+  </symbol><symbol id="curios-play" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="24"/><path d="m27 22 15 10-15 10z" fill="#7DDDE5" stroke="none"/>
+  </symbol><symbol id="curios-organizer" viewBox="0 0 64 64">
+    <circle cx="32" cy="20" r="8"/><path d="M17 50c1-10 7-15 15-15s14 5 15 15"/><path d="M11 28h10M43 28h10"/>
+  </symbol><symbol id="curios-search" viewBox="0 0 64 64">
+    <circle cx="28" cy="28" r="15"/><path d="m39 39 13 13"/>
+  </symbol><symbol id="curios-filter" viewBox="0 0 64 64">
+    <path d="M10 14h44L38 34v16l-12-6V34z"/>
+  </symbol><symbol id="curios-expedition" viewBox="0 0 64 64">
+    <path d="M11 47V17l21-7 21 7v30l-21 7z"/><path d="M11 17l21 8 21-8"/><path d="M32 25v29"/><path d="m24 36 8-4 8 4-8 5z"/>
+  </symbol><symbol id="curios-map" viewBox="0 0 64 64">
+    <path d="m8 14 16-6 16 6 16-6v42l-16 6-16-6-16 6z"/><path d="M24 8v42M40 14v42"/>
+  </symbol><symbol id="curios-location" viewBox="0 0 64 64">
+    <path d="M32 55s18-16 18-30a18 18 0 1 0-36 0c0 14 18 30 18 30z"/><circle cx="32" cy="25" r="6"/>
+  </symbol><symbol id="curios-gps" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="18"/><circle cx="32" cy="32" r="5"/><path d="M32 8v9M32 47v9M8 32h9M47 32h9"/>
+  </symbol><symbol id="curios-qr" viewBox="0 0 64 64">
+    <rect x="9" y="9" width="18" height="18"/><rect x="37" y="9" width="18" height="18"/><rect x="9" y="37" width="18" height="18"/><path d="M38 38h6v6h-6zM48 48h7M48 38v5M38 49v6"/>
+  </symbol><symbol id="curios-manual" viewBox="0 0 64 64">
+    <path d="M15 10h34a5 5 0 0 1 5 5v34a5 5 0 0 1-5 5H15a5 5 0 0 1-5-5V15a5 5 0 0 1 5-5z"/><path d="M20 22h24M20 32h24M20 42h14"/>
+  </symbol><symbol id="curios-offline" viewBox="0 0 64 64">
+    <path d="M9 25a32 32 0 0 1 46 0M16 33a22 22 0 0 1 32 0M24 41a11 11 0 0 1 16 0"/><path d="m11 11 42 42"/><circle cx="32" cy="50" r="2" fill="#E7B77A" stroke="none"/>
+  </symbol><symbol id="curios-team" viewBox="0 0 64 64">
+    <circle cx="24" cy="23" r="7"/><circle cx="43" cy="26" r="6"/><path d="M10 51c1-10 7-15 14-15s13 5 14 15M38 38c8 0 13 4 15 13"/>
+  </symbol><symbol id="curios-score" viewBox="0 0 64 64">
+    <path d="M32 8 39 23l17 2-12 12 3 17-15-8-15 8 3-17L8 25l17-2z"/><path d="m25 32 5 5 10-11"/>
+  </symbol><symbol id="curios-mission" viewBox="0 0 64 64">
+    <path d="M14 12h36v40H14z"/><path d="M21 23h22M21 32h22M21 41h14"/><circle cx="49" cy="48" r="7" fill="#7DDDE5" stroke="none"/>
+  </symbol><symbol id="curios-quiz" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="24"/><path d="M25 25c1-6 12-8 15-2 3 6-5 8-7 11v3"/><circle cx="32" cy="44" r="2" fill="#E7B77A" stroke="none"/>
+  </symbol><symbol id="curios-observation" viewBox="0 0 64 64">
+    <path d="M8 32s9-17 24-17 24 17 24 17-9 17-24 17S8 32 8 32z"/><circle cx="32" cy="32" r="7"/>
+  </symbol><symbol id="curios-media" viewBox="0 0 64 64">
+    <rect x="9" y="12" width="46" height="40" rx="4"/><circle cx="22" cy="25" r="4"/><path d="m12 46 13-13 9 8 7-7 11 12"/>
+  </symbol><symbol id="curios-science" viewBox="0 0 64 64">
+    <path d="M25 10h14M28 10v15L14 48a5 5 0 0 0 4 6h28a5 5 0 0 0 4-6L36 25V10"/><path d="M19 41h26"/><circle cx="30" cy="34" r="3" fill="#7DDDE5" stroke="none"/>
+  </symbol><symbol id="curios-nature" viewBox="0 0 64 64">
+    <path d="M32 55V24"/><path d="M32 38C19 37 11 29 12 17c12-1 20 7 20 21z"/><path d="M32 45c13-1 21-9 20-21-12-1-20 7-20 21z"/>
+  </symbol><symbol id="curios-cyber" viewBox="0 0 64 64">
+    <rect x="10" y="12" width="44" height="32" rx="4"/><path d="M22 52h20M32 44v8M23 24l6 5-6 5M34 34h8"/>
+  </symbol><symbol id="curios-orientation" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="23"/><path d="m39 25-5 14-14 5 5-14z"/><path d="M32 9v6M32 49v6M9 32h6M49 32h6"/>
+  </symbol><symbol id="curios-camera" viewBox="0 0 64 64">
+    <rect x="8" y="17" width="48" height="34" rx="6"/><path d="M20 17l4-7h16l4 7"/><circle cx="32" cy="34" r="10"/><circle cx="32" cy="34" r="4"/>
+  </symbol><symbol id="curios-micro" viewBox="0 0 64 64">
+    <rect x="24" y="9" width="16" height="29" rx="8"/><path d="M16 29a16 16 0 0 0 32 0M32 45v10M24 55h16"/>
+  </symbol><symbol id="curios-audio" viewBox="0 0 64 64">
+    <path d="M11 27h9l12-10v30L20 37h-9z"/><path d="M40 25c5 4 5 10 0 14M46 19c9 7 9 19 0 26"/>
+  </symbol><symbol id="curios-light" viewBox="0 0 64 64">
+    <circle cx="32" cy="29" r="10"/><path d="M32 7v8M32 43v8M10 29h8M46 29h8M16 13l6 6M42 39l6 6M48 13l-6 6M22 39l-6 6"/><path d="M27 48h10"/>
+  </symbol><symbol id="curios-accelerometer" viewBox="0 0 64 64">
+    <path d="M32 8v48M8 32h48"/><path d="m32 8 6 6M32 8l-6 6M56 32l-6 6M56 32l-6-6M32 56l6-6M32 56l-6-6M8 32l6-6M8 32l6 6"/><circle cx="32" cy="32" r="6"/>
+  </symbol><symbol id="curios-gyroscope" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="22"/><ellipse cx="32" cy="32" rx="8" ry="22"/><ellipse cx="32" cy="32" rx="22" ry="8"/><circle cx="32" cy="32" r="3" fill="#D99678" stroke="none"/>
+  </symbol><symbol id="curios-magnetometer" viewBox="0 0 64 64">
+    <path d="M18 45V25a14 14 0 0 1 28 0v20"/><path d="M18 45h10V30h8v15h10"/><path d="M25 20h14"/>
+  </symbol><symbol id="curios-vibration" viewBox="0 0 64 64">
+    <rect x="21" y="10" width="22" height="44" rx="4"/><path d="M14 21c-5 5-5 17 0 22M50 21c5 5 5 17 0 22M9 16c-7 8-7 24 0 32M55 16c7 8 7 24 0 32"/>
+  </symbol><symbol id="curios-battery" viewBox="0 0 64 64">
+    <rect x="10" y="18" width="44" height="28" rx="4"/><path d="M54 27h4v10h-4"/><path d="M16 24h20v16H16z" fill="#5FD68F" stroke="none"/>
+  </symbol><symbol id="curios-timer" viewBox="0 0 64 64">
+    <circle cx="32" cy="34" r="21"/><path d="M26 8h12M32 8v5M32 34l10 6"/><path d="M20 15 16 11"/>
+  </symbol><symbol id="curios-touch" viewBox="0 0 64 64">
+    <path d="M24 30V15a4 4 0 0 1 8 0v13-7a4 4 0 0 1 8 0v8-5a4 4 0 0 1 8 0v8c0 14-7 22-19 22-7 0-12-4-17-10l-6-8a4 4 0 0 1 6-5z"/>
+  </symbol><symbol id="curios-accessibility" viewBox="0 0 64 64">
+    <circle cx="32" cy="10" r="5"/><path d="M15 21h34M32 21v18M32 39l-10 15M32 39l10 15"/>
+  </symbol><symbol id="curios-language" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="23"/><path d="M17 25h30M17 39h30M32 9c7 7 7 39 0 46M32 9c-7 7-7 39 0 46"/>
+  </symbol><symbol id="curios-settings" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="8"/><path d="m32 8 4 5 7-1 2 7 7 2-1 7 5 4-5 4 1 7-7 2-2 7-7-1-4 5-4-5-7 1-2-7-7-2 1-7-5-4 5-4-1-7 7-2 2-7 7 1z"/>
+  </symbol><symbol id="curios-help" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="24"/><path d="M24 24c1-8 15-10 18-2 2 6-6 9-8 12v3"/><circle cx="34" cy="44" r="2" fill="#7DDDE5" stroke="none"/>
+  </symbol><symbol id="curios-hint" viewBox="0 0 64 64">
+    <path d="M32 8a18 18 0 0 0-10 33c3 2 4 5 4 8h12c0-3 1-6 4-8A18 18 0 0 0 32 8z"/><path d="M26 55h12"/>
+  </symbol><symbol id="curios-badge" viewBox="0 0 64 64">
+    <path d="m32 7 8 8 11 1-1 11 6 9-9 6-2 11-13-3-13 3-2-11-9-6 6-9-1-11 11-1z"/><path d="m25 32 5 5 10-11"/>
+  </symbol><symbol id="curios-star" viewBox="0 0 64 64">
+    <path d="m32 8 7 15 17 2-12 12 3 17-15-8-15 8 3-17L8 25l17-2z"/>
+  </symbol><symbol id="curios-check" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="24"/><path d="m20 32 8 8 16-18"/>
+  </symbol><symbol id="curios-close" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="24"/><path d="m22 22 20 20M42 22 22 42"/>
+  </symbol><symbol id="curios-back" viewBox="0 0 64 64">
+    <path d="M52 32H14M28 16 12 32l16 16"/>
+  </symbol><symbol id="curios-forward" viewBox="0 0 64 64">
+    <path d="M12 32h38M36 16l16 16-16 16"/>
+  </symbol><symbol id="curios-info" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="24"/><path d="M32 28v16"/><circle cx="32" cy="20" r="2" fill="#7DDDE5" stroke="none"/>
+  </symbol><symbol id="curios-warning" viewBox="0 0 64 64">
+    <path d="m32 8 24 45H8z"/><path d="M32 24v13"/><circle cx="32" cy="44" r="2" fill="#E7B77A" stroke="none"/>
+  </symbol><symbol id="curios-danger" viewBox="0 0 64 64">
+    <path d="M32 8 54 20v24L32 56 10 44V20z"/><path d="M24 24l16 16M40 24 24 40"/>
+  </symbol><symbol id="curios-success" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="24"/><path d="m20 32 8 8 16-18"/>
+  </symbol>
+</svg>

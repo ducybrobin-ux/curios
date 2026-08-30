@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#073B5C">
+  <title>CURIOS Hub — Connexion</title>
+  <link rel="icon" href="../img/icon.svg">
+  <link rel="stylesheet" href="../css/hub.css">
+</head>
+<body>
+  <div class="hub-login-wrap">
+    <div class="hub-login-card">
+      <div class="hub-login-logo">
+        <img src="../img/logo.svg" alt="CURIOS">
+      </div>
+      <h1 class="hub-login-title">Project Hub</h1>
+      <p class="hub-login-sub">Accès direct au Hub — aucune connexion requise</p>
+
+      <div class="hub-login-error" id="login-error" style="display:none;"></div>
+
+      <button class="hub-btn hub-btn-primary" type="button"
+              style="width:100%;justify-content:center;padding:12px;font-size:15px;"
+              onclick="window.location.href='app.html'">
+        Entrer dans le Hub
+      </button>
+
+      <div class="hub-login-footer">
+        Le Hub Curi🧭s est accessible sans connexion.
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/hub-auth.js"></script>
+  <script>
+    (function () {
+      if (HubAuth.isAuthenticated()) {
+        window.location.href = "app.html";
+        return;
+      }
+    })();
+  </script>
+</body>
+</html>

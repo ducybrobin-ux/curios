@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title-vibration">
+  <title id="title-vibration">Vibration</title>
+  <g fill="none" stroke="#D99678" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="21" y="10" width="22" height="44" rx="4"/><path d="M14 21c-5 5-5 17 0 22M50 21c5 5 5 17 0 22M9 16c-7 8-7 24 0 32M55 16c7 8 7 24 0 32"/>
+  </g>
+</svg>

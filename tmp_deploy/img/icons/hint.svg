@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title-hint">
+  <title id="title-hint">Indice</title>
+  <g fill="none" stroke="#E7B77A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 8a18 18 0 0 0-10 33c3 2 4 5 4 8h12c0-3 1-6 4-8A18 18 0 0 0 32 8z"/><path d="M26 55h12"/>
+  </g>
+</svg>
