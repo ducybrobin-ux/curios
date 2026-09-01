@@ -931,3 +931,15 @@ body.night .topbar-logo, body.night .hero-logo { background: rgba(255,255,255,0.
 .hero-card .setting-row select { max-width: 230px; }
 .hero-card #row-home-lock-hint { text-align: center; margin: 6px auto 0; max-width: 420px; }
 .hero-card #btn-home-logout { margin-top: 14px; align-self: center; }
+
+/* ---------- Mise à jour disponible (bandeau) ---------- */
+.update-prompt {
+  position: sticky; top: 0; z-index: 60;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  background: var(--primary); color: var(--on-primary, #fff);
+  padding: 10px 16px; font-weight: 700; font-size: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.update-prompt.hidden { display: none; }
+.update-prompt .btn { background: #fff; color: var(--primary); border-color: #fff; }
+body.night .update-prompt .btn { background: var(--bg-soft); color: var(--text); border-color: var(--line); }

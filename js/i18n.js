@@ -140,6 +140,8 @@ const I18N = (function () {
       set_update_ok: "Mise à jour récupérée. Rechargement…",
       set_update_fail: "Serveur injoignable : pas de mise à jour disponible.",
       set_update_noupdate: "Déjà à jour, aucune mise à jour disponible.",
+      sw_update_available: "Une mise à jour est disponible.",
+      sw_update_reload: "🔄 Redémarrer",
       dict_start: "🎤 Dicter ma réponse",
       dict_stop: "⏹ Arrêter la dictée",
       dict_unsupported: "Reconnaissance vocale non disponible.",

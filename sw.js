@@ -4,9 +4,9 @@
    Source : packages/offline/src/{config,strategy}.js
    ========================================================= */
 
-const VERSION = "curios-v4";
-const CACHE = "curios-core-v4";
-const RUNTIME = "curios-runtime-v4";
+const VERSION = "curios-v5";
+const CACHE = "curios-core-v5";
+const RUNTIME = "curios-runtime-v5";
 
 const PRECACHE = [
   "./",
@@ -137,7 +137,6 @@ self.addEventListener("install", (e) => {
   e.waitUntil(
     caches.open(CACHE)
       .then((c) => c.addAll(PRECACHE))
-      .then(() => self.skipWaiting())
   );
 });
 

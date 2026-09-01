@@ -107,7 +107,30 @@
   function registerSW() {
     if (!("serviceWorker" in navigator)) return;
     window.addEventListener("load", () => {
-      navigator.serviceWorker.register("sw.js").catch(() => {});
+      navigator.serviceWorker.register("sw.js")
+        .then((reg) => {
+          /* Mise à jour propre : on NE force pas skipWaiting. La nouvelle
+           * version reste "waiting" (l'ancienne reste active) jusqu'à ce que
+           * l'utilisateur choisisse « Redémarrer » (voir updateApp / bandeau).
+           */
+          reg.addEventListener("updatefound", () => {
+            const nw = reg.installing;
+            if (!nw) return;
+            nw.addEventListener("statechange", () => {
+              if (nw.state === "installed" && reg.active) {
+                const prompt = document.getElementById("update-prompt");
+                if (prompt) prompt.classList.remove("hidden");
+              }
+            });
+          });
+          const btnNow = document.getElementById("btn-update-now");
+          if (btnNow) btnNow.addEventListener("click", () => {
+            if (reg.waiting) reg.waiting.postMessage({ type: "SKIP_WAITING" });
+            reg.update().catch(() => {});
+            location.reload();
+          });
+        })
+        .catch(() => {});
     });
   }
 

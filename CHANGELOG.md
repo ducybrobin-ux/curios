@@ -3,6 +3,26 @@
 Historique Curi🧭s (moteur universel) puis héritage Multi JDP.
 Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) — versionnement sémantique.
 
+## [Curi🧭s v2026.09.01] — 2026-09-01
+
+### Corrigé
+- **P0** : validateur de réponses, catalogue, icônes SVG (sprite upstream + helper `icon()`).
+- **P1** : hachage PBKDF2 du mot de passe organisateur (`auth.js`, en clair → hash) ; liens morts/sans-extension + boutons Hub sans handler.
+- **Dérive des bundles commités** résorbée (tous les `--check` CI de nouveau verts).
+
+### Modifié
+- **Mise à jour SW maîtrisée** : suppression du `skipWaiting()` inconditionnel à l'`install` — la nouvelle version reste en attente jusqu'au choix de l'utilisateur. Bandeau « Mise à jour disponible / 🔄 Redémarrer » à la détection (`updatefound`/`statechange`) + rechargement après prise de contrôle. Bump `curios-v4` → `curios-v5`.
+- **Source unique `game-flow`** (générée par `tools/build-game-flow.mjs`) + `esc()` unifié sur `packages/shared/src/escape.js`.
+- **Consolidation des 2 stacks d'auth** sur `packages/shared/src/password.js` (PBKDF2 partagé `sha512` 100k itérations, vérification Hub à temps constant).
+
+### Ajouté
+- **Réconciliation des packs orphelins** : `cristaux-de-balto` & `tsle1-ornithologie` déclarés dans `content/manifest.json` (11 packs au total, 1 actif : `packdemo`). `tsle1-ornithologie` (16 fichiers) migré vers le schéma `jdpbc-pack` (découvertes en `category`/`size` anglais sans `emoji`/`couleur`/`pedagogie` corrigées) ; documents `content/curios-parcours/{cristaux-de-balto,tsle1-ornithologie}.json` générés.
+- **Pack actif `packdemo`** réconcilié (fichier `packDemo.json` → `packdemo.json`, id corrigé), `content/catalog/packs.json` (S1) aligné sur 11 packs.
+
+### Vérifié
+- **398/398** tests unitaires verts ; eslint **0 erreur** (warnings de style pré-existants) ; tous les `--check` CI verts (`build-data`, `build-catalogue`, `build-sw`, `build-engine`, `build-game-flow`, `build-geo`, `build-editions`, `convert-packs` 11/11).
+- `validate-parcours` : 12/12 documents valides ; smoke-engine / smoke-geo : OK.
+
 ## [Curi🧭s v1.7.0] — 2026-08-30
 
 ### Corrigé
