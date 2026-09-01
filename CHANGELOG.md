@@ -22,6 +22,7 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) — 
 ### Vérifié
 - **398/398** tests unitaires verts ; eslint **0 erreur** (warnings de style pré-existants) ; tous les `--check` CI verts (`build-data`, `build-catalogue`, `build-sw`, `build-engine`, `build-game-flow`, `build-geo`, `build-editions`, `convert-packs` 11/11).
 - `validate-parcours` : 12/12 documents valides ; smoke-engine / smoke-geo : OK.
+- **`@curios/editorial-governance` branché au CI** : étape `Tests unitaires editorial-governance` ajoutée (41/41) — le module de gouvernance est désormais testé en continue.
 
 ## [Curi🧭s v1.7.0] — 2026-08-30
 

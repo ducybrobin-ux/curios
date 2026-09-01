@@ -83,5 +83,8 @@ jobs:
       - name: Tests unitaires pedagogy-engine
         run: node --test tests/unit/pedagogy-engine.test.mjs
 
+      - name: Tests unitaires editorial-governance
+        run: node --test tests/unit/editorial-governance.test.mjs
+
       - name: Build distribution
         run: node tools/build.mjs --target all
