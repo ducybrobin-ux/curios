@@ -1,0 +1,1749 @@
+{
+  "$format": "curios-parcours",
+  "$version": 1,
+  "id": "packdemo",
+  "title": "CuriðŸ§­s â€” Le GRAND DEMO PACK : France, Outre-mer & Smartphone",
+  "metadata": {
+    "author": "",
+    "organization": "",
+    "language": "fr",
+    "license": "",
+    "createdAt": "2026-09-01",
+    "updatedAt": "2026-09-01",
+    "source": {
+      "format": "jdpbc-pack",
+      "version": 1
+    }
+  },
+  "description": "Parcours de dÃ©monstration destinÃ© Ã  montrer l'Ã©tendue de CuriðŸ§­s : scÃ©nario, humour, matiÃ¨res scolaires, gÃ©olocalisation, POI de France et Outre-mer, observation, mÃ©dias et expÃ©rimentation des capacitÃ©s d'un smartphone.",
+  "theme": true,
+  "audience": {
+    "minAge": 9,
+    "maxAge": 99
+  },
+  "duration": null,
+  "pedagogy": {
+    "objectives": [
+      "Comprendre le dÃ©roulement d'une partie de Curi>s",
+      "DÃ©velopper l'entraide et la communication au sein de l'Ã©quipe",
+      "DÃ©couvrir le fonctionnement global du jeu et ses mÃ©caniques de balise",
+      "Comprendre l'importance de la coopÃ©ration dans la rÃ©solution de problÃ¨mes"
+    ],
+    "skills": [],
+    "competencies": [
+      {
+        "id": "jeu-balises",
+        "nom": "Le jeu de balises",
+        "description": "Prologue & fonctionnement : le Professeur Curi🧭s explique que la Machine à Comprendre la France est en panne. Le joueur doit OBSERVER, MESURER, RÉFLÉCHIR et EXPÉRIMENTER pour retrouver les fragments. Le guide détaille balises, niveaux de difficulté, validation et exemples de missions.",
+        "emoji": "",
+        "objectif": "Comprendre le dÃ©roulement d'une partie de Curi>s",
+        "ages": [
+          8,
+          18
+        ],
+        "programme": []
+      },
+      {
+        "id": "cooperation",
+        "nom": "La coopÃ©ration",
+        "description": "L'importance de jouer ensemble et de partager ses idÃ©es pour rÃ©ussir les dÃ©fis du parcours.",
+        "emoji": "",
+        "objectif": "DÃ©velopper l'entraide et la communication au sein de l'Ã©quipe",
+        "ages": [
+          8,
+          18
+        ],
+        "programme": []
+      }
+    ],
+    "evaluation": []
+  },
+  "game": {
+    "mode": "courses",
+    "scoring": {
+      "starsPerStation": 3,
+      "timeBonus": true
+    },
+    "rules": {
+      "order": "libre"
+    }
+  },
+  "location": {
+    "provider": "schematic",
+    "center": null,
+    "trail": []
+  },
+  "stations": [
+    {
+      "id": "S01",
+      "label": "Tour Eiffel â€” Paris",
+      "code": "DEMO-S01",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": 48.85837,
+      "lng": 2.29448,
+      "radius": null,
+      "missions": [
+        "S01-enigme"
+      ]
+    },
+    {
+      "id": "S02",
+      "label": "Lille â€” Grand'Place",
+      "code": "DEMO-S02",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": 50.6365,
+      "lng": 3.0633,
+      "radius": null,
+      "missions": [
+        "S02-enigme"
+      ]
+    },
+    {
+      "id": "S03",
+      "label": "Mont-Saint-Michel",
+      "code": "DEMO-S03",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": 48.6361,
+      "lng": -1.5115,
+      "radius": null,
+      "missions": [
+        "S03-enigme"
+      ]
+    },
+    {
+      "id": "S04",
+      "label": "Palais de Versailles",
+      "code": "DEMO-S04",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": 48.8049,
+      "lng": 2.1204,
+      "radius": null,
+      "missions": [
+        "S04-enigme"
+      ]
+    },
+    {
+      "id": "S05",
+      "label": "Carcassonne",
+      "code": "DEMO-S05",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": 43.206,
+      "lng": 2.3634,
+      "radius": null,
+      "missions": [
+        "S05-enigme"
+      ]
+    },
+    {
+      "id": "S06",
+      "label": "Calanques â€” Marseille",
+      "code": "DEMO-S06",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": 43.214,
+      "lng": 5.4474,
+      "radius": null,
+      "missions": [
+        "S06-enigme"
+      ]
+    },
+    {
+      "id": "S07",
+      "label": "Mont-Blanc",
+      "code": "DEMO-S07",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": 45.8326,
+      "lng": 6.8652,
+      "radius": null,
+      "missions": [
+        "S07-enigme"
+      ]
+    },
+    {
+      "id": "S08",
+      "label": "Futuroscope â€” Poitiers",
+      "code": "DEMO-S08",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": 46.6699,
+      "lng": 0.367,
+      "radius": null,
+      "missions": [
+        "S08-enigme"
+      ]
+    },
+    {
+      "id": "S09",
+      "label": "CitÃ© des sciences â€” Paris",
+      "code": "DEMO-S09",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": 48.8955,
+      "lng": 2.387,
+      "radius": null,
+      "missions": [
+        "S09-enigme"
+      ]
+    },
+    {
+      "id": "S10",
+      "label": "Lascaux â€” Dordogne",
+      "code": "DEMO-S10",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": 45.0535,
+      "lng": 1.1686,
+      "radius": null,
+      "missions": [
+        "S10-enigme"
+      ]
+    },
+    {
+      "id": "S11",
+      "label": "Observatoire â€” Pic du Midi",
+      "code": "DEMO-S11",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": 42.9369,
+      "lng": 0.141,
+      "radius": null,
+      "missions": [
+        "S11-enigme"
+      ]
+    },
+    {
+      "id": "S12",
+      "label": "Strasbourg â€” CathÃ©drale",
+      "code": "DEMO-S12",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": 48.5819,
+      "lng": 7.7508,
+      "radius": null,
+      "missions": [
+        "S12-enigme"
+      ]
+    },
+    {
+      "id": "S13",
+      "label": "Piton de la Fournaise â€” RÃ©union",
+      "code": "DEMO-S13",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": -21.2444,
+      "lng": 55.7088,
+      "radius": null,
+      "missions": [
+        "S13-enigme"
+      ]
+    },
+    {
+      "id": "S14",
+      "label": "Fort-de-France â€” Martinique",
+      "code": "DEMO-S14",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": 14.6161,
+      "lng": -61.0588,
+      "radius": null,
+      "missions": [
+        "S14-enigme"
+      ]
+    },
+    {
+      "id": "S15",
+      "label": "Pointe-Ã -Pitre â€” Guadeloupe",
+      "code": "DEMO-S15",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": 16.2411,
+      "lng": -61.5331,
+      "radius": null,
+      "missions": [
+        "S15-enigme"
+      ]
+    },
+    {
+      "id": "S16",
+      "label": "Cayenne â€” Guyane",
+      "code": "DEMO-S16",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": 4.9224,
+      "lng": -52.3135,
+      "radius": null,
+      "missions": [
+        "S16-enigme"
+      ]
+    },
+    {
+      "id": "S17",
+      "label": "Mamoudzou â€” Mayotte",
+      "code": "DEMO-S17",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": -12.7806,
+      "lng": 45.2278,
+      "radius": null,
+      "missions": [
+        "S17-enigme"
+      ]
+    },
+    {
+      "id": "S18",
+      "label": "Papeete â€” PolynÃ©sie franÃ§aise",
+      "code": "DEMO-S18",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": -17.5516,
+      "lng": -149.5585,
+      "radius": null,
+      "missions": [
+        "S18-enigme"
+      ]
+    },
+    {
+      "id": "S19",
+      "label": "NoumÃ©a â€” Nouvelle-CalÃ©donie",
+      "code": "DEMO-S19",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": -22.2758,
+      "lng": 166.458,
+      "radius": null,
+      "missions": [
+        "S19-enigme"
+      ]
+    },
+    {
+      "id": "S20",
+      "label": "Saint-Pierre â€” Saint-Pierre-et-Miquelon",
+      "code": "DEMO-S20",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": 46.7811,
+      "lng": -56.1773,
+      "radius": null,
+      "missions": [
+        "S20-enigme"
+      ]
+    },
+    {
+      "id": "S21",
+      "label": "Terres australes â€” mission virtuelle",
+      "code": "DEMO-S21",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": -49.35,
+      "lng": 69.35,
+      "radius": null,
+      "missions": [
+        "S21-enigme"
+      ]
+    },
+    {
+      "id": "S22",
+      "label": "Dunkerque â€” plage",
+      "code": "DEMO-S22",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": 51.0344,
+      "lng": 2.3768,
+      "radius": null,
+      "missions": [
+        "S22-enigme"
+      ]
+    },
+    {
+      "id": "S23",
+      "label": "Nantes â€” Machines de l'Ã®le",
+      "code": "DEMO-S23",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": 47.214,
+      "lng": -1.5562,
+      "radius": null,
+      "missions": [
+        "S23-enigme"
+      ]
+    },
+    {
+      "id": "S24",
+      "label": "Bordeaux â€” miroir d'eau",
+      "code": "DEMO-S24",
+      "discoveryId": "curios",
+      "x": null,
+      "y": null,
+      "lat": 44.8378,
+      "lng": -0.5702,
+      "radius": null,
+      "missions": [
+        "S24-enigme"
+      ]
+    }
+  ],
+  "missions": [
+    {
+      "id": "S01-enigme",
+      "type": "enigme",
+      "stationId": "S01",
+      "difficultyLevels": {
+        "facile": {
+          "text": "La Tour Eiffel mesure environ 330 m. Si un ascenseur parcourt 2,5 m/s, combien de secondes pour monter 300 m ?",
+          "answers": [
+            "120",
+            "120 s",
+            "120 secondes"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "La Tour Eiffel mesure environ 330 m. Si un ascenseur parcourt 2,5 m/s, combien de secondes pour monter 300 m ?",
+          "answers": [
+            "120",
+            "120 s",
+            "120 secondes"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "La Tour Eiffel mesure environ 330 m. Si un ascenseur parcourt 2,5 m/s, combien de secondes pour monter 300 m ?",
+          "answers": [
+            "120",
+            "120 s",
+            "120 secondes"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "S02-enigme",
+      "type": "enigme",
+      "stationId": "S02",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Sans regarder une carte, tourne ton tÃ©lÃ©phone jusqu'au Nord puis avance de 10 pas. Quel angle approximatif sÃ©pare le Nord et l'Est ?",
+          "answers": [
+            "90",
+            "90Â°",
+            "90 degrÃ©s"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "Sans regarder une carte, tourne ton tÃ©lÃ©phone jusqu'au Nord puis avance de 10 pas. Quel angle approximatif sÃ©pare le Nord et l'Est ?",
+          "answers": [
+            "90",
+            "90Â°",
+            "90 degrÃ©s"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "Sans regarder une carte, tourne ton tÃ©lÃ©phone jusqu'au Nord puis avance de 10 pas. Quel angle approximatif sÃ©pare le Nord et l'Est ?",
+          "answers": [
+            "90",
+            "90Â°",
+            "90 degrÃ©s"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "S03-enigme",
+      "type": "enigme",
+      "stationId": "S03",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Le Mont-Saint-Michel semble surgir de la mer. Si une marÃ©e monte de 8 m en 6 h, quelle est sa vitesse moyenne en cm/min ?",
+          "answers": [
+            "2.22",
+            "2,22",
+            "2.2"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "Le Mont-Saint-Michel semble surgir de la mer. Si une marÃ©e monte de 8 m en 6 h, quelle est sa vitesse moyenne en cm/min ?",
+          "answers": [
+            "2.22",
+            "2,22",
+            "2.2"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "Le Mont-Saint-Michel semble surgir de la mer. Si une marÃ©e monte de 8 m en 6 h, quelle est sa vitesse moyenne en cm/min ?",
+          "answers": [
+            "2.22",
+            "2,22",
+            "2.2"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "S04-enigme",
+      "type": "enigme",
+      "stationId": "S04",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Prends une photo d'un motif symÃ©trique. Combien d'axes de symÃ©trie peux-tu repÃ©rer ?",
+          "answers": [
+            "2",
+            "3",
+            "4",
+            "un",
+            "deux",
+            "trois",
+            "quatre"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "Prends une photo d'un motif symÃ©trique. Combien d'axes de symÃ©trie peux-tu repÃ©rer ?",
+          "answers": [
+            "2",
+            "3",
+            "4",
+            "un",
+            "deux",
+            "trois",
+            "quatre"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "Prends une photo d'un motif symÃ©trique. Combien d'axes de symÃ©trie peux-tu repÃ©rer ?",
+          "answers": [
+            "2",
+            "3",
+            "4",
+            "un",
+            "deux",
+            "trois",
+            "quatre"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "S05-enigme",
+      "type": "enigme",
+      "stationId": "S05",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Fais tourner doucement ton tÃ©lÃ©phone d'un demi-tour. Combien de degrÃ©s as-tu parcourus ?",
+          "answers": [
+            "180",
+            "180Â°",
+            "180 degrÃ©s"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "Fais tourner doucement ton tÃ©lÃ©phone d'un demi-tour. Combien de degrÃ©s as-tu parcourus ?",
+          "answers": [
+            "180",
+            "180Â°",
+            "180 degrÃ©s"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "Fais tourner doucement ton tÃ©lÃ©phone d'un demi-tour. Combien de degrÃ©s as-tu parcourus ?",
+          "answers": [
+            "180",
+            "180Â°",
+            "180 degrÃ©s"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "S06-enigme",
+      "type": "enigme",
+      "stationId": "S06",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Marche 20 m puis accÃ©lÃ¨re lÃ©gÃ¨rement pendant 3 s. Quelle grandeur mesure ton tÃ©lÃ©phone pour dÃ©tecter ce changement ?",
+          "answers": [
+            "accÃ©lÃ©ration",
+            "accelerometre"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "Marche 20 m puis accÃ©lÃ¨re lÃ©gÃ¨rement pendant 3 s. Quelle grandeur mesure ton tÃ©lÃ©phone pour dÃ©tecter ce changement ?",
+          "answers": [
+            "accÃ©lÃ©ration",
+            "accelerometre"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "Marche 20 m puis accÃ©lÃ¨re lÃ©gÃ¨rement pendant 3 s. Quelle grandeur mesure ton tÃ©lÃ©phone pour dÃ©tecter ce changement ?",
+          "answers": [
+            "accÃ©lÃ©ration",
+            "accelerometre"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "S07-enigme",
+      "type": "enigme",
+      "stationId": "S07",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Ã€ haute altitude, la pression atmosphÃ©rique diminue. Ton tÃ©lÃ©phone possÃ¨de-t-il un baromÃ¨tre ? Si oui, relÃ¨ve la pression.",
+          "answers": [
+            "oui",
+            "yes"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "Ã€ haute altitude, la pression atmosphÃ©rique diminue. Ton tÃ©lÃ©phone possÃ¨de-t-il un baromÃ¨tre ? Si oui, relÃ¨ve la pression.",
+          "answers": [
+            "oui",
+            "yes"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "Ã€ haute altitude, la pression atmosphÃ©rique diminue. Ton tÃ©lÃ©phone possÃ¨de-t-il un baromÃ¨tre ? Si oui, relÃ¨ve la pression.",
+          "answers": [
+            "oui",
+            "yes"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "S08-enigme",
+      "type": "enigme",
+      "stationId": "S08",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Place ton tÃ©lÃ©phone dans une zone claire puis ombragÃ©e. La valeur du capteur de lumiÃ¨re devrait-elle augmenter ou diminuer ?",
+          "answers": [
+            "augmenter",
+            "diminuer"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "Place ton tÃ©lÃ©phone dans une zone claire puis ombragÃ©e. La valeur du capteur de lumiÃ¨re devrait-elle augmenter ou diminuer ?",
+          "answers": [
+            "augmenter",
+            "diminuer"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "Place ton tÃ©lÃ©phone dans une zone claire puis ombragÃ©e. La valeur du capteur de lumiÃ¨re devrait-elle augmenter ou diminuer ?",
+          "answers": [
+            "augmenter",
+            "diminuer"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "S09-enigme",
+      "type": "enigme",
+      "stationId": "S09",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Tape trois fois dans tes mains. Combien d'impulsions sonores ton micro peut-il dÃ©tecter ?",
+          "answers": [
+            "3",
+            "trois"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "Tape trois fois dans tes mains. Combien d'impulsions sonores ton micro peut-il dÃ©tecter ?",
+          "answers": [
+            "3",
+            "trois"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "Tape trois fois dans tes mains. Combien d'impulsions sonores ton micro peut-il dÃ©tecter ?",
+          "answers": [
+            "3",
+            "trois"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "S10-enigme",
+      "type": "enigme",
+      "stationId": "S10",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Ã‰mets un son grave puis un son aigu. Lequel possÃ¨de la frÃ©quence la plus Ã©levÃ©e ?",
+          "answers": [
+            "aigu",
+            "le son aigu"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "Ã‰mets un son grave puis un son aigu. Lequel possÃ¨de la frÃ©quence la plus Ã©levÃ©e ?",
+          "answers": [
+            "aigu",
+            "le son aigu"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "Ã‰mets un son grave puis un son aigu. Lequel possÃ¨de la frÃ©quence la plus Ã©levÃ©e ?",
+          "answers": [
+            "aigu",
+            "le son aigu"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "S11-enigme",
+      "type": "enigme",
+      "stationId": "S11",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Pointe ton tÃ©lÃ©phone vers le Nord, puis vers le Sud. De combien de degrÃ©s environ as-tu changÃ© d'orientation ?",
+          "answers": [
+            "180",
+            "180Â°",
+            "180 degrÃ©s"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "Pointe ton tÃ©lÃ©phone vers le Nord, puis vers le Sud. De combien de degrÃ©s environ as-tu changÃ© d'orientation ?",
+          "answers": [
+            "180",
+            "180Â°",
+            "180 degrÃ©s"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "Pointe ton tÃ©lÃ©phone vers le Nord, puis vers le Sud. De combien de degrÃ©s environ as-tu changÃ© d'orientation ?",
+          "answers": [
+            "180",
+            "180Â°",
+            "180 degrÃ©s"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "S12-enigme",
+      "type": "enigme",
+      "stationId": "S12",
+      "difficultyLevels": {
+        "facile": {
+          "text": "TÃ©lÃ©phone posÃ© sur une table : dÃ©clenche une vibration et dÃ©cris ce que tu observes. Quelle Ã©nergie est convertie en mouvement ?",
+          "answers": [
+            "electrique",
+            "Ã©lectrique"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "TÃ©lÃ©phone posÃ© sur une table : dÃ©clenche une vibration et dÃ©cris ce que tu observes. Quelle Ã©nergie est convertie en mouvement ?",
+          "answers": [
+            "electrique",
+            "Ã©lectrique"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "TÃ©lÃ©phone posÃ© sur une table : dÃ©clenche une vibration et dÃ©cris ce que tu observes. Quelle Ã©nergie est convertie en mouvement ?",
+          "answers": [
+            "electrique",
+            "Ã©lectrique"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "S13-enigme",
+      "type": "enigme",
+      "stationId": "S13",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Le Piton de la Fournaise est volcanique. Si une coulÃ©e avance de 600 m en 10 min, quelle est sa vitesse moyenne en m/s ?",
+          "answers": [
+            "1",
+            "1 m/s",
+            "1.0"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "Le Piton de la Fournaise est volcanique. Si une coulÃ©e avance de 600 m en 10 min, quelle est sa vitesse moyenne en m/s ?",
+          "answers": [
+            "1",
+            "1 m/s",
+            "1.0"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "Le Piton de la Fournaise est volcanique. Si une coulÃ©e avance de 600 m en 10 min, quelle est sa vitesse moyenne en m/s ?",
+          "answers": [
+            "1",
+            "1 m/s",
+            "1.0"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "S14-enigme",
+      "type": "enigme",
+      "stationId": "S14",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Cadre un Ã©lÃ©ment rouge, bleu ou blanc. Quelle couleur franÃ§aise manque dans ton cadre ?",
+          "answers": [
+            "une des deux autres",
+            "rouge",
+            "bleu",
+            "blanc"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "Cadre un Ã©lÃ©ment rouge, bleu ou blanc. Quelle couleur franÃ§aise manque dans ton cadre ?",
+          "answers": [
+            "une des deux autres",
+            "rouge",
+            "bleu",
+            "blanc"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "Cadre un Ã©lÃ©ment rouge, bleu ou blanc. Quelle couleur franÃ§aise manque dans ton cadre ?",
+          "answers": [
+            "une des deux autres",
+            "rouge",
+            "bleu",
+            "blanc"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "S15-enigme",
+      "type": "enigme",
+      "stationId": "S15",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Oriente le tÃ©lÃ©phone vers l'Est. Quel point cardinal trouveras-tu aprÃ¨s un quart de tour vers la gauche ?",
+          "answers": [
+            "nord",
+            "nord"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "Oriente le tÃ©lÃ©phone vers l'Est. Quel point cardinal trouveras-tu aprÃ¨s un quart de tour vers la gauche ?",
+          "answers": [
+            "nord",
+            "nord"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "Oriente le tÃ©lÃ©phone vers l'Est. Quel point cardinal trouveras-tu aprÃ¨s un quart de tour vers la gauche ?",
+          "answers": [
+            "nord",
+            "nord"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "S16-enigme",
+      "type": "enigme",
+      "stationId": "S16",
+      "difficultyLevels": {
+        "facile": {
+          "text": "En Guyane, la lumiÃ¨re naturelle est forte. Compare la luminositÃ© dehors et Ã  l'ombre : laquelle est la plus Ã©levÃ©e ?",
+          "answers": [
+            "dehors",
+            "extÃ©rieur"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "En Guyane, la lumiÃ¨re naturelle est forte. Compare la luminositÃ© dehors et Ã  l'ombre : laquelle est la plus Ã©levÃ©e ?",
+          "answers": [
+            "dehors",
+            "extÃ©rieur"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "En Guyane, la lumiÃ¨re naturelle est forte. Compare la luminositÃ© dehors et Ã  l'ombre : laquelle est la plus Ã©levÃ©e ?",
+          "answers": [
+            "dehors",
+            "extÃ©rieur"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "S17-enigme",
+      "type": "enigme",
+      "stationId": "S17",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Trouve ta position GPS et donne les deux premiÃ¨res dÃ©cimales de ta latitude.",
+          "answers": [
+            "manuel"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "Trouve ta position GPS et donne les deux premiÃ¨res dÃ©cimales de ta latitude.",
+          "answers": [
+            "manuel"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "Trouve ta position GPS et donne les deux premiÃ¨res dÃ©cimales de ta latitude.",
+          "answers": [
+            "manuel"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "S18-enigme",
+      "type": "enigme",
+      "stationId": "S18",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Enregistre 5 secondes de sons ambiants. Combien de sources sonores diffÃ©rentes peux-tu distinguer ?",
+          "answers": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "Enregistre 5 secondes de sons ambiants. Combien de sources sonores diffÃ©rentes peux-tu distinguer ?",
+          "answers": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "Enregistre 5 secondes de sons ambiants. Combien de sources sonores diffÃ©rentes peux-tu distinguer ?",
+          "answers": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "S19-enigme",
+      "type": "enigme",
+      "stationId": "S19",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Fais une rotation lente de 360Â°. Le gyroscope doit-il dÃ©tecter une rotation nulle ou un tour complet ?",
+          "answers": [
+            "tour complet",
+            "360",
+            "360Â°"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "Fais une rotation lente de 360Â°. Le gyroscope doit-il dÃ©tecter une rotation nulle ou un tour complet ?",
+          "answers": [
+            "tour complet",
+            "360",
+            "360Â°"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "Fais une rotation lente de 360Â°. Le gyroscope doit-il dÃ©tecter une rotation nulle ou un tour complet ?",
+          "answers": [
+            "tour complet",
+            "360",
+            "360Â°"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "S20-enigme",
+      "type": "enigme",
+      "stationId": "S20",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Regarde le niveau de batterie. Si tu as 60 % et que trois dÃ©fis consomment chacun 4 %, combien restera-t-il ?",
+          "answers": [
+            "48",
+            "48%",
+            "48 %"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "Regarde le niveau de batterie. Si tu as 60 % et que trois dÃ©fis consomment chacun 4 %, combien restera-t-il ?",
+          "answers": [
+            "48",
+            "48%",
+            "48 %"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "Regarde le niveau de batterie. Si tu as 60 % et que trois dÃ©fis consomment chacun 4 %, combien restera-t-il ?",
+          "answers": [
+            "48",
+            "48%",
+            "48 %"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "S21-enigme",
+      "type": "enigme",
+      "stationId": "S21",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Mission hors-ligne : coupe le rÃ©seau. Le parcours doit-il continuer Ã  fonctionner ?",
+          "answers": [
+            "oui",
+            "oui, il doit continuer"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "Mission hors-ligne : coupe le rÃ©seau. Le parcours doit-il continuer Ã  fonctionner ?",
+          "answers": [
+            "oui",
+            "oui, il doit continuer"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "Mission hors-ligne : coupe le rÃ©seau. Le parcours doit-il continuer Ã  fonctionner ?",
+          "answers": [
+            "oui",
+            "oui, il doit continuer"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "S22-enigme",
+      "type": "enigme",
+      "stationId": "S22",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Marche 10 pas, arrÃªte-toi net. Que mesure principalement l'accÃ©lÃ©romÃ¨tre lors de l'arrÃªt ?",
+          "answers": [
+            "une variation d'accÃ©lÃ©ration",
+            "accÃ©lÃ©ration"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "Marche 10 pas, arrÃªte-toi net. Que mesure principalement l'accÃ©lÃ©romÃ¨tre lors de l'arrÃªt ?",
+          "answers": [
+            "une variation d'accÃ©lÃ©ration",
+            "accÃ©lÃ©ration"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "Marche 10 pas, arrÃªte-toi net. Que mesure principalement l'accÃ©lÃ©romÃ¨tre lors de l'arrÃªt ?",
+          "answers": [
+            "une variation d'accÃ©lÃ©ration",
+            "accÃ©lÃ©ration"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "S23-enigme",
+      "type": "enigme",
+      "stationId": "S23",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Prends une photo d'une structure mÃ©canique et identifie une piÃ¨ce qui sert de pivot.",
+          "answers": [
+            "axe",
+            "pivot",
+            "roue"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "Prends une photo d'une structure mÃ©canique et identifie une piÃ¨ce qui sert de pivot.",
+          "answers": [
+            "axe",
+            "pivot",
+            "roue"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "Prends une photo d'une structure mÃ©canique et identifie une piÃ¨ce qui sert de pivot.",
+          "answers": [
+            "axe",
+            "pivot",
+            "roue"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "S24-enigme",
+      "type": "enigme",
+      "stationId": "S24",
+      "difficultyLevels": {
+        "facile": {
+          "text": "ChronomÃ¨tre 10 secondes sans regarder l'Ã©cran. Ã€ quel point ton estimation est-elle proche ?",
+          "answers": [
+            "10",
+            "10 secondes"
+          ],
+          "ages": [
+            9,
+            11
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "moyen": {
+          "text": "ChronomÃ¨tre 10 secondes sans regarder l'Ã©cran. Ã€ quel point ton estimation est-elle proche ?",
+          "answers": [
+            "10",
+            "10 secondes"
+          ],
+          "ages": [
+            12,
+            15
+          ],
+          "hint": true,
+          "knowMore": true
+        },
+        "difficile": {
+          "text": "ChronomÃ¨tre 10 secondes sans regarder l'Ã©cran. Ã€ quel point ton estimation est-elle proche ?",
+          "answers": [
+            "10",
+            "10 secondes"
+          ],
+          "ages": [
+            15,
+            99
+          ],
+          "hint": true,
+          "knowMore": true
+        }
+      }
+    },
+    {
+      "id": "curios-quiz",
+      "type": "quiz",
+      "characterId": "curios",
+      "questions": [
+        {
+          "q": "Curi>s est avant tout un jeu deâ€¦",
+          "options": [
+            "CompÃ©tition individuelle",
+            "DÃ©couverte et coopÃ©ration",
+            "Course contre la montre",
+            "Puzzle"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Le jeu peut-il jouer sans connexion internet ?",
+          "options": [
+            "Non, jamais",
+            "Oui, hors-ligne",
+            "Seulement le week-end",
+            "Uniquement avec un abonnement"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "equipe-quiz",
+      "type": "quiz",
+      "characterId": "equipe",
+      "questions": [
+        {
+          "q": "En mode coopÃ©ratif, qui gagne des Ã©toiles ?",
+          "options": [
+            "Le meilleur joueur",
+            "Toute l'Ã©quipe",
+            "Personne",
+            "Le capitaine uniquement"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Quel comportement aide le plus une Ã©quipe ?",
+          "options": [
+            "Garder ses rÃ©ponses pour soi",
+            "Partager ses idÃ©es",
+            "Se dÃ©pÃªcher seul",
+            "Ignorer les autres"
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "curios",
+      "nom": "Curi>s, le jeu",
+      "latin": "Exploration Â· DÃ©couverte",
+      "emoji": "ðŸ§­",
+      "couleur": "#e67e22",
+      "categorie": "diurne",
+      "taille": "Astuce : explore chaque balise avant de valider",
+      "img": "",
+      "anecdotes": [
+        "Le Professeur Curi🧭s a créé la Machine à Comprendre la France : ses fragments sont dispersés à travers la France et les territoires ultramarins.",
+        "Prologue : « Bonjour, jeune explorateur. Si tu entends ce message, c’est que la situation est… légèrement catastrophique. »",
+        "Mission : retrouver les fragments en observant, mesurant et expérimentant avec ton smartphone."
+      ],
+      "pedagogy": {
+        "ages": [
+          8,
+          18
+        ],
+        "dureeMin": 10,
+        "objectif": "DÃ©couvrir le fonctionnement global du jeu et ses mÃ©caniques de balise",
+        "programme": [
+          "cycle 3",
+          "cycle 4"
+        ]
+      },
+      "chant": {
+        "tempo": 100,
+        "notes": [
+          {
+            "f": 262,
+            "fEnd": 262,
+            "d": 0.12,
+            "g": 0.07,
+            "type": "sine",
+            "v": 0.5
+          },
+          {
+            "f": 392,
+            "fEnd": 392,
+            "d": 0.12,
+            "g": 0.07,
+            "type": "sine",
+            "v": 0.5
+          },
+          {
+            "f": 523,
+            "fEnd": 523,
+            "d": 0.1,
+            "g": 0.15,
+            "type": "sine",
+            "v": 0.4
+          }
+        ]
+      }
+    },
+    {
+      "id": "equipe",
+      "nom": "L'Ã©quipe",
+      "latin": "CoopÃ©ration Â· Entraide",
+      "emoji": "ðŸ¤",
+      "couleur": "#2ecc71",
+      "categorie": "diurne",
+      "taille": "Astuce : rÃ©partissez les rÃ´les dans l'Ã©quipe",
+      "img": "",
+      "anecdotes": [
+        "En mode coopÃ©ratif, toute l'Ã©quipe gagne ou perd ensemble.",
+        "Partager ses idÃ©es aide Ã  rÃ©soudre les Ã©nigmes difficiles.",
+        "Chaque membre peut prendre un rÃ´le : lecteur, explorateur, validateur."
+      ],
+      "pedagogy": {
+        "ages": [
+          8,
+          18
+        ],
+        "dureeMin": 8,
+        "objectif": "Comprendre l'importance de la coopÃ©ration dans la rÃ©solution de problÃ¨mes",
+        "programme": [
+          "cycle 3",
+          "cycle 4"
+        ]
+      },
+      "chant": {
+        "tempo": 112,
+        "notes": [
+          {
+            "f": 294,
+            "fEnd": 294,
+            "d": 0.12,
+            "g": 0.07,
+            "type": "sine",
+            "v": 0.5
+          },
+          {
+            "f": 370,
+            "fEnd": 370,
+            "d": 0.12,
+            "g": 0.07,
+            "type": "sine",
+            "v": 0.5
+          },
+          {
+            "f": 440,
+            "fEnd": 440,
+            "d": 0.1,
+            "g": 0.15,
+            "type": "sine",
+            "v": 0.4
+          }
+        ]
+      }
+    }
+  ],
+  "media": [],
+  "rewards": [],
+  "debriefing": {
+    "participantQuestions": [],
+    "facilitatorReport": [],
+    "skillsObserved": []
+  }
+}

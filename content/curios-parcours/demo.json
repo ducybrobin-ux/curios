@@ -2,24 +2,24 @@
   "$format": "curios-parcours",
   "$version": 1,
   "id": "demo",
-  "title": "Démo Curi>s — Découverte du jeu",
+  "title": "Curi🧭s — Le GRAND DEMO PACK",
   "metadata": {
     "author": "",
     "organization": "",
     "language": "fr",
     "license": "",
-    "createdAt": "2026-08-30",
-    "updatedAt": "2026-08-30",
+    "createdAt": "2026-09-01",
+    "updatedAt": "2026-09-01",
     "source": {
       "format": "jdpbc-pack",
       "version": 1
     }
   },
-  "description": "Un parcours court de prise en main pour découvrir les 3 types de balises, les quiz de découverte et les notions du guide. Idéal pour tester Curi>s en 15 minutes.",
-  "theme": "prise en main & découverte",
+  "description": "Parcours de démonstration destiné à montrer l'étendue de Curi🧭s : scénario, humour, matières scolaires, géolocalisation, POI de France et Outre-mer, observation, médias et expérimentation des capacités d'un smartphone.",
+  "theme": "grand demo",
   "audience": {
-    "minAge": 8,
-    "maxAge": 18
+    "minAge": 9,
+    "maxAge": 99
   },
   "duration": null,
   "pedagogy": {
