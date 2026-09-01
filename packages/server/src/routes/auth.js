@@ -18,7 +18,7 @@ async function handleLoginPost(req, res, auth, state) {
     return sendError(res, 400, "missing-password");
   }
 
-  if (!auth.state.password) {
+  if (!auth.hasPassword()) {
     // Premier login : définir le mot de passe
     auth.savePassword(payload.password);
     const token = auth.createSession(req.socket.remoteAddress);
@@ -63,7 +63,7 @@ export function handleSetup(method, req, res, auth) {
 }
 
 async function handleSetupPost(req, res, auth) {
-  if (auth.state.password) {
+  if (auth.hasPassword()) {
     return sendError(res, 409, "password-already-set");
   }
 

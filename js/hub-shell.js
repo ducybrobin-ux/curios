@@ -7,18 +7,20 @@
   "use strict";
 
   var NAV_ITEMS = [
+    /* Les icônes nommées ASCII → img/img/icons/*.svg du pack officiel ;
+       les émojis restants n'ont pas d'équivalent 1:1 dans le pack. */
     { id: "dashboard", label: "Dashboard", icon: "📊" },
     { id: "projets", label: "Projets", icon: "📁" },
-    { id: "parcours", label: "Parcours", icon: "🗺️" },
+    { id: "parcours", label: "Parcours", icon: "map" },
     { id: "catalogue", label: "Catalogue", icon: "🎨" },
     { id: "packs", label: "Packs", icon: "📦" },
     { id: "sessions", label: "Sessions", icon: "🎯" },
-    { id: "clients", label: "Clients", icon: "👥" },
+    { id: "clients", label: "Clients", icon: "team" },
     { id: "materiel", label: "Matériel", icon: "🔧" },
     { id: "planning", label: "Planning", icon: "📅" },
     { id: "commercial", label: "Commercial", icon: "💰" },
     { id: "analytics", label: "Analytics", icon: "📈" },
-    { id: "settings", label: "Settings", icon: "⚙️" },
+    { id: "settings", label: "Settings", icon: "settings" },
   ];
 
   var PAGES = {};
@@ -54,19 +56,26 @@
         container.innerHTML = typeof html === "string" ? html : "";
       } catch (err) {
         container.innerHTML =
-          '<div class="hub-empty"><div class="hub-empty-icon">⚠️</div>' +
+          '<div class="hub-empty"><div class="hub-empty-icon">' + iconTag("warning") + '</div>' +
           '<div class="hub-empty-title">Erreur de chargement</div>' +
           '<div class="hub-empty-desc">' + escHtml(err.message) + "</div></div>";
       }
     } else {
       container.innerHTML =
-        '<div class="hub-empty"><div class="hub-empty-icon">🔍</div>' +
+        '<div class="hub-empty"><div class="hub-empty-icon">' + iconTag("search") + '</div>' +
         '<div class="hub-empty-title">Page introuvable</div>' +
         '<div class="hub-empty-desc">La page "' + escHtml(pageId) + '" n\'existe pas.</div></div>';
     }
 
     bindNavEvents();
     bindPageEvents();
+  }
+
+  function iconTag(icon) {
+    if (icon && /^[A-Za-z0-9.-]+$/.test(icon)) {
+      return '<img class="cur-icon" src="../img/icons/' + icon + '.svg" alt="">';
+    }
+    return icon;
   }
 
   function renderTopbar(user, activePageId) {
@@ -77,7 +86,7 @@
       var active = item.id === activePageId ? " active" : "";
       return (
         '<button class="hub-nav-item' + active + '" data-nav="' + item.id + '">' +
-        '<span class="icon">' + item.icon + "</span>" +
+        '<span class="icon">' + iconTag(item.icon) + "</span>" +
         "<span>" + item.label + "</span></button>"
       );
     }).join("");
@@ -128,6 +137,9 @@
         var action = this.getAttribute("data-page-action");
         if (typeof window["hubAction_" + action] === "function") {
           window["hubAction_" + action]();
+        } else {
+          // Fonctionnalité non encore câblée : on le signale au lieu de ne rien faire.
+          toast("Fonctionnalité « " + action + " » à venir");
         }
       });
     }

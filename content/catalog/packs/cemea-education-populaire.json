@@ -9,14 +9,32 @@
   "emoji": "🤝",
   "difficulty": "facile",
   "durationMin": 110,
-  "players": [2, 12],
+  "players": [
+    2,
+    12
+  ],
   "location": "En salle ou en plein air",
   "environment": "mixte",
-  "skills": ["Coopération", "Méthodes actives", "Émancipation"],
-  "material": ["Smartphone", "Matériel d'animation"],
-  "goals": ["Découvrir l'éducation populaire", "Expérimenter la coopération", "S'initier aux pédagogies actives"],
+  "skills": [
+    "Coopération",
+    "Méthodes actives",
+    "Émancipation"
+  ],
+  "material": [
+    "Smartphone",
+    "Matériel d'animation"
+  ],
+  "goals": [
+    "Découvrir l'éducation populaire",
+    "Expérimenter la coopération",
+    "S'initier aux pédagogies actives"
+  ],
   "staff": true,
-  "badges": ["Éducatif", "Collectif"],
+  "badges": [
+    "Éducatif",
+    "Collectif"
+  ],
   "collection": "Éducation & coopération",
-  "featured": true
+  "featured": true,
+  "dramatisation": "Une anomalie est détectée dans Curi🧭 : le « Terrain » ne répond plus. Qui est là ? Que s'y passe-t-il ? Qui décide ? Le Professeur Curi🧭 a besoin d'une équipe : observer un lieu, comprendre ce qui s'y joue, faire des choix, vérifier ses informations, écouter les autres et décider ensemble. Règle d'or : une réponse n'est jamais plus importante que la façon dont vous l'avez trouvée."
 }

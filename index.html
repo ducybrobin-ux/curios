@@ -37,7 +37,7 @@
     <button id="btn-home" class="icon-btn" data-i18n-aria="btn_home" aria-label="Accueil">⌂</button>
     <img id="topbar-logo" class="topbar-logo" src="img/logo.svg" alt="Curi🧭s — Créez des expériences qui font apprendre">
     <h1 id="page-title">Curi🧭s</h1>
-    <button id="btn-voice" class="icon-btn" data-i18n-aria="btn_voice" aria-label="Lire l'écran à voix haute" data-i18n-title="btn_voice" title="Lire l'écran à voix haute">🔊</button>
+    <button id="btn-voice" class="icon-btn" data-i18n-aria="btn_voice" aria-label="Lire l'écran à voix haute" data-i18n-title="btn_voice" title="Lire l'écran à voix haute"><img class="cur-icon" src="img/icons/audio.svg" alt=""></button>
     <button id="btn-night" class="icon-btn" data-i18n-aria="btn_night" title="Mode nuit" data-i18n-title="btn_night">☾</button>
   </header>
 
@@ -52,11 +52,11 @@
         <p class="hero-slogan" data-i18n="home_slogan">Suis le sentier, résous les énigmes, deviens passeur·se de savoirs&nbsp;!</p>
         <p class="hero-baseline" data-i18n="home_baseline">Explorer. Jouer. Comprendre.</p>
         <div id="home-offline" class="status-pill hidden" data-i18n="home_offline">Hors-ligne — tout est prêt</div>
-        <button class="btn btn-primary btn-big" id="btn-play" data-i18n="home_play">▶ Commencer le jeu</button>
+        <button class="btn btn-primary btn-big" id="btn-play" data-i18n="home_play" data-i18n-html>▶ Commencer le jeu</button>
         <div class="hero-actions">
           <button class="btn btn-ghost" id="btn-choose-parcours" data-i18n="btn_choose_parcours">📦 Choisir un parcours</button>
           <button class="btn btn-ghost" id="btn-catalogue" title="Parcourir les expéditions Curi🧭s">🎨 Catalogue</button>
-          <button class="btn btn-ghost" id="btn-administer" data-i18n="btn_administer">⚙️ Administrer</button>
+          <button class="btn btn-ghost" id="btn-administer" data-i18n="btn_administer" data-i18n-html>⚙️ Administrer</button>
         </div>
         <button class="btn btn-ghost" id="btn-open-carnet-home" data-i18n="home_carnet_btn">📔 Mon carnet d'observation</button>
         <p class="hero-meta" id="home-progress"></p>
@@ -78,7 +78,7 @@
           <span data-i18n="home_tile_god">Mode admin</span>
         </button>
         <button class="home-tile" data-go="dashboard">
-          <span class="tile-ico">🗺️</span>
+          <span class="tile-ico"><img class="cur-icon" src="img/icons/map.svg" alt=""></span>
           <span data-i18n="home_tile_dashboard">Tableau de bord</span>
         </button>
         <button class="home-tile" data-go="catalogue">
@@ -94,17 +94,17 @@
           <span data-i18n="home_tile_palmares">Palmarès des familles</span>
         </button>
         <button class="home-tile" data-go="reco">
-          <span class="tile-ico">🎙️</span>
+          <span class="tile-ico"><img class="cur-icon" src="img/icons/micro.svg" alt=""></span>
           <span data-i18n="home_tile_reco">Reconnaître un son</span>
         </button>
         <button class="home-tile" data-go="settings">
-          <span class="tile-ico">⚙️</span>
+          <span class="tile-ico"><img class="cur-icon" src="img/icons/settings.svg" alt=""></span>
           <span data-i18n="home_tile_settings">Réglages</span>
         </button>
       </div>
 
       <div id="net-panel" class="net-panel hidden">
-        <p class="net-title" data-i18n="net_title">📶 Connecter un autre appareil</p>
+        <p class="net-title" data-i18n="net_title" data-i18n-html>📶 Connecter un autre appareil</p>
         <p class="note" data-i18n="net_note">Sur un autre téléphone du même réseau, ouvre cette adresse (ou scanne ce code)&nbsp;:</p>
         <code id="net-url" class="net-url"></code>
         <div id="net-qr" class="net-qr"></div>
@@ -126,14 +126,14 @@
     <!-- ================= ADMINISTRER (zone formateur / pilote) ================= -->
     <section class="screen" id="screen-admin" data-title="admin">
       <div class="space-card">
-        <p class="space-kicker">⚙️ Administrer</p>
+        <p class="space-kicker"><img class="cur-icon" src="img/icons/settings.svg" alt=""> Administrer</p>
         <h2 class="space-title" data-i18n="admin_title">Piloter une session</h2>
         <p class="space-lede" data-i18n="admin_lede">Outils pour préparer et animer : tableau de bord, éditeur, mode admin et réglages.</p>
         <div class="space-grid">
           <button class="home-tile" data-go="dashboard"><span class="tile-ico">📊</span><span data-i18n="home_tile_dashboard">Tableau de bord</span></button>
           <button class="home-tile" id="btn-admin-edit"><span class="tile-ico">🛠️</span><span data-i18n="admin_edit">Éditeur de parcours</span></button>
           <button class="home-tile" data-go="god"><span class="tile-ico">🗝️</span><span data-i18n="home_tile_god">Mode admin</span></button>
-          <button class="home-tile" data-go="settings"><span class="tile-ico">⚙️</span><span data-i18n="home_tile_settings">Réglages</span></button>
+          <button class="home-tile" data-go="settings"><span class="tile-ico"><img class="cur-icon cur-icon--lg" src="img/icons/settings.svg" alt=""></span><span data-i18n="home_tile_settings">Réglages</span></button>
         </div>
         <button class="btn btn-ghost" id="btn-admin-back" data-i18n="admin_back">← Retour à l’accueil</button>
       </div>
@@ -196,11 +196,11 @@
           <div id="race-standings" class="race-standings"><p class="empty" data-i18n="race_wait_others">En attente des autres équipes…</p></div>
           <div class="dash-actions">
             <button class="btn btn-outline" id="btn-race-refresh" data-i18n="race_btn_refresh">🔄 Rafraîchir</button>
-            <button class="btn btn-primary" id="btn-race-guestbook" data-i18n="race_btn_msg_selfie">📸 Laisser un message et un selfie</button>
+            <button class="btn btn-primary" id="btn-race-guestbook" data-i18n="race_btn_msg_selfie" data-i18n-html>📸 Laisser un message et un selfie</button>
           </div>
         </div>
         <button class="btn btn-primary btn-big" id="btn-end-palmares" data-i18n="end_palmares">🏆 Voir le palmarès</button>
-        <button class="btn btn-ghost" id="btn-end-map" data-i18n="end_map">🗺️ Revenir à la carte</button>
+        <button class="btn btn-ghost" id="btn-end-map" data-i18n="end_map" data-i18n-html>🗺️ Revenir à la carte</button>
       </div>
     </section>
 
@@ -211,7 +211,7 @@
         <label for="profile-name" data-i18n="prof_name_label">Nom de la famille</label>
         <div class="dict-row">
           <input id="profile-name" name="name" type="text" maxlength="24" placeholder="Ex : Famille Dupont" data-i18n-placeholder="prof_name_placeholder" required>
-          <button type="button" id="btn-dict-profile" class="dict-btn" data-i18n-aria="dict_start" aria-label="Dicter" title="🎤 Dicter">🎤</button>
+          <button type="button" id="btn-dict-profile" class="dict-btn" data-i18n-aria="dict_start" aria-label="Dicter" title="🎤 Dicter"><img class="cur-icon" src="img/icons/micro.svg" alt=""></button>
         </div>
         <label for="profile-kids" data-i18n="prof_kids_label">Nombre d'enfants</label>
         <input id="profile-kids" name="kids" type="number" min="0" max="10" value="2">
@@ -243,10 +243,10 @@
         </svg>
       </div>
       <div class="map-actions">
-        <button class="btn btn-primary" id="btn-scan" data-i18n="map_scan_btn">📷 Scanner une balise</button>
-        <button class="btn btn-outline" id="btn-gps" data-i18n="map_gps_btn">📍 Ma position</button>
+        <button class="btn btn-primary" id="btn-scan" data-i18n="map_scan_btn" data-i18n-html>📷 Scanner une balise</button>
+        <button class="btn btn-outline" id="btn-gps" data-i18n="map_gps_btn" data-i18n-html>📍 Ma position</button>
         <button class="btn btn-danger" id="btn-urgency" data-i18n="urgency_open_btn">🚨 Urgence</button>
-        <a class="btn btn-outline hidden" id="btn-map-open" href="#" target="_blank" rel="noopener" data-i18n="map_open_btn">🗺️ Voir le parcours</a>
+        <a class="btn btn-outline hidden" id="btn-map-open" href="#" target="_blank" rel="noopener" data-i18n="map_open_btn" data-i18n-html>🗺️ Voir le parcours</a>
       </div>
       <div id="compass-panel" class="compass-panel hidden">
         <div class="compass-panel-btns">
@@ -280,7 +280,7 @@
           <p class="compass-light-hint" data-i18n="compass_light_hint">Noir : on s'éloigne · Blanc : cible · IR → UV en approchant</p>
           <p class="compass-status" id="compass-status"></p>
           <div class="compass-info">
-            <div class="compass-row"><span data-i18n="compass_here">📍 Ma position</span><b id="compass-here">—</b></div>
+            <div class="compass-row"><span data-i18n="compass_here" data-i18n-html>📍 Ma position</span><b id="compass-here">—</b></div>
             <div class="compass-row"><span data-i18n="compass_target">🎯 Balise</span><b id="compass-target">—</b></div>
             <div class="compass-row"><span data-i18n="compass_dist">📏 Distance</span><b id="compass-distance">—</b></div>
             <div class="compass-row"><span data-i18n="compass_azimut">🧭 Azimut</span><b id="compass-azimut">—</b></div>
@@ -299,14 +299,14 @@
         <div class="scan-frame"></div>
         <p class="scan-hint" data-i18n="scan_intro_camera">Vise le QR code gravé sur la balise en bois&nbsp;!</p>
       </div>
-      <button class="btn btn-primary" id="btn-start-camera" data-i18n="scan_btn_camera">📷 Allumer la caméra</button>
+      <button class="btn btn-primary" id="btn-start-camera" data-i18n="scan_btn_camera" data-i18n-html>📷 Allumer la caméra</button>
       <button class="btn btn-outline" id="btn-stop-camera" data-i18n="scan_btn_stop">Arrêter</button>
       <hr class="sep">
       <p class="screen-intro" data-i18n="scan_intro_manual">Pas de caméra ou code illisible&nbsp;? Tape le code inscrit sous le QR&nbsp;:</p>
       <form id="code-form" class="form" autocomplete="off">
         <div class="dict-row">
           <input id="code-input" name="code" type="text" placeholder="Ex : JDP-B1" data-i18n-placeholder="scan_placeholder" autocomplete="off">
-          <button type="button" id="btn-dict-code" class="dict-btn" data-i18n-aria="dict_start" aria-label="Dicter" title="🎤 Dicter">🎤</button>
+          <button type="button" id="btn-dict-code" class="dict-btn" data-i18n-aria="dict_start" aria-label="Dicter" title="🎤 Dicter"><img class="cur-icon" src="img/icons/micro.svg" alt=""></button>
         </div>
         <button class="btn btn-primary" type="submit" data-i18n="scan_btn_validate">Valider le code</button>
       </form>
@@ -325,11 +325,11 @@
           <label for="riddle-input" id="riddle-label" data-i18n="riddle_label">Ta réponse</label>
           <div class="dict-row">
             <input id="riddle-input" name="answer" type="text" placeholder="..." data-i18n-placeholder="riddle_placeholder" autocomplete="off">
-            <button type="button" id="btn-dict-riddle" class="dict-btn" data-i18n-aria="dict_start" aria-label="Dicter ma réponse" title="🎤 Dicter ma réponse">🎤</button>
+            <button type="button" id="btn-dict-riddle" class="dict-btn" data-i18n-aria="dict_start" aria-label="Dicter ma réponse" title="🎤 Dicter ma réponse"><img class="cur-icon" src="img/icons/micro.svg" alt=""></button>
           </div>
           <button class="btn btn-primary" type="submit" data-i18n="riddle_btn_try">Essayer</button>
         </form>
-        <button class="btn btn-ghost" id="btn-riddle-hint" data-i18n="riddle_btn_hint">💡 Un indice</button>
+        <button class="btn btn-ghost" id="btn-riddle-hint" data-i18n="riddle_btn_hint" data-i18n-html>💡 Un indice</button>
         <p class="note" id="riddle-status"></p>
         <div class="saviez" id="riddle-saviez"></div>
       </div>
@@ -367,7 +367,7 @@
         <div class="reco-meter" id="reco-meter"><div class="reco-meter-fill" id="reco-meter-fill"></div></div>
         <div class="reco-status" id="reco-status" data-i18n="reco_ready">Prêt à écouter.</div>
         <div class="reco-actions">
-          <button class="btn btn-primary" id="btn-reco-record" data-i18n="reco_btn_record">🎙️ Enregistrer</button>
+          <button class="btn btn-primary" id="btn-reco-record" data-i18n="reco_btn_record" data-i18n-html>🎙️ Enregistrer</button>
           <button class="btn btn-outline" id="btn-reco-stop" data-i18n="reco_btn_stop" disabled>Arrêter</button>
         </div>
         <div id="reco-result" class="reco-result"></div>
@@ -422,14 +422,14 @@
           </select>
         </label>
         <div class="setting-row" id="row-alert-actions">
-          <button class="btn btn-ghost btn-mini" id="btn-alert-rec" data-i18n="alert_rec">🎤 Enregistrer le mien (5 s max)</button>
-          <button class="btn btn-ghost btn-mini" id="btn-alert-test" data-i18n="alert_test">▶️ Tester</button>
+          <button class="btn btn-ghost btn-mini" id="btn-alert-rec" data-i18n="alert_rec" data-i18n-html>🎤 Enregistrer le mien (5 s max)</button>
+          <button class="btn btn-ghost btn-mini" id="btn-alert-test" data-i18n="alert_test" data-i18n-html>▶️ Tester</button>
         </div>
         <label class="setting-row">
           <span data-i18n="set_race">Mode course (chronomètre sur la carte)</span>
           <input type="checkbox" id="set-race">
         </label>
-        <p class="note hidden" id="race-warning-note" data-i18n="race_warn_points">⚠️ Sans les énigmes ni les quiz, vos points (⭐) risquent de ne pas suffire pour apparaître dans le palmarès classique.</p>
+        <p class="note hidden" id="race-warning-note" data-i18n="race_warn_points" data-i18n-html>⚠️ Sans les énigmes ni les quiz, vos points (⭐) risquent de ne pas suffire pour apparaître dans le palmarès classique.</p>
         <button class="btn btn-outline hidden" id="btn-race-setup" data-i18n="race_btn_setup">🏁 Configurer la course (équipes adverses)</button>
         <label class="setting-row">
           <span data-i18n="set_volume">Volume</span>
@@ -483,10 +483,10 @@
       <p class="screen-intro" data-i18n="god_intro">Toutes les balises : codes, QR codes et accès direct.</p>
       <p class="note" data-i18n="god_sam_only">Mode admin visible uniquement pour le profil « Admin » (0 enfant).</p>
       <div class="god-actions">
-        <button class="btn btn-outline" id="btn-god-dashboard" data-i18n="god_dashboard">🗺️ Tableau de bord</button>
+        <button class="btn btn-outline" id="btn-god-dashboard" data-i18n="god_dashboard" data-i18n-html>🗺️ Tableau de bord</button>
         <button class="btn btn-outline" id="btn-god-edit" data-i18n="god_edit">✏️ Éditer le jeu</button>
         <button class="btn btn-outline" id="btn-god-report" data-i18n="god_report">📧 Rapport</button>
-        <button class="btn btn-outline" id="btn-god-all-done" data-i18n="god_all_done">✅ Tout valider</button>
+        <button class="btn btn-outline" id="btn-god-all-done" data-i18n="god_all_done" data-i18n-html>✅ Tout valider</button>
         <button class="btn btn-danger" id="btn-god-all-reset" data-i18n="god_all_reset">♻️ Tout réinitialiser</button>
       </div>
       <button class="btn btn-danger" id="btn-god-exit" data-i18n="god_quit">🚪 Quitter le mode admin</button>
@@ -508,10 +508,10 @@
   <div id="board-banner" class="board-banner hidden" role="status"></div>
 
   <nav id="bottombar" class="bottombar" aria-label="Navigation principale">
-    <button class="nav-btn" data-go="map"><span>🗺️</span><span data-i18n="nav_map">Carte</span></button>
+    <button class="nav-btn" data-go="map"><span><img class="cur-icon" src="img/icons/map.svg" alt=""></span><span data-i18n="nav_map">Carte</span></button>
     <button class="nav-btn" data-go="carnet"><span>📔</span><span data-i18n="nav_carnet">Carnet</span></button>
     <button class="nav-btn" data-go="palmares"><span>🏆</span><span data-i18n="nav_palmares">Palmarès</span></button>
-    <button class="nav-btn" data-go="settings"><span>⚙️</span><span data-i18n="nav_settings">Réglages</span></button>
+    <button class="nav-btn" data-go="settings"><span><img class="cur-icon" src="img/icons/settings.svg" alt=""></span><span data-i18n="nav_settings">Réglages</span></button>
   </nav>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
@@ -526,11 +526,11 @@
       <div class="gb-selfie">
         <video id="gb-video" class="gb-video hidden" playsinline muted></video>
         <div id="gb-preview" class="gb-preview hidden"><img id="gb-preview-img" alt=""></div>
-        <div id="gb-placeholder" class="gb-placeholder">📸</div>
+        <div id="gb-placeholder" class="gb-placeholder"><img class="cur-icon cur-icon--xl" src="img/icons/camera.svg" alt=""></div>
       </div>
       <div class="gb-actions">
-        <button type="button" class="btn btn-outline" id="gb-selfie-btn" data-i18n="guestbook_btn_selfie">📸 Prendre un selfie</button>
-        <button type="button" class="btn btn-outline hidden" id="gb-capture-btn" data-i18n="guestbook_btn_capture">📷 Capturer</button>
+        <button type="button" class="btn btn-outline" id="gb-selfie-btn" data-i18n="guestbook_btn_selfie" data-i18n-html>📸 Prendre un selfie</button>
+        <button type="button" class="btn btn-outline hidden" id="gb-capture-btn" data-i18n="guestbook_btn_capture" data-i18n-html>📷 Capturer</button>
         <button type="button" class="btn btn-outline" id="gb-file-btn" data-i18n="guestbook_btn_file">🖼️ Choisir une photo</button>
         <button type="button" class="btn btn-danger hidden" id="gb-remove-btn" data-i18n="guestbook_btn_remove">🗑️ Retirer</button>
       </div>
@@ -539,7 +539,7 @@
       <label class="gb-label" for="gb-note" data-i18n="guestbook_note_label">Votre message</label>
       <div class="dict-row">
         <textarea id="gb-note" rows="3" data-i18n-placeholder="guestbook_note_placeholder" placeholder="Un mot pour la postérité…"></textarea>
-        <button type="button" id="btn-dict-gb" class="dict-btn" data-i18n-aria="dict_start" aria-label="Dicter" title="🎤 Dicter">🎤</button>
+        <button type="button" id="btn-dict-gb" class="dict-btn" data-i18n-aria="dict_start" aria-label="Dicter" title="🎤 Dicter"><img class="cur-icon" src="img/icons/micro.svg" alt=""></button>
       </div>
 
       <div class="gb-save-row">
@@ -572,7 +572,7 @@
         <label for="urgency-msg" data-i18n="urgency_msg_label">✉️ Message à l'organisateur</label>
         <div class="dict-row">
           <textarea id="urgency-msg" rows="2" data-i18n-placeholder="urgency_msg_placeholder" placeholder="Ex : Nous arrivons en retard, attendez-nous."></textarea>
-          <button type="button" id="btn-dict-urgency" class="dict-btn" data-i18n-aria="dict_start" aria-label="Dicter" title="🎤 Dicter">🎤</button>
+          <button type="button" id="btn-dict-urgency" class="dict-btn" data-i18n-aria="dict_start" aria-label="Dicter" title="🎤 Dicter"><img class="cur-icon" src="img/icons/micro.svg" alt=""></button>
         </div>
         <button type="button" class="btn btn-outline urgency-opt" id="urg-message" data-i18n="urgency_msg_btn">✉️ Envoyer le message</button>
       </div>
@@ -588,7 +588,7 @@
     <div class="guestbook-card">
       <button type="button" class="overlay-close" id="race-close" data-i18n-aria="guestbook_btn_cancel" aria-label="Fermer">✕</button>
       <h3 id="race-title" data-i18n="race_title">🏁 Mode course</h3>
-      <p class="note race-warn" data-i18n="race_warn_points">⚠️ Sans les énigmes ni les quiz, vos points (⭐) risquent de ne pas suffire pour apparaître dans le palmarès classique.</p>
+      <p class="note race-warn" data-i18n="race_warn_points" data-i18n-html>⚠️ Sans les énigmes ni les quiz, vos points (⭐) risquent de ne pas suffire pour apparaître dans le palmarès classique.</p>
       <p class="note" data-i18n="race_opp_question">Contre quelles équipes connectées au serveur voulez-vous courir ?</p>
       <div id="race-opponents" class="race-opponents"><p class="empty" data-i18n="race_opp_loading">Recherche des équipes connectées…</p></div>
       <p class="note race-rule" data-i18n="race_rule">Aucune question : validez chaque balise par QR code. Le parcours est tiré au sort — toutes les équipes valident toutes les balises, et le plus rapide gagne.</p>
@@ -608,7 +608,7 @@
       <p class="challenge-question" id="challenge-question"></p>
       <div class="dict-row">
         <textarea id="challenge-answer" rows="3" data-i18n-placeholder="chal_placeholder" placeholder="Votre réponse…"></textarea>
-        <button type="button" id="btn-dict-chal" class="dict-btn" data-i18n-aria="dict_start" aria-label="Dicter" title="🎤 Dicter">🎤</button>
+        <button type="button" id="btn-dict-chal" class="dict-btn" data-i18n-aria="dict_start" aria-label="Dicter" title="🎤 Dicter"><img class="cur-icon" src="img/icons/micro.svg" alt=""></button>
       </div>
       <div class="gb-save-row">
         <button type="button" class="btn btn-primary" id="chal-send" data-i18n="chal_send">📮 Envoyer notre réponse</button>

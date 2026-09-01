@@ -16,7 +16,7 @@ export const STEPS = [
   {
     id: "public",
     label: "Public",
-    icon: "👥",
+    icon: "team",
     description: "Cibler le public participants et définir le niveau de difficulté",
     fields: ["audience", "difficulty", "duration"],
     required: ["audience"],
@@ -24,7 +24,7 @@ export const STEPS = [
   {
     id: "territoire",
     label: "Territoire",
-    icon: "🗺️",
+    icon: "map",
     description: "Choisir le lieu, placer les balises et dessiner le sentier",
     fields: ["location", "trail", "balises"],
     required: ["location"],
@@ -56,7 +56,7 @@ export const STEPS = [
   {
     id: "tests",
     label: "Tests",
-    icon: "✅",
+    icon: "check",
     description: "Vérifier la cohérence, tester les réponses et valider le parcours",
     fields: ["validation", "preview"],
     required: [],

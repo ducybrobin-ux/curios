@@ -9,14 +9,33 @@
   "emoji": "🔗",
   "difficulty": "facile",
   "durationMin": 45,
-  "players": [2, 6],
+  "players": [
+    2,
+    6
+  ],
   "location": "En ville, en parc ou en salle",
   "environment": "mixte",
-  "skills": ["Coopération", "Transmission", "Responsabilité"],
-  "material": ["Smartphone", "QR code", "Feuille & enveloppe"],
-  "goals": ["Comprendre la transmission des savoirs", "Coopérer en relais", "Prendre soin du groupe"],
+  "skills": [
+    "Coopération",
+    "Transmission",
+    "Responsabilité"
+  ],
+  "material": [
+    "Smartphone",
+    "QR code",
+    "Feuille & enveloppe"
+  ],
+  "goals": [
+    "Comprendre la transmission des savoirs",
+    "Coopérer en relais",
+    "Prendre soin du groupe"
+  ],
   "staff": true,
-  "badges": ["Éducatif", "Collectif"],
+  "badges": [
+    "Éducatif",
+    "Collectif"
+  ],
   "collection": "Coopération & transmission",
-  "featured": true
+  "featured": true,
+  "dramatisation": "Tous les territoires sont en attente : le réseau est fermé. Chaque équipe découvre qu'elle ne joue pas seulement pour elle-même : elle est responsable de transmettre l'expérience aux suivants. Fragment, QR code, exploration et relais humain — le trésor n'a jamais été caché, c'est la chaîne."
 }

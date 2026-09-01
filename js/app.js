@@ -30,6 +30,9 @@
 
   const $ = (id) => document.getElementById(id);
 
+  // Icône du pack officiel (img/icons/*.svg).
+  const ico = (name, cls) => `<img class="cur-icon${cls ? " " + cls : ""}" src="img/icons/${name}.svg" alt="">`;
+
   /* ---------- Event Engine ---------- */
   const {
     createEngine, createGameState,
@@ -1185,7 +1188,7 @@
       <div class="end-stats-grid">
         <div class="end-stat"><span class="end-stat-icon">🧠</span><strong>${done}/${BALISES.length}</strong><small>${I18N.t("end_stat_birds")}</small></div>
         <div class="end-stat"><span class="end-stat-icon">⭐</span><strong>${stars}</strong><small>${I18N.t("end_stat_stars")}</small></div>
-        <div class="end-stat"><span class="end-stat-icon">⏱️</span><strong>${time}</strong><small>${I18N.t("end_stat_time")}</small></div>
+        <div class="end-stat"><span class="end-stat-icon">${ico("timer")}</span><strong>${time}</strong><small>${I18N.t("end_stat_time")}</small></div>
         <div class="end-stat"><span class="end-stat-icon">🌻</span><strong>${seeds}</strong><small>${I18N.t("end_stat_seeds")}</small></div>
       </div>
       <p class="end-conclusion">${concl}</p>`;
@@ -1259,7 +1262,7 @@
         return `<div class="race-row ${  me ? "me" : ""  }">` +
           `<span class="race-medal">${  medal  }</span>` +
           `<b>${  esc(f.team)  }${me ? ` · ${  I18N.t("race_you")}` : ""  }</b>` +
-          `<small>⏱️ ${  fmtTime(Number(f.seconds || 0))  }</small>${ 
+          `<small>${ico("timer")} ${  fmtTime(Number(f.seconds || 0))  }</small>${ 
           f.message ? `<em class="palmares-msg">« ${  esc(f.message)  } »</em>` : "" 
           }</div>`;
       }).join("");
@@ -1427,7 +1430,7 @@
     const on = Store.raceEnabled();
     const show = on && App.screen === "map";
     el.classList.toggle("hidden", !show);
-    if (show) el.textContent = `⏱️ ${  fmtStopwatch(getElapsed(p))}`;
+    if (show) el.innerHTML = `${ico("timer")} ${  fmtStopwatch(getElapsed(p))}`;
   }
 
   function sharePalmares() {
@@ -1472,7 +1475,7 @@
     if (out.offline) {
       el.innerHTML = `
         <div class="reco-result-card offline">
-          <h4>📶 Hors-ligne</h4>
+          <h4>${ico("offline")} Hors-ligne</h4>
           <p>La reconnaissance automatique a besoin du réseau.<br>
           Essayez en Wi-Fi sur le site, ou faites confiance à vos oreilles : réécoutez-la dans le quiz ! 🎤</p>
           <button class="btn btn-ghost" id="btn-reco-demo">🎬 Voir une démo</button>
@@ -1749,7 +1752,7 @@
       : I18N.t("trouble_summary_ok");
 
     box.innerHTML =
-      `<p class="trouble-title">${fails ? "⚠️ " : "✅ "}${esc(summary)}</p>` +
+      `<p class="trouble-title">${fails ? ico("warning") + " " : ico("check") + " "}${esc(summary)}</p>` +
       `<ul class="trouble-list">${ 
       items.map((i) =>
         `<li class="${i.ok ? "ok" : "ko"}"><span class="trouble-mark">${i.ok ? "✓" : "✗"}</span>` +
@@ -2203,7 +2206,7 @@
         box.className = "hint";
         $("riddle-status").after(box);
       }
-      box.innerHTML = `<p class="hint-text">💡 ${  esc(enigme.indice)  }</p>`
+      box.innerHTML = `<p class="hint-text">${ico("hint")} ${  esc(enigme.indice)  }</p>`
         + `<button class="btn btn-ghost btn-mini" id="btn-hint-guide">🧠 ${  esc(I18N.t("guide_open"))  }</button>`;
       const gb = $("btn-hint-guide");
       if (gb) gb.addEventListener("click", () => openGuide("riddle"));

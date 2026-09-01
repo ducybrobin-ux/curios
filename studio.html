@@ -266,6 +266,12 @@
     const $ = (sel) => document.querySelector(sel);
     const $$ = (sel) => document.querySelectorAll(sel);
 
+    // Icônes du pack officiel : un nom ASCII → img/img/icons/*.svg, sinon émoji conservé.
+    const iconOf = (icon) =>
+      /^[\x00-\x7F]+$/.test(icon)
+        ? `<img class="cur-icon" src="img/icons/${icon}.svg" alt="">`
+        : icon;
+
     function render() {
       renderSteps();
       renderContent();
@@ -279,7 +285,7 @@
         const completed = wf.state.completedSteps.has(i);
         const cls = active ? "active" : completed ? "completed" : "";
         return `<button class="step-btn ${cls}" data-step="${i}">
-          <span class="icon">${step.icon}</span>
+          <span class="icon">${iconOf(step.icon)}</span>
           ${step.label}
         </button>`;
       }).join("");
@@ -300,7 +306,7 @@
       const step = STEPS[wf.state.currentStep];
 
       let html = `
-        <h2 class="step-title">${step.icon} ${step.label}</h2>
+        <h2 class="step-title">${iconOf(step.icon)} ${step.label}</h2>
         <p class="step-desc">${step.description}</p>
       `;
 

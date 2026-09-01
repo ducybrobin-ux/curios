@@ -79,8 +79,6 @@ export function resolvePathSafe(root, target) {
   let relative = target.replace(/\?.*$/, "").replace(/#.*$/, "");
   relative = relative.replace(/^https?:\/\/[^/]+/, "");
   if (!relative || relative === "/") relative = "/index.html";
-  if (relative.toLowerCase() === "/dashboard") relative = "/dashboard.html";
-  if (relative.toLowerCase() === "/editeur") relative = "/editeur.html";
 
   const parts = relative.split("?")[0].split("#")[0];
   let decoded;
@@ -92,6 +90,14 @@ export function resolvePathSafe(root, target) {
 
   const full = path.resolve(root, decoded.replace(/^\//, ""));
   if (!full.startsWith(root)) return null;
+
+  // URLs sans extension : si le fichier exact n'existe pas mais qu'une page
+  // <nom>.html existe, on la sert (ex. /editeur → /editeur.html, /atelier → /atelier.html).
+  if (!fs.existsSync(full) && !path.extname(decoded)) {
+    const withHtml = full + ".html";
+    if (fs.existsSync(withHtml)) return withHtml;
+    return null;
+  }
   if (!fs.existsSync(full)) return null;
   return full;
 }

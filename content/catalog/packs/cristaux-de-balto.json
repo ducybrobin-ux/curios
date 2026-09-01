@@ -9,14 +9,31 @@
   "emoji": "🐺",
   "difficulty": "facile",
   "durationMin": 90,
-  "players": [1, 6],
+  "players": [
+    1,
+    6
+  ],
   "location": "Élevage de Charron (Creuse)",
   "environment": "extérieur",
-  "skills": ["Observation", "Connaissance du vivant", "Culture"],
-  "material": ["Smartphone"],
-  "goals": ["Découvrir le husky de Sibérie", "Comprendre le métier de musher", "Explorer la légende de Balto"],
+  "skills": [
+    "Observation",
+    "Connaissance du vivant",
+    "Culture"
+  ],
+  "material": [
+    "Smartphone"
+  ],
+  "goals": [
+    "Découvrir le husky de Sibérie",
+    "Comprendre le métier de musher",
+    "Explorer la légende de Balto"
+  ],
   "staff": false,
-  "badges": ["Nature", "Éducatif"],
+  "badges": [
+    "Nature",
+    "Éducatif"
+  ],
   "collection": "Nature & vivant",
-  "featured": true
+  "featured": true,
+  "dramatisation": "L'élevage de Charron, en Creuse. La meute, le traîneau, la légende : neuf découvertes sur la vie des huskys de Sibérie, le matériel d'attelage, les sports canins et l'histoire de Balto. Quatre notions complémentaires et neuf balises énigmatiques t'attendent dans la neige."
 }

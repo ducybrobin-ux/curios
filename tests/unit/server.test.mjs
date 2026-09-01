@@ -400,4 +400,18 @@ describe("Static files", () => {
     const text = res.text();
     assert.ok(text.includes("<!DOCTYPE html>") || text.includes("<html"));
   });
+
+  it("sert les pages sans extension (URLs nues → .html)", async () => {
+    for (const path of ["/editeur", "/dashboard", "/atelier", "/studio", "/catalogue"]) {
+      const res = await fetch(path);
+      assert.equal(res.status, 200, `GET ${path} doit être servi`);
+      const text = res.text();
+      assert.ok(text.includes("<!DOCTYPE html>") || text.includes("<html"), `${path} doit renvoyer du HTML`);
+    }
+  });
+
+  it("renvoie 404 pour un chemin sans extension inexistant", async () => {
+    const res = await fetch("/aucune-page-existante-xyz");
+    assert.equal(res.status, 404);
+  });
 });

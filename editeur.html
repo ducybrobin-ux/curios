@@ -121,7 +121,7 @@
        <button id="btn-add-bird" class="btn btn-outline">➕ Ajouter une découverte</button>
       <button id="btn-images" class="btn btn-outline">🖼️ Images</button>
       <button id="btn-terrain" class="btn btn-outline" onclick="openTerrainPanel()">📏 Terrain</button>
-            <button id="btn-map" class="btn btn-outline">🗺️ Carte des balises</button>
+            <button id="btn-map" class="btn btn-outline"><img class="cur-icon" src="img/icons/map.svg" alt=""> Carte des balises</button>
       <button id="btn-ai" class="btn btn-outline">🤖 IA</button>
       <button id="btn-report" class="btn btn-outline">📧 Rapport</button>
       <button id="btn-export" class="btn btn-outline">📥 Exporter JSON</button>
@@ -151,7 +151,7 @@
         <div class="img-browser-head">
           <b>🖼️ Images du site</b>
           <span class="img-browser-target" id="img-browser-target"></span>
-          <button class="btn btn-outline" id="img-browser-close" onclick="closeImgBrowser()">✖ Fermer</button>
+          <button class="btn btn-outline" id="img-browser-close" onclick="closeImgBrowser()"><img class="cur-icon" src="img/icons/close.svg" alt=""> Fermer</button>
         </div>
         <div class="img-browser-tools">
           <input type="search" id="img-browser-filter" placeholder="🔍 Filtrer les images…">
@@ -169,7 +169,7 @@
     <div id="map-editor" class="map-editor-overlay hidden">
       <div class="map-editor-panel">
         <div class="map-editor-head">
-          <b>🗺️ Carte des balises</b>
+          <b><img class="cur-icon" src="img/icons/map.svg" alt=""> Carte des balises</b>
           <span class="note">Glissez les pastilles pour déplacer une balise (lat/lng). Cliquez sur une pastille pour voir/changer sa photo.</span>
           <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
             <input type="search" id="map-ed-search" placeholder="🔎 Rechercher une balise (n°, code, nom)…" style="flex:1 1 200px;padding:8px 12px;border-radius:10px;border:2px solid var(--line);background:var(--card);color:var(--text)">
@@ -178,12 +178,12 @@
           <div style="display:flex;gap:8px;flex-wrap:wrap">
             <button id="btn-map-add" class="btn btn-outline" onclick="mapEdToggleAdd()">➕ Ajouter une balise</button>
             <button class="btn btn-outline" onclick="mapEdFitAll()">🔍 Tout afficher</button>
-            <button class="btn btn-outline" onclick="mapEdLocateMe()">📍 Me localiser</button>
+            <button class="btn btn-outline" onclick="mapEdLocateMe()"><img class="cur-icon" src="img/icons/location.svg" alt=""> Me localiser</button>
             <button id="btn-map-chain" class="btn btn-outline" onclick="mapEdChainToggle()">⛓️ Mode terrain</button>
             <button class="btn btn-outline" onclick="openMapFullscreen()">🖥️ Plein écran</button>
             <button id="btn-map-import" class="btn btn-outline" onclick="mapEdToggleImport()">⬇️ Importer KML / My Maps</button>
             <button class="btn btn-outline" onclick="mapEdAutoLayout()">🧭 Ajuster la carte du jeu</button>
-            <button class="btn btn-outline" onclick="closeMapEditor()">✖ Fermer</button>
+            <button class="btn btn-outline" onclick="closeMapEditor()"><img class="cur-icon" src="img/icons/close.svg" alt=""> Fermer</button>
           </div>
           <div id="map-ed-import" class="hidden" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:6px">
             <input type="text" id="map-ed-kml-url" placeholder="Collez l'adresse de votre carte Google My Maps…" style="flex:1 1 260px;padding:8px 12px;border-radius:10px;border:2px solid var(--line);background:var(--card);color:var(--text)">
@@ -204,7 +204,7 @@
     <div class="ed-actions">
       <button id="btn-save" class="btn btn-primary" onclick="saveAll()">💾 Enregistrer</button>
       <button id="btn-reset" class="btn" style="--btn-bg:var(--err)" onclick="resetAll()">🗑️ Tout réinitialiser</button>
-      <button id="btn-ed-dict" class="btn btn-outline" title="Dicter dans le champ sélectionné">🎤 Dicter</button>
+      <button id="btn-ed-dict" class="btn btn-outline" title="Dicter dans le champ sélectionné"><img class="cur-icon" src="img/icons/micro.svg" alt=""> Dicter</button>
     </div>
 
   </main>

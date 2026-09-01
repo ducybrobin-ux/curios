@@ -1,0 +1,13 @@
+/* Curi🧭s Icon Pack — usage */
+.cur-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-block;
+  vertical-align: middle;
+  flex: none;
+}
+.cur-icon--lg { width: 2.5rem; height: 2.5rem; }
+.cur-icon--xl { width: 4rem; height: 4rem; }
+
+/* SVG files use the official Curi🧭s palette:
+   #061522 #073B5C #7DDDE5 #B8F5F3 #D99678 #E7B77A */

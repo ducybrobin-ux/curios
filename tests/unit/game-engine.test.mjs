@@ -41,6 +41,38 @@ describe("checkAnswer", () => {
   it("fonctionne avec le champ `answers` (format curios-parcours)", () => {
     assert.equal(checkAnswer({ answers: ["fontaine", "la fontaine"] }, "La Fontaine"), true);
   });
+
+  /* Régression CURIOS — Bug A : les articles initiaux doivent être ignorés
+   * des DEUX côtés (référence avec article + joueur sans, et inversement). */
+  it("accepte une réponse exacte quand la référence porte un article (sans article côté joueur)", () => {
+    assert.equal(checkAnswer({ reponses: ["l'urgence artificielle", "l'urgence"] }, "urgence artificielle"), true);
+  });
+  it("accepte « troisième » pour la référence « la troisième »", () => {
+    assert.equal(checkAnswer({ reponses: ["la troisième", "la troisième notification", "la C"] }, "troisieme"), true);
+  });
+  it("accepte une réponse sans article pour la référence « l'adresse du site »", () => {
+    assert.equal(checkAnswer({ reponses: ["l'adresse du site", "l'URL"] }, "adresse du site"), true);
+  });
+  it("tolère les déterminants pluriels / invariants (les, des, du)", () => {
+    assert.equal(checkAnswer({ reponses: ["les métadonnées"] }, "métadonnées"), true);
+    assert.equal(checkAnswer({ reponses: ["des traces"] }, "traces"), true);
+    assert.equal(checkAnswer({ reponses: ["du temps"] }, "temps"), true);
+  });
+  it("accentue sans casser l'égalité avec déterminant composé « de la »", () => {
+    assert.equal(checkAnswer({ reponses: ["de la lune"] }, "lune"), true);
+  });
+  it("n'accepte pas une réponse partielle quand aucun mot complet ne correspond", () => {
+    assert.equal(checkAnswer({ reponses: ["le biais de confirmation"] }, "biais"), false);
+  });
+  it("ne retire pas un article qui serait le mot lui-même (pas de faux positif)", () => {
+    assert.equal(checkAnswer({ reponses: ["la"] }, "la"), true); // égalité exacte conservée
+    assert.equal(checkAnswer({ reponses: ["la relative"] }, "relative"), true); // article ignoré
+    assert.equal(checkAnswer({ reponses: ["decor"] }, "décor"), true); // « de » non suivi d'espace → pas retiré
+  });
+  it("ne tombe pas sur `answers` quand `reponses` est présent mais vide (robustesse)", () => {
+    assert.equal(checkAnswer({ reponses: [], answers: ["fontaine"] }, "fontaine"), true);
+    assert.equal(checkAnswer({ reponses: [], answers: ["la fontaine"] }, "fontaine"), true);
+  });
 });
 
 /* ---- makeQuiz ---- */

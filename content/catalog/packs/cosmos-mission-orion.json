@@ -9,14 +9,33 @@
   "emoji": "🔭",
   "difficulty": "moyen",
   "durationMin": 110,
-  "players": [1, 6],
+  "players": [
+    1,
+    6
+  ],
   "location": "Dans la nuit, sous un ciel étoilé",
   "environment": "extérieur",
-  "skills": ["Astronomie", "Investigation scientifique", "Orientation"],
-  "material": ["Smartphone", "Disque de chiffrement", "Carte du ciel"],
-  "goals": ["S'orienter dans le ciel nocturne", "Comprendre la méthode scientifique", "Agir contre la pollution lumineuse"],
+  "skills": [
+    "Astronomie",
+    "Investigation scientifique",
+    "Orientation"
+  ],
+  "material": [
+    "Smartphone",
+    "Disque de chiffrement",
+    "Carte du ciel"
+  ],
+  "goals": [
+    "S'orienter dans le ciel nocturne",
+    "Comprendre la méthode scientifique",
+    "Agir contre la pollution lumineuse"
+  ],
   "staff": false,
-  "badges": ["Sciences", "Nature"],
+  "badges": [
+    "Sciences",
+    "Nature"
+  ],
   "collection": "Sciences & espace",
-  "featured": true
+  "featured": true,
+  "dramatisation": "Un signal stellaire vient d'être capté : une enquête s'ouvre dans le ciel étoilé. Orientation, analyse spectrale, échelle des tailles, chiffre de Cassini, traces nocturnes, choix d'orbite : sept missions pour percer les secrets du système solaire et des constellations — tout en luttant contre la pollution lumineuse."
 }

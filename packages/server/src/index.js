@@ -274,7 +274,7 @@ export function startServer(options = {}) {
     console.log(`Curios server started`);
     console.log(`  Directory  : ${state.root}`);
     console.log(`  HTTP       : http://localhost:${config.port}`);
-    if (!auth.state.password) {
+    if (!auth.hasPassword()) {
       console.log(`  Auth       : no password set (first login will set it)`);
     }
     console.log(`  Ctrl+C to stop`);

@@ -417,13 +417,31 @@ const I18N = (function () {
     },
     /* Traduit tous les éléments marqués data-i18n… puis notifie l'app */
     apply() {
+      /* Émojis structurels → icônes du pack officiel (img/img/icons/*.svg).
+         Réservé aux nœuds marqués data-i18n-html : le texte des libellés
+         reste intact, seule l'icône de contrôle 1:1 est remplacée. */
+      const ICON_MAP = {
+        "▶️": "play", "▶": "play",
+        "⚙️": "settings",
+        "📍": "location",
+        "🗺️": "map",
+        "🎙️": "micro", "🎤": "micro",
+        "💡": "hint",
+        "✅": "check",
+        "🔊": "audio",
+        "📷": "camera", "📸": "camera",
+        "⚠️": "warning",
+        "📶": "offline",
+      };
+      const ICON_RE = new RegExp(Object.keys(ICON_MAP).sort((a, b) => b.length - a.length).join("|"));
+      const icoify = (str) => String(str).replace(ICON_RE, (e) => '<img class="cur-icon" src="img/icons/' + ICON_MAP[e] + '.svg" alt="">');
       try {
         const el = document.documentElement;
         if (el) el.lang = this.region;
       } catch (e) {}
       document.querySelectorAll("[data-i18n]").forEach((node) => {
         const key = node.getAttribute("data-i18n");
-        if (node.hasAttribute("data-i18n-html")) node.innerHTML = this.t(key);
+        if (node.hasAttribute("data-i18n-html")) node.innerHTML = icoify(this.t(key));
         else node.textContent = this.t(key);
       });
       document.querySelectorAll("[data-i18n-placeholder]").forEach((node) => {

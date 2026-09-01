@@ -9,14 +9,31 @@
   "emoji": "🧭",
   "difficulty": "facile",
   "durationMin": 20,
-  "players": [1, 6],
+  "players": [
+    1,
+    6
+  ],
   "location": "Partout (sans GPS)",
   "environment": "intérieur / extérieur",
-  "skills": ["Prise en main", "Coopération", "Découverte"],
-  "material": ["Smartphone"],
-  "goals": ["Découvrir le jeu de balises", "Comprendre les niveaux de difficulté", "Expérimenter la coopération"],
+  "skills": [
+    "Prise en main",
+    "Coopération",
+    "Découverte"
+  ],
+  "material": [
+    "Smartphone"
+  ],
+  "goals": [
+    "Découvrir le jeu de balises",
+    "Comprendre les niveaux de difficulté",
+    "Expérimenter la coopération"
+  ],
   "staff": false,
-  "badges": ["Démo", "Prise en main"],
+  "badges": [
+    "Démo",
+    "Prise en main"
+  ],
   "collection": "Démos",
-  "featured": true
+  "featured": true,
+  "dramatisation": "Le Professeur Curi🧭 a construit la Machine à Comprendre la France : une machine capable de transformer l'observation du monde en connaissances. Une surcharge de curiosité provoque une panne : les fragments de la Machine sont dispersés à travers tout le territoire. À toi de les retrouver en utilisant ton smartphone comme un véritable laboratoire de poche. Observe, mesure, réfléchis, expérimente... et surtout : ne fais pas confiance à ton téléphone sans vérifier."
 }

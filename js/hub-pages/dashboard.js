@@ -27,7 +27,7 @@
       statCard("📁", "blue", "—", "Projets actifs") +
       statCard("🎯", "green", "—", "Sessions en cours") +
       statCard("📦", "gold", "—", "Packs disponibles") +
-      statCard("👥", "red", "—", "Équipes connectées") +
+      statCard("team", "red", "—", "Équipes connectées") +
       "</div>" +
 
       '<div class="hub-grid">' +
@@ -38,7 +38,7 @@
       "</div>" +
       '<div class="hub-quick-actions">' +
       quickAction("📁", "Nouveau projet", "new-projet") +
-      quickAction("🗺️", "Nouveau parcours", "new-parcours") +
+      quickAction("map", "Nouveau parcours", "new-parcours") +
       quickAction("🧩", "Créer un pack", "create-pack") +
       quickAction("🎯", "Lancer une session", "new-session") +
       "</div></div>" +
@@ -59,7 +59,7 @@
       "</div>" +
       '<div id="hub-alerts">' +
       '<div style="padding:8px 0;color:var(--hub-ink-dim);font-size:14px;">' +
-      "✅ Aucune alerte pour le moment." +
+      iconEl("check") + " Aucune alerte pour le moment." +
       "</div></div></div>" +
 
       "</div>" +
@@ -69,22 +69,29 @@
       "<h2>🔗 Outils de création</h2>" +
       "</div>" +
       '<div class="hub-quick-actions">' +
-      '<a class="hub-quick-action" href="../player/studio.html">' +
+      '<a class="hub-quick-action" href="../studio.html">' +
       '<span class="qa-icon">🎨</span><span class="qa-label">Studio de création<span style="display:block;font-size:12px;font-weight:400;color:var(--hub-ink-dim);">Workflow guidé en 8 étapes</span></span></a>' +
-      '<a class="hub-quick-action" href="../player/editeur.html">' +
+      '<a class="hub-quick-action" href="../editeur.html">' +
       '<span class="qa-icon">✏️</span><span class="qa-label">Éditeur de contenu<span style="display:block;font-size:12px;font-weight:400;color:var(--hub-ink-dim);">Modifier balises, découvertes, quiz</span></span></a>' +
-      '<a class="hub-quick-action" href="../player/atelier.html">' +
+      '<a class="hub-quick-action" href="../atelier.html">' +
       '<span class="qa-icon">🧩</span><span class="qa-label">Atelier de packs<span style="display:block;font-size:12px;font-weight:400;color:var(--hub-ink-dim);">Créer et exporter des bundles</span></span></a>' +
-      '<a class="hub-quick-action" href="../player/dashboard.html">' +
+      '<a class="hub-quick-action" href="../dashboard.html">' +
       '<span class="qa-icon">🎛️</span><span class="qa-label">Dashboard organisateur<span style="display:block;font-size:12px;font-weight:400;color:var(--hub-ink-dim);">Suivi en direct des équipes</span></span></a>' +
       "</div></div>"
     );
   }
 
+  function iconEl(icon) {
+    if (icon && /^[A-Za-z0-9.-]+$/.test(icon)) {
+      return '<img class="cur-icon" src="../img/icons/' + icon + '.svg" alt="">';
+    }
+    return icon;
+  }
+
   function statCard(icon, color, value, label) {
     return (
       '<div class="hub-stat">' +
-      '<div class="hub-stat-icon ' + color + '">' + icon + "</div>" +
+      '<div class="hub-stat-icon ' + color + '">' + iconEl(icon) + "</div>" +
       "<div>" +
       '<div class="hub-stat-value">' + value + "</div>" +
       '<div class="hub-stat-label">' + label + "</div>" +
@@ -95,7 +102,7 @@
   function quickAction(icon, label, action) {
     return (
       '<a class="hub-quick-action" href="#" data-page-action="' + action + '">' +
-      '<span class="qa-icon">' + icon + "</span>" +
+      '<span class="qa-icon">' + iconEl(icon) + "</span>" +
       '<span class="qa-label">' + label + "</span></a>"
     );
   }

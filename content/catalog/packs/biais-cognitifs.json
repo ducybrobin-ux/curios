@@ -9,14 +9,32 @@
   "emoji": "🧠",
   "difficulty": "moyen",
   "durationMin": 80,
-  "players": [1, 6],
+  "players": [
+    1,
+    6
+  ],
   "location": "Le long du sentier",
   "environment": "extérieur",
-  "skills": ["Esprit critique", "Réflexion", "Conscience de soi"],
-  "material": ["Smartphone", "Carnet de route"],
-  "goals": ["Comprendre les biais cognitifs", "Identifier les pièges mentaux du quotidien", "Entraîner l'esprit critique"],
+  "skills": [
+    "Esprit critique",
+    "Réflexion",
+    "Conscience de soi"
+  ],
+  "material": [
+    "Smartphone",
+    "Carnet de route"
+  ],
+  "goals": [
+    "Comprendre les biais cognitifs",
+    "Identifier les pièges mentaux du quotidien",
+    "Entraîner l'esprit critique"
+  ],
   "staff": false,
-  "badges": ["Éducatif", "Sciences"],
+  "badges": [
+    "Éducatif",
+    "Sciences"
+  ],
   "collection": "Sciences & esprit critique",
-  "featured": false
+  "featured": false,
+  "dramatisation": "Notre cerveau nous joue des tours : pièges d'attention, illusions, raccourcis de pensée et faux souvenirs. Huit découvertes du sentier — un biais cognitif par balise — et dix notions complémentaires pour comprendre comment notre cerveau répond dehors et déjouer ses pièges. Énigmes, expériences et réflexions pour entraîner l'esprit critique."
 }

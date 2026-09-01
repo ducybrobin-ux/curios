@@ -16,6 +16,9 @@
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
   }
+  function ico(name, cls) {
+    return '<img class="cur-icon' + (cls ? " " + cls : "") + '" src="../img/icons/' + name + '.svg" alt="">';
+  }
   function isActive(p) {
     var live = liveStates[p.id];
     return live ? !!live.actif : false;
@@ -47,7 +50,7 @@
         "<td>" + badgeFor(p) + "</td>" +
         "<td>" +
         (isActive(p)
-          ? '<button class="hub-btn hub-btn-primary cat-hub-play" data-id="' + esc(p.id) + '">▶ Jouer</button>'
+          ? '<button class="hub-btn hub-btn-primary cat-hub-play" data-id="' + esc(p.id) + '">' + ico("play", "cur-icon--xs") + ' Jouer</button>'
           : '<button class="hub-btn hub-btn-outline cat-hub-activate" data-id="' + esc(p.id) + '">Activer</button>') +
         '<button class="hub-btn cat-hub-detail" data-id="' + esc(p.id) + '">Fiche</button>' +
         "</td>" +
@@ -74,7 +77,7 @@
       "</div>" +
       '<div class="hub-card" style="margin-top:16px;">' +
       '<div class="hub-empty" style="padding:16px;text-align:left;">' +
-      '<div class="hub-empty-desc">💡 Retrouve les expéditions officielles et communautaires dans le catalogue immersif, ou gère l\'activation du parcours actif depuis cette table.</div>' +
+      '<div class="hub-empty-desc">' + ico("hint") + ' Retrouve les expéditions officielles et communautaires dans le catalogue immersif, ou gère l\'activation du parcours actif depuis cette table.</div>' +
       "</div></div>"
     );
   }

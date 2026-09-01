@@ -9,14 +9,31 @@
   "emoji": "👻",
   "difficulty": "moyen",
   "durationMin": 90,
-  "players": [1, 6],
+  "players": [
+    1,
+    6
+  ],
   "location": "Roeulx (France)",
   "environment": "extérieur",
-  "skills": ["Cybersécurité", "Esprit critique", "Vie privée"],
-  "material": ["Smartphone"],
-  "goals": ["Reconnaître le phishing", "Protéger son identité numérique", "Comprendre l'ingénierie sociale"],
+  "skills": [
+    "Cybersécurité",
+    "Esprit critique",
+    "Vie privée"
+  ],
+  "material": [
+    "Smartphone"
+  ],
+  "goals": [
+    "Reconnaître le phishing",
+    "Protéger son identité numérique",
+    "Comprendre l'ingénierie sociale"
+  ],
   "staff": false,
-  "badges": ["Éducatif", "Numérique"],
+  "badges": [
+    "Éducatif",
+    "Numérique"
+  ],
   "collection": "Cybersécurité & numérique",
-  "featured": true
+  "featured": true,
+  "dramatisation": "Neuf missions de cybersécurité immersive : phishing, QR codes piégés, métadonnées, mots de passe, ingénierie sociale. À chaque mission, une révélation : le véritable ennemi n'est pas l'ordinateur mais nos propres décisions."
 }

@@ -410,6 +410,90 @@
   margin: 0 0 var(--cur-space-2);
 }
 .cat-md-chips { display: flex; flex-wrap: wrap; gap: var(--cur-space-2); }
+.cat-md-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--cur-space-2); }
+.cat-md-list li {
+  border: var(--cur-line-thin) solid var(--cur-line);
+  border-radius: var(--cur-radius);
+  padding: var(--cur-space-2) var(--cur-space-3);
+  font-size: var(--cur-fs-sm);
+}
+.cat-md-note { margin: var(--cur-space-2) 0 0; font-size: var(--cur-fs-xs); }
+
+/* ---- Carte schématique ---- */
+.cat-map { border: var(--cur-line-thin) solid var(--cur-line); border-radius: var(--cur-radius); overflow: hidden; }
+.cat-map-svg { display: block; width: 100%; height: auto; background: radial-gradient(120% 120% at 50% 0%, #0b2c3f 0%, #092235 60%, #061522 100%); }
+.cat-map-dot { cursor: pointer; }
+.cat-map-dot circle { transition: transform .15s ease, filter .15s ease; transform-origin: center; transform-box: fill-box; }
+.cat-map-dot:hover circle, .cat-map-dot:focus circle { filter: brightness(1.25); transform: scale(1.28); }
+.cat-map-dot:focus { outline: 2px solid var(--cur-cyan); outline-offset: 2px; border-radius: 50%; }
+.cat-map-cap {
+  display: flex; flex-wrap: wrap; gap: var(--cur-space-2) var(--cur-space-4);
+  justify-content: space-between;
+  padding: var(--cur-space-2) var(--cur-space-3);
+  background: rgba(6, 21, 34, .6);
+  border-top: var(--cur-line-thin) solid var(--cur-line);
+  font-size: var(--cur-fs-xs);
+  color: var(--cur-text-dim);
+}
+
+/* ---- Découvertes / illustrations ---- */
+.cat-disc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: var(--cur-space-2); }
+.cat-disc {
+  display: flex; flex-direction: column; align-items: center; gap: var(--cur-space-1);
+  padding: var(--cur-space-3) var(--cur-space-2);
+  border: var(--cur-line-thin) solid var(--cur-line);
+  border-top: 3px solid var(--disc-color, #2ecc71);
+  border-radius: var(--cur-radius);
+  background: rgba(9, 34, 53, .4);
+  text-align: center;
+}
+.cat-disc-emoji { font-size: 30px; line-height: 1; }
+.cat-disc-nom { font-size: var(--cur-fs-xs); font-weight: var(--cur-fw-medium); line-height: 1.25; }
+.cat-disc-latin { font-size: 11px; color: var(--cur-text-dim); line-height: 1.2; font-style: italic; }
+
+/* ---- Épreuves & énigmes ---- */
+.cat-md-station {
+  border: var(--cur-line-thin) solid var(--cur-line);
+  border-radius: var(--cur-radius);
+  margin: var(--cur-space-2) 0;
+  background: rgba(9, 34, 53, .35);
+  overflow: hidden;
+}
+.cat-md-station summary {
+  display: flex; align-items: center; gap: var(--cur-space-2);
+  padding: var(--cur-space-2) var(--cur-space-3);
+  cursor: pointer;
+  list-style: none;
+  flex-wrap: wrap;
+}
+.cat-md-station summary::-webkit-details-marker { display: none; }
+.cat-md-station summary:hover { background: rgba(125, 221, 229, .06); }
+.cat-md-stn-num {
+  flex: none; width: 24px; height: 24px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--cur-cyan); color: #061522;
+  font-size: 12px; font-weight: 800;
+}
+.cat-md-stn-name { font-weight: var(--cur-fw-semibold); }
+.cat-md-stn-meta { font-size: var(--cur-fs-xs); color: var(--cur-text-dim); }
+.cat-md-stn-count {
+  margin-left: auto; font-size: var(--cur-fs-xs);
+  border: var(--cur-line-thin) solid var(--cur-line);
+  border-radius: 999px; padding: 2px var(--cur-space-2);
+  color: var(--cur-amber, #E7B77A);
+}
+.cat-md-station[open] summary .cat-md-stn-num { background: var(--cur-amber, #E7B77A); }
+.cat-md-enigme {
+  border-top: var(--cur-line-thin) solid var(--cur-line);
+  padding: var(--cur-space-3);
+}
+.cat-md-enigme + .cat-md-enigme { border-top: 1px dashed var(--cur-line); }
+.cat-md-enigme-lvl { font-size: var(--cur-fs-xs); text-transform: uppercase; letter-spacing: .5px; font-weight: 700; color: var(--cur-text-dim); margin-bottom: var(--cur-space-2); }
+.cat-md-enigme--moyen .cat-md-enigme-lvl { color: #E7B77A; }
+.cat-md-enigme--difficile .cat-md-enigme-lvl { color: #e0776d; }
+.cat-md-enigme-text { margin: 0 0 var(--cur-space-2); line-height: 1.6; white-space: pre-wrap; }
+.cat-md-hint { margin: var(--cur-space-1) 0; font-size: var(--cur-fs-sm); color: var(--cur-cyan); }
+.cat-md-fun { margin: var(--cur-space-1) 0 0; font-size: var(--cur-fs-sm); color: var(--cur-text-dim); }
 .cat-md-actions {
   display: flex;
   gap: var(--cur-space-2);

@@ -9,14 +9,31 @@
   "emoji": "🛡️",
   "difficulty": "facile",
   "durationMin": 60,
-  "players": [1, 8],
+  "players": [
+    1,
+    8
+  ],
   "location": "Milieu scolaire",
   "environment": "mixte",
-  "skills": ["Empathie", "Prévention", "Esprit civique"],
-  "material": ["Smartphone"],
-  "goals": ["Comprendre le harcèlement", "Apprendre les bons réflexes", "Sensibiliser à l'entraide"],
+  "skills": [
+    "Empathie",
+    "Prévention",
+    "Esprit civique"
+  ],
+  "material": [
+    "Smartphone"
+  ],
+  "goals": [
+    "Comprendre le harcèlement",
+    "Apprendre les bons réflexes",
+    "Sensibiliser à l'entraide"
+  ],
   "staff": true,
-  "badges": ["Éducatif", "Citoyenneté"],
+  "badges": [
+    "Éducatif",
+    "Citoyenneté"
+  ],
   "collection": "Citoyenneté & climat scolaire",
-  "featured": false
+  "featured": false,
+  "dramatisation": "Dans un cadre scolaire, une mission sobre pour comprendre le harcèlement et trouver les bons réflexes : témoigner, protéger, alerter. Six découvertes et quatre notions de repères pour savoir quoi faire, et surtout ne pas rester seul."
 }

@@ -48,18 +48,18 @@
       HubShell.registerPage("parcours", function (user) {
         return (
           '<div class="hub-page-header">' +
-          '<div><h1 class="hub-page-title">🗺️ Parcours</h1>' +
+          '<div><h1 class="hub-page-title"><img class="cur-icon" src="../img/icons/map.svg" alt=""> Parcours</h1>' +
           '<p class="hub-page-sub">Vos parcours éducatifs et sentiers</p></div>' +
           '<div class="hub-page-actions">' +
           '<button class="hub-btn hub-btn-primary" data-page-action="new-parcours">➕ Nouveau parcours</button>' +
           "</div></div>" +
           '<div class="hub-card"><div class="hub-empty">' +
-          '<div class="hub-empty-icon">🗺️</div>' +
+          '<div class="hub-empty-icon"><img class="cur-icon cur-icon--lg" src="../img/icons/map.svg" alt=""></div>' +
           '<div class="hub-empty-title">Aucun parcours</div>' +
           '<div class="hub-empty-desc">Créez des parcours avec le Studio ou importez des bundles depuis l\'Atelier.</div>' +
           '<div class="hub-quick-actions">' +
-          '<a class="hub-quick-action" href="../player/studio.html"><span class="qa-icon">🎨</span><span class="qa-label">Ouvrir le Studio</span></a>' +
-          '<a class="hub-quick-action" href="../player/atelier.html"><span class="qa-icon">🧩</span><span class="qa-label">Ouvrir l\'Atelier</span></a>' +
+          '<a class="hub-quick-action" href="../studio.html"><span class="qa-icon">🎨</span><span class="qa-label">Ouvrir le Studio</span></a>' +
+          '<a class="hub-quick-action" href="../atelier.html"><span class="qa-icon">🧩</span><span class="qa-label">Ouvrir l\'Atelier</span></a>' +
           "</div></div>"
         );
       });
@@ -76,7 +76,7 @@
           '<div class="hub-empty-icon">📦</div>' +
           '<div class="hub-empty-title">Gestion des packs</div>' +
           '<div class="hub-empty-desc">Importez, configurez et publiez vos packs de contenu.</div>' +
-          '<a class="hub-btn hub-btn-outline" href="../player/atelier.html">🧩 Ouvrir l\'Atelier</a>' +
+          '<a class="hub-btn hub-btn-outline" href="../atelier.html">🧩 Ouvrir l\'Atelier</a>' +
           "</div></div>"
         );
       });
@@ -97,10 +97,10 @@
       HubShell.registerPage("clients", function (user) {
         return (
           '<div class="hub-page-header">' +
-          '<div><h1 class="hub-page-title">👥 Clients & Prescripteurs</h1>' +
+          '<div><h1 class="hub-page-title"><img class="cur-icon" src="../img/icons/team.svg" alt=""> Clients & Prescripteurs</h1>' +
           '<p class="hub-page-sub">Vos contacts professionnels</p></div></div>' +
           '<div class="hub-card"><div class="hub-empty">' +
-          '<div class="hub-empty-icon">👥</div>' +
+          '<div class="hub-empty-icon"><img class="cur-icon cur-icon--lg" src="../img/icons/team.svg" alt=""></div>' +
           '<div class="hub-empty-title">Aucun client</div>' +
           '<div class="hub-empty-desc">Ajoutez vos établissements, collectivités et associations.</div>' +
           '<button class="hub-btn hub-btn-primary" data-page-action="new-client">➕ Ajouter un client</button>' +
@@ -156,7 +156,7 @@
           '<p class="hub-page-sub">Tableaux de bord et métriques</p></div></div>' +
           '<div class="hub-stats">' +
           '<div class="hub-stat"><div class="hub-stat-icon blue">📊</div><div><div class="hub-stat-value">—</div><div class="hub-stat-label">Sessions totales</div></div></div>' +
-          '<div class="hub-stat"><div class="hub-stat-icon green">👥</div><div><div class="hub-stat-value">—</div><div class="hub-stat-label">Participants</div></div></div>' +
+          '<div class="hub-stat"><div class="hub-stat-icon green"><img class="cur-icon" src="../img/icons/team.svg" alt=""></div><div><div class="hub-stat-value">—</div><div class="hub-stat-label">Participants</div></div></div>' +
           '<div class="hub-stat"><div class="hub-stat-icon gold">⭐</div><div><div class="hub-stat-value">—</div><div class="hub-stat-label">Score moyen</div></div></div>' +
           '<div class="hub-stat"><div class="hub-stat-icon red">⏱️</div><div><div class="hub-stat-value">—</div><div class="hub-stat-label">Durée moyenne</div></div></div>' +
           "</div>" +
@@ -171,7 +171,7 @@
       HubShell.registerPage("settings", function (user) {
         return (
           '<div class="hub-page-header">' +
-          '<div><h1 class="hub-page-title">⚙️ Settings</h1>' +
+          '<div><h1 class="hub-page-title"><img class="cur-icon" src="../img/icons/settings.svg" alt=""> Settings</h1>' +
           '<p class="hub-page-sub">Paramètres du Hub et de votre compte</p></div></div>' +
           '<div class="hub-grid">' +
           '<div class="hub-card">' +
@@ -190,11 +190,11 @@
           '<div class="hub-card">' +
           '<div class="hub-card-header"><h2>🔗 Liens rapides</h2></div>' +
           '<div class="hub-quick-actions" style="flex-direction:column;">' +
-          '<a class="hub-quick-action" href="../player/dashboard.html"><span class="qa-icon">🎛️</span><span class="qa-label">Dashboard organisateur</span></a>' +
-          '<a class="hub-quick-action" href="../player/editeur.html"><span class="qa-icon">✏️</span><span class="qa-label">Éditeur de contenu</span></a>' +
-          '<a class="hub-quick-action" href="../player/studio.html"><span class="qa-icon">🎨</span><span class="qa-label">Studio de création</span></a>' +
-          '<a class="hub-quick-action" href="../player/atelier.html"><span class="qa-icon">🧩</span><span class="qa-label">Atelier de packs</span></a>' +
-          '<a class="hub-quick-action" href="../player/"><span class="qa-icon">▶️</span><span class="qa-label">Lancer le player</span></a>' +
+          '<a class="hub-quick-action" href="../dashboard.html"><span class="qa-icon">🎛️</span><span class="qa-label">Dashboard organisateur</span></a>' +
+          '<a class="hub-quick-action" href="../editeur.html"><span class="qa-icon">✏️</span><span class="qa-label">Éditeur de contenu</span></a>' +
+          '<a class="hub-quick-action" href="../studio.html"><span class="qa-icon">🎨</span><span class="qa-label">Studio de création</span></a>' +
+          '<a class="hub-quick-action" href="../atelier.html"><span class="qa-icon">🧩</span><span class="qa-label">Atelier de packs</span></a>' +
+          '<a class="hub-quick-action" href="../index.html"><span class="qa-icon"><img class="cur-icon" src="../img/icons/play.svg" alt=""></span><span class="qa-label">Lancer le player</span></a>' +
           "</div></div></div>"
         );
       });

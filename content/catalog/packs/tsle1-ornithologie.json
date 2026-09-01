@@ -9,14 +9,31 @@
   "emoji": "🦉",
   "difficulty": "facile",
   "durationMin": 80,
-  "players": [1, 8],
+  "players": [
+    1,
+    8
+  ],
   "location": "Camping nature d'Auzances (Creuse)",
   "environment": "extérieur",
-  "skills": ["Observation", "Écoute", "Connaissance du vivant"],
-  "material": ["Smartphone"],
-  "goals": ["Identifier les oiseaux par le chant", "Observer la faune locale", "Se reconnecter à la nature"],
+  "skills": [
+    "Observation",
+    "Écoute",
+    "Connaissance du vivant"
+  ],
+  "material": [
+    "Smartphone"
+  ],
+  "goals": [
+    "Identifier les oiseaux par le chant",
+    "Observer la faune locale",
+    "Se reconnecter à la nature"
+  ],
   "staff": false,
-  "badges": ["Nature", "Éducatif"],
+  "badges": [
+    "Nature",
+    "Éducatif"
+  ],
   "collection": "Nature & vivant",
-  "featured": true
+  "featured": true,
+  "dramatisation": "Un sentier ornithologique au cœur de la Creuse, autour du camping nature d'Auzances. Huit balises disséminées dans les buissons, les haies et les sous-bois guident vers les oiseaux locaux — diurnes et nocturnes — par le chant, l'observation et l'énigme."
 }

@@ -35,6 +35,10 @@ function esc(s) {
   }[c]));
 }
 
+function curIco(name, cls) {
+  return '<img class="cur-icon' + (cls ? " " + cls : "") + '" src="img/icons/' + name + '.svg" alt="">';
+}
+
 function setStatus(msg, cls) {
   const el = document.getElementById("ed-status");
   el.textContent = msg;
@@ -221,14 +225,14 @@ function buildBaliseCard(b) {
     <div class="field-row">
       <div class="field"><label>Rayon GPS propre (m, vide = défaut du site)</label><input type="number" step="0.5" min="1" id="b-${b.id}-radius" value="${b.radius == null ? "" : b.radius}"></div>
     </div>
-    <div class="field"><button class="btn btn-outline" type="button" onclick="useMyGps('${b.id}')">📍 Ma position GPS</button>
+    <div class="field"><button class="btn btn-outline" type="button" onclick="useMyGps('${b.id}')">${curIco("location")} Ma position GPS</button>
       <small style="color:var(--text-muted)">Remplit Latitude/Longitude avec la position actuelle de cet appareil (déplacez-vous sur la balise, ou saisissez à la main).</small></div>
     <div class="field"><label>Image de l'énigme</label>
       <div class="img-box">
         <img id="b-${b.id}-img-preview" src="${esc(b.hintImg || "")}" alt="">
         <input type="text" id="b-${b.id}-hintImg" value="${esc(b.hintImg || "")}" style="flex:1 1 220px">
         <input type="file" id="b-${b.id}-file" accept="image/*" class="hidden">
-        <button class="btn" onclick="pickImg('b-${b.id}')">📷 Envoyer</button>
+        <button class="btn" onclick="pickImg('b-${b.id}')">${curIco("camera")} Envoyer</button>
         <button class="btn btn-outline" onclick="openImgBrowser('b-${b.id}-hintImg','b-${b.id}-img-preview','b-${b.id}-img-sel')">🖼️</button>
       </div>
       <select id="b-${b.id}-img-sel" onchange="onImgSelect('b-${b.id}')">${imgSelectOptions(b.hintImg || "")}</select>
@@ -328,7 +332,7 @@ function buildQuizCard(bird) {
         <img id="q-${bird.id}-img-preview" src="${esc(img)}" alt="">
         <input type="text" id="q-${bird.id}-img" value="${esc(img)}" style="flex:1 1 220px">
         <input type="file" id="q-${bird.id}-file" accept="image/*" class="hidden">
-        <button class="btn" onclick="pickImg('q-${bird.id}')">📷 Envoyer</button>
+        <button class="btn" onclick="pickImg('q-${bird.id}')">${curIco("camera")} Envoyer</button>
         <button class="btn btn-outline" onclick="openImgBrowser('q-${bird.id}-img','q-${bird.id}-img-preview','q-${bird.id}-img-sel')">🖼️</button>
       </div>
       <select id="q-${bird.id}-img-sel" onchange="onImgSelect('q-${bird.id}')">${imgSelectOptions(img)}</select>
@@ -416,7 +420,7 @@ function quizQuestionHtml(birdId, qi, q) {
   ).join("");
   return `
     <div class="quiz-q" data-qidx="${qi}">
-      <div class="q-head"><b>Question ${qi + 1}</b><button class="btn" style="--btn-bg:var(--err)" onclick="removeQuestion('${birdId}',${qi})">✖</button></div>
+      <div class="q-head"><b>Question ${qi + 1}</b><button class="btn" style="--btn-bg:var(--err)" onclick="removeQuestion('${birdId}',${qi})">${curIco("close")}</button></div>
       <div class="field"><label>Question</label><textarea id="q-${birdId}-${qi}-q">${esc(q.q || "")}</textarea></div>
       <div class="field"><label>Options (une par ligne)</label><textarea id="q-${birdId}-${qi}-options" oninput="refreshRepSelect('${birdId}',${qi})">${esc(opts)}</textarea></div>
       <div class="field"><label>Bonne réponse</label><select id="q-${birdId}-${qi}-reponse">${selOpts}</select></div>
@@ -479,7 +483,7 @@ function buildGuideCard(g) {
         <img id="g-${g.id}-img-preview" src="${esc(img)}" alt="">
         <input type="text" id="g-${g.id}-img" value="${esc(img)}" style="flex:1 1 220px">
         <input type="file" id="g-${g.id}-file" accept="image/*" class="hidden">
-        <button class="btn" onclick="pickImg('g-${g.id}')">📷 Envoyer</button>
+        <button class="btn" onclick="pickImg('g-${g.id}')">${curIco("camera")} Envoyer</button>
         <button class="btn btn-outline" onclick="openImgBrowser('g-${g.id}-img','g-${g.id}-img-preview','g-${g.id}-img-sel')">🖼️</button>
       </div>
       <select id="g-${g.id}-img-sel" onchange="onImgSelect('g-${g.id}')">${imgSelectOptions(img)}</select>
@@ -864,7 +868,7 @@ function mapEdPopupHtml(b) {
     </div>
     <div class="map-pop-actions">
       <button class="btn" onclick="mapEdApplyInput('${b.id}')">✓ Appliquer les coordonnées</button>
-      <button class="btn btn-outline" onclick="mapEdUseGps('${b.id}')">📍 Ma position GPS</button>
+      <button class="btn btn-outline" onclick="mapEdUseGps('${b.id}')">${curIco("location")} Ma position GPS</button>
       <button class="btn btn-outline" onclick="mapEdCenterOn('${b.id}')">🎯 Recentrer</button>
     </div>
     <div class="field" style="margin-top:10px"><label>Photo de la balise</label>
@@ -872,7 +876,7 @@ function mapEdPopupHtml(b) {
         <img id="mappop-${b.id}-img-preview" src="${esc(img)}" alt="">
         <input type="text" id="mappop-${b.id}-img" value="${esc(img)}" style="flex:1 1 140px">
         <input type="file" id="mappop-${b.id}-file" accept="image/*" class="hidden">
-        <button class="btn" onclick="pickImg('mappop-${b.id}')">📷 Envoyer</button>
+        <button class="btn" onclick="pickImg('mappop-${b.id}')">${curIco("camera")} Envoyer</button>
       </div>
       <select id="mappop-${b.id}-img-sel" onchange="mapOnImgSelect('${b.id}')">${imgSelectOptions(img)}</select>
     </div>
@@ -1645,7 +1649,7 @@ function openTerrainPanel() {
       '<tr><td>' + esc(p.id) + ' &rarr; ' + esc(a.id) + '</td>' +
       '<td style="text-align:right">' + fmt(d) + '</td>' +
       '<td style="text-align:right;color:var(--text-muted)">rayons ' + (ra === defR ? defR + ' (déf.)' : ra + '') + ' + ' + (rp === defR ? defR + ' (déf.)' : rp + '') + '</td>' +
-      '<td>' + (d < sum ? '⚠️ cercles GPS qui se chevauchent : QR code conseillé ou rayons plus petits' : '✔') + '</td></tr>'
+      '<td>' + (d < sum ? curIco("warning") + ' cercles GPS qui se chevauchent : QR code conseillé ou rayons plus petits' : curIco("check")) + '</td></tr>'
     );
   }
   const head = '<strong>📏 Préparation du terrain</strong> — ' + BALISES.length + ' balises · ' +
@@ -1657,7 +1661,7 @@ function openTerrainPanel() {
   ov.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:2200;display:flex;align-items:center;justify-content:center;padding:18px";
   ov.innerHTML = '<div style="background:var(--card,#fff);color:var(--text,#222);max-width:860px;width:100%;max-height:82vh;overflow:auto;border-radius:14px;padding:16px 18px;box-shadow:0 12px 40px rgba(0,0,0,.45)">' +
     '<div style="display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:10px"><span>' + head + '</span>' +
-    '<button class="btn btn-primary" id="terrain-close">✖ Fermer</button></div>' +
+    '<button class="btn btn-primary" id="terrain-close">' + curIco("close") + ' Fermer</button></div>' +
     '<table style="width:100%;border-collapse:collapse;font-size:14px"><thead><tr>' +
     '<th style="text-align:left;padding:6px 8px;border-bottom:2px solid var(--line,#ddd)">Étape</th>' +
     '<th style="text-align:right;padding:6px 8px;border-bottom:2px solid var(--line,#ddd)">Distance</th>' +

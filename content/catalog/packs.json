@@ -1,8 +1,9 @@
 {
   "$schema": "curios-catalog-index-v1",
   "version": 1,
-  "updatedAt": "2026-08-29",
+  "updatedAt": "2026-08-31",
   "packs": [
+    "demo",
     "biais-cognitifs",
     "cemea-education-populaire",
     "cosmos-mission-orion",

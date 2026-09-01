@@ -5,6 +5,9 @@ const $ = (id) => document.getElementById(id);
 function esc(s) {
   return String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 }
+function curIco(name, cls) {
+  return '<img class="cur-icon' + (cls ? " " + cls : "") + '" src="img/icons/' + name + '.svg" alt="">';
+}
 
 const DASH_LANGS = { fr: "Français" };
 let dashLang = "fr";
@@ -97,6 +100,17 @@ const DASH_T = {
     packs_offline: "Hors ligne : catalogue indisponible.",
   },
 };
+/* Émojis structurels → icônes du pack officiel (img/img/icons/*.svg),
+       réservé aux nœuds rendus en HTML (data-i18n-html). */
+const ICON_MAP = {
+  "🗺️": "map",
+  "⚙️": "settings",
+  "✅": "check",
+};
+const ICON_RE = new RegExp(Object.keys(ICON_MAP).sort((a, b) => b.length - a.length).join("|"));
+function icoify(str) {
+  return String(str).replace(ICON_RE, (e) => '<img class="cur-icon" src="img/icons/' + ICON_MAP[e] + '.svg" alt="">');
+}
 function T(key) {
   const v = (DASH_T[dashLang] && DASH_T[dashLang][key]) || DASH_T.fr[key];
   return v == null ? key : v;
@@ -108,7 +122,7 @@ function applyLang() {
   document.documentElement.lang = dashLang;
   document.title = T("dash_title");
   document.querySelectorAll("[data-i18n]").forEach((el) => { el.textContent = T(el.getAttribute("data-i18n")); });
-  document.querySelectorAll("[data-i18n-html]").forEach((el) => { el.innerHTML = T(el.getAttribute("data-i18n-html")); });
+  document.querySelectorAll("[data-i18n-html]").forEach((el) => { el.innerHTML = icoify(T(el.getAttribute("data-i18n-html"))); });
   document.querySelectorAll("[data-i18n-ph]").forEach((el) => { el.setAttribute("placeholder", T(el.getAttribute("data-i18n-ph"))); });
   document.querySelectorAll("[data-i18n-title]").forEach((el) => { el.setAttribute("title", T(el.getAttribute("data-i18n-title"))); });
   document.querySelectorAll("[data-i18n-aria]").forEach((el) => { el.setAttribute("aria-label", T(el.getAttribute("data-i18n-aria"))); });
@@ -643,20 +657,20 @@ function renderFamilies() {
       (onl === 1 ? T("fam_online") : (onl === 0 ? T("fam_offline") : "📶 —")) +
       (st.net ? TF("fam_net", { net: esc(st.net) }) : "") + "</span>");
     if (st.bat != null && st.bat !== "") {
-      parts.push('<span class="fam-tag">🔋 ' + esc(String(st.bat)) + " %" + (st.chg ? " ⚡" : "") + "</span>");
+      parts.push('<span class="fam-tag">' + curIco("battery") + ' ' + esc(String(st.bat)) + " %" + (st.chg ? " ⚡" : "") + "</span>");
     } else {
-      parts.push('<span class="fam-tag">🔋 —</span>');
+      parts.push('<span class="fam-tag">' + curIco("battery") + ' —</span>');
     }
     const cam = String(st.cam || "");
     parts.push('<span class="fam-tag ' + (cam === "granted" ? "ok" : (cam === "denied" ? "ko" : "")) + '">' +
       (cam === "granted" ? T("fam_cam_ok") : (cam === "denied" ? T("fam_cam_no") : (cam === "prompt" ? T("fam_cam_ask") : "📷 —"))) + "</span>");
     if (st.acc != null && st.acc !== "") {
-      parts.push('<span class="fam-tag">🛰️ ±' + esc(String(st.acc)) + " m" + (st.posAt ? " (" + esc(st.posAt) + ")" : "") + "</span>");
+      parts.push('<span class="fam-tag">' + curIco("gps") + ' ±' + esc(String(st.acc)) + " m" + (st.posAt ? " (" + esc(st.posAt) + ")" : "") + "</span>");
     } else {
-      parts.push('<span class="fam-tag">🛰️ —</span>');
+      parts.push('<span class="fam-tag">' + curIco("gps") + ' —</span>');
     }
-    parts.push('<span class="fam-tag">✅ ' + done.size + "/" + BALISES.length + "</span>");
-    if (st.seen) parts.push('<span class="fam-tag">👁️ ' + TF("fam_seen", { t: esc(st.seen) }) + "</span>");
+    parts.push('<span class="fam-tag">' + curIco("check") + ' ' + done.size + "/" + BALISES.length + "</span>");
+    if (st.seen) parts.push('<span class="fam-tag">' + curIco("observation") + ' ' + TF("fam_seen", { t: esc(st.seen) }) + "</span>");
     parts.push("</span>");
     card.innerHTML = parts.join("");
     const kick = document.createElement("button");
@@ -696,7 +710,7 @@ function renderFinishList() {
     row.appendChild(name);
     const st = document.createElement("span");
     st.className = "finish-stat";
-    st.textContent = "⭐ " + (t.stars || 0) + " · ⏱️ " + fmtTime(t.seconds || 0);
+    st.innerHTML = "⭐ " + (t.stars || 0) + " · " + curIco("timer") + " " + fmtTime(t.seconds || 0);
     row.appendChild(st);
     const det = document.createElement("small");
     det.textContent = "🏁 " + (t.balises || 0) + "/" + BALISES.length;
@@ -863,7 +877,7 @@ function renderValidations() {
     const b = document.createElement("b");
     b.textContent = tm.name;
     const small = document.createElement("small");
-    small.textContent = "✅ " + tm.done.size + "/" + BALISES.length;
+    small.innerHTML = curIco("check") + " " + tm.done.size + "/" + BALISES.length;
     head.appendChild(b);
     head.appendChild(small);
     div.appendChild(head);

@@ -20,43 +20,82 @@ import path from "node:path";
 const TOKEN_LENGTH = 32;
 const TOKEN_EXPIRY_MS = 24 * 60 * 60 * 1000; // 24h
 
+// Paramètres de hachage PBKDF2 (alignés sur hub-auth.js)
+const PBKDF2_ITERATIONS = 100000;
+const KEY_LENGTH = 64;
+const DIGEST = "sha512";
+const HASH_PREFIX = "pbkdf2$";
+
 export function createAuth(root) {
   const configFile = path.join(root, "data", "auth.json");
   const state = {
-    password: null,
+    password: null, // hash PBKDF2 au format "pbkdf2$salt$hash" ou null
+    legacyClear: null, // mot de passe en clair obsolète (migration)
     sessions: new Map(), // token → { createdAt, ip }
   };
 
-  // Charger le mot de passe depuis la config
+  // Charger le mot de passe depuis la config (gère la migration clair → hash)
   function loadPassword() {
     try {
       if (fs.existsSync(configFile)) {
         const data = JSON.parse(fs.readFileSync(configFile, "utf8"));
-        state.password = data.password || null;
+        if (typeof data.hash === "string" && typeof data.salt === "string") {
+          state.password = HASH_PREFIX + data.salt + "$" + data.hash;
+        } else if (typeof data.password === "string") {
+          // Ancien format en clair : on le conserve uniquement pour l'authentifier
+          // puis on le rechiffrera dès le prochain login réussi.
+          state.legacyClear = data.password;
+        }
       }
     } catch {}
   }
 
-  // Sauvegarder la config
+  // Sauvegarder la config (toujours hachée, jamais en clair)
   function savePassword(password) {
-    state.password = password;
+    const salt = crypto.randomBytes(16).toString("hex");
+    const hash = crypto.pbkdf2Sync(password, salt, PBKDF2_ITERATIONS, KEY_LENGTH, DIGEST).toString("hex");
+    state.password = HASH_PREFIX + salt + "$" + hash;
+    state.legacyClear = null;
     const dir = path.dirname(configFile);
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(configFile, JSON.stringify({ password }), "utf8");
+    fs.writeFileSync(configFile, JSON.stringify({ salt, hash }), "utf8");
+  }
+
+  // Contrôler si un mot de passe correspond ; rehache automatiquement un
+  // mot de passe encore au format clair hérité dès qu'il est vérifié.
+  function checkPassword(password) {
+    if (state.password && state.password.startsWith(HASH_PREFIX)) {
+      const body = state.password.slice(HASH_PREFIX.length);
+      const sep = body.indexOf("$");
+      const salt = body.slice(0, sep);
+      const expected = body.slice(sep + 1);
+      const derived = crypto.pbkdf2Sync(password, salt, PBKDF2_ITERATIONS, KEY_LENGTH, DIGEST).toString("hex");
+      const ok = constTimeEquals(derived, expected);
+      if (!ok) return false;
+      return true;
+    }
+    if (state.legacyClear != null) {
+      const ok = constTimeEquals(String(password), state.legacyClear);
+      if (ok) {
+        // Migration : on déplace le clair vers un hash persistant.
+        savePassword(password);
+      }
+      return ok;
+    }
+    return false;
+  }
+
+  // Comparaison à temps constant pour les chaînes hexadécimales
+  function constTimeEquals(a, b) {
+    const ba = Buffer.from(String(a));
+    const bb = Buffer.from(String(b));
+    if (ba.length !== bb.length) return false;
+    return crypto.timingSafeEqual(ba, bb);
   }
 
   // Générer un token aléatoire
   function generateToken() {
     return crypto.randomBytes(TOKEN_LENGTH).toString("hex");
-  }
-
-  // Vérifier un mot de passe
-  function checkPassword(password) {
-    if (!state.password) return false;
-    const a = Buffer.from(password);
-    const b = Buffer.from(state.password);
-    if (a.length !== b.length) return false;
-    return crypto.timingSafeEqual(a, b);
   }
 
   // Créer une session
@@ -118,10 +157,16 @@ export function createAuth(root) {
     return true;
   }
 
+  // Un mot de passe est-il défini (hash ou ancien clair en migration) ?
+  function hasPassword() {
+    return !!(state.password && state.password.startsWith(HASH_PREFIX)) || state.legacyClear != null;
+  }
+
   loadPassword();
 
   return {
     state,
+    hasPassword,
     loadPassword,
     savePassword,
     checkPassword,

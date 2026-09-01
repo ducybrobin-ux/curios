@@ -18,6 +18,7 @@ function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, (c) => (
 function slug(s) { return String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""); }
 function uid(prefix) { return `${prefix  }-${  Math.random().toString(36).slice(2, 7)}`; }
 function setStatus(msg, cls) { const st = document.getElementById("at-status"); st.textContent = msg; st.className = `status-pill ${  cls || ""}`; }
+function curIco(name, cls) { return `<img class="cur-icon${  cls ? " " + cls : ""  }" src="img/icons/${  name  }.svg" alt="">`; }
 
 /* écrit v à l'emplacement « d.0.quiz.1.q », « g.2.nom », « pack.id »… */
 function applyPath(p, v) {
@@ -260,7 +261,7 @@ function render() {
     inp(`d.${  i  }.taille`, "Antidote (sous-titre affiché)", d.taille) 
     }${d.anecdotes.map((a, ai) => inp(`d.${  i  }.anecdotes.${  ai}`, `Anecdote / exemple ${  ai + 1}`, a, { type: "textarea" })).join("") 
     }${pedagoBlock(`d.${  i  }.pedagogie`, d.pedagogie) 
-    }<div class="q-head" style="margin-top:10px;"><b>❓ Quiz</b><button class="btn btn-outline" data-act="add-q" data-i="${  i  }">➕ Question</button></div>${ 
+    }<div class="q-head" style="margin-top:10px;"><b>${curIco("help")} Quiz</b><button class="btn btn-outline" data-act="add-q" data-i="${  i  }">➕ Question</button></div>${ 
     quizBlock(i, d.quiz) 
     }</details>`).join("");
 
@@ -279,7 +280,7 @@ function render() {
 
   const birdOpts = AT.decouvertes.map((d) => d.id);
   const bCards = AT.balises.map((b, i) =>
-    `<details class="ed-card" open><summary>📍 ${  esc(b.id)  } — ${  esc(b.label || "(sans libellé)") 
+    `<details class="ed-card" open><summary>${curIco("location")} ${  esc(b.id)  } — ${  esc(b.label || "(sans libellé)") 
     }<button class="btn ed-remove-btn" data-act="del-b" data-i="${  i  }">➖</button></summary>` +
     `<p class="ed-id">${  esc(b.code)  }</p>` +
     `<div class="field-row">${  inp(`b.${  i  }.id`, "Identifiant", b.id)  }${inp(`b.${  i  }.code`, "Code de validation", b.code)  }</div>${ 
@@ -309,9 +310,9 @@ function render() {
   document.getElementById("lists-root").innerHTML =
     `<h3 class="sec-title">🧠 Découvertes (${  AT.decouvertes.length  })</h3>` +
     `<button class="btn btn-outline" data-act="add-d">➕ Ajouter une découverte</button>${  dCards 
-    }<h3 class="sec-title">📚 Notions du guide (${  AT.guide.length  })</h3>` +
+    }<h3 class="sec-title">${curIco("info")} Notions du guide (${  AT.guide.length  })</h3>` +
     `<button class="btn btn-outline" data-act="add-g">➕ Ajouter une notion</button>${  gCards 
-    }<h3 class="sec-title">📍 Balises (${  AT.balises.length  })</h3>` +
+    }<h3 class="sec-title">${curIco("location")} Balises (${  AT.balises.length  })</h3>` +
     `<button class="btn btn-outline" data-act="add-b">➕ Ajouter une balise</button>${  bCards
     }<h3 class="sec-title">⚡ Événements (${  AT.events.length  })</h3>` +
     `<button class="btn btn-outline" data-act="add-ev">➕ Ajouter un événement</button>${  evCards}`;

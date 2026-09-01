@@ -9,14 +9,31 @@
   "emoji": "🔧",
   "difficulty": "facile",
   "durationMin": 80,
-  "players": [1, 10],
+  "players": [
+    1,
+    10
+  ],
   "location": "En classe ou sur le terrain",
   "environment": "mixte",
-  "skills": ["Orientation", "Découverte des métiers", "Projet professionnel"],
-  "material": ["Smartphone"],
-  "goals": ["Découvrir des métiers en tension", "Comprendre l'orientation", "Construire son projet"],
+  "skills": [
+    "Orientation",
+    "Découverte des métiers",
+    "Projet professionnel"
+  ],
+  "material": [
+    "Smartphone"
+  ],
+  "goals": [
+    "Découvrir des métiers en tension",
+    "Comprendre l'orientation",
+    "Construire son projet"
+  ],
   "staff": true,
-  "badges": ["Orientation", "Éducatif"],
+  "badges": [
+    "Orientation",
+    "Éducatif"
+  ],
   "collection": "Orientation & métiers",
-  "featured": false
+  "featured": false,
+  "dramatisation": "Des entreprises recrutent fortement : bâtiment, soin, alimentation, transport, réparation, agriculture, industrie. Huit découvertes de familles de métiers pour explorer les voies possibles et quatre notions pour comprendre l'orientation. Une mission conçue pour le cycle 4 et la 3e."
 }
