@@ -4,5 +4,12 @@
   "latin": "Corvus corone",
   "category": "diurne",
   "size": "48 cm",
-  "description": "Très intelligente, toute noire, elle est souvent vue en couple dans les prés de la Creuse."
+  "description": "Très intelligente, toute noire, elle est souvent vue en couple dans les prés de la Creuse.",
+  "pedagogie": {
+    "ages": [
+      6,
+      12
+    ],
+    "objectif": "Comprendre la corneille noire, son intelligence et ses mœurs."
+  }
 }

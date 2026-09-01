@@ -4,5 +4,12 @@
   "latin": "Fringilla coelebs",
   "category": "diurne",
   "size": "15 cm",
-  "description": "Très commun dans les forêts et les jardins de la Creuse. Le mâle a la tête bleu-gris et la poitrine orangée."
+  "description": "Très commun dans les forêts et les jardins de la Creuse. Le mâle a la tête bleu-gris et la poitrine orangée.",
+  "pedagogie": {
+    "ages": [
+      6,
+      12
+    ],
+    "objectif": "Reconnaître le pinson des arbres et son rayon alaire blanc."
+  }
 }

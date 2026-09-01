@@ -4,5 +4,12 @@
   "latin": "Hirundo rustica",
   "category": "diurne",
   "size": "19 cm",
-  "description": "Reine des étés, elle revient d'Afrique au printemps et niche sous les toits des fermes."
+  "description": "Reine des étés, elle revient d'Afrique au printemps et niche sous les toits des fermes.",
+  "pedagogie": {
+    "ages": [
+      6,
+      12
+    ],
+    "objectif": "Découvrir l'hirondelle rustique, migrateur emblématique des étés."
+  }
 }

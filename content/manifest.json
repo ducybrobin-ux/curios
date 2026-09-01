@@ -10,6 +10,10 @@
                       "actif":  false
                   },
                   {
+                      "id":  "cristaux-de-balto",
+                      "actif":  false
+                  },
+                  {
                       "id":  "harcelement-scolaire",
                       "actif":  false
                   },
@@ -27,6 +31,10 @@
                   },
                   {
                       "id":  "passeur-relais",
+                      "actif":  false
+                  },
+                  {
+                      "id":  "tsle1-ornithologie",
                       "actif":  false
                   },
                   {

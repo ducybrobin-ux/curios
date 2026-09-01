@@ -2,15 +2,41 @@
   "id": "mesange",
   "nom": "Mésange charbonnière",
   "latin": "Parus major",
-  "category": "diurne",
-  "size": "14 cm",
   "chant": {
     "tempo": 150,
     "notes": [
-      { "f": 7000, "fEnd": 6800, "d": 0.10, "g": 0.05, "type": "square", "v": 0.35 },
-      { "f": 7000, "fEnd": 6800, "d": 0.10, "g": 0.05, "type": "square", "v": 0.35 },
-      { "f": 5200, "fEnd": 5000, "d": 0.12, "g": 0.05, "type": "square", "v": 0.4 },
-      { "f": 5200, "fEnd": 5000, "d": 0.12, "g": 0.30, "type": "square", "v": 0.4 }
+      {
+        "f": 7000,
+        "fEnd": 6800,
+        "d": 0.1,
+        "g": 0.05,
+        "type": "square",
+        "v": 0.35
+      },
+      {
+        "f": 7000,
+        "fEnd": 6800,
+        "d": 0.1,
+        "g": 0.05,
+        "type": "square",
+        "v": 0.35
+      },
+      {
+        "f": 5200,
+        "fEnd": 5000,
+        "d": 0.12,
+        "g": 0.05,
+        "type": "square",
+        "v": 0.4
+      },
+      {
+        "f": 5200,
+        "fEnd": 5000,
+        "d": 0.12,
+        "g": 0.3,
+        "type": "square",
+        "v": 0.4
+      }
     ]
   },
   "anecdotes": [
@@ -21,13 +47,32 @@
   "quiz": [
     {
       "q": "Quelle est la « cravate » de la mésange charbonnière ?",
-      "options": ["Une ligne noire sur le ventre", "Une écharpe rouge", "Un collier de feuilles"],
+      "options": [
+        "Une ligne noire sur le ventre",
+        "Une écharpe rouge",
+        "Un collier de feuilles"
+      ],
       "reponse": 0
     },
     {
       "q": "Sa chanson ressemble à…",
-      "options": ["Un « coucou »", "Un martèlement « ti-ti-tsa-tsa »", "Un miaulement"],
+      "options": [
+        "Un « coucou »",
+        "Un martèlement « ti-ti-tsa-tsa »",
+        "Un miaulement"
+      ],
       "reponse": 1
     }
-  ]
+  ],
+  "categorie": "diurne",
+  "taille": "14 cm",
+  "emoji": "🐦",
+  "couleur": "#3f7dba",
+  "pedagogie": {
+    "ages": [
+      6,
+      12
+    ],
+    "objectif": "Reconnaître la mésange et son chant simple, présent près de l'homme."
+  }
 }

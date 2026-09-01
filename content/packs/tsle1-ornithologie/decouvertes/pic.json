@@ -2,23 +2,105 @@
   "id": "pic",
   "nom": "Pic épeiche",
   "latin": "Dendrocopos major",
-  "category": "diurne",
-  "size": "23 cm",
   "chant": {
     "tempo": 120,
     "notes": [
-      { "f": 200, "fEnd": 200, "d": 0.05, "g": 0.03, "type": "noise", "v": 0.7 },
-      { "f": 200, "fEnd": 200, "d": 0.05, "g": 0.03, "type": "noise", "v": 0.7 },
-      { "f": 200, "fEnd": 200, "d": 0.05, "g": 0.03, "type": "noise", "v": 0.7 },
-      { "f": 200, "fEnd": 200, "d": 0.05, "g": 0.03, "type": "noise", "v": 0.7 },
-      { "f": 200, "fEnd": 200, "d": 0.05, "g": 0.03, "type": "noise", "v": 0.7 },
-      { "f": 200, "fEnd": 200, "d": 0.05, "g": 0.03, "type": "noise", "v": 0.7 },
-      { "f": 200, "fEnd": 200, "d": 0.05, "g": 0.03, "type": "noise", "v": 0.7 },
-      { "f": 200, "fEnd": 200, "d": 0.05, "g": 0.03, "type": "noise", "v": 0.7 },
-      { "f": 200, "fEnd": 200, "d": 0.05, "g": 0.03, "type": "noise", "v": 0.7 },
-      { "f": 200, "fEnd": 200, "d": 0.05, "g": 0.03, "type": "noise", "v": 0.7 },
-      { "f": 200, "fEnd": 200, "d": 0.05, "g": 0.03, "type": "noise", "v": 0.7 },
-      { "f": 200, "fEnd": 200, "d": 0.05, "g": 0.40, "type": "noise", "v": 0.7 }
+      {
+        "f": 200,
+        "fEnd": 200,
+        "d": 0.05,
+        "g": 0.03,
+        "type": "noise",
+        "v": 0.7
+      },
+      {
+        "f": 200,
+        "fEnd": 200,
+        "d": 0.05,
+        "g": 0.03,
+        "type": "noise",
+        "v": 0.7
+      },
+      {
+        "f": 200,
+        "fEnd": 200,
+        "d": 0.05,
+        "g": 0.03,
+        "type": "noise",
+        "v": 0.7
+      },
+      {
+        "f": 200,
+        "fEnd": 200,
+        "d": 0.05,
+        "g": 0.03,
+        "type": "noise",
+        "v": 0.7
+      },
+      {
+        "f": 200,
+        "fEnd": 200,
+        "d": 0.05,
+        "g": 0.03,
+        "type": "noise",
+        "v": 0.7
+      },
+      {
+        "f": 200,
+        "fEnd": 200,
+        "d": 0.05,
+        "g": 0.03,
+        "type": "noise",
+        "v": 0.7
+      },
+      {
+        "f": 200,
+        "fEnd": 200,
+        "d": 0.05,
+        "g": 0.03,
+        "type": "noise",
+        "v": 0.7
+      },
+      {
+        "f": 200,
+        "fEnd": 200,
+        "d": 0.05,
+        "g": 0.03,
+        "type": "noise",
+        "v": 0.7
+      },
+      {
+        "f": 200,
+        "fEnd": 200,
+        "d": 0.05,
+        "g": 0.03,
+        "type": "noise",
+        "v": 0.7
+      },
+      {
+        "f": 200,
+        "fEnd": 200,
+        "d": 0.05,
+        "g": 0.03,
+        "type": "noise",
+        "v": 0.7
+      },
+      {
+        "f": 200,
+        "fEnd": 200,
+        "d": 0.05,
+        "g": 0.03,
+        "type": "noise",
+        "v": 0.7
+      },
+      {
+        "f": 200,
+        "fEnd": 200,
+        "d": 0.05,
+        "g": 0.4,
+        "type": "noise",
+        "v": 0.7
+      }
     ]
   },
   "anecdotes": [
@@ -29,13 +111,32 @@
   "quiz": [
     {
       "q": "Pourquoi le pic frappe-t-il les arbres ?",
-      "options": ["Pour casser des noix", "Pour en sortir les insectes", "Pour faire peur aux promeneurs"],
+      "options": [
+        "Pour casser des noix",
+        "Pour en sortir les insectes",
+        "Pour faire peur aux promeneurs"
+      ],
       "reponse": 1
     },
     {
       "q": "Comment s'appelle son cri de frappe ?",
-      "options": ["Le tambourinage", "Le ronronnement", "Le cliquetis"],
+      "options": [
+        "Le tambourinage",
+        "Le ronronnement",
+        "Le cliquetis"
+      ],
       "reponse": 0
     }
-  ]
+  ],
+  "categorie": "diurne",
+  "taille": "23 cm",
+  "emoji": "🐦",
+  "couleur": "#b03a3a",
+  "pedagogie": {
+    "ages": [
+      6,
+      12
+    ],
+    "objectif": "Découvrir le pic épeiche et son tambourinement sur le bois."
+  }
 }

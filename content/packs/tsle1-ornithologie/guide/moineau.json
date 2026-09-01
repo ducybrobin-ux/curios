@@ -4,5 +4,12 @@
   "latin": "Passer domesticus",
   "category": "diurne",
   "size": "15 cm",
-  "description": "Inséparable des habitations, il gazouille dans les haies et les cours de ferme, souvent en bandes."
+  "description": "Inséparable des habitations, il gazouille dans les haies et les cours de ferme, souvent en bandes.",
+  "pedagogie": {
+    "ages": [
+      6,
+      12
+    ],
+    "objectif": "Comprendre le moineau domestique, voisin discret des villes."
+  }
 }

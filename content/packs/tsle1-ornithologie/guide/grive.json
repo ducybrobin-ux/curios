@@ -4,5 +4,12 @@
   "latin": "Turdus philomelos",
   "category": "diurne",
   "size": "22 cm",
-  "description": "Sa poitrine est couverte de petits points. Elle chante en répétant chaque phrase deux fois."
+  "description": "Sa poitrine est couverte de petits points. Elle chante en répétant chaque phrase deux fois.",
+  "pedagogie": {
+    "ages": [
+      6,
+      12
+    ],
+    "objectif": "Observer la grive musicienne et son plumage tacheté."
+  }
 }

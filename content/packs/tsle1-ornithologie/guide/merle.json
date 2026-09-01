@@ -4,5 +4,12 @@
   "latin": "Turdus merula",
   "category": "diurne",
   "size": "25 cm",
-  "description": "Le mâle est tout noir avec un bec jaune orangé, la femelle est brune. Il sautille sur la pelouse et chante dès l'aube, perché sur un toit."
+  "description": "Le mâle est tout noir avec un bec jaune orangé, la femelle est brune. Il sautille sur la pelouse et chante dès l'aube, perché sur un toit.",
+  "pedagogie": {
+    "ages": [
+      6,
+      12
+    ],
+    "objectif": "Identifier le merle noir et son chant mélodieux du soir."
+  }
 }

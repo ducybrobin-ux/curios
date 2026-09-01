@@ -2,13 +2,25 @@
   "id": "buse",
   "nom": "Buse variable",
   "latin": "Buteo buteo",
-  "category": "diurne",
-  "size": "55 cm",
   "chant": {
     "tempo": 30,
     "notes": [
-      { "f": 2100, "fEnd": 900, "d": 0.55, "g": 0.20, "type": "sine", "v": 0.5 },
-      { "f": 1800, "fEnd": 750, "d": 0.50, "g": 1.4, "type": "sine", "v": 0.45 }
+      {
+        "f": 2100,
+        "fEnd": 900,
+        "d": 0.55,
+        "g": 0.2,
+        "type": "sine",
+        "v": 0.5
+      },
+      {
+        "f": 1800,
+        "fEnd": 750,
+        "d": 0.5,
+        "g": 1.4,
+        "type": "sine",
+        "v": 0.45
+      }
     ]
   },
   "anecdotes": [
@@ -19,13 +31,32 @@
   "quiz": [
     {
       "q": "Comment reconnaître le cri de la buse ?",
-      "options": ["Un « piiia » aigu", "Un « coucou »", "Un tambourinement"],
+      "options": [
+        "Un « piiia » aigu",
+        "Un « coucou »",
+        "Un tambourinement"
+      ],
       "reponse": 0
     },
     {
       "q": "Où construit-elle son nid ?",
-      "options": ["Dans une haie basse", "Très haut dans les arbres", "Sous les pierres"],
+      "options": [
+        "Dans une haie basse",
+        "Très haut dans les arbres",
+        "Sous les pierres"
+      ],
       "reponse": 1
     }
-  ]
+  ],
+  "categorie": "diurne",
+  "taille": "55 cm",
+  "emoji": "🦅",
+  "couleur": "#7a5c2e",
+  "pedagogie": {
+    "ages": [
+      6,
+      12
+    ],
+    "objectif": "Reconnaître la buse variable et comprendre son rôle de rapace des plaines."
+  }
 }

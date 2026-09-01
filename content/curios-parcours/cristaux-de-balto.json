@@ -1,0 +1,1212 @@
+{
+  "$format": "curios-parcours",
+  "$version": 1,
+  "id": "cristaux-de-balto",
+  "title": "Les Cristaux de Balto",
+  "metadata": {
+    "author": "",
+    "organization": "",
+    "language": "fr",
+    "license": "",
+    "createdAt": "2026-09-01",
+    "updatedAt": "2026-09-01",
+    "source": {
+      "format": "jdpbc-pack",
+      "version": 1
+    }
+  },
+  "description": "Neuf découvertes sur la vie de la meute, le husky de Sibérie, le matériel d'attelage, les sports canins, l'hébergement trappeur et la légende de Balto, quatre notions complémentaires et neuf balises énigmatiques à l'élevage de Charron (Creuse).",
+  "theme": "huskys de Sibérie, meute et métier de musher",
+  "audience": {
+    "minAge": 7,
+    "maxAge": 99
+  },
+  "duration": null,
+  "pedagogy": {
+    "objectives": [
+      "Situer l'histoire du transport attelé et des courses nordiques",
+      "Connaître les caractéristiques physiques et comportementales du husky",
+      "Découvrir les coulisses du métier et le rôle de handler",
+      "Identifier les principes du bien-être animal et du respect du vivant",
+      "Découvrir l'élevage, son territoire et son esprit",
+      "Comprendre l'organisation sociale de la meute et la place de chacun",
+      "Connaître le husky de Sibérie, ses origines et ses adaptations",
+      "Identifier les besoins quotidiens des chiens et le respect du vivant",
+      "Nommer le matériel d'attelage et comprendre son rôle",
+      "Distinguer cani-kart, cani-randonnée et balade en traîneau",
+      "Découvrir l'hébergement insolite et l'esprit week-end trappeur",
+      "Comprendre le métier de musher et le rôle de handler",
+      "Raconter la grande course au sérum de Nome (1925) et la légende de Balto"
+    ],
+    "skills": [],
+    "competencies": [
+      {
+        "id": "histoire-du-mushing",
+        "nom": "L'histoire du mushing",
+        "description": "Pendant des millénaires, les peuples circumpolaires ont attelé leurs chiens pour chasser, pêcher et voyager : le traîneau était leur lien vital. À la fin du XIXe siècle, la ruée vers l'or en Alaska fait du mushing un métier ; en 1925, la course au sérum de Nome transforme ces chiens en héros mondiaux. Aujourd'hui, le mushing est un sport pratiqué dans le respect des chiens — et Balto veille sur son souvenir.",
+        "emoji": "🛷",
+        "objectif": "Situer l'histoire du transport attelé et des courses nordiques",
+        "ages": [
+          8,
+          99
+        ],
+        "programme": [
+          "cycle 3",
+          "cycle 4"
+        ],
+        "anecdotes": [
+          "Le mot « musher » vient du cri « marche ! » (marchons) lancé aux chiens par les Canadiens francophones.",
+          "L'Iditarod, grande course d'Alaska, reprend en partie le tracé historique de la course au sérum de 1925 : environ 1 800 km.",
+          "Avant les avions et les routes, le traîneau était le seul « bus » fiable de l'hiver arctique."
+        ]
+      },
+      {
+        "id": "husky-de-siberie",
+        "nom": "Le husky de Sibérie",
+        "description": "Taille moyenne (50-60 cm), ossature puissante sans lourdeur, allures légères et fluides : le husky est un coureur de fond. Très sociable avec l'humain comme avec ses congénères, il reste avant tout un chien de travail qui a besoin de dépense, de cadre et de fraîcheur. Son cri du loup porte loin dans la nuit.",
+        "emoji": "❄️",
+        "objectif": "Connaître les caractéristiques physiques et comportementales du husky",
+        "ages": [
+          7,
+          99
+        ],
+        "programme": [
+          "cycle 2",
+          "cycle 3"
+        ],
+        "anecdotes": [
+          "Race officiellement reconnue depuis 1930 aux États-Unis, née des sélections des Tchouktches de Sibérie orientale.",
+          "Ses yeux peuvent être bruns, bleus, vairons… ou hétérochromes : un œil de chaque couleur !",
+          "Le sous-poil dense et le poil de couverture imperméable forment une barrière thermique redoutable."
+        ]
+      },
+      {
+        "id": "metier-de-musher",
+        "nom": "Le métier de musher",
+        "description": "Être musher, c'est piloter un attelage… mais surtout gérer une meute entière : alimentation, soins, entraînements progressifs, matériel, sécurité. Le handler l'assiste comme un second capitaine. L'initiation proposée dès 12 ans permet de devenir, le temps d'une demi-journée, le bras droit du musher : c'est concret, physique et passionnant.",
+        "emoji": "🧭",
+        "objectif": "Découvrir les coulisses du métier et le rôle de handler",
+        "ages": [
+          10,
+          99
+        ],
+        "programme": [
+          "cycle 4"
+        ],
+        "anecdotes": [
+          "Le musher ne choisit pas ses chiens au hasard : chaque place de l'attelage correspond à un tempérament (leaders, moteurs, roues).",
+          "Un handler apprend à reconnaître chaque husky individuellement : oreilles, queue, caractère… et préférences de câlins.",
+          "La saison se prépare l'été : entraînements à la carte à pneus, contrôles vétérinaires, révision du matériel."
+        ]
+      },
+      {
+        "id": "respect-du-vivant",
+        "nom": "Le respect du vivant",
+        "description": "Ici, chaque activité est pensée « dans le respect de leur bien-être, de la faune, de la flore » : sorties adaptées à la météo et aux capacités de chacun, repos protégé, alimentation soignée. Et parce que l'élevage vit au cœur des paysages préservés de la Creuse, les balades apprennent aussi à marcher sans trace : rester sur les pistes, observer sans déranger, repartir plus malin qu'en arrivant.",
+        "emoji": "🌿",
+        "objectif": "Identifier les principes du bien-être animal et du respect du vivant",
+        "ages": [
+          7,
+          99
+        ],
+        "programme": [
+          "cycle 2",
+          "cycle 3"
+        ],
+        "anecdotes": [
+          "Les sorties sont annulées par forte chaleur : le bien-être des chiens passe toujours avant la prestation.",
+          "Les pistes traversent un bocage vivant : on y respecte les nichées, les fleurs sauvages et le bétail voisin.",
+          "Observer un chien heureux : oreilles hautes, queue souple, envie de partir. C'est le meilleur des indicateurs."
+        ]
+      }
+    ],
+    "evaluation": []
+  },
+  "game": {
+    "mode": "courses",
+    "scoring": {
+      "starsPerStation": 3,
+      "timeBonus": true
+    },
+    "rules": {
+      "order": "libre"
+    }
+  },
+  "location": {
+    "provider": "schematic",
+    "center": null,
+    "trail": []
+  },
+  "stations": [
+    {
+      "id": "B1",
+      "label": "La porte des Cristaux",
+      "code": "JDP-B1",
+      "discoveryId": "accueil-elevage",
+      "x": 240,
+      "y": 105,
+      "lat": 50.7258178,
+      "lng": 3.1329639,
+      "radius": null,
+      "missions": [
+        "B1-enigme"
+      ]
+    },
+    {
+      "id": "B2",
+      "label": "Le cercle de la meute",
+      "code": "JDP-B2",
+      "discoveryId": "vie-meute",
+      "x": 348,
+      "y": 153,
+      "lat": 46.03095,
+      "lng": 2.55332,
+      "radius": null,
+      "missions": [
+        "B2-enigme"
+      ]
+    },
+    {
+      "id": "B3",
+      "label": "Le manteau du Nord",
+      "code": "JDP-B3",
+      "discoveryId": "husky-siberien",
+      "x": 405,
+      "y": 274,
+      "lat": 46.03075,
+      "lng": 2.55347,
+      "radius": null,
+      "missions": [
+        "B3-enigme"
+      ]
+    },
+    {
+      "id": "B4",
+      "label": "Le refuge des soins",
+      "code": "JDP-B4",
+      "discoveryId": "bienetre-animal",
+      "x": 385,
+      "y": 412,
+      "lat": 46.0305,
+      "lng": 2.55337,
+      "radius": null,
+      "missions": [
+        "B4-enigme"
+      ]
+    },
+    {
+      "id": "B5",
+      "label": "Le hangar des attelages",
+      "code": "JDP-B5",
+      "discoveryId": "materiel-attelage",
+      "x": 297,
+      "y": 503,
+      "lat": 46.03032,
+      "lng": 2.55307,
+      "radius": null,
+      "missions": [
+        "B5-enigme"
+      ]
+    },
+    {
+      "id": "B6",
+      "label": "La piste des sensations",
+      "code": "JDP-B6",
+      "discoveryId": "cani-sports",
+      "x": 183,
+      "y": 503,
+      "lat": 46.03032,
+      "lng": 2.55272,
+      "radius": null,
+      "missions": [
+        "B6-enigme"
+      ]
+    },
+    {
+      "id": "B7",
+      "label": "La yourte des voyageurs",
+      "code": "JDP-B7",
+      "discoveryId": "yourte-tipi",
+      "x": 95,
+      "y": 412,
+      "lat": 46.0305,
+      "lng": 2.55244,
+      "radius": null,
+      "missions": [
+        "B7-enigme"
+      ]
+    },
+    {
+      "id": "B8",
+      "label": "L'école des handlers",
+      "code": "JDP-B8",
+      "discoveryId": "metier-handler",
+      "x": 75,
+      "y": 274,
+      "lat": 46.03075,
+      "lng": 2.55234,
+      "radius": null,
+      "missions": [
+        "B8-enigme"
+      ]
+    },
+    {
+      "id": "B9",
+      "label": "La ligne de départ",
+      "code": "JDP-B9",
+      "discoveryId": "legende-balto",
+      "x": 132,
+      "y": 153,
+      "lat": 46.03098,
+      "lng": 2.5525,
+      "radius": null,
+      "missions": [
+        "B9-enigme"
+      ]
+    }
+  ],
+  "missions": [
+    {
+      "id": "B1-enigme",
+      "type": "enigme",
+      "stationId": "B1",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Bienvenue ! Notre élevage se trouve dans un village de la Creuse qui s'appelle…",
+          "answers": [
+            "charron",
+            "charron creuse"
+          ],
+          "ages": [
+            7,
+            10
+          ],
+          "hint": "Comme le grand oiseau de mer au long bec : C-H-A-R-R-O-N.",
+          "knowMore": "L'adresse exacte : 3 La Chaux, 23700 Charron — entre Aubusson et Montluçon."
+        },
+        "moyen": {
+          "text": "Les Cristaux de Balto vous invitent à vivre une expérience authentique au cœur de la nature, en compagnie de chiens venus d'une région du Grand Nord. De quelle race ?",
+          "answers": [
+            "husky",
+            "huskys",
+            "husky de siberie",
+            "huskys de siberie",
+            "chien de traineau"
+          ],
+          "ages": [
+            11,
+            13
+          ],
+          "hint": "Ces chiens aux yeux bleus viennent de Sibérie : les h___ .",
+          "knowMore": "Chaque prestation est pensée « dans le respect de leur bien-être, de la faune, de la flore »."
+        },
+        "difficile": {
+          "text": "L'élevage est situé « aux portes » d'une petite sous-préfecture de la Creuse, citée en premier sur le site avec Aubusson et Clermont-Ferrand. Laquelle ?",
+          "answers": [
+            "auzances",
+            "a Auzances",
+            "aux portes d auzances"
+          ],
+          "ages": [
+            14,
+            99
+          ],
+          "hint": "Sept lettres, ça commence par « Au » comme Aubusson… mais ce n'est pas Aubusson.",
+          "knowMore": "Le massif des Combrailles et le bocage creusois encadrent les pistes d'entraînement."
+        }
+      }
+    },
+    {
+      "id": "B2-enigme",
+      "type": "enigme",
+      "stationId": "B2",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Les huskys vivent ensemble comme une grande famille. Comment appelle-t-on ce groupe de chiens (ou de loups) ?",
+          "answers": [
+            "meute",
+            "la meute",
+            "une meute"
+          ],
+          "ages": [
+            7,
+            10
+          ],
+          "hint": "M-E-U-T-E : cinq lettres, comme « loups ».",
+          "knowMore": "Dans une meute bien équilibrée, chacun trouve sa place — les aînés apaisent les jeunes."
+        },
+        "moyen": {
+          "text": "Je suis en tête d'attelage : je ne suis pas le plus fort, mais le plus lucide. Les mushers se fient à mon jugement sur la piste. Qui suis-je ?",
+          "answers": [
+            "chien de tete",
+            "le chien de tete",
+            "leader",
+            "le leader",
+            "tête"
+          ],
+          "ages": [
+            11,
+            13
+          ],
+          "hint": "En anglais on dirait le « leader »… mais ici on dit chien de ___ .",
+          "knowMore": "Un bon chien de tête anticipe les virages et rassure toute la ligne d'attelage."
+        },
+        "difficile": {
+          "text": "Chez les canidés, la « hiérarchie de dominance » a longtemps servi d'explication unique. Les travaux modernes décrivent plutôt la meute familiale comme…",
+          "answers": [
+            "famille",
+            "une famille",
+            "groupe familial",
+            "un groupe familial",
+            "cellule familiale"
+          ],
+          "ages": [
+            14,
+            99
+          ],
+          "hint": "Parents et jeunes apprennent ensemble : quel mot de 7 lettres ?",
+          "knowMore": "Observer les postures (queues, oreilles) suffit souvent à lire les relations dans le groupe."
+        }
+      }
+    },
+    {
+      "id": "B3-enigme",
+      "type": "enigme",
+      "stationId": "B3",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Mon pelage a deux étages pour me tenir chaud au Grand Nord. De quoi mon corps est-il protégé ?",
+          "answers": [
+            "froid",
+            "du froid",
+            "le froid"
+          ],
+          "ages": [
+            7,
+            10
+          ],
+          "hint": "Ce qu'on ressent en hiver quand on oublie son écharpe !",
+          "knowMore": "Sous-poil dense + poils imperméables = barrière thermique redoutable."
+        },
+        "moyen": {
+          "text": "Mes yeux peuvent être bruns, bleus… ou un de chaque couleur ! Comment s'appelle cette particularité ?",
+          "answers": [
+            "heterochromie",
+            "heterochrome",
+            "yeux vairons",
+            "vairon",
+            "vairons"
+          ],
+          "ages": [
+            11,
+            13
+          ],
+          "hint": "En français on dit aussi « yeux ___ » comme les chats.",
+          "knowMore": "Certains huskys ont même deux yeux de couleurs différentes : c'est admis par le standard de la race."
+        },
+        "difficile": {
+          "text": "Le husky de Sibérie fut sélectionné par un peuple autochtone du Grand Nord pour tirer de légères charges très loin en économisant son énergie. Quel peuple ?",
+          "answers": [
+            "tchouktches",
+            "les tchouktches",
+            "tchouktche",
+            "tchouktki"
+          ],
+          "ages": [
+            14,
+            99
+          ],
+          "hint": "Un peuple de Sibérie orientale dont le nom commence par « Tcho ».",
+          "knowMore": "La race est classée dans le groupe 5 FCI : spitz nordiques et types primitifs."
+        }
+      }
+    },
+    {
+      "id": "B4-enigme",
+      "type": "enigme",
+      "stationId": "B4",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Quand un husky est fatigué ou malade, une personne spéciale vient le soigner. Qui ?",
+          "answers": [
+            "veterinaire",
+            "le veterinaire",
+            "la veterinaire",
+            "un veterinaire",
+            "vet"
+          ],
+          "ages": [
+            7,
+            10
+          ],
+          "hint": "C'est le docteur des animaux : V-É-T-É-R-I-N-A-I-R-E.",
+          "knowMore": "Des contrôles réguliers veillent sur la santé de toute la meute."
+        },
+        "moyen": {
+          "text": "Par forte chaleur, que fait-on ici pour protéger les huskys ?",
+          "answers": [
+            "annule les sorties",
+            "on annule les sorties",
+            "pas de sortie",
+            "aucune sortie",
+            "on ne sort pas",
+            "repos"
+          ],
+          "ages": [
+            11,
+            13
+          ],
+          "hint": "On préfère reporter plutôt que risquer leur santé : leur plaisir se lit dans leurs oreilles !",
+          "knowMore": "Le bien-être animal inclut aussi le respect de la faune et de la flore des pistes."
+        },
+        "difficile": {
+          "text": "Sur la page d'accueil de l'élevage, chaque activité est présentée comme pensée « dans le respect de leur bien-être, de la faune, de la flore »… et de quoi d'autre, cité juste avant ?",
+          "answers": [
+            "nature",
+            "de la nature",
+            "la nature"
+          ],
+          "ages": [
+            14,
+            99
+          ],
+          "hint": "« Partager un moment de ___, de complicité et d'évasion ».",
+          "knowMore": "Marcher sans trace : rester sur les pistes, observer sans déranger, c'est aussi ça, l'esprit des lieux."
+        }
+      }
+    },
+    {
+      "id": "B5-enigme",
+      "type": "enigme",
+      "stationId": "B5",
+      "difficultyLevels": {
+        "facile": {
+          "text": "En hiver, les huskys tirent cet engin qui glisse sur la neige et transporte les voyageurs. De quoi s'agit-il ?",
+          "answers": [
+            "traineau",
+            "le traineau",
+            "un traineau",
+            "luge"
+          ],
+          "ages": [
+            7,
+            10
+          ],
+          "hint": "Il a des patins et une poignée : T-R-A-I-N-E-A-U.",
+          "knowMore": "Le musher freine avec le patin arrière et se tient à l'archet, la poignée du traîneau."
+        },
+        "moyen": {
+          "text": "Je suis le morceau d'équipement qui répartit la traction sur tout le corps du chien sans le blesser. Que suis-je ?",
+          "answers": [
+            "harnais",
+            "le harnais",
+            "un harnais"
+          ],
+          "ages": [
+            11,
+            13
+          ],
+          "hint": "Sept lettres — on le boucle autour du corps, jamais au cou.",
+          "knowMore": "Un bon harnais en X laisse les épaules libres : le chien tire avec plaisir."
+        },
+        "difficile": {
+          "text": "Sans neige, le traîneau cède sa place à un véhicule à roues tracté par l'attelage. Quel est son nom ?",
+          "answers": [
+            "cani kart",
+            "cani-kart",
+            "kart"
+          ],
+          "ages": [
+            14,
+            99
+          ],
+          "hint": "Deux mots : « cani » + le véhicule à quatre roues.",
+          "knowMore": "Le cani-kart permet de vivre les sensations de l'attelage toute l'année, hors forte chaleur."
+        }
+      }
+    },
+    {
+      "id": "B6-enigme",
+      "type": "enigme",
+      "stationId": "B6",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Je suis une marche sportive relié à un husky par un équipement spécial : on avance ensemble, à son rythme. Comment s'appelle mon activité ?",
+          "answers": [
+            "cani randonnee",
+            "cani-randonnee",
+            "la cani randonnee",
+            "canirando",
+            "cani rando"
+          ],
+          "ages": [
+            7,
+            10
+          ],
+          "hint": "« Cani » comme chien + une longue marche : la cani-___ .",
+          "knowMore": "Le chien, motivé par son instinct de traction, vous aide dans l'effort — complicité garantie."
+        },
+        "moyen": {
+          "text": "En cani-randonnée, qui donne le rythme de la marche ?",
+          "answers": [
+            "le binome",
+            "binome",
+            "le chien et lhumain",
+            "chien",
+            "le chien"
+          ],
+          "ages": [
+            11,
+            13
+          ],
+          "hint": "On avance « au rythme de son compagnon » : qui décide ?",
+          "knowMore": "L'initiation est encadrée : on apprend à gérer son binôme avant le départ."
+        },
+        "difficile": {
+          "text": "Selon la FAQ du site, pourquoi le pilotage d'attelage (cani-kart) n'est-il pas praticable toute l'année sans exception ?",
+          "answers": [
+            "forte chaleur",
+            "a cause de la forte chaleur",
+            "chaleur",
+            "bien etre des chiens",
+            "le bien etre des chiens"
+          ],
+          "ages": [
+            14,
+            99
+          ],
+          "hint": "Une raison météo… liée aux chiens, pas aux humains.",
+          "knowMore": "Les sorties sont organisées « selon les conditions adaptées aux animaux » : c'est écrit noir sur blanc sur le site."
+        }
+      }
+    },
+    {
+      "id": "B7-enigme",
+      "type": "enigme",
+      "stationId": "B7",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Pour dormir comme un trappeur, on peut coucher dans une tente ronde venue de Mongolie. Comment s'appelle-t-elle ?",
+          "answers": [
+            "yourte",
+            "la yourte",
+            "une yourte"
+          ],
+          "ages": [
+            7,
+            10
+          ],
+          "hint": "Y-O-U-R-T-E : six lettres, et elle est montée en rond !",
+          "knowMore": "Il y a aussi un tipi : l'hébergement insolite se choisit selon son humeur."
+        },
+        "moyen": {
+          "text": "Le week-end trappeur se déroule dans un camping au nom poétique, à la même adresse que l'élevage. Lequel ?",
+          "answers": [
+            "la toile sous les etoiles",
+            "toile sous les etoiles",
+            "camping la toile sous les etoiles"
+          ],
+          "ages": [
+            11,
+            13
+          ],
+          "hint": "Regardez le ciel cette nuit : sous les ___, une toile…",
+          "knowMore": "Un repas peut s'ajouter en option au séjour en yourte ou en tipi."
+        },
+        "difficile": {
+          "text": "La yourte associée aux Cristaux de Balto vient d'un pays d'Asie centrale célèbre pour ses steppes et son héritage nomade. Lequel ?",
+          "answers": [
+            "mongolie",
+            "la mongolie",
+            "de mongolie"
+          ],
+          "ages": [
+            14,
+            99
+          ],
+          "hint": "Gengis Khan, chevaux et steppes immenses…",
+          "knowMore": "Yourte mongole + huskys + étoiles : le trio parfait du week-end hors du temps."
+        }
+      }
+    },
+    {
+      "id": "B8-enigme",
+      "type": "enigme",
+      "stationId": "B8",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Celui qui pilote le traîneau et prend soin de toute la meute porte un nom venu du Grand Nord. Lequel ?",
+          "answers": [
+            "musher",
+            "le musher",
+            "un musher"
+          ],
+          "ages": [
+            7,
+            10
+          ],
+          "hint": "M-U-S-H-E-R — comme le cri « marche ! » donné aux chiens.",
+          "knowMore": "Le mot viendrait du « mush ! » ou « marche » lancé par les Canadiens francophones."
+        },
+        "moyen": {
+          "text": "Je suis le bras droit du musher : je m'occupe des soins, du matériel et des entraînements. Comment m'appelle-t-on ?",
+          "answers": [
+            "handler",
+            "le handler",
+            "un handler"
+          ],
+          "ages": [
+            11,
+            13
+          ],
+          "hint": "Un mot anglais : HAND + ER… celui qui a toujours les mains dans le travail.",
+          "knowMore": "La « Découverte du métier » dure une demi-journée : on devient handler d'un jour."
+        },
+        "difficile": {
+          "text": "D'après la FAQ du site, à partir de quel âge peut-on s'initier au métier de musher ?",
+          "answers": [
+            "12 ans",
+            "douze ans",
+            "12",
+            "douze"
+          ],
+          "ages": [
+            14,
+            99
+          ],
+          "hint": "L'âge du passage en collège : deux chiffres, dont un 1 et un 2.",
+          "knowMore": "Plus de vingt années d'engagement consolident l'expérience de Julien et sa meute."
+        }
+      }
+    },
+    {
+      "id": "B9-enigme",
+      "type": "enigme",
+      "stationId": "B9",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Un chien de traîneau héroïque a donné son prénom à notre élevage. Comment s'appelle-t-il ?",
+          "answers": [
+            "balto",
+            "balto le chien"
+          ],
+          "ages": [
+            7,
+            10
+          ],
+          "hint": "C'est aussi le nom de l'élevage : Les Cristaux de ___ .",
+          "knowMore": "Sa statue se dresse à Central Park, à New York."
+        },
+        "moyen": {
+          "text": "En 1925, une terrible maladie menace les enfants de Nome, en Alaska. Quel remède est transporté en traîneau sur plus de 1 000 km ?",
+          "answers": [
+            "serum",
+            "le serum",
+            "serum anti-diphterie",
+            "antitoxine diphterique",
+            "serum antidiphterique"
+          ],
+          "ages": [
+            11,
+            13
+          ],
+          "hint": "Contre la diphtérie, on achemine un s___ .",
+          "knowMore": "Par -50 °C et dans le blizzard, des relais de traîneaux se sont passés le témoin sans interruption."
+        },
+        "difficile": {
+          "text": "Balto a couru le dernier relais jusqu'à Nome… mais quel autre chien a parcouru le plus long tronçon de cette course au sérum ?",
+          "answers": [
+            "togo",
+            "togo le chien",
+            "leonhard seppala togo"
+          ],
+          "ages": [
+            14,
+            99
+          ],
+          "hint": "Quatre lettres : T-O-G-O — il a couru 424 km, cinq fois plus que Balto !",
+          "knowMore": "Sur la statue de Balto à Central Park on lit : « Endurance · Fidelity · Intelligence »."
+        }
+      }
+    },
+    {
+      "id": "accueil-elevage-quiz",
+      "type": "quiz",
+      "characterId": "accueil-elevage",
+      "questions": [
+        {
+          "q": "Dans quel département se trouve l'élevage ?",
+          "options": [
+            "La Creuse",
+            "Le Puy-de-Dôme",
+            "La Haute-Loire"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Qui vit au cœur de l'élevage ?",
+          "options": [
+            "Une meute de huskys de Sibérie",
+            "Des loups sauvages",
+            "Des rennes"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "vie-meute-quiz",
+      "type": "quiz",
+      "characterId": "vie-meute",
+      "questions": [
+        {
+          "q": "Qu'est-ce qui fait un bon chien de tête ?",
+          "options": [
+            "Son intelligence et sa lucidité",
+            "Sa force brute",
+            "Ses aboiements"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Comment vit-on ensemble dans la meute ?",
+          "options": [
+            "En respectant le rythme de chacun",
+            "Chacun pour soi",
+            "Toujours en cage"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "husky-siberien-quiz",
+      "type": "quiz",
+      "characterId": "husky-siberien",
+      "questions": [
+        {
+          "q": "À quoi sert le double pelage du husky ?",
+          "options": [
+            "À se protéger du froid extrême",
+            "À nager plus vite",
+            "À attirer les partenaires"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Quand fait-on attention à ne pas faire courir les huskys ?",
+          "options": [
+            "Par forte chaleur",
+            "Sous la pluie",
+            "Pendant la nuit"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "bienetre-animal-quiz",
+      "type": "quiz",
+      "characterId": "bienetre-animal",
+      "questions": [
+        {
+          "q": "Que fait-on si un chien montre des signes de fatigue ?",
+          "options": [
+            "On arrête et on le soigne",
+            "On continue quand même",
+            "On change seulement de piste"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Le bien-être animal inclut aussi…",
+          "options": [
+            "Le respect de la faune et de la flore",
+            "Plus de courses",
+            "Des entraînements plus longs"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "materiel-attelage-quiz",
+      "type": "quiz",
+      "characterId": "materiel-attelage",
+      "questions": [
+        {
+          "q": "À quoi sert le harnais ?",
+          "options": [
+            "À répartir la traction sur le corps du chien",
+            "À décorer le chien",
+            "À mesurer sa vitesse"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Que pilote l'attelage quand il n'y a pas de neige ?",
+          "options": [
+            "Un cani-kart",
+            "Une luge de plage",
+            "Un vélo sans roues"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "cani-sports-quiz",
+      "type": "quiz",
+      "characterId": "cani-sports",
+      "questions": [
+        {
+          "q": "En cani-randonnée, qui donne le rythme de la marche ?",
+          "options": [
+            "Le binôme, au rythme du chien",
+            "Le téléphone",
+            "Le premier arrivé"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Quand pratique-t-on le cani-kart ?",
+          "options": [
+            "Toute l'année hors forte chaleur",
+            "Uniquement la nuit",
+            "Seulement sous la neige"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "yourte-tipi-quiz",
+      "type": "quiz",
+      "characterId": "yourte-tipi",
+      "questions": [
+        {
+          "q": "Comment s'appelle le camping où dorment les trappeurs d'un week-end ?",
+          "options": [
+            "La Toile sous les Étoiles",
+            "Le Chalet des Loups",
+            "La Prairie d'Argent"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Que peut ajouter un séjour en yourte en option ?",
+          "options": [
+            "Un repas",
+            "Un cours de ski",
+            "Une piscine chauffée"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "metier-handler-quiz",
+      "type": "quiz",
+      "characterId": "metier-handler",
+      "questions": [
+        {
+          "q": "Comment appelle-t-on celui qui pilote et prend soin de l'attelage ?",
+          "options": [
+            "Un musher",
+            "Un jockey",
+            "Un berger"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "À partir de quel âge peut-on s'initier au métier de musher ?",
+          "options": [
+            "12 ans",
+            "18 ans",
+            "6 ans"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "legende-balto-quiz",
+      "type": "quiz",
+      "characterId": "legende-balto",
+      "questions": [
+        {
+          "q": "En 1925, quel précieux chargement a été transporté jusqu'à Nome ?",
+          "options": [
+            "Le sérum anti-diphtérie",
+            "De l'or",
+            "Du courrier royal"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Où se trouve la statue de Balto ?",
+          "options": [
+            "À Central Park, New York",
+            "Devant l'élevage de Charron",
+            "À Moscou"
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "accueil-elevage",
+      "nom": "Bienvenue à l'élevage",
+      "latin": "Les Cristaux de Balto · 3 La Chaux, Charron (Creuse)",
+      "emoji": "🏡",
+      "couleur": "#2f6f4f",
+      "categorie": "diurne",
+      "taille": "Repère : une ferme, une meute, une famille",
+      "img": "",
+      "anecdotes": [
+        "L'élevage se cache à « 3 La Chaux », un hameau de Charron dans la Creuse, entre Aubusson, Montluçon et Clermont-Ferrand.",
+        "Ici, les huskys ne sont pas des outils : ce sont la famille du musher Julien et les ambassadeurs de l'aventure.",
+        "Le nom fait écho à Balto, le chien de traîneau devenu légende — et aux cristaux de givre des matins d'hiver."
+      ],
+      "pedagogy": {
+        "ages": [
+          7,
+          99
+        ],
+        "dureeMin": 6,
+        "objectif": "Découvrir l'élevage, son territoire et son esprit",
+        "programme": [
+          "cycle 2",
+          "cycle 3",
+          "cycle 4"
+        ]
+      }
+    },
+    {
+      "id": "vie-meute",
+      "nom": "La vie en meute",
+      "latin": "Hiérarchie douce, complicité et entraide",
+      "emoji": "🐺",
+      "couleur": "#4a6fa5",
+      "categorie": "diurne",
+      "taille": "Repère : ensemble, chacun à sa place",
+      "img": "",
+      "anecdotes": [
+        "Une meute, ce n'est pas une bagarre pour le pouvoir : c'est un équilibre où chacun trouve sa place, avec les aînés qui apaisent les jeunes.",
+        "Les leaders de tête ne sont pas les plus forts mais les plus lucides : le musher se fie à leur jugement sur la piste.",
+        "Observer la meute au repos, c'est lire un langage entier : queues, oreilles, postures… et sieste collective au soleil."
+      ],
+      "pedagogy": {
+        "ages": [
+          7,
+          99
+        ],
+        "dureeMin": 8,
+        "objectif": "Comprendre l'organisation sociale de la meute et la place de chacun",
+        "programme": [
+          "cycle 2",
+          "cycle 3",
+          "cycle 4"
+        ]
+      }
+    },
+    {
+      "id": "husky-siberien",
+      "nom": "Le husky de Sibérie",
+      "latin": "Chien de travail du Grand Nord · race FCI groupe 5",
+      "emoji": "❄️",
+      "couleur": "#2e8fb0",
+      "categorie": "diurne",
+      "taille": "Repère : un athlète au double manteau",
+      "img": "",
+      "anecdotes": [
+        "Le husky de Sibérie a été sélectionné par les Tchouktches pour tirer de légères charges très loin, très vite, sans presque rien manger.",
+        "Son double pelage le protège du froid intense… mais il supporte mal la chaleur : ici, on adapte les sorties à la météo.",
+        "Il « parle » beaucoup : gémissements, glapissements, hurlements — rarement aboiements."
+      ],
+      "pedagogy": {
+        "ages": [
+          7,
+          99
+        ],
+        "dureeMin": 8,
+        "objectif": "Connaître le husky de Sibérie, ses origines et ses adaptations",
+        "programme": [
+          "cycle 2",
+          "cycle 3",
+          "cycle 4"
+        ]
+      }
+    },
+    {
+      "id": "bienetre-animal",
+      "nom": "Le bien-être animal",
+      "latin": "Soins, repos, alimentation · la priorité absolue",
+      "emoji": "💚",
+      "couleur": "#2e8f5a",
+      "categorie": "diurne",
+      "taille": "Repère : des chiens avant tout bien traités",
+      "img": "",
+      "anecdotes": [
+        "Contrôles vétérinaires, alimentation riche en énergie, repos au frais l'été : la santé de la meute passe avant tout.",
+        "Aucune sortie quand il fait trop chaud ou si un chien semble fatigué : le plaisir des chiens se lit dans leurs oreilles !",
+        "Respecter le vivant, c'est aussi préserver la faune et la flore du bocage creusois qui entoure les pistes."
+      ],
+      "pedagogy": {
+        "ages": [
+          7,
+          99
+        ],
+        "dureeMin": 8,
+        "objectif": "Identifier les besoins quotidiens des chiens et le respect du vivant",
+        "programme": [
+          "cycle 2",
+          "cycle 3",
+          "cycle 4"
+        ]
+      }
+    },
+    {
+      "id": "materiel-attelage",
+      "nom": "L'attelage et le matériel",
+      "latin": "Harnais, lignes, traîneau et cani-kart",
+      "emoji": "🛷",
+      "couleur": "#b05f2a",
+      "categorie": "diurne",
+      "taille": "Repère : chaque pièce a son rôle",
+      "img": "",
+      "anecdotes": [
+        "Le harnais en X répartit la traction sur tout le corps du chien : confortable, il permet de tirer sans se blesser.",
+        "La ligne d'attache relie les chiens entre eux et au traîneau ; le musher tient la poignée — l'archet — et freine avec le patin.",
+        "Pas de neige ? Pas de problème : le cani-kart remplace le traîneau dès que la piste est sèche."
+      ],
+      "pedagogy": {
+        "ages": [
+          7,
+          99
+        ],
+        "dureeMin": 7,
+        "objectif": "Nommer le matériel d'attelage et comprendre son rôle",
+        "programme": [
+          "cycle 3"
+        ]
+      }
+    },
+    {
+      "id": "cani-sports",
+      "nom": "Cani-kart & cani-randonnée",
+      "latin": "Les sports canins de traction · toute l'année",
+      "emoji": "🏃",
+      "couleur": "#d97b1f",
+      "categorie": "diurne",
+      "taille": "Repère : avancer avec son chien, pas devant lui",
+      "img": "",
+      "anecdotes": [
+        "En cani-kart, vous prenez place à bord d'un kart tracté par l'attelage : sensations garanties, en douceur.",
+        "En cani-randonnée, vous êtes relié à votre husky par un équipement spécifique : vous avancez ensemble, à son rythme.",
+        "Ces activités renforcent la complicité du binôme humain-chien — et font marcher les mollets des humains !"
+      ],
+      "pedagogy": {
+        "ages": [
+          8,
+          99
+        ],
+        "dureeMin": 8,
+        "objectif": "Distinguer cani-kart, cani-randonnée et balade en traîneau",
+        "programme": [
+          "cycle 3",
+          "cycle 4"
+        ]
+      }
+    },
+    {
+      "id": "yourte-tipi",
+      "nom": "Yourte & tipi : week-end trappeur",
+      "latin": "Dormir au camping « La Toile sous les Étoiles »",
+      "emoji": "⛺",
+      "couleur": "#7a3b8f",
+      "categorie": "nocturne",
+      "taille": "Repère : une nuit hors du temps, près de la meute",
+      "img": "",
+      "anecdotes": [
+        "La yourte mongole et le tipi sont installés au camping « La Toile sous les Étoiles », à la même adresse que l'élevage.",
+        "Week-end trappeur : activités avec les huskys, nuit en yourte, repas partagés… et déconnexion totale.",
+        "La nuit tombée, on entend parfois la meute chanter sous les étoiles : le vrai concert nordique."
+      ],
+      "pedagogy": {
+        "ages": [
+          7,
+          99
+        ],
+        "dureeMin": 7,
+        "objectif": "Découvrir l'hébergement insolite et l'esprit week-end trappeur",
+        "programme": [
+          "cycle 2",
+          "cycle 3"
+        ]
+      }
+    },
+    {
+      "id": "metier-handler",
+      "nom": "Musher & handler",
+      "latin": "Le quotidien d'une meute · dès 12 ans pour l'initiation",
+      "emoji": "🧭",
+      "couleur": "#444a6b",
+      "categorie": "diurne",
+      "taille": "Repère : devenir le bras droit du musher",
+      "img": "",
+      "anecdotes": [
+        "Le musher dirige l'attelage, mais surtout : il organise la vie entière de la meute, été comme hiver.",
+        "Le handler est son bras droit : soins, matériel, entraînements — une demi-journée suffit pour découvrir les coulisses.",
+        "Plus de vingt ans d'expérience guident Julien et sa meute : la passion, ça s'apprend au quotidien."
+      ],
+      "pedagogy": {
+        "ages": [
+          10,
+          99
+        ],
+        "dureeMin": 8,
+        "objectif": "Comprendre le métier de musher et le rôle de handler",
+        "programme": [
+          "cycle 4"
+        ]
+      }
+    },
+    {
+      "id": "legende-balto",
+      "nom": "La légende de Balto",
+      "latin": "Alaska, 1925 · la course contre la diphtérie",
+      "emoji": "🌟",
+      "couleur": "#0c6e8f",
+      "categorie": "nocturne",
+      "taille": "Repère : un chien devenu héros",
+      "img": "",
+      "anecdotes": [
+        "Hiver 1925 : la diphtérie menace Nome, en Alaska. Le sérum est porté en traîneaux-relais sur plus de 1 000 km, par -50 °C et dans le blizzard.",
+        "Balto termine le dernier relais et entre dans Nome ; son compagnon Togo a couru le plus long tronçon. Les deux sont des héros.",
+        "La statue de Balto se dresse aujourd'hui à Central Park, à New York : « Endurance · Fidelity · Intelligence »."
+      ],
+      "pedagogy": {
+        "ages": [
+          7,
+          99
+        ],
+        "dureeMin": 9,
+        "objectif": "Raconter la grande course au sérum de Nome (1925) et la légende de Balto",
+        "programme": [
+          "cycle 3",
+          "cycle 4"
+        ]
+      }
+    }
+  ],
+  "media": [],
+  "rewards": [],
+  "debriefing": {
+    "participantQuestions": [],
+    "facilitatorReport": [],
+    "skillsObserved": []
+  }
+}

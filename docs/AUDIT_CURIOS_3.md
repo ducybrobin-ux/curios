@@ -88,7 +88,9 @@ Le pack de 49 SVG (`img/icons/`, `css/curios-icons.css`, sprite `img/curios-icon
 4. `content/curios-parcours/<id>.json` (S4, modèle v1, 8 packs) ;
 5. `js/data.js` (S5, généré).
 
-Incohérences relevées : `cristaux-de-balto` & `tsle1-ornithologie` absents de `content/manifest.json` (donc jamais chargés) mais **précachés dans `sw.js:31,35`** ; `content/catalog/packs.json` **omet `demo`** ; divergences `location`/`description` entre S1 et S2 ; 4 bundles seulement (`content/bundles/`) pour 10 packs → repli hors-ligne impossible pour 6 packs.
+Incohérences relevées : `cristaux-de-balto` & `tsle1-ornithologie` étaient absents de `content/manifest.json` (donc jamais chargés — packs « invisibles ») mais présents sur disque et catalogués ; `content/catalog/packs.json` **omettait `demo`/`packdemo`** ; divergences `location`/`description` entre S1 et S2 ; 4 bundles seulement (`content/bundles/`) pour 10 packs → repli hors-ligne impossible pour 6 packs.
+
+**Réconciliation faite (P2 — hygiène promotions, 2026-09-01)** : les 2 orphelins ont été **ajoutés au manifest** (`actif:false`), ce qui a exposé une non-conformité réelle de `tsle1-ornithologie` (8 découvertes en `category`/`size` anglais sans `emoji`/`couleur`/`pedagogie` ; 8 guides sans `pedagogie.objectif`) → migrés vers le schéma `jdpbc-pack` (16 fichiers). Documents `content/curios-parcours/{cristaux-de-balto,tsle1-ornithologie}.json` générés. `content/catalog/packs.json` (S1) réconcilié sur **11 packs** (ajout de `packdemo`). Désormais manifest / S1 / S2 = **11 packs** synchronisés, `convert-packs --check` 11/11.
 
 ---
 
@@ -182,8 +184,8 @@ Scores attendus : technique /100, pédagogique /100, thématique /100, richesse 
 - [ ] Migrer player/concepteur/studio/debriefing/hub vers le design system unique (`cur-*`, palette officielle, `img/icons`).
 - [ ] Navigation unifiée **JOUER / PARCOURS / CRÉER / PILOTER / ⚙** (Optimisation.txt §2) ; tableau de bord/carnet/stats dans les espaces appropriés.
 - [ ] Maîtriser la mise à jour SW (garder l'ancienne version, proposer « Mettre à jour / Redémarrer », supprimer le `skipWaiting` inconditionnel).
-- [ ] **Packs** : créer le Pack Démo complet par défaut ; compléter les 9 packs ; `npm run validate:packs` / `validate:all` (PACK_COMPLETENESS_SCHEMA) ; normaliser catalogue/manifest/parcours (éliminer packs invisibles & doublons).
-- [ ] Hygiène : `.gitignore` `content/bundles/`; réconcilier orphelins avec `manifest.json`+`sw.js`; brancher `editorial-governance` ou le retirer.
+- [x] **Packs (partiel)** : Pack Démo actif `packdemo` créé ; **normaliser catalogue/manifest/parcours (éliminer packs invisibles & doublons)** fait — les 2 orphelins (`cristaux-de-balto`, `tsle1-ornithologie`) déclarés dans le manifest, `tsle1-ornithologie` rendu conforme au schéma (16 fichiers), documents v1 générés, manifest/S1/S2 alignés sur **11 packs**. Reste : compléter les 9 packs restants + `npm run validate:packs` / `validate:all` (PACK_COMPLETENESS_SCHEMA).
+- [ ] Hygiène : **réconcilier orphelins avec `manifest.json` fait** (2 packs déclarés + conformes) ; `.gitignore` `content/bundles/` annulé — `content/bundles/` et `content/curios-parcours/` sont des **dépendances runtime** (fallback hors-ligne catalogue/atelier + API `/api/packs`) → ne pas gitignorer ; restes : brancher `editorial-governance` ou le retirer.
 
 ---
 

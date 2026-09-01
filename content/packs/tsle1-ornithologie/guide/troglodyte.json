@@ -4,5 +4,12 @@
   "latin": "Troglodytes troglodytes",
   "category": "diurne",
   "size": "9 cm",
-  "description": "Tout petit et brun, il dresse sa queue en l'air et chante très fort pour sa taille."
+  "description": "Tout petit et brun, il dresse sa queue en l'air et chante très fort pour sa taille.",
+  "pedagogie": {
+    "ages": [
+      6,
+      12
+    ],
+    "objectif": "Découvrir le troglodyte mignon, minuscule et tonitruant."
+  }
 }

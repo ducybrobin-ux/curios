@@ -4,5 +4,12 @@
   "latin": "Chloris chloris",
   "category": "diurne",
   "size": "15 cm",
-  "description": "D'un vert olive avec du jaune aux ailes, il émet un « dzii » nasillard en vol."
+  "description": "D'un vert olive avec du jaune aux ailes, il émet un « dzii » nasillard en vol.",
+  "pedagogie": {
+    "ages": [
+      6,
+      12
+    ],
+    "objectif": "Identifier le verdier d'Europe et son plumage verdâtre."
+  }
 }

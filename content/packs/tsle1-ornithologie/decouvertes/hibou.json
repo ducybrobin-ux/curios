@@ -2,14 +2,33 @@
   "id": "hibou",
   "nom": "Hibou moyen-duc",
   "latin": "Asio otus",
-  "category": "nocturne",
-  "size": "36 cm",
   "chant": {
     "tempo": 40,
     "notes": [
-      { "f": 620, "fEnd": 620, "d": 0.10, "g": 0.10, "type": "sine", "v": 0.55 },
-      { "f": 620, "fEnd": 620, "d": 0.10, "g": 0.10, "type": "sine", "v": 0.55 },
-      { "f": 580, "fEnd": 560, "d": 0.18, "g": 1.2, "type": "sine", "v": 0.5 }
+      {
+        "f": 620,
+        "fEnd": 620,
+        "d": 0.1,
+        "g": 0.1,
+        "type": "sine",
+        "v": 0.55
+      },
+      {
+        "f": 620,
+        "fEnd": 620,
+        "d": 0.1,
+        "g": 0.1,
+        "type": "sine",
+        "v": 0.55
+      },
+      {
+        "f": 580,
+        "fEnd": 560,
+        "d": 0.18,
+        "g": 1.2,
+        "type": "sine",
+        "v": 0.5
+      }
     ]
   },
   "anecdotes": [
@@ -20,13 +39,32 @@
   "quiz": [
     {
       "q": "Les longues touffes du hibou sont…",
-      "options": ["Des plumes, pas des oreilles", "Des vraies oreilles", "Des antennes"],
+      "options": [
+        "Des plumes, pas des oreilles",
+        "Des vraies oreilles",
+        "Des antennes"
+      ],
       "reponse": 0
     },
     {
       "q": "Où chasse le hibou moyen-duc ?",
-      "options": ["Dans les champs et prairies", "Dans l'eau", "Dans les greniers"],
+      "options": [
+        "Dans les champs et prairies",
+        "Dans l'eau",
+        "Dans les greniers"
+      ],
       "reponse": 0
     }
-  ]
+  ],
+  "categorie": "nocturne",
+  "taille": "36 cm",
+  "emoji": "🦉",
+  "couleur": "#4d3b2a",
+  "pedagogie": {
+    "ages": [
+      6,
+      12
+    ],
+    "objectif": "Comprendre le hibou moyen-duc et ses grandes aigrettes nocturnes."
+  }
 }

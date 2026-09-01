@@ -2,17 +2,57 @@
   "id": "fauvette",
   "nom": "Fauvette à tête noire",
   "latin": "Sylvia atricapilla",
-  "category": "diurne",
-  "size": "13 cm",
   "chant": {
     "tempo": 200,
     "notes": [
-      { "f": 3200, "fEnd": 3600, "d": 0.08, "g": 0.04, "type": "sine", "v": 0.6 },
-      { "f": 3600, "fEnd": 3000, "d": 0.07, "g": 0.04, "type": "sine", "v": 0.6 },
-      { "f": 3400, "fEnd": 3800, "d": 0.08, "g": 0.04, "type": "sine", "v": 0.6 },
-      { "f": 3000, "fEnd": 2600, "d": 0.10, "g": 0.06, "type": "sine", "v": 0.55 },
-      { "f": 4000, "fEnd": 4400, "d": 0.09, "g": 0.05, "type": "sine", "v": 0.6 },
-      { "f": 3500, "fEnd": 2900, "d": 0.12, "g": 0.30, "type": "sine", "v": 0.5 }
+      {
+        "f": 3200,
+        "fEnd": 3600,
+        "d": 0.08,
+        "g": 0.04,
+        "type": "sine",
+        "v": 0.6
+      },
+      {
+        "f": 3600,
+        "fEnd": 3000,
+        "d": 0.07,
+        "g": 0.04,
+        "type": "sine",
+        "v": 0.6
+      },
+      {
+        "f": 3400,
+        "fEnd": 3800,
+        "d": 0.08,
+        "g": 0.04,
+        "type": "sine",
+        "v": 0.6
+      },
+      {
+        "f": 3000,
+        "fEnd": 2600,
+        "d": 0.1,
+        "g": 0.06,
+        "type": "sine",
+        "v": 0.55
+      },
+      {
+        "f": 4000,
+        "fEnd": 4400,
+        "d": 0.09,
+        "g": 0.05,
+        "type": "sine",
+        "v": 0.6
+      },
+      {
+        "f": 3500,
+        "fEnd": 2900,
+        "d": 0.12,
+        "g": 0.3,
+        "type": "sine",
+        "v": 0.5
+      }
     ]
   },
   "anecdotes": [
@@ -23,13 +63,32 @@
   "quiz": [
     {
       "q": "Comment reconnaître le mâle de la fauvette ?",
-      "options": ["Une calotte noire sur la tête", "Une queue bleue", "Des pattes oranges"],
+      "options": [
+        "Une calotte noire sur la tête",
+        "Une queue bleue",
+        "Des pattes oranges"
+      ],
       "reponse": 0
     },
     {
       "q": "Que mange la fauvette en automne ?",
-      "options": ["Des cailloux", "Des baies de sureau", "Du chocolat"],
+      "options": [
+        "Des cailloux",
+        "Des baies de sureau",
+        "Du chocolat"
+      ],
       "reponse": 1
     }
-  ]
+  ],
+  "categorie": "diurne",
+  "taille": "13 cm",
+  "emoji": "🐦",
+  "couleur": "#8a9a5b",
+  "pedagogie": {
+    "ages": [
+      6,
+      12
+    ],
+    "objectif": "Identifier la fauvette et observer son chant vif dans les buissons."
+  }
 }

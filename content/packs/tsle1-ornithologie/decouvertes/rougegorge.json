@@ -2,16 +2,49 @@
   "id": "rougegorge",
   "nom": "Rouge-gorge familier",
   "latin": "Erithacus rubecula",
-  "category": "diurne",
-  "size": "14 cm",
   "chant": {
     "tempo": 90,
     "notes": [
-      { "f": 2800, "fEnd": 2600, "d": 0.16, "g": 0.06, "type": "sine", "v": 0.6 },
-      { "f": 2400, "fEnd": 2200, "d": 0.14, "g": 0.06, "type": "sine", "v": 0.6 },
-      { "f": 2000, "fEnd": 1800, "d": 0.18, "g": 0.10, "type": "sine", "v": 0.55 },
-      { "f": 2600, "fEnd": 2400, "d": 0.14, "g": 0.06, "type": "sine", "v": 0.55 },
-      { "f": 2100, "fEnd": 1800, "d": 0.22, "g": 0.40, "type": "sine", "v": 0.5 }
+      {
+        "f": 2800,
+        "fEnd": 2600,
+        "d": 0.16,
+        "g": 0.06,
+        "type": "sine",
+        "v": 0.6
+      },
+      {
+        "f": 2400,
+        "fEnd": 2200,
+        "d": 0.14,
+        "g": 0.06,
+        "type": "sine",
+        "v": 0.6
+      },
+      {
+        "f": 2000,
+        "fEnd": 1800,
+        "d": 0.18,
+        "g": 0.1,
+        "type": "sine",
+        "v": 0.55
+      },
+      {
+        "f": 2600,
+        "fEnd": 2400,
+        "d": 0.14,
+        "g": 0.06,
+        "type": "sine",
+        "v": 0.55
+      },
+      {
+        "f": 2100,
+        "fEnd": 1800,
+        "d": 0.22,
+        "g": 0.4,
+        "type": "sine",
+        "v": 0.5
+      }
     ]
   },
   "anecdotes": [
@@ -22,13 +55,32 @@
   "quiz": [
     {
       "q": "À quoi sert le plastron orange du rouge-gorge ?",
-      "options": ["À se cacher", "À intimider les autres rouges-gorges", "À attraper les insectes"],
+      "options": [
+        "À se cacher",
+        "À intimider les autres rouges-gorges",
+        "À attraper les insectes"
+      ],
       "reponse": 1
     },
     {
       "q": "Le rouge-gorge chante aussi…",
-      "options": ["En plein hiver", "Jamais le jour", "Seulement la nuit"],
+      "options": [
+        "En plein hiver",
+        "Jamais le jour",
+        "Seulement la nuit"
+      ],
       "reponse": 0
     }
-  ]
+  ],
+  "categorie": "diurne",
+  "taille": "14 cm",
+  "emoji": "🐦",
+  "couleur": "#c75b2a",
+  "pedagogie": {
+    "ages": [
+      6,
+      12
+    ],
+    "objectif": "Reconnaître le rougegorge familier à sa poitrine orangée et son chant doux."
+  }
 }

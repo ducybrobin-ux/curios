@@ -2,13 +2,25 @@
   "id": "chouette",
   "nom": "Chouette hulotte",
   "latin": "Strix aluco",
-  "category": "nocturne",
-  "size": "40 cm",
   "chant": {
     "tempo": 24,
     "notes": [
-      { "f": 540, "fEnd": 540, "d": 0.16, "g": 0.18, "type": "sine", "v": 0.6 },
-      { "f": 470, "fEnd": 420, "d": 0.85, "g": 1.6, "type": "sine", "v": 0.55 }
+      {
+        "f": 540,
+        "fEnd": 540,
+        "d": 0.16,
+        "g": 0.18,
+        "type": "sine",
+        "v": 0.6
+      },
+      {
+        "f": 470,
+        "fEnd": 420,
+        "d": 0.85,
+        "g": 1.6,
+        "type": "sine",
+        "v": 0.55
+      }
     ]
   },
   "anecdotes": [
@@ -19,13 +31,32 @@
   "quiz": [
     {
       "q": "Pourquoi la chouette chasse-t-elle la nuit ?",
-      "options": ["Parce qu'elle dort le jour", "Elle n'a pas le choix", "Elle a peur du soleil"],
+      "options": [
+        "Parce qu'elle dort le jour",
+        "Elle n'a pas le choix",
+        "Elle a peur du soleil"
+      ],
       "reponse": 0
     },
     {
       "q": "Comment est son vol ?",
-      "options": ["Très bruyant", "Presque silencieux", "En zigzag bruyant"],
+      "options": [
+        "Très bruyant",
+        "Presque silencieux",
+        "En zigzag bruyant"
+      ],
       "reponse": 1
     }
-  ]
+  ],
+  "categorie": "nocturne",
+  "taille": "40 cm",
+  "emoji": "🦉",
+  "couleur": "#3a2b45",
+  "pedagogie": {
+    "ages": [
+      6,
+      12
+    ],
+    "objectif": "Découvrir la chouette hulotte, son chant nocturne et son vol silencieux."
+  }
 }

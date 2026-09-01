@@ -1,0 +1,1456 @@
+{
+  "$format": "curios-parcours",
+  "$version": 1,
+  "id": "tsle1-ornithologie",
+  "title": "La toile sous les étoiles",
+  "metadata": {
+    "author": "",
+    "organization": "",
+    "language": "fr",
+    "license": "",
+    "createdAt": "2026-09-01",
+    "updatedAt": "2026-09-01",
+    "source": {
+      "format": "jdpbc-pack",
+      "version": 1
+    }
+  },
+  "description": "Un sentier ornithologique au cœur de la Creuse, autour du camping nature d'Auzances. Huit balises disséminées dans les buissons, les haies et les sous-bois vous guident à la découverte des oiseaux locaux — diurnes et nocturnes — par le chant, l'observation et l'énigme. Du rouge-gorge familier au hibou moyen-duc, chaque étape associe un quiz, des anecdotes sur le terrain et une synthèse audio du chant naturel.",
+  "theme": "ornithologie, chants d'oiseaux et nature",
+  "audience": {
+    "minAge": 6,
+    "maxAge": 99
+  },
+  "duration": null,
+  "pedagogy": {
+    "objectives": [
+      "Comprendre la corneille noire, son intelligence et ses mœurs.",
+      "Observer la grive musicienne et son plumage tacheté.",
+      "Découvrir l'hirondelle rustique, migrateur emblématique des étés.",
+      "Identifier le merle noir et son chant mélodieux du soir.",
+      "Comprendre le moineau domestique, voisin discret des villes.",
+      "Reconnaître le pinson des arbres et son rayon alaire blanc.",
+      "Découvrir le troglodyte mignon, minuscule et tonitruant.",
+      "Identifier le verdier d'Europe et son plumage verdâtre.",
+      "Reconnaître la buse variable et comprendre son rôle de rapace des plaines.",
+      "Découvrir la chouette hulotte, son chant nocturne et son vol silencieux.",
+      "Identifier la fauvette et observer son chant vif dans les buissons.",
+      "Comprendre le hibou moyen-duc et ses grandes aigrettes nocturnes.",
+      "Reconnaître la mésange et son chant simple, présent près de l'homme.",
+      "Découvrir le pic épeiche et son tambourinement sur le bois.",
+      "Identifier le roitelet huppé, le plus petit oiseau de nos forêts.",
+      "Reconnaître le rougegorge familier à sa poitrine orangée et son chant doux."
+    ],
+    "skills": [],
+    "competencies": [
+      {
+        "id": "corneille",
+        "nom": "Corneille noire",
+        "description": "Très intelligente, toute noire, elle est souvent vue en couple dans les prés de la Creuse.",
+        "emoji": "",
+        "objectif": "Comprendre la corneille noire, son intelligence et ses mœurs.",
+        "ages": [
+          6,
+          12
+        ],
+        "programme": []
+      },
+      {
+        "id": "grive",
+        "nom": "Grive musicienne",
+        "description": "Sa poitrine est couverte de petits points. Elle chante en répétant chaque phrase deux fois.",
+        "emoji": "",
+        "objectif": "Observer la grive musicienne et son plumage tacheté.",
+        "ages": [
+          6,
+          12
+        ],
+        "programme": []
+      },
+      {
+        "id": "hirondelle",
+        "nom": "Hirondelle rustique",
+        "description": "Reine des étés, elle revient d'Afrique au printemps et niche sous les toits des fermes.",
+        "emoji": "",
+        "objectif": "Découvrir l'hirondelle rustique, migrateur emblématique des étés.",
+        "ages": [
+          6,
+          12
+        ],
+        "programme": []
+      },
+      {
+        "id": "merle",
+        "nom": "Merle noir",
+        "description": "Le mâle est tout noir avec un bec jaune orangé, la femelle est brune. Il sautille sur la pelouse et chante dès l'aube, perché sur un toit.",
+        "emoji": "",
+        "objectif": "Identifier le merle noir et son chant mélodieux du soir.",
+        "ages": [
+          6,
+          12
+        ],
+        "programme": []
+      },
+      {
+        "id": "moineau",
+        "nom": "Moineau domestique",
+        "description": "Inséparable des habitations, il gazouille dans les haies et les cours de ferme, souvent en bandes.",
+        "emoji": "",
+        "objectif": "Comprendre le moineau domestique, voisin discret des villes.",
+        "ages": [
+          6,
+          12
+        ],
+        "programme": []
+      },
+      {
+        "id": "pinson",
+        "nom": "Pinson des arbres",
+        "description": "Très commun dans les forêts et les jardins de la Creuse. Le mâle a la tête bleu-gris et la poitrine orangée.",
+        "emoji": "",
+        "objectif": "Reconnaître le pinson des arbres et son rayon alaire blanc.",
+        "ages": [
+          6,
+          12
+        ],
+        "programme": []
+      },
+      {
+        "id": "troglodyte",
+        "nom": "Troglodyte mignon",
+        "description": "Tout petit et brun, il dresse sa queue en l'air et chante très fort pour sa taille.",
+        "emoji": "",
+        "objectif": "Découvrir le troglodyte mignon, minuscule et tonitruant.",
+        "ages": [
+          6,
+          12
+        ],
+        "programme": []
+      },
+      {
+        "id": "verdier",
+        "nom": "Verdier d'Europe",
+        "description": "D'un vert olive avec du jaune aux ailes, il émet un « dzii » nasillard en vol.",
+        "emoji": "",
+        "objectif": "Identifier le verdier d'Europe et son plumage verdâtre.",
+        "ages": [
+          6,
+          12
+        ],
+        "programme": []
+      }
+    ],
+    "evaluation": []
+  },
+  "game": {
+    "mode": "courses",
+    "scoring": {
+      "starsPerStation": 3,
+      "timeBonus": true
+    },
+    "rules": {
+      "order": "libre"
+    }
+  },
+  "location": {
+    "provider": "schematic",
+    "center": null,
+    "trail": []
+  },
+  "stations": [
+    {
+      "id": "B1",
+      "label": "La clairière des buissons",
+      "code": "TSLE1-B1",
+      "discoveryId": "fauvette",
+      "x": 74,
+      "y": 452,
+      "lat": 46.0308738,
+      "lng": 2.5527285,
+      "radius": null,
+      "missions": [
+        "B1-enigme"
+      ]
+    },
+    {
+      "id": "B2",
+      "label": "Le jardin des curieux",
+      "code": "TSLE1-B2",
+      "discoveryId": "rougegorge",
+      "x": 148,
+      "y": 400,
+      "lat": 46.031046,
+      "lng": 2.5521356,
+      "radius": null,
+      "missions": [
+        "B2-enigme"
+      ]
+    },
+    {
+      "id": "B3",
+      "label": "La haie qui chante",
+      "code": "TSLE1-B3",
+      "discoveryId": "mesange",
+      "x": 238,
+      "y": 292,
+      "lat": 46.0319361,
+      "lng": 2.5523502,
+      "radius": null,
+      "missions": [
+        "B3-enigme"
+      ]
+    },
+    {
+      "id": "B4",
+      "label": "Le vieux chêne",
+      "code": "TSLE1-B4",
+      "discoveryId": "pic",
+      "x": 320,
+      "y": 320,
+      "lat": 46.0308226,
+      "lng": 2.5529671,
+      "radius": null,
+      "missions": [
+        "B4-enigme"
+      ]
+    },
+    {
+      "id": "B5",
+      "label": "La prairie ouverte",
+      "code": "TSLE1-B5",
+      "discoveryId": "buse",
+      "x": 406,
+      "y": 448,
+      "lat": 46.0304762,
+      "lng": 2.5520927,
+      "radius": null,
+      "missions": [
+        "B5-enigme"
+      ]
+    },
+    {
+      "id": "B6",
+      "label": "Le sous-bois des aiguilles",
+      "code": "TSLE1-B6",
+      "discoveryId": "roitelet",
+      "x": 388,
+      "y": 396,
+      "lat": 46.0307692,
+      "lng": 2.5527699,
+      "radius": null,
+      "missions": [
+        "B6-enigme"
+      ]
+    },
+    {
+      "id": "B7",
+      "label": "Le grand dortoir",
+      "code": "TSLE1-B7",
+      "discoveryId": "chouette",
+      "x": 320,
+      "y": 500,
+      "lat": 46.0309759,
+      "lng": 2.5524359,
+      "radius": null,
+      "missions": [
+        "B7-enigme"
+      ]
+    },
+    {
+      "id": "B8",
+      "label": "La lisière étoilée",
+      "code": "TSLE1-B8",
+      "discoveryId": "hibou",
+      "x": 148,
+      "y": 560,
+      "lat": 46.0303623,
+      "lng": 2.5527967,
+      "radius": null,
+      "missions": [
+        "B8-enigme"
+      ]
+    }
+  ],
+  "missions": [
+    {
+      "id": "B1-enigme",
+      "type": "enigme",
+      "stationId": "B1",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Je porte une petite calotte noire sur la tête et je chante si fort que toute la forêt m'entend. Quel oiseau suis-je ?",
+          "answers": [
+            "fauvette",
+            "la fauvette",
+            "fauvette a tete noire",
+            "la fauvette a tete noire"
+          ],
+          "ages": [
+            6,
+            99
+          ],
+          "hint": "Regarde ma tête : le mâle porte un petit béret noir. Mon nom commence par « fau »…",
+          "knowMore": "En Creuse, les haies bocagères bordent les chemins : autour d'Auzances, la campagne de collines et de prairies est le royaume des fauvettes, qui offrent un vrai concert de chants dès le printemps."
+        },
+        "moyen": {
+          "text": "Le mâle porte un béret noir, la femelle un béret roux. J'adore les baies de sureau et je chante du matin au soir. Quel oiseau suis-je ?",
+          "answers": [
+            "fauvette",
+            "la fauvette",
+            "fauvette a tete noire",
+            "la fauvette a tete noire"
+          ],
+          "ages": [
+            8,
+            99
+          ],
+          "hint": "Ma coiffe noire me donne mon nom : une « … » à tête noire.",
+          "knowMore": "Auzances est entouré de hameaux et de villages dans un rayon de 15 km : au parc de Coux, dans la ville, les buissons des haies sont le meilleur poste pour observer les fauvettes de près."
+        },
+        "difficile": {
+          "text": "Casquée de noir tel un petit bandit des buissons, je déroule un chant qui déborde. En automne, je picore les baies noires avant le grand voyage vers le sud. Mon nom évoque ma coiffure : qui suis-je ?",
+          "answers": [
+            "fauvette",
+            "la fauvette",
+            "fauvette a tete noire",
+            "la fauvette a tete noire"
+          ],
+          "ages": [
+            10,
+            99
+          ],
+          "hint": "Mon nom rime avec « fauvette » et précise la couleur de mon béret.",
+          "knowMore": "En automne, les fauvettes picorent les baies de sureau avant leur grand voyage vers l'Afrique du Nord : les chemins balisés du pays d'Auzances (Sermur, Mainsat, Sannat) sont parfaits pour les surprendre."
+        }
+      }
+    },
+    {
+      "id": "B2-enigme",
+      "type": "enigme",
+      "stationId": "B2",
+      "difficultyLevels": {
+        "facile": {
+          "text": "J'ai un plastron orange vif et je m'approche tout près des gens qui jardinent. Je chante même en plein hiver. Quel oiseau suis-je ?",
+          "answers": [
+            "rouge gorge",
+            "rouge-gorge",
+            "le rouge-gorge",
+            "le rouge gorge",
+            "rougegorge"
+          ],
+          "ages": [
+            6,
+            99
+          ],
+          "hint": "Mon cœur est orange feu : je suis le …-gorge.",
+          "knowMore": "Le rouge-gorge adore les jardins et les terrasses : à Auzances comme à Guéret, les ruelles et les jardins des villages l'accueillent toute l'année — un simple point d'eau suffit pour le voir de très près."
+        },
+        "moyen": {
+          "text": "Petit gardien du jardin, mon poitrail orange éclaire les jours gris. Je suis le confident des personnes qui remuent la terre. Quel oiseau suis-je ?",
+          "answers": [
+            "rouge gorge",
+            "rouge-gorge",
+            "le rouge-gorge",
+            "le rouge gorge",
+            "rougegorge",
+            "rouge gorge familier"
+          ],
+          "ages": [
+            8,
+            99
+          ],
+          "hint": "Mon nom dit la couleur de ma poitrine : rouge…",
+          "knowMore": "Guéret est l'une des plus petites préfectures de France : le samedi matin, son marché de producteurs du pays creusois attire les familles — et leurs rouge-gorges de jardin, curieux et confiants."
+        },
+        "difficile": {
+          "text": "Pas de couronne ni de diadème : mon orgueil est une poitrine de feu. Je chante le froid et l'orage, fidèle compagnon des mains dans la terre. Qui suis-je ?",
+          "answers": [
+            "rouge gorge",
+            "rouge-gorge",
+            "le rouge-gorge",
+            "le rouge gorge",
+            "rougegorge"
+          ],
+          "ages": [
+            10,
+            99
+          ],
+          "hint": "Ma poitrine embrasée porte le nom d'une couleur chaude.",
+          "knowMore": "Bon plan : le marché de Boussac, sélectionné par TF1 au concours « Votre plus beau marché », a terminé 5e — sous les étals de fromages et de charcuteries, les rouge-gorges se faufilent entre les visiteurs."
+        }
+      }
+    },
+    {
+      "id": "B3-enigme",
+      "type": "enigme",
+      "stationId": "B3",
+      "difficultyLevels": {
+        "facile": {
+          "text": "J'ai une cravate noire sur un ventre jaune et je chante « ti-ti-tsa-tsa ». Quel oiseau suis-je ?",
+          "answers": [
+            "mesange",
+            "la mesange",
+            "mesange charbonniere",
+            "la mesange charbonniere",
+            "charbonniere"
+          ],
+          "ages": [
+            6,
+            99
+          ],
+          "hint": "Mon nom évoque une petite boule : une m… charbonnière.",
+          "knowMore": "Les mésanges raffolent des mangeoires en hiver : plusieurs fermes pédagogiques et écomusées de la Creuse proposent des ateliers « fabriquer son nichoir » — une belle activité en famille."
+        },
+        "moyen": {
+          "text": "Élégante des mangeoires, je porte une cravate noire sur un gilet jaune. Mon chant martèle « ti-ti-tsa-tsa » dès le printemps. Quel oiseau suis-je ?",
+          "answers": [
+            "mesange",
+            "la mesange",
+            "mesange charbonniere",
+            "la mesange charbonniere",
+            "charbonniere"
+          ],
+          "ages": [
+            8,
+            99
+          ],
+          "hint": "Je suis une petite « m… » et mon ventre est jaune.",
+          "knowMore": "À l'étang des Landes (Lussat), réserve naturelle, des animations enfants « Explorateurs de la nature » proposent des défis sur les oiseaux de la réserve : parfait pour reconnaître le chant des mésanges."
+        },
+        "difficile": {
+          "text": "Veste jaune et cravate de satin, je suis l'aristocrate des haies. On croit que je tambourine, mais je répète une phrase en deux temps pour annoncer le printemps. Qui suis-je ?",
+          "answers": [
+            "mesange",
+            "la mesange",
+            "mesange charbonniere",
+            "la mesange charbonniere",
+            "charbonniere"
+          ],
+          "ages": [
+            10,
+            99
+          ],
+          "hint": "Ma cravate noire sur fond jaune me désigne : une m…",
+          "knowMore": "Une famille de mésanges protège un verger des chenilles : à l'arboretum de la Sédelle, à Crozant, des concerts de jazz sont donnés chaque été sous les arbres où nichent les oiseaux."
+        }
+      }
+    },
+    {
+      "id": "B4-enigme",
+      "type": "enigme",
+      "stationId": "B4",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Je tambourine sur les troncs avec mon bec : on dit que je suis le docteur des arbres. Quel oiseau suis-je ?",
+          "answers": [
+            "pic",
+            "le pic",
+            "pic epeiche",
+            "le pic epeiche"
+          ],
+          "ages": [
+            6,
+            99
+          ],
+          "hint": "Mon nom commence par « p » : un pic.",
+          "knowMore": "Les pics ont besoin de vieux arbres : la forêt de Chabrières, près de Guéret, est le « poumon vert » de la Creuse — idéale pour une balade et l'écoute des tambourinages."
+        },
+        "moyen": {
+          "text": "Bec-marteau, plumage noir et blanc, je tambourine sur l'écorce pour en sortir les insectes. Une tache rouge se cache sous ma queue. Quel oiseau suis-je ?",
+          "answers": [
+            "pic",
+            "le pic",
+            "pic epeiche",
+            "le pic epeiche"
+          ],
+          "ages": [
+            8,
+            99
+          ],
+          "hint": "Je suis un « p… », le cousin des oiseaux à marteau.",
+          "knowMore": "En août, la forêt de Chabrières accueille le Trophée de France des jeunes vététistes : 400 jeunes cyclistes s'y entraînent sous les vieux chênes où les pics tambourinent."
+        },
+        "difficile": {
+          "text": "Vingt coups par seconde, plus vite qu'un battement d'ailes ! Chirurgien des écorces, j'opère quand le bois est silencieux. Ma boîte à outils est mon bec. Qui suis-je ?",
+          "answers": [
+            "pic",
+            "le pic",
+            "pic epeiche",
+            "le pic epeiche"
+          ],
+          "ages": [
+            10,
+            99
+          ],
+          "hint": "On m'appelle souvent « docteur des arbres » : je suis un pic épeiche.",
+          "knowMore": "Les vieux chênes creusois abritent les loges des pics : le sentier de découverte de la forêt de Chabrières, gratuit et accessible à tous, est un bon plan pour les observer en famille."
+        }
+      }
+    },
+    {
+      "id": "B5-enigme",
+      "type": "enigme",
+      "stationId": "B5",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Grand oiseau, je plane en rond au-dessus des prairies et mon cri fait « piiia ». Quel oiseau suis-je ?",
+          "answers": [
+            "buse",
+            "la buse",
+            "buse variable",
+            "la buse variable"
+          ],
+          "ages": [
+            6,
+            99
+          ],
+          "hint": "Mon nom commence par « b » : la buse variable.",
+          "knowMore": "Les buses planent au-dessus des prairies creusoises : depuis le Châtelard ou Bussière-Nouvelle, la vue porte jusqu'aux Monts d'Auvergne, un superbe poste d'observation."
+        },
+        "moyen": {
+          "text": "Dans le ciel, je dessine des cercles au-dessus des prés, à l'affût d'un mulot. Mon cri aigu ressemble à un miaulement. Quel oiseau suis-je ?",
+          "answers": [
+            "buse",
+            "la buse",
+            "buse variable",
+            "la buse variable"
+          ],
+          "ages": [
+            8,
+            99
+          ],
+          "hint": "Je suis un grand rapace brun : la buse variable.",
+          "knowMore": "Le massif des Monédières, site classé d'environ 920 m, offre un panorama à 360° : par temps clair, buses et milans y tournent dans les courants d'air au-dessus des landes."
+        },
+        "difficile": {
+          "text": "Seigneur des courants d'air, je surveille les champs d'un œil doré. Quand je parle, mon « piiia » traverse toute la vallée. Qui suis-je ?",
+          "answers": [
+            "buse",
+            "la buse",
+            "buse variable",
+            "la buse variable"
+          ],
+          "ages": [
+            10,
+            99
+          ],
+          "hint": "Mon nom me décrit comme « changeant » : la buse variable.",
+          "knowMore": "Le lac de Vassivière, l'un des plus grands lacs artificiels de France (10 km² d'eau, 43 km de rivages), est surnommé le « petit Canada » : idéal pour voir tournoyer les rapaces au-dessus de l'eau."
+        }
+      }
+    },
+    {
+      "id": "B6-enigme",
+      "type": "enigme",
+      "stationId": "B6",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Je suis le plus petit oiseau d'Europe, plus léger qu'une pièce. Sur ma tête, une touffe orange. Quel oiseau suis-je ?",
+          "answers": [
+            "roitelet",
+            "le roitelet",
+            "roitelet huppe",
+            "le roitelet huppe"
+          ],
+          "ages": [
+            6,
+            99
+          ],
+          "hint": "Mon nom évoque une petite couronne : le roitelet huppé.",
+          "knowMore": "Les roitelets vivent dans les sapins : les forêts de résineux autour de Bourganeuf, la « cité des Templiers », sont leur terrain de jeu préféré."
+        },
+        "moyen": {
+          "text": "Je pèse à peine 5 grammes, moins qu'un crayon ! Ma couronne orange s'allume quand je suis content et je chante très aigu. Quel oiseau suis-je ?",
+          "answers": [
+            "roitelet",
+            "le roitelet",
+            "roitelet huppe",
+            "le roitelet huppe"
+          ],
+          "ages": [
+            8,
+            99
+          ],
+          "hint": "Petit comme un roi, je suis le roitelet huppé.",
+          "knowMore": "Bourganeuf et sa tour Zizim rappellent l'histoire des chevaliers du Temple : dans les sous-bois de conifères, on entend le chant très aigu des plus petits oiseaux d'Europe."
+        },
+        "difficile": {
+          "text": "Poids plume de 5 grammes, je suis le plus léger d'Europe. Ma crête orange flamboie dans les sapins et ma chanson imite un criquet. Qui suis-je ?",
+          "answers": [
+            "roitelet",
+            "le roitelet",
+            "roitelet huppe",
+            "le roitelet huppe"
+          ],
+          "ages": [
+            10,
+            99
+          ],
+          "hint": "On m'appelle comme une petite « couronne » posée sur la tête : le roitelet.",
+          "knowMore": "À Crozant, l'arboretum de la Sédelle accueille chaque été des concerts de jazz sous les arbres : tendez l'oreille, le roitelet (5 g) y chante si aigu qu'il se mêle aux notes des musiciens."
+        }
+      }
+    },
+    {
+      "id": "B7-enigme",
+      "type": "enigme",
+      "stationId": "B7",
+      "difficultyLevels": {
+        "facile": {
+          "text": "La nuit, sous les étoiles, j'appelle « hou-houuu ». Je vole sans faire le moindre bruit. Quel oiseau nocturne suis-je ?",
+          "answers": [
+            "chouette",
+            "la chouette",
+            "chouette hulotte",
+            "la chouette hulotte",
+            "hulotte"
+          ],
+          "ages": [
+            6,
+            99
+          ],
+          "hint": "Je suis la dame des nuits : la chouette hulotte.",
+          "knowMore": "La nuit, le ciel creusois est l'un des plus sombres de France : idéal pour voir les étoiles et entendre les chouettes autour du camping."
+        },
+        "moyen": {
+          "text": "Princesse des nuits étoilées, je chante « hou-houuu » en direction de la Lune. Mes plumes de velours étouffent mon vol. Quel oiseau suis-je ?",
+          "answers": [
+            "chouette",
+            "la chouette",
+            "chouette hulotte",
+            "la chouette hulotte",
+            "hulotte"
+          ],
+          "ages": [
+            8,
+            99
+          ],
+          "hint": "Mon nom commence par « c » : la chouette hulotte.",
+          "knowMore": "Le 14 août, la 30e Nuit de la chauve-souris se tient à l'étang des Landes (Lussat) : l'occasion d'observer les animaux de la nuit, chouettes et hiboux compris."
+        },
+        "difficile": {
+          "text": "Quand la Voie lactée déploie son ruban, je deviens la sentinelle du ciel. Mes yeux de phare ne clignent jamais et je tourne la tête pour compter les constellations. Mon cri scande la nuit. Qui suis-je ?",
+          "answers": [
+            "chouette",
+            "la chouette",
+            "chouette hulotte",
+            "la chouette hulotte",
+            "hulotte"
+          ],
+          "ages": [
+            10,
+            99
+          ],
+          "hint": "Je suis l'oiseau qui « hue » dans la nuit : la chouette hulotte.",
+          "knowMore": "En Creuse, des veillées astronomie et des « randonnées aux chandelles » sont organisées en été : parfait pour compter les constellations tout en écoutant le « hou-houuu » des chouettes dans leur dortoir."
+        }
+      }
+    },
+    {
+      "id": "B8-enigme",
+      "type": "enigme",
+      "stationId": "B8",
+      "difficultyLevels": {
+        "facile": {
+          "text": "Mes « oreilles » sont des touffes de plumes et je hulule dans la nuit étoilée du camping. Quel oiseau suis-je ?",
+          "answers": [
+            "hibou",
+            "le hibou",
+            "hibou moyen duc",
+            "hibou moyen-duc",
+            "le hibou moyen-duc",
+            "moyen duc",
+            "moyen-duc"
+          ],
+          "ages": [
+            6,
+            99
+          ],
+          "hint": "Mon nom commence par « h » : le hibou moyen-duc.",
+          "knowMore": "Les hiboux chassent dans les champs à la tombée de la nuit : les balades crépusculaires en Creuse permettent de les entendre sans les déranger."
+        },
+        "moyen": {
+          "text": "Sur ma tête, deux piquants de plumes — mais ce ne sont pas des oreilles ! Je chasse sous les étoiles, dans les champs autour du camping. Quel oiseau suis-je ?",
+          "answers": [
+            "hibou",
+            "le hibou",
+            "hibou moyen duc",
+            "hibou moyen-duc",
+            "le hibou moyen-duc",
+            "moyen duc",
+            "moyen-duc"
+          ],
+          "ages": [
+            8,
+            99
+          ],
+          "hint": "Je suis le cousin de la chouette aux « oreilles » pointues : le hibou moyen-duc.",
+          "knowMore": "Le pays d'Auzances est une terre de granite émaillée de hameaux : le dolmen de la Pierre Soupèse, monument classé, veille sur les prairies où chassent les hiboux à la nuit tombée."
+        },
+        "difficile": {
+          "text": "Porteur de deux aigrettes, je ne suis pas un écouteur mais une ombre. Astronome des prés, je récite « hou-hou-hou » comme un ballon qui se dégonfle, là où les galaxies brillent au-dessus des tentes. Qui suis-je ?",
+          "answers": [
+            "hibou",
+            "le hibou",
+            "hibou moyen duc",
+            "hibou moyen-duc",
+            "le hibou moyen-duc",
+            "moyen duc",
+            "moyen-duc"
+          ],
+          "ages": [
+            10,
+            99
+          ],
+          "hint": "Mes touffes de plumes rappellent des « oreilles » d'âne : le hibou moyen-duc.",
+          "knowMore": "À l'étang de Méouze (60 ha), les pêcheurs pratiquent le « no-kill » et sortent des brochets de plus d'un mètre : sur les rives, au crépuscule, écoutez le hibou moyen-duc chasser sous les étoiles."
+        }
+      }
+    },
+    {
+      "id": "buse-quiz",
+      "type": "quiz",
+      "characterId": "buse",
+      "questions": [
+        {
+          "q": "Comment reconnaître le cri de la buse ?",
+          "options": [
+            "Un « piiia » aigu",
+            "Un « coucou »",
+            "Un tambourinement"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Où construit-elle son nid ?",
+          "options": [
+            "Dans une haie basse",
+            "Très haut dans les arbres",
+            "Sous les pierres"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "chouette-quiz",
+      "type": "quiz",
+      "characterId": "chouette",
+      "questions": [
+        {
+          "q": "Pourquoi la chouette chasse-t-elle la nuit ?",
+          "options": [
+            "Parce qu'elle dort le jour",
+            "Elle n'a pas le choix",
+            "Elle a peur du soleil"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Comment est son vol ?",
+          "options": [
+            "Très bruyant",
+            "Presque silencieux",
+            "En zigzag bruyant"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "fauvette-quiz",
+      "type": "quiz",
+      "characterId": "fauvette",
+      "questions": [
+        {
+          "q": "Comment reconnaître le mâle de la fauvette ?",
+          "options": [
+            "Une calotte noire sur la tête",
+            "Une queue bleue",
+            "Des pattes oranges"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Que mange la fauvette en automne ?",
+          "options": [
+            "Des cailloux",
+            "Des baies de sureau",
+            "Du chocolat"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "hibou-quiz",
+      "type": "quiz",
+      "characterId": "hibou",
+      "questions": [
+        {
+          "q": "Les longues touffes du hibou sont…",
+          "options": [
+            "Des plumes, pas des oreilles",
+            "Des vraies oreilles",
+            "Des antennes"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Où chasse le hibou moyen-duc ?",
+          "options": [
+            "Dans les champs et prairies",
+            "Dans l'eau",
+            "Dans les greniers"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "mesange-quiz",
+      "type": "quiz",
+      "characterId": "mesange",
+      "questions": [
+        {
+          "q": "Quelle est la « cravate » de la mésange charbonnière ?",
+          "options": [
+            "Une ligne noire sur le ventre",
+            "Une écharpe rouge",
+            "Un collier de feuilles"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Sa chanson ressemble à…",
+          "options": [
+            "Un « coucou »",
+            "Un martèlement « ti-ti-tsa-tsa »",
+            "Un miaulement"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "pic-quiz",
+      "type": "quiz",
+      "characterId": "pic",
+      "questions": [
+        {
+          "q": "Pourquoi le pic frappe-t-il les arbres ?",
+          "options": [
+            "Pour casser des noix",
+            "Pour en sortir les insectes",
+            "Pour faire peur aux promeneurs"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Comment s'appelle son cri de frappe ?",
+          "options": [
+            "Le tambourinage",
+            "Le ronronnement",
+            "Le cliquetis"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "roitelet-quiz",
+      "type": "quiz",
+      "characterId": "roitelet",
+      "questions": [
+        {
+          "q": "Combien pèse le roitelet huppé ?",
+          "options": [
+            "Environ 5 g",
+            "Environ 1 kg",
+            "Environ 50 g"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Où se trouve sa couleur vive ?",
+          "options": [
+            "Sur la queue",
+            "Sur la tête",
+            "Sur les pattes"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "rougegorge-quiz",
+      "type": "quiz",
+      "characterId": "rougegorge",
+      "questions": [
+        {
+          "q": "À quoi sert le plastron orange du rouge-gorge ?",
+          "options": [
+            "À se cacher",
+            "À intimider les autres rouges-gorges",
+            "À attraper les insectes"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Le rouge-gorge chante aussi…",
+          "options": [
+            "En plein hiver",
+            "Jamais le jour",
+            "Seulement la nuit"
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "buse",
+      "nom": "Buse variable",
+      "latin": "Buteo buteo",
+      "emoji": "🦅",
+      "couleur": "#7a5c2e",
+      "categorie": "diurne",
+      "taille": "55 cm",
+      "img": "",
+      "anecdotes": [
+        "C'est un grand rapace qui plane en cercles au-dessus des prairies pour guetter ses proies.",
+        "Son cri ressemble à un miaulement : un « piiia » aigu qui porte très loin.",
+        "Elle construit son nid très haut dans les arbres et le réutilise plusieurs années."
+      ],
+      "pedagogy": {
+        "ages": [
+          6,
+          12
+        ],
+        "dureeMin": null,
+        "objectif": "Reconnaître la buse variable et comprendre son rôle de rapace des plaines.",
+        "programme": []
+      },
+      "chant": {
+        "tempo": 30,
+        "notes": [
+          {
+            "f": 2100,
+            "fEnd": 900,
+            "d": 0.55,
+            "g": 0.2,
+            "type": "sine",
+            "v": 0.5
+          },
+          {
+            "f": 1800,
+            "fEnd": 750,
+            "d": 0.5,
+            "g": 1.4,
+            "type": "sine",
+            "v": 0.45
+          }
+        ]
+      }
+    },
+    {
+      "id": "chouette",
+      "nom": "Chouette hulotte",
+      "latin": "Strix aluco",
+      "emoji": "🦉",
+      "couleur": "#3a2b45",
+      "categorie": "nocturne",
+      "taille": "40 cm",
+      "img": "",
+      "anecdotes": [
+        "C'est elle qui fait « hou-houuu » la nuit, le cri le plus connu des forêts !",
+        "Ses yeux sont immenses et fixes : elle tourne toute la tête pour regarder autour d'elle.",
+        "Ses plumes sont si douces qu'elle vole presque sans aucun bruit."
+      ],
+      "pedagogy": {
+        "ages": [
+          6,
+          12
+        ],
+        "dureeMin": null,
+        "objectif": "Découvrir la chouette hulotte, son chant nocturne et son vol silencieux.",
+        "programme": []
+      },
+      "chant": {
+        "tempo": 24,
+        "notes": [
+          {
+            "f": 540,
+            "fEnd": 540,
+            "d": 0.16,
+            "g": 0.18,
+            "type": "sine",
+            "v": 0.6
+          },
+          {
+            "f": 470,
+            "fEnd": 420,
+            "d": 0.85,
+            "g": 1.6,
+            "type": "sine",
+            "v": 0.55
+          }
+        ]
+      }
+    },
+    {
+      "id": "fauvette",
+      "nom": "Fauvette à tête noire",
+      "latin": "Sylvia atricapilla",
+      "emoji": "🐦",
+      "couleur": "#8a9a5b",
+      "categorie": "diurne",
+      "taille": "13 cm",
+      "img": "",
+      "anecdotes": [
+        "Le mâle porte une petite calotte noire, la femelle une calotte rousse : comme un béret !",
+        "Elle chante si fort qu'on dirait qu'elle veut dire bonjour à toute la forêt.",
+        "En automne, elle adore picorer les baies du sureau, puis s'envole vers l'Afrique du Nord."
+      ],
+      "pedagogy": {
+        "ages": [
+          6,
+          12
+        ],
+        "dureeMin": null,
+        "objectif": "Identifier la fauvette et observer son chant vif dans les buissons.",
+        "programme": []
+      },
+      "chant": {
+        "tempo": 200,
+        "notes": [
+          {
+            "f": 3200,
+            "fEnd": 3600,
+            "d": 0.08,
+            "g": 0.04,
+            "type": "sine",
+            "v": 0.6
+          },
+          {
+            "f": 3600,
+            "fEnd": 3000,
+            "d": 0.07,
+            "g": 0.04,
+            "type": "sine",
+            "v": 0.6
+          },
+          {
+            "f": 3400,
+            "fEnd": 3800,
+            "d": 0.08,
+            "g": 0.04,
+            "type": "sine",
+            "v": 0.6
+          },
+          {
+            "f": 3000,
+            "fEnd": 2600,
+            "d": 0.1,
+            "g": 0.06,
+            "type": "sine",
+            "v": 0.55
+          },
+          {
+            "f": 4000,
+            "fEnd": 4400,
+            "d": 0.09,
+            "g": 0.05,
+            "type": "sine",
+            "v": 0.6
+          },
+          {
+            "f": 3500,
+            "fEnd": 2900,
+            "d": 0.12,
+            "g": 0.3,
+            "type": "sine",
+            "v": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "id": "hibou",
+      "nom": "Hibou moyen-duc",
+      "latin": "Asio otus",
+      "emoji": "🦉",
+      "couleur": "#4d3b2a",
+      "categorie": "nocturne",
+      "taille": "36 cm",
+      "img": "",
+      "anecdotes": [
+        "Ses « oreilles » ne sont pas des oreilles : ce sont des touffes de plumes !",
+        "Son hululement est un petit « hou-hou-hou » qui ressemble à un ballon qui se dégonfle.",
+        "Il chasse surtout dans les champs et les prairies, au-dessus du camping la nuit."
+      ],
+      "pedagogy": {
+        "ages": [
+          6,
+          12
+        ],
+        "dureeMin": null,
+        "objectif": "Comprendre le hibou moyen-duc et ses grandes aigrettes nocturnes.",
+        "programme": []
+      },
+      "chant": {
+        "tempo": 40,
+        "notes": [
+          {
+            "f": 620,
+            "fEnd": 620,
+            "d": 0.1,
+            "g": 0.1,
+            "type": "sine",
+            "v": 0.55
+          },
+          {
+            "f": 620,
+            "fEnd": 620,
+            "d": 0.1,
+            "g": 0.1,
+            "type": "sine",
+            "v": 0.55
+          },
+          {
+            "f": 580,
+            "fEnd": 560,
+            "d": 0.18,
+            "g": 1.2,
+            "type": "sine",
+            "v": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "id": "mesange",
+      "nom": "Mésange charbonnière",
+      "latin": "Parus major",
+      "emoji": "🐦",
+      "couleur": "#3f7dba",
+      "categorie": "diurne",
+      "taille": "14 cm",
+      "img": "",
+      "anecdotes": [
+        "Elle a une cravate noire qui descend sur son ventre jaune : très chic !",
+        "Sa chanson ressemble à un martèlement : « ti-ti-tsa-tsa, ti-ti-tsa-tsa ».",
+        "En hiver, elle suit les mésanges bleues dans les haies pour trouver à manger ensemble."
+      ],
+      "pedagogy": {
+        "ages": [
+          6,
+          12
+        ],
+        "dureeMin": null,
+        "objectif": "Reconnaître la mésange et son chant simple, présent près de l'homme.",
+        "programme": []
+      },
+      "chant": {
+        "tempo": 150,
+        "notes": [
+          {
+            "f": 7000,
+            "fEnd": 6800,
+            "d": 0.1,
+            "g": 0.05,
+            "type": "square",
+            "v": 0.35
+          },
+          {
+            "f": 7000,
+            "fEnd": 6800,
+            "d": 0.1,
+            "g": 0.05,
+            "type": "square",
+            "v": 0.35
+          },
+          {
+            "f": 5200,
+            "fEnd": 5000,
+            "d": 0.12,
+            "g": 0.05,
+            "type": "square",
+            "v": 0.4
+          },
+          {
+            "f": 5200,
+            "fEnd": 5000,
+            "d": 0.12,
+            "g": 0.3,
+            "type": "square",
+            "v": 0.4
+          }
+        ]
+      }
+    },
+    {
+      "id": "pic",
+      "nom": "Pic épeiche",
+      "latin": "Dendrocopos major",
+      "emoji": "🐦",
+      "couleur": "#b03a3a",
+      "categorie": "diurne",
+      "taille": "23 cm",
+      "img": "",
+      "anecdotes": [
+        "C'est le docteur des arbres : il tambourine sur l'écorce pour en sortir les insectes.",
+        "Son tambourinage peut atteindre 20 coups par seconde, plus rapide qu'un battement d'ailes !",
+        "Il a une tache rouge sous la queue et le mâle en a une aussi derrière la tête."
+      ],
+      "pedagogy": {
+        "ages": [
+          6,
+          12
+        ],
+        "dureeMin": null,
+        "objectif": "Découvrir le pic épeiche et son tambourinement sur le bois.",
+        "programme": []
+      },
+      "chant": {
+        "tempo": 120,
+        "notes": [
+          {
+            "f": 200,
+            "fEnd": 200,
+            "d": 0.05,
+            "g": 0.03,
+            "type": "noise",
+            "v": 0.7
+          },
+          {
+            "f": 200,
+            "fEnd": 200,
+            "d": 0.05,
+            "g": 0.03,
+            "type": "noise",
+            "v": 0.7
+          },
+          {
+            "f": 200,
+            "fEnd": 200,
+            "d": 0.05,
+            "g": 0.03,
+            "type": "noise",
+            "v": 0.7
+          },
+          {
+            "f": 200,
+            "fEnd": 200,
+            "d": 0.05,
+            "g": 0.03,
+            "type": "noise",
+            "v": 0.7
+          },
+          {
+            "f": 200,
+            "fEnd": 200,
+            "d": 0.05,
+            "g": 0.03,
+            "type": "noise",
+            "v": 0.7
+          },
+          {
+            "f": 200,
+            "fEnd": 200,
+            "d": 0.05,
+            "g": 0.03,
+            "type": "noise",
+            "v": 0.7
+          },
+          {
+            "f": 200,
+            "fEnd": 200,
+            "d": 0.05,
+            "g": 0.03,
+            "type": "noise",
+            "v": 0.7
+          },
+          {
+            "f": 200,
+            "fEnd": 200,
+            "d": 0.05,
+            "g": 0.03,
+            "type": "noise",
+            "v": 0.7
+          },
+          {
+            "f": 200,
+            "fEnd": 200,
+            "d": 0.05,
+            "g": 0.03,
+            "type": "noise",
+            "v": 0.7
+          },
+          {
+            "f": 200,
+            "fEnd": 200,
+            "d": 0.05,
+            "g": 0.03,
+            "type": "noise",
+            "v": 0.7
+          },
+          {
+            "f": 200,
+            "fEnd": 200,
+            "d": 0.05,
+            "g": 0.03,
+            "type": "noise",
+            "v": 0.7
+          },
+          {
+            "f": 200,
+            "fEnd": 200,
+            "d": 0.05,
+            "g": 0.4,
+            "type": "noise",
+            "v": 0.7
+          }
+        ]
+      }
+    },
+    {
+      "id": "roitelet",
+      "nom": "Roitelet huppé",
+      "latin": "Regulus regulus",
+      "emoji": "🐦",
+      "couleur": "#7a9b3a",
+      "categorie": "diurne",
+      "taille": "9 cm",
+      "img": "",
+      "anecdotes": [
+        "C'est l'un des plus petits oiseaux d'Europe, plus léger qu'une pièce !",
+        "Sur sa tête, une touffe orange vif s'allume quand il est excité.",
+        "Il ne pèse que 5 g mais chante très aigu, presque comme un criquet."
+      ],
+      "pedagogy": {
+        "ages": [
+          6,
+          12
+        ],
+        "dureeMin": null,
+        "objectif": "Identifier le roitelet huppé, le plus petit oiseau de nos forêts.",
+        "programme": []
+      },
+      "chant": {
+        "tempo": 260,
+        "notes": [
+          {
+            "f": 6500,
+            "fEnd": 7000,
+            "d": 0.05,
+            "g": 0.02,
+            "type": "sine",
+            "v": 0.4
+          },
+          {
+            "f": 6800,
+            "fEnd": 6200,
+            "d": 0.05,
+            "g": 0.02,
+            "type": "sine",
+            "v": 0.4
+          },
+          {
+            "f": 6500,
+            "fEnd": 7000,
+            "d": 0.05,
+            "g": 0.02,
+            "type": "sine",
+            "v": 0.4
+          },
+          {
+            "f": 6800,
+            "fEnd": 7200,
+            "d": 0.06,
+            "g": 0.3,
+            "type": "sine",
+            "v": 0.4
+          }
+        ]
+      }
+    },
+    {
+      "id": "rougegorge",
+      "nom": "Rouge-gorge familier",
+      "latin": "Erithacus rubecula",
+      "emoji": "🐦",
+      "couleur": "#c75b2a",
+      "categorie": "diurne",
+      "taille": "14 cm",
+      "img": "",
+      "anecdotes": [
+        "Son plastron orange vif sert à faire de l'intimidation envers les autres rouges-gorges !",
+        "Il est très curieux : il s'approche souvent des gens qui jardinent.",
+        "Son chant est une petite phrase claire et mélancolique, même en plein hiver."
+      ],
+      "pedagogy": {
+        "ages": [
+          6,
+          12
+        ],
+        "dureeMin": null,
+        "objectif": "Reconnaître le rougegorge familier à sa poitrine orangée et son chant doux.",
+        "programme": []
+      },
+      "chant": {
+        "tempo": 90,
+        "notes": [
+          {
+            "f": 2800,
+            "fEnd": 2600,
+            "d": 0.16,
+            "g": 0.06,
+            "type": "sine",
+            "v": 0.6
+          },
+          {
+            "f": 2400,
+            "fEnd": 2200,
+            "d": 0.14,
+            "g": 0.06,
+            "type": "sine",
+            "v": 0.6
+          },
+          {
+            "f": 2000,
+            "fEnd": 1800,
+            "d": 0.18,
+            "g": 0.1,
+            "type": "sine",
+            "v": 0.55
+          },
+          {
+            "f": 2600,
+            "fEnd": 2400,
+            "d": 0.14,
+            "g": 0.06,
+            "type": "sine",
+            "v": 0.55
+          },
+          {
+            "f": 2100,
+            "fEnd": 1800,
+            "d": 0.22,
+            "g": 0.4,
+            "type": "sine",
+            "v": 0.5
+          }
+        ]
+      }
+    }
+  ],
+  "media": [],
+  "rewards": [],
+  "debriefing": {
+    "participantQuestions": [],
+    "facilitatorReport": [],
+    "skillsObserved": []
+  }
+}
