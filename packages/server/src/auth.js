@@ -16,14 +16,10 @@
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
+import { hashPassword, verifyPassword, timingSafeEqualString } from "../../shared/src/password.js";
 
 const TOKEN_LENGTH = 32;
 const TOKEN_EXPIRY_MS = 24 * 60 * 60 * 1000; // 24h
-
-// Paramètres de hachage PBKDF2 (alignés sur hub-auth.js)
-const PBKDF2_ITERATIONS = 100000;
-const KEY_LENGTH = 64;
-const DIGEST = "sha512";
 const HASH_PREFIX = "pbkdf2$";
 
 export function createAuth(root) {
@@ -52,8 +48,7 @@ export function createAuth(root) {
 
   // Sauvegarder la config (toujours hachée, jamais en clair)
   function savePassword(password) {
-    const salt = crypto.randomBytes(16).toString("hex");
-    const hash = crypto.pbkdf2Sync(password, salt, PBKDF2_ITERATIONS, KEY_LENGTH, DIGEST).toString("hex");
+    const { salt, hash } = hashPassword(password);
     state.password = HASH_PREFIX + salt + "$" + hash;
     state.legacyClear = null;
     const dir = path.dirname(configFile);
@@ -69,13 +64,11 @@ export function createAuth(root) {
       const sep = body.indexOf("$");
       const salt = body.slice(0, sep);
       const expected = body.slice(sep + 1);
-      const derived = crypto.pbkdf2Sync(password, salt, PBKDF2_ITERATIONS, KEY_LENGTH, DIGEST).toString("hex");
-      const ok = constTimeEquals(derived, expected);
-      if (!ok) return false;
+      if (!verifyPassword(password, salt, expected)) return false;
       return true;
     }
     if (state.legacyClear != null) {
-      const ok = constTimeEquals(String(password), state.legacyClear);
+      const ok = timingSafeEqualString(String(password), state.legacyClear);
       if (ok) {
         // Migration : on déplace le clair vers un hash persistant.
         savePassword(password);
@@ -83,14 +76,6 @@ export function createAuth(root) {
       return ok;
     }
     return false;
-  }
-
-  // Comparaison à temps constant pour les chaînes hexadécimales
-  function constTimeEquals(a, b) {
-    const ba = Buffer.from(String(a));
-    const bb = Buffer.from(String(b));
-    if (ba.length !== bb.length) return false;
-    return crypto.timingSafeEqual(ba, bb);
   }
 
   // Générer un token aléatoire

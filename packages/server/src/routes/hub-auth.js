@@ -8,24 +8,11 @@ import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { sendJson, sendOk, sendError, readBody, parseJson } from "../http.js";
+import { hashPassword, verifyPassword } from "../../../shared/src/password.js";
 
-const PBKDF2_ITERATIONS = 100000;
-const KEY_LENGTH = 64;
-const DIGEST = "sha512";
 const TOKEN_TTL_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
 
 const ROLES = ["ADMIN", "PROJECT_MANAGER", "PEDAGOGICAL_EDITOR", "CONTENT_VALIDATOR", "FORMATOR", "OBSERVER", "CLIENT", "PLAYER"];
-
-function hashPassword(password, salt) {
-  if (!salt) salt = crypto.randomBytes(16).toString("hex");
-  const derived = crypto.pbkdf2Sync(password, salt, PBKDF2_ITERATIONS, KEY_LENGTH, DIGEST);
-  return { hash: derived.toString("hex"), salt };
-}
-
-function verifyPassword(password, hash, salt) {
-  const result = crypto.pbkdf2Sync(password, salt, PBKDF2_ITERATIONS, KEY_LENGTH, DIGEST);
-  return result.toString("hex") === hash;
-}
 
 function generateToken() {
   return crypto.randomBytes(32).toString("hex");
@@ -200,7 +187,7 @@ async function handleLoginPost(req, res, hubAuth) {
     return sendError(res, 400, "missing-fields");
   }
   const user = hubAuth.findUserByEmail(p.email);
-  if (!user || !verifyPassword(p.password, user.hash, user.salt)) {
+  if (!user || !verifyPassword(p.password, user.salt, user.hash)) {
     return sendError(res, 401, "invalid-credentials");
   }
   const token = hubAuth.createSession(user.id, req.socket.remoteAddress);
