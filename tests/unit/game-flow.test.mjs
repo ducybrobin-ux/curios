@@ -10,7 +10,7 @@ import {
   resolveQuizEnd,
   computePalmares,
   formatTime,
-} from "../../js/game-flow-export.mjs";
+} from "../../packages/game-engine/src/index.js";
 
 /* ---- validateBaliseFound ---- */
 describe("validateBaliseFound", () => {

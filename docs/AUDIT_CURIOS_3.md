@@ -78,8 +78,8 @@ Le pack de 49 SVG (`img/icons/`, `css/curios-icons.css`, sprite `img/curios-icon
 | Accès données | `js/data.js` (globals) | `packages/core/src/data-loader.js` | Divergence |
 | Admin overlay | `applyAdminData` inline dans `js/data.js:1610-1745` (**généré**) | `packages/core/src/apply-admin.js` | Logique dupliquée |
 | Moteur | `js/engine.js` **généré** | `packages/game-engine/src/*` | OK par design, régénérer |
-| Game flow | `js/game-flow.js` (IIFE) | `js/game-flow-export.mjs` (maintenu à la main) | Drift |
-| Échappement HTML | `esc()` recopié dans **~9 fichiers** | `packages/shared/src/escape.js` | 1 copie = XSS |
+| Game flow | `js/game-flow.js` **généré** | `packages/game-engine/src/game-flow.js` | ✅ résolu (source unique) |
+| Échappement HTML | `esc()` recopié dans **~9 fichiers** | `packages/shared/src/escape.js` | 8 copies alignées sur le canonique |
 
 **Métadonnées de packs — 5 sources non synchronisées** :
 1. `content/catalog/packs/*.json` (S1, 10 packs, sans `nbBalises`/`ages`) ;
@@ -160,7 +160,10 @@ Scores attendus : technique /100, pédagogique /100, thématique /100, richesse 
   - Migration transparente : un ancien `auth.json` en clair est authentiqué puis **réécrit en hash** dès le premier login réussi ; aucun hash n'est écrit en cas d'échec.
   - Nouveau helper `hasPassword()` (remplace les lectures brutes de `state.password`) ; endpoints `/api/auth/login`, `/api/auth/setup`, `/api/auth/me` et `index.js` mis à jour.
   - **392/392 tests verts** (dont `tests/unit/auth-hash.test.mjs`, 4 nouveaux : stockage hash, rejet mauvais hash, migration clair→hash, non-migration sur échec) ; eslint 0 erreur.
-- [ ] Source de vérité unique `packages/*` ; régénérer les bundles commités en CI (`npm test` + `--check`) ; supprimer `js/game-flow-export.mjs` au profit d'un vrai build ; unifier `esc()` (shared ou vérifier les 9 copies).
+- [x] **Source de vérité unique `packages/*` — bundle game-flow généré + unifier `esc()`** : fait.
+  - **Game flow** : logique pur déplacée dans `packages/game-engine/src/game-flow.js` (source de vérité ESM, 9 fonctions). Nouveau générateur `tools/build-game-flow.mjs` (miroir de `build-engine.mjs`) → produit `js/game-flow.js` (IIFE → `window.GameFlow`). `js/game-flow-export.mjs` (maintenu à la main) **supprimé** ; `tests/unit/game-flow.test.mjs` importe désormais depuis `packages/game-engine/src/index.js`. `window.GameFlow` exposé identique (vérifié : 9 clés). CI : étape `node tools/build-game-flow.mjs --check`.
+  - **`esc()` unifié** : les 8 copies navigateur (app, board, dashboard, atelier, catalogue, editeur, questionnaire, hub-pages/catalogue) normalisées sur le canonique `packages/shared/src/escape.js` (null-guard + `[&<>"']`). Corrigés les variantes affaiblies : `app.js`/`board.js` (pas de null-guard, `'` non échappé) et `hub-pages/catalogue.js` (`'` manquant). Vérifié : les 8 corps sont désormais identiques à la source de vérité.
+  - **394/394 tests verts ; eslint 0 erreur ; tous les générateurs `--check` OK** (build-game-flow, build-engine, build-catalogue).
 - [ ] Consolider les 2 stacks d'auth (API PBKDF2 organisateur + Hub multi-user) — hachage déja aligné (`PBKDF2_ITERATIONS`, `KEY_LENGTH`, `DIGEST` identiques).
 - [x] **Corriger les liens morts (`../player/*`, sans-extension) + boutons Hub sans handler** : fait.
   - **`../player/*`** (dossier inexistant) → pointent vers les vraies pages à la racine : `hub/app.html` (8 liens) et `js/hub-pages/dashboard.js` (4 liens) → `../studio.html`, `../atelier.html`, `../editeur.html`, `../dashboard.html`, `../index.html`.

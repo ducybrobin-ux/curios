@@ -1,12 +1,3 @@
-/* game-flow.js — Logique de jeu pure (généré automatiquement depuis packages/game-engine/src/game-flow.js).
- * NE PAS ÉDITER DIRECTEMENT — modifier la source dans packages/game-engine/src/game-flow.js.
- * Régénérer : node tools/build-game-flow.mjs
- */
-(function () {
-  "use strict";
-  /* Node.js compat : simule window si absent (pour les tests) */
-  if (typeof window === "undefined") globalThis.window = {};
-
 /* game-flow.js — Logique de jeu pure (source de vérité pour le moteur).
  *
  * Fonctions pures, sans dépendance DOM. Toutes les dépendances
@@ -26,7 +17,7 @@
  * @param {object} params.ctx — { isDone, getActive, currentTarget }
  * @returns {{ ok: boolean, reason?: string, balise?: object }}
  */
-function validateBaliseFound({ balise, mode, ctx }) {
+export function validateBaliseFound({ balise, mode, ctx }) {
   if (!ctx.getActive()) {
     return { ok: false, reason: "no_profile" };
   }
@@ -47,7 +38,7 @@ function validateBaliseFound({ balise, mode, ctx }) {
  * @param {object} params.ctx — { raceEnabled, isRiddleSolved, getDifficulty, getEnigme }
  * @returns {{ action: string, enigme?: object|null }}
  */
-function resolveBaliseAction({ balise, ctx }) {
+export function resolveBaliseAction({ balise, ctx }) {
   if (ctx.raceEnabled()) {
     return { action: "unlock_and_reveal" };
   }
@@ -67,7 +58,7 @@ function resolveBaliseAction({ balise, ctx }) {
  * @param {Function} params.checkAnswer
  * @returns {{ correct: boolean }}
  */
-function checkRiddleAnswer({ enigme, answer, checkAnswer }) {
+export function checkRiddleAnswer({ enigme, answer, checkAnswer }) {
   return { correct: checkAnswer(enigme, answer) };
 }
 
@@ -79,7 +70,7 @@ function checkRiddleAnswer({ enigme, answer, checkAnswer }) {
  * @param {Function} [params.rng]
  * @returns {{ questions: Array, index: number, score: number, birdId: string }}
  */
-function createQuizSession({ bird, makeQuiz, rng }) {
+export function createQuizSession({ bird, makeQuiz, rng }) {
   return {
     questions: makeQuiz(bird, rng),
     index: 0,
@@ -95,7 +86,7 @@ function createQuizSession({ bird, makeQuiz, rng }) {
  * @param {number} params.selectedIndex
  * @returns {{ correct: boolean, correctIndex: number, done: boolean, session: object }}
  */
-function answerQuizQuestion({ session, selectedIndex }) {
+export function answerQuizQuestion({ session, selectedIndex }) {
   const q = session.questions[session.index];
   if (!q) return { correct: false, correctIndex: -1, done: true, session };
 
@@ -116,7 +107,7 @@ function answerQuizQuestion({ session, selectedIndex }) {
  * @param {object} params.session
  * @returns {{ perfect: boolean, score: number, total: number }}
  */
-function quizResult({ session }) {
+export function quizResult({ session }) {
   const total = session.questions.length;
   const perfect = session.score >= total;
   return { perfect, score: session.score, total };
@@ -130,7 +121,7 @@ function quizResult({ session }) {
  * @param {object} params.ctx — { balisesCount, completedCount, nextBalise }
  * @returns {{ action: string, nextBalise?: object|null, stars?: number }}
  */
-function resolveQuizEnd({ session, balise, ctx }) {
+export function resolveQuizEnd({ session, balise, ctx }) {
   const { perfect, score, total } = quizResult({ session });
   const done = ctx.completedCount;
   const allDone = done >= ctx.balisesCount;
@@ -158,7 +149,7 @@ function resolveQuizEnd({ session, balise, ctx }) {
  * @param {string} params.currentWeek
  * @returns {Array}
  */
-function computePalmares({ profiles, balisesCount, currentWeek }) {
+export function computePalmares({ profiles, balisesCount, currentWeek }) {
   return profiles
     .filter(
       (p) =>
@@ -184,7 +175,7 @@ function computePalmares({ profiles, balisesCount, currentWeek }) {
  * @param {number} seconds
  * @returns {string}
  */
-function formatTime(seconds) {
+export function formatTime(seconds) {
   const s = Math.max(0, Math.round(seconds || 0));
   const h = Math.floor(s / 3600);
   const m = Math.floor((s % 3600) / 60);
@@ -192,18 +183,3 @@ function formatTime(seconds) {
   if (h > 0) return `${h}:${String(m).padStart(2, "0")}:${String(sec).padStart(2, "0")}`;
   return `${m}:${String(sec).padStart(2, "0")}`;
 }
-
-
-  /* Expose sur window */
-  window.GameFlow = {
-    validateBaliseFound,
-    resolveBaliseAction,
-    checkRiddleAnswer,
-    createQuizSession,
-    answerQuizQuestion,
-    quizResult,
-    resolveQuizEnd,
-    computePalmares,
-    formatTime,
-  };
-})();

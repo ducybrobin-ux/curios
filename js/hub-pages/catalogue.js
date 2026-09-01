@@ -12,9 +12,7 @@
   DATA.packs.forEach(function (p) { liveStates[p.id] = undefined; });
 
   function esc(s) {
-    return String(s == null ? "" : s)
-      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;");
+    return String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   }
   function ico(name, cls) {
     return '<img class="cur-icon' + (cls ? " " + cls : "") + '" src="../img/icons/' + name + '.svg" alt="">';

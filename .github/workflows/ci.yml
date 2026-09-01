@@ -33,6 +33,9 @@ jobs:
       - name: Synchronisation packages/game-engine → js/engine.js
         run: node tools/build-engine.mjs --check
 
+      - name: Synchronisation packages/game-engine → js/game-flow.js
+        run: node tools/build-game-flow.mjs --check
+
       - name: Synchronisation packages/geolocation → js/geo.js
         run: node tools/build-geo.mjs --check
 

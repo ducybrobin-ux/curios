@@ -30,6 +30,13 @@ export {
 } from "./state.js";
 
 export { createEngine } from "./engine.js";
+
+// Logique de jeu pure (quant à GameFlow)
+export {
+  validateBaliseFound, resolveBaliseAction, checkRiddleAnswer,
+  createQuizSession, answerQuizQuestion, quizResult,
+  resolveQuizEnd, computePalmares, formatTime,
+} from "./game-flow.js";
 export {
   DEFAULT_RULES,
   actionRevealBird, actionUnlockBalise, actionSolveRiddle,
