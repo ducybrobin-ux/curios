@@ -1,6 +1,6 @@
 {
   "$schema": "curios-catalog-pack-v1",
-  "id": "packDemo",
+  "id": "packdemo",
   "nom": "Curi🧭s — Le GRAND DEMO PACK",
   "tagline": "Scénario démo multi-terrain & smartphone",
   "description": "Parcours de démonstration destiné à montrer l'étendue de Curi🧭s : scénario, humour, matières scolaires, géolocalisation, POI de France et Outre-mer, observation, médias et expérimentation des capacités d'un smartphone.",

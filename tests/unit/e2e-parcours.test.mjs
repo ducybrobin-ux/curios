@@ -67,7 +67,7 @@ describe("E2E — Données du choix de parcours", () => {
   it("01. content/manifest.json déclare exactement un pack actif", () => {
     const actifs = MANIFEST.packs.filter((p) => p.actif);
     assert.equal(actifs.length, 1);
-    assert.equal(actifs[0].id, "phantom-cybersecurite");
+    assert.equal(actifs[0].id, "packdemo");
   });
 
   it("02. chargerContenu expose packsActifs cohérent avec le manifest", () => {
@@ -79,7 +79,7 @@ describe("E2E — Données du choix de parcours", () => {
   it("03. js/data.js embarque l'id actif (ACTIVE_PACKS) et src est synchronisée", () => {
     const ids = activePacksFromData();
     assert.deepEqual(ids, contenu.packsActifs);
-    assert.ok(ids.includes("phantom-cybersecurite"));
+    assert.ok(ids.includes("packdemo"));
   });
 
   it("04. js/app.js contient le fallback offline du catalogue (réparation en place)", () => {

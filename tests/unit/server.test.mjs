@@ -361,14 +361,18 @@ describe("GET /api/editor", () => {
 });
 
 describe("Packs API", () => {
-  it("GET /api/packs lists the active phantom pack", async () => {
+  it("GET /api/packs lists the active pack", async () => {
     const res = await fetch("/api/packs");
     assert.equal(res.status, 200);
     const data = res.json();
     assert.equal(data.ok, true);
+    // Le pack actif (par défaut packdemo) est marqué ACTIVE, les autres ne le sont pas.
+    const actifs = data.packs.filter((p) => p.state === "ACTIVE");
+    assert.equal(actifs.length, 1);
+    assert.equal(actifs[0].id, "packdemo");
     const phantom = data.packs.find((p) => p.id === "phantom-cybersecurite");
     assert.ok(phantom, "phantom-cybersecurite must be listed");
-    assert.equal(phantom.state, "ACTIVE");
+    assert.equal(phantom.state, "DISABLED");
   });
 
   it("GET /api/packs/:id returns the pack bundle", async () => {
