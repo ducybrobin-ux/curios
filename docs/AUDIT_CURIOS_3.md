@@ -167,6 +167,10 @@ Scores attendus : technique /100, pédagogique /100, thématique /100, richesse 
   - **URLs sans extension** : généralisation dans `packages/server/src/http.js` `resolvePathSafe()` — tout `/<nom>` sans extension dont `<nom>.html` existe est servi (remplace les 2 cas codés en dur `/dashboard`+`/editeur`). `/editeur`, `/dashboard`, `/atelier`, `/studio`, `/catalogue` désormais tous servis.
   - **Boutons Hub morts** (`new-projet`, `new-parcours`, `create-pack`, `new-session`, `import-pack`, `save-settings`…) : fallback dans `hub-shell.js` — si aucun `hubAction_*` n'existe, un toast « Fonctionnalité à venir » s'affiche au lieu d'un clic muet (implémentation UI complète = travail futur, non inventé ici).
   - **394/394 tests verts** (+2 `server.test.mjs` : pages sans extension servies, 404 sur chemin inexistant) ; eslint 0 erreur.
+- [x] **Réconcilier le pack actif `packdemo`** : l'upstream a activé `packdemo` comme pack par défaut (`content/manifest.json`, commit `b0ccc64`/`be93661`) mais 5 tests codaient `phantom-cybersecurite` actif et l'id catalogue était mal orthographié.
+  - Le fichier catalogué s'appelait `packDemo.json` (id `packDemo`, majuscule) alors que manifest + `content/packs/packdemo/` utilisent `packdemo` → renommé en `packdemo.json` + id corrigé en `packdemo` (`git mv`).
+  - `tests/unit/e2e-parcours.test.mjs` (01, 03) et `tests/unit/server.test.mjs` (Packs API) : attentes alignées sur `packdemo` ACTIVE (phantom → DISABLED, reste listé).
+  - `node tools/build-catalogue.mjs` régénéré : `js/catalogue-data.js` (11 packs, `packdemo` présent) ; suite complète **394/394** ; commits `3ac10c1` + `ad2cb4c` pusher sur `origin/main`.
 
 ### P2 — UX / architecture
 - [ ] Migrer player/concepteur/studio/debriefing/hub vers le design system unique (`cur-*`, palette officielle, `img/icons`).
