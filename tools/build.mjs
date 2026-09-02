@@ -93,7 +93,7 @@ async function build() {
   }
 
   // 2. Copy directories
-  const dirs = ["css", "img", "js", "data", "content", "docs"];
+  const dirs = ["css", "hub", "img", "js", "data", "content", "docs"];
   for (const dir of dirs) {
     const src = join(ROOT, dir);
     try {

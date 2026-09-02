@@ -4,9 +4,9 @@
    Source : packages/offline/src/{config,strategy}.js
    ========================================================= */
 
-const VERSION = "curios-v7";
-const CACHE = "curios-core-v7";
-const RUNTIME = "curios-runtime-v7";
+const VERSION = "curios-v8";
+const CACHE = "curios-core-v8";
+const RUNTIME = "curios-runtime-v8";
 
 const PRECACHE = [
   "./",
@@ -112,6 +112,7 @@ const PRECACHE = [
   "js/engine.js",
   "js/game-flow.js",
   "js/geo.js",
+  "js/hub-api.js",
   "js/hub-auth.js",
   "js/hub-pages/catalogue.js",
   "js/hub-pages/dashboard.js",

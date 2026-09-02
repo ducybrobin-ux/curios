@@ -8,14 +8,15 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) — 
 ### Modifié
 - **Design system unique (P2, partiel)** : `styles.css` réaligné sur les tokens `cur-*` (bloc nuit sur `var(--cur-*)`, bloc jour documenté dans `docs/CURIOS_DESIGN_SYSTEM.md`, `--primary: var(--cur-blue)`) ; `studio.html` + `debriefing.html` migrés vers tokens + design system + icons (palettes en dur `#0f172a`/`#64ffda`/`#8892b0` → `var(--cur-*)`). Bug `--cur-line` corrigé (`curios-tokens.css` : le token était écrasé par une épaisseur `2px` ; couleur conservée, épaisseur renommée `--cur-line-md`, 6 usages mis à jour).
 - **Navigation unifiée** **JOUER / PARCOURS / CRÉER / PILOTER / ⚙ Hub** : shell partagé `js/nav-shell.js` injecté via l'ancre `#cur-nav[data-nav-current]` sur les 6 espaces (`index`, `catalogue`, `atelier`, `editeur`, `studio`, `dashboard`), barre `.cur-navbar` dans le design system (adaptative au thème), lien actif + `aria-current`. Chemins harmonisés en `.html` (ouvertures `app.js`, topbars concepteur, alias serveur `/catalogue`, `/atelier`, `/studio`, `/hub`). Panneau « Administrer » du joueur resserré à Mode admin + Réglages.
-- **Distribution** : `catalogue.html` ajouté à `tools/build.mjs` (`rootFiles`) — le catalogue n'était **pas copié** dans les distributions Windows/Linux.
+- **Distribution** : `catalogue.html` ajouté à `tools/build.mjs` (`rootFiles`) — le catalogue n'était **pas copié** dans les distributions Windows/Linux ; dossier **`hub/` ajouté aux dossiers copiés** (`dirs`) — le Hub n'était pas dans les distributions malgré son précache SW.
 
 ### Ajouté
-- **Bump SW `curios-v6` → `curios-v7`** (`packages/offline/src/config.js` + `sw.js` régénéré, 123 fichiers précachés, `js/nav-shell.js` inclus).
-- **Tests `nav-shell`** : 6 tests unitaires (espaces, lien actif, garde-fou double-mount, absence d'ancre).
+- **Navigation unifiée** : `js/nav-shell.js` + tests `nav-shell` (6 tests unitaires : espaces, lien actif, garde-fou double-mount, absence d'ancre).
+- **Stats du Hub dashboard câblées** : helper `js/hub-api.js` (fetch JSON avec token Hub, fallback silencieux hors-ligne) + `loadStats()` dans `js/hub-pages/dashboard.js` — Projets actifs / Sessions en cours depuis `/api/hub/analytics`, Packs disponibles depuis `/api/packs`, Équipes connectées depuis `/api/pos` (fini les tirets en dur) ; tests `hub-api` (8 tests unitaires).
+- **Bump SW jusqu'à `curios-v8`** (`packages/offline/src/config.js` + `sw.js` régénéré, 124 fichiers précachés incluant `nav-shell.js` et `hub-api.js`).
 
 ### Vérifié
-- **404/404** tests unitaires verts ; eslint **0 erreur** ; `build-sw --check` vert ; `build --target all` OK ; dist vérifié : `catalogue.html` + `js/nav-shell.js` + ancres `data-nav-current` présentes sur les pages.
+- **412/412** tests unitaires verts ; eslint **0 erreur** ; `build-sw --check` vert ; `build --target all` OK ; dist vérifié : `catalogue.html` + `hub/` + `js/nav-shell.js` + `js/hub-api.js` + ancres `data-nav-current` présentes sur les pages.
 
 ## [Curi🧭s v2026.09.01] — 2026-09-01
 

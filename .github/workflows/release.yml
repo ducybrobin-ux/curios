@@ -43,6 +43,7 @@ jobs:
         run: |
           cd dist
           tar -czf curios-${{ steps.version.outputs.version }}-linux.tar.gz curios-linux/
+          zip -r curios-${{ steps.version.outputs.version }}-windows.zip curios-windows/
           cd ..
 
       - name: Upload artifacts
@@ -51,7 +52,9 @@ jobs:
           name: curios-${{ steps.version.outputs.version }}
           path: |
             dist/curios-${{ steps.version.outputs.version }}-linux.tar.gz
-            dist/curios/
+            dist/curios-${{ steps.version.outputs.version }}-windows.zip
+            dist/curios-linux/
+            dist/curios-windows/
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
@@ -64,7 +67,7 @@ jobs:
             
             ### Installation
             
-            **Windows** : Télécharger et extraire, puis lancer `lancer-curios.bat`
+            **Windows** : Télécharger `curios-${{ steps.version.outputs.version }}-windows.zip`, extraire, puis lancer `lancer-curios.bat`
             
             **Linux / Raspberry Pi** :
             ```bash
@@ -75,9 +78,11 @@ jobs:
             
             ### Contenu
             
-            - 4 éditions incluses
-            - Studio de création
-            - Dashboard organisateur
+            - 11 packs de contenu (dont le pack démo)
+            - Design system unique + navigation unifiée (Jouer / Parcours / Créer / Piloter / Hub)
+            - Studio de création + Éditeur + Atelier de packs
+            - Dashboard organisateur temps réel
+            - CURIOS Project Hub (stats câblées sur les données du serveur)
             - Mode hors-ligne
             
             ### Documentation
@@ -85,6 +90,7 @@ jobs:
             Voir [docs/GUIDE_FORMATEUR.md](docs/GUIDE_FORMATEUR.md)
           files: |
             dist/curios-${{ steps.version.outputs.version }}-linux.tar.gz
+            dist/curios-${{ steps.version.outputs.version }}-windows.zip
           draft: false
           prerelease: false
         env:

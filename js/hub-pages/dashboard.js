@@ -15,6 +15,8 @@
       day: "numeric",
     });
 
+    loadStats();
+
     return (
       '<div class="hub-page-header">' +
       "<div>" +
@@ -24,10 +26,10 @@
       "</div>" +
 
       '<div class="hub-stats">' +
-      statCard("📁", "blue", "—", "Projets actifs") +
-      statCard("🎯", "green", "—", "Sessions en cours") +
-      statCard("📦", "gold", "—", "Packs disponibles") +
-      statCard("team", "red", "—", "Équipes connectées") +
+      statCard("hub-stat-projets", "📁", "blue", "—", "Projets actifs") +
+      statCard("hub-stat-sessions", "🎯", "green", "—", "Sessions en cours") +
+      statCard("hub-stat-packs", "📦", "gold", "—", "Packs disponibles") +
+      statCard("hub-stat-teams", "team", "red", "—", "Équipes connectées") +
       "</div>" +
 
       '<div class="hub-grid">' +
@@ -88,15 +90,49 @@
     return icon;
   }
 
-  function statCard(icon, color, value, label) {
+  function statCard(id, icon, color, value, label) {
     return (
       '<div class="hub-stat">' +
       '<div class="hub-stat-icon ' + color + '">' + iconEl(icon) + "</div>" +
       "<div>" +
-      '<div class="hub-stat-value">' + value + "</div>" +
+      '<div class="hub-stat-value" id="' + id + '">' + value + "</div>" +
       '<div class="hub-stat-label">' + label + "</div>" +
       "</div></div>"
     );
+  }
+
+  /* --- Stats câblées sur les endpoints serveur (silencieux si indisponible) --- */
+
+  var _gen = 0;
+
+  async function loadStats() {
+    _gen++;
+    var g = _gen;
+
+    // Projets actifs + sessions en cours : agrégat Hub (auth Hub).
+    var ana = await window.HubApi.getJson("/api/hub/analytics");
+    if (ana && ana.totals && g === _gen) {
+      setValue("hub-stat-projets", ana.byStatus && ana.byStatus.projetsActive != null ? ana.byStatus.projetsActive : ana.totals.projets);
+      setValue("hub-stat-sessions", ana.byStatus && ana.byStatus.sessionsActive != null ? ana.byStatus.sessionsActive : ana.totals.sessions);
+    }
+
+    // Packs réellement installés / disponibles (public) : /api/packs.
+    var packs = await window.HubApi.getJson("/api/packs");
+    if (packs && packs.total != null && g === _gen) {
+      setValue("hub-stat-packs", packs.total);
+    }
+
+    // Équipes connectées (positions GPS fraîches 3 min, public) : /api/pos.
+    var pos = await window.HubApi.getJson("/api/pos");
+    if (pos && g === _gen) {
+      setValue("hub-stat-teams", Array.isArray(pos.positions) ? pos.positions.length : 0);
+    }
+  }
+
+  function setValue(id, val) {
+    var el = document.getElementById(id);
+    var shown = val == null ? "—" : String(val);
+    if (el) el.textContent = shown;
   }
 
   function quickAction(icon, label, action) {
@@ -115,4 +151,5 @@
   }
 
   window.renderDashboard = renderDashboard;
+  window.HubDashboard = { load: loadStats };
 })();
