@@ -39,9 +39,12 @@
   --cur-radius-lg:   16px;
   --cur-radius-pill: 999px;
 
-  /* ---- Bordures ---- */
+  /* ---- Bordures ----
+     Épaisseurs : --cur-line-thin / --cur-line-md / --cur-line-thick.
+     Couleur de bordure : --cur-line (#315468). Ne pas redéfinir --cur-line
+     dans ce bloc (épaissirait inutilement le bug de surcharge). */
   --cur-line-thin:   1px;
-  --cur-line:        2px;
+  --cur-line-md:     2px;
   --cur-line-thick:  3px;
 
   /* ---- Typographie ---- */

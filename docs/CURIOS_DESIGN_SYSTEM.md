@@ -100,8 +100,10 @@ Définis ci-dessus (`--cur-*`). Un seul point de vérité.
 | `--cur-radius-lg` | `16px` | modales, grands panneaux |
 | `--cur-radius-pill` | `999px` | pilules, badges arrondis |
 | `--cur-line-thin` | `1px` | bordures discrètes |
-| `--cur-line` | `2px` | bordures actives |
+| `--cur-line-md` | `2px` | bordures actives |
 | `--cur-line-thick` | `3px` | éléments signature |
+
+> Note : `--cur-line` désigne la **couleur** de bordure (`#315468`) — cf. §3.2. Pour l'épaisseur moyenne, utiliser `--cur-line-md` (2px).
 
 ### 3.3 Tokens de typographie
 

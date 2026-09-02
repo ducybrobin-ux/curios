@@ -4,22 +4,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Curios Studio</title>
+  <link rel="stylesheet" href="css/curios-tokens.css">
+  <link rel="stylesheet" href="css/curios-icons.css">
+  <link rel="stylesheet" href="css/curios-design-system.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #0f172a;
-      --bg-soft: #1e293b;
-      --card: #1e293b;
-      --ink: #e2e8f0;
-      --ink-dim: #94a3b8;
-      --primary: #38bdf8;
-      --primary-dim: #0ea5e9;
-      --gold: #fbbf24;
-      --err: #f87171;
-      --ok: #34d399;
-      --line: #334155;
-      --radius: 12px;
+      /* Outil auteur — palette alignée sur les tokens officiels cur-* */
+      --bg: var(--cur-bg-primary);
+      --bg-soft: var(--cur-bg-secondary);
+      --card: var(--cur-bg-secondary);
+      --ink: var(--cur-text);
+      --ink-dim: var(--cur-text-dim);
+      --primary: var(--cur-cyan);
+      --primary-dim: var(--cur-cyan-light);
+      --gold: var(--cur-gold);
+      --err: var(--cur-danger);
+      --ok: var(--cur-success);
+      --line: var(--cur-line);
+      --radius: var(--cur-radius);
     }
 
     body {
@@ -67,7 +71,7 @@
     .step-btn:hover { border-color: var(--primary); color: var(--ink); }
     .step-btn.active {
       border-color: var(--primary);
-      background: rgba(56, 189, 248, 0.1);
+      background: rgba(125, 221, 229, 0.1);
       color: var(--primary);
       font-weight: 600;
     }
@@ -158,14 +162,14 @@
       cursor: pointer;
       transition: all 0.2s;
     }
-    .btn-primary { background: var(--primary); color: #0f172a; }
+    .btn-primary { background: var(--primary); color: var(--cur-bg-secondary); }
     .btn-primary:hover { background: var(--primary-dim); }
     .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
     .btn-secondary { background: var(--line); color: var(--ink); }
-    .btn-secondary:hover { background: #475569; }
+    .btn-secondary:hover { background: #4a6575; }
     .btn-danger { background: var(--err); color: white; }
     .btn-danger:hover { opacity: 0.8; }
-    .btn-success { background: var(--ok); color: #0f172a; }
+    .btn-success { background: var(--ok); color: var(--cur-bg-secondary); }
     .btn-sm { padding: 4px 10px; font-size: 12px; }
     .btn-icon { width: 36px; height: 36px; padding: 0; display: flex; align-items: center; justify-content: center; font-size: 18px; }
 
@@ -194,12 +198,12 @@
       font-size: 14px;
     }
     .validation-list li.error {
-      background: rgba(248, 113, 113, 0.1);
+      background: rgba(255, 123, 123, 0.1);
       color: var(--err);
       border-left: 3px solid var(--err);
     }
     .validation-list li.warning {
-      background: rgba(251, 191, 36, 0.1);
+      background: rgba(231, 183, 122, 0.1);
       color: var(--gold);
       border-left: 3px solid var(--gold);
     }

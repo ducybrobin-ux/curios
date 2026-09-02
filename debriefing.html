@@ -4,18 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Curi🧭s — Débriefing</title>
+  <link rel="stylesheet" href="css/curios-tokens.css">
+  <link rel="stylesheet" href="css/curios-icons.css">
+  <link rel="stylesheet" href="css/curios-design-system.css">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-      color: #fff;
+      font-family: var(--cur-font);
+      background: linear-gradient(135deg, var(--cur-bg-primary) 0%, var(--cur-bg-secondary) 50%, #10304a 100%);
+      color: var(--cur-text);
       min-height: 100vh;
       padding: 2rem;
     }
     .container { max-width: 800px; margin: 0 auto; }
     h1 { text-align: center; font-size: 2rem; margin-bottom: 0.5rem; }
-    .subtitle { text-align: center; color: #8892b0; margin-bottom: 2rem; }
+    .subtitle { text-align: center; color: var(--cur-text-dim); margin-bottom: 2rem; }
     .card {
       background: rgba(255,255,255,0.05);
       border-radius: 12px;
@@ -23,11 +26,11 @@
       margin-bottom: 1.5rem;
       border: 1px solid rgba(255,255,255,0.1);
     }
-    .card h2 { font-size: 1.25rem; margin-bottom: 1rem; color: #64ffda; }
+    .card h2 { font-size: 1.25rem; margin-bottom: 1rem; color: var(--cur-cyan); }
     .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: center; }
     .stat { padding: 1rem; }
-    .stat-value { font-size: 2rem; font-weight: bold; color: #64ffda; }
-    .stat-label { color: #8892b0; font-size: 0.875rem; }
+    .stat-value { font-size: 2rem; font-weight: bold; color: var(--cur-cyan); }
+    .stat-label { color: var(--cur-text-dim); font-size: 0.875rem; }
     .timeline { list-style: none; }
     .timeline li {
       padding: 0.75rem 0;
@@ -36,7 +39,7 @@
       justify-content: space-between;
     }
     .timeline li:last-child { border-bottom: none; }
-    .stars { color: #ffd700; }
+    .stars { color: var(--cur-gold); }
     .questions { list-style: none; }
     .questions li {
       padding: 1rem;
@@ -45,7 +48,7 @@
       border-radius: 8px;
     }
     .question-text { font-weight: 500; margin-bottom: 0.5rem; }
-    .question-answer { color: #64ffda; }
+    .question-answer { color: var(--cur-cyan); }
     .btn {
       display: block;
       width: 100%;
@@ -58,7 +61,7 @@
       transition: transform 0.2s, box-shadow 0.2s;
     }
     .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
-    .btn-primary { background: #64ffda; color: #1a1a2e; }
+    .btn-primary { background: var(--cur-cyan); color: var(--cur-bg-secondary); }
     .btn-secondary { background: rgba(255,255,255,0.1); color: #fff; margin-top: 0.5rem; }
     .hidden { display: none; }
     @media (max-width: 600px) {

@@ -6,16 +6,18 @@
    ========================================================= */
 
 :root {
-  /* ---- Jour (variante claire lisible en plein soleil) ---- */
-  --bg: #eff4f6;
-  --bg-soft: #dde8ee;
+  /* ---- Jour (déclinaison claire de la palette officielle cur-*) ----
+     Les valeurs restent stables (lecture plein soleil) ; les teintes sont
+     dérivées des tokens officiels, et --primary pointe sur le bleu officiel. */
+  --bg: #eff4f6;             /* clair dérivé de --cur-bg-primary */
+  --bg-soft: #dde8ee;        /* clair dérivé de --cur-bg-secondary */
   --card: #ffffff;
   --card-soft: #f5f9fb;
-  --ink: #12303f;
+  --ink: #12303f;            /* teinte dérivée de --cur-blue */
   --text-muted: #4a6675;
-  --primary: #073b5c;      /* curios-blue */
+  --primary: var(--cur-blue);   /* #073b5c officiel */
   --primary-dark: #052a44;
-  --gold: #c98a1b;
+  --gold: #c98a1b;           /* dérivé de --cur-gold */
   --err: #c33c3c;
   --ok: #1e8a5a;
   --line: #bcceda;
@@ -25,19 +27,19 @@
 }
 
 body.night {
-  /* ---- Nuit (palette officielle Cartographie) ---- */
-  --bg: #061522;           /* bg-primary */
-  --bg-soft: #092235;      /* bg-secondary */
-  --card: #092235;
-  --card-soft: rgba(7, 59, 92, 0.28);
-  --ink: #e9f0f2;          /* text-primary */
-  --text-muted: #8da8b3;   /* text-secondary */
-  --primary: #7ddde5;      /* technical-cyan */
-  --primary-dark: #073b5c; /* curios-blue */
-  --gold: #e7b77a;         /* gold */
-  --err: #ff7b7b;
-  --ok: #5fd68f;
-  --line: #315468;         /* technical-line */
+  /* ---- Nuit (palette officielle Cartographie — tokens cur-*) ---- */
+  --bg: var(--cur-bg-primary);          /* #061522 */
+  --bg-soft: var(--cur-bg-secondary);   /* #092235 */
+  --card: var(--cur-bg-secondary);      /* #092235 */
+  --card-soft: var(--cur-surface-alt);  /* rgba(7,59,92,.28) */
+  --ink: var(--cur-text);               /* #e9f0f2 */
+  --text-muted: var(--cur-text-dim);    /* #8da8b3 */
+  --primary: var(--cur-cyan);           /* #7ddde5 */
+  --primary-dark: var(--cur-blue);      /* #073b5c */
+  --gold: var(--cur-gold);              /* #e7b77a */
+  --err: var(--cur-danger);             /* #ff7b7b */
+  --ok: var(--cur-success);             /* #5fd68f */
+  --line: var(--cur-line);   /* #315468 (token corrigé : --cur-line = couleur) */
   --shadow: 0 6px 22px rgba(0, 0, 0, 0.45);
   --radius: var(--cur-radius-lg);
   --font: var(--cur-font);

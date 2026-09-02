@@ -121,13 +121,13 @@
 }
 .cur-corner::before {
   top: -1px; left: -1px;
-  border-top: var(--cur-line) solid var(--cur-cyan);
-  border-left: var(--cur-line) solid var(--cur-cyan);
+  border-top: var(--cur-line-md) solid var(--cur-cyan);
+  border-left: var(--cur-line-md) solid var(--cur-cyan);
 }
 .cur-corner::after {
   bottom: -1px; right: -1px;
-  border-bottom: var(--cur-line) solid var(--cur-cyan);
-  border-right: var(--cur-line) solid var(--cur-cyan);
+  border-bottom: var(--cur-line-md) solid var(--cur-cyan);
+  border-right: var(--cur-line-md) solid var(--cur-cyan);
 }
 
 .cur-card-title {
@@ -225,7 +225,7 @@
   height: 10px;
   border-radius: 50%;
   background: var(--cur-surface);
-  border: var(--cur-line) solid var(--cur-cyan);
+  border: var(--cur-line-md) solid var(--cur-cyan);
 }
 .cur-timeline__item--done::before { background: var(--cur-cyan); }
 .cur-timeline__item--future::before { border-color: var(--cur-line); }
@@ -378,7 +378,7 @@
               background var(--cur-dur-sm) var(--cur-ease);
 }
 .cur-nav__link:hover { color: var(--cur-cyan-light); background: var(--cur-surface-alt); }
-.cur-nav__link--active { color: var(--cur-cyan-light); background: var(--cur-surface-alt); border-bottom: var(--cur-line) solid var(--cur-cyan); }
+.cur-nav__link--active { color: var(--cur-cyan-light); background: var(--cur-surface-alt); border-bottom: var(--cur-line-md) solid var(--cur-cyan); }
 
 /* ---- Hexagones de compétences ---- */
 .cur-skillhex {
