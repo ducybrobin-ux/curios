@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
-<rect width="1200" height="700" rx="40" fill="#0f172a"/>
-<circle cx="180" cy="180" r="100" fill="none" stroke="#60a5fa" stroke-width="14"/>
-<path d="M180 80 L215 180 L180 280 L145 180 Z" fill="#fbbf24"/>
-<text x="600" y="310" text-anchor="middle" font-family="sans-serif" font-size="64" fill="white">Curi🧭s — La lumière</text>
-<text x="600" y="390" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#cbd5e1">Grand Demo Pack • France &amp; Outre-mer</text>
-</svg>
