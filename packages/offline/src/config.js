@@ -9,6 +9,6 @@
  * (scan du filesystem). Ne plus la maintenir manuellement ici.
  */
 
-export const VERSION = "curios-v5";
-export const CACHE = "curios-core-v5";
-export const RUNTIME = "curios-runtime-v5";
+export const VERSION = "curios-v6";
+export const CACHE = "curios-core-v6";
+export const RUNTIME = "curios-runtime-v6";
