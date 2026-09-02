@@ -1428,6 +1428,10 @@ function Resolve-PathSafe([string]$RelativeUrl) {
     if ($relative -eq '/' -or $relative -eq '') { $relative = '/index.html' }
     if ($relative -ieq '/dashboard') { $relative = '/dashboard.html' }
     if ($relative -ieq '/editeur') { $relative = '/editeur.html' }
+    if ($relative -ieq '/catalogue') { $relative = '/catalogue.html' }
+    if ($relative -ieq '/atelier') { $relative = '/atelier.html' }
+    if ($relative -ieq '/studio') { $relative = '/studio.html' }
+    if ($relative -ieq '/hub') { $relative = '/hub/app.html' }
     $parts = $relative.Split('?')[0].Split('#')[0]
     # Décode les URL encodées (ex : Chouette%20hulotte.png) : indispensable pour
     # les images à espaces ET pour le service worker (cache hors-ligne).

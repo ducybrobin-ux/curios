@@ -70,6 +70,7 @@ async function build() {
     "SECURITY.md",
     "demarrer_serveur.cmd",
     "index.html",
+    "catalogue.html",
     "dashboard.html",
     "debriefing.html",
     "editeur.html",

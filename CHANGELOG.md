@@ -3,6 +3,20 @@
 Historique Curi🧭s (moteur universel) puis héritage Multi JDP.
 Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) — versionnement sémantique.
 
+## [Curi🧭s v2026.09.02] — 2026-09-02
+
+### Modifié
+- **Design system unique (P2, partiel)** : `styles.css` réaligné sur les tokens `cur-*` (bloc nuit sur `var(--cur-*)`, bloc jour documenté dans `docs/CURIOS_DESIGN_SYSTEM.md`, `--primary: var(--cur-blue)`) ; `studio.html` + `debriefing.html` migrés vers tokens + design system + icons (palettes en dur `#0f172a`/`#64ffda`/`#8892b0` → `var(--cur-*)`). Bug `--cur-line` corrigé (`curios-tokens.css` : le token était écrasé par une épaisseur `2px` ; couleur conservée, épaisseur renommée `--cur-line-md`, 6 usages mis à jour).
+- **Navigation unifiée** **JOUER / PARCOURS / CRÉER / PILOTER / ⚙ Hub** : shell partagé `js/nav-shell.js` injecté via l'ancre `#cur-nav[data-nav-current]` sur les 6 espaces (`index`, `catalogue`, `atelier`, `editeur`, `studio`, `dashboard`), barre `.cur-navbar` dans le design system (adaptative au thème), lien actif + `aria-current`. Chemins harmonisés en `.html` (ouvertures `app.js`, topbars concepteur, alias serveur `/catalogue`, `/atelier`, `/studio`, `/hub`). Panneau « Administrer » du joueur resserré à Mode admin + Réglages.
+- **Distribution** : `catalogue.html` ajouté à `tools/build.mjs` (`rootFiles`) — le catalogue n'était **pas copié** dans les distributions Windows/Linux.
+
+### Ajouté
+- **Bump SW `curios-v6` → `curios-v7`** (`packages/offline/src/config.js` + `sw.js` régénéré, 123 fichiers précachés, `js/nav-shell.js` inclus).
+- **Tests `nav-shell`** : 6 tests unitaires (espaces, lien actif, garde-fou double-mount, absence d'ancre).
+
+### Vérifié
+- **404/404** tests unitaires verts ; eslint **0 erreur** ; `build-sw --check` vert ; `build --target all` OK ; dist vérifié : `catalogue.html` + `js/nav-shell.js` + ancres `data-nav-current` présentes sur les pages.
+
 ## [Curi🧭s v2026.09.01] — 2026-09-01
 
 ### Corrigé

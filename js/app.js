@@ -2125,11 +2125,11 @@
           return;
         }
         if (go === "dashboard") {
-          if (!window.open("dashboard", "_blank")) location.href = "dashboard";
+          if (!window.open("dashboard.html", "_blank")) location.href = "dashboard.html";
           return;
         }
         if (go === "catalogue") {
-          if (!window.open("catalogue", "_blank")) location.href = "catalogue";
+          if (!window.open("catalogue.html", "_blank")) location.href = "catalogue.html";
           return;
         }
         if (go === "guide") renderGuide();
@@ -2172,8 +2172,8 @@
     $("btn-compass").addEventListener("click", onCompassToggle);
     $("btn-compass-cal").addEventListener("click", onCompassCalibrate);
     $("btn-god-back").addEventListener("click", () => { showScreen("home"); renderHome(); });
-    $("btn-god-dashboard").addEventListener("click", () => { if (!window.open("dashboard", "_blank")) location.href = "dashboard"; });
-    $("btn-god-edit").addEventListener("click", () => { if (!window.open("editeur", "_blank")) location.href = "editeur"; });
+    $("btn-god-dashboard").addEventListener("click", () => { if (!window.open("dashboard.html", "_blank")) location.href = "dashboard.html"; });
+    $("btn-god-edit").addEventListener("click", () => { if (!window.open("editeur.html", "_blank")) location.href = "editeur.html"; });
     $("btn-god-report").addEventListener("click", sendGodReport);
     $("btn-god-exit").addEventListener("click", () => {
       Store.setSettings({ adminOff: true });
@@ -2192,12 +2192,11 @@
     const goHomeFromSpace = () => { renderHome(); showScreen("home"); };
     $("btn-choose-parcours").addEventListener("click", () => { renderParcours(); showScreen("parcours"); });
     $("btn-catalogue").addEventListener("click", () => {
-      if (!window.open("catalogue", "_blank")) location.href = "catalogue";
+      if (!window.open("catalogue.html", "_blank")) location.href = "catalogue.html";
     });
     $("btn-administer").addEventListener("click", () => { renderAdmin(); showScreen("admin"); });
     $("btn-parcours-back").addEventListener("click", goHomeFromSpace);
     $("btn-admin-back").addEventListener("click", goHomeFromSpace);
-    $("btn-admin-edit").addEventListener("click", () => { if (!window.open("editeur", "_blank")) location.href = "editeur"; });
 
     // Scan
     $("btn-start-camera").addEventListener("click", startScanner);

@@ -380,6 +380,50 @@
 .cur-nav__link:hover { color: var(--cur-cyan-light); background: var(--cur-surface-alt); }
 .cur-nav__link--active { color: var(--cur-cyan-light); background: var(--cur-surface-alt); border-bottom: var(--cur-line-md) solid var(--cur-cyan); }
 
+/* ---- Barre d'espaces (shell de navigation unifiée, injecté par js/nav-shell.js) ----
+   S'adapte au thème de la page : utilise les variables contextuelles de styles.css
+   (mode jour/nuit) quand elles existent, sinon fallback sur les tokens cur-*. */
+.cur-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cur-space-3);
+  padding: var(--cur-space-2) var(--cur-space-4);
+  background: var(--bg-soft, var(--cur-bg-secondary));
+  border-bottom: var(--cur-line-thin) solid var(--line, var(--cur-line));
+}
+.cur-navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cur-space-2);
+  color: var(--ink, var(--cur-text));
+  font-weight: var(--cur-fw-bold);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.cur-navbar__logo { font-size: 1.25rem; line-height: 1; }
+.cur-navbar .cur-nav { justify-content: flex-end; min-width: 0; }
+.cur-navbar .cur-nav__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cur-space-1);
+  color: var(--text-muted, var(--cur-text-dim));
+}
+.cur-navbar .cur-nav__link:hover {
+  color: var(--primary, var(--cur-cyan-light));
+  background: var(--card-soft, var(--cur-surface-alt));
+}
+.cur-navbar .cur-nav__link--active {
+  color: var(--primary, var(--cur-cyan-light));
+  background: var(--card-soft, var(--cur-surface-alt));
+  border-bottom: var(--cur-line-md) solid var(--primary, var(--cur-cyan));
+}
+@media (max-width: 620px) {
+  .cur-navbar { flex-direction: column; align-items: stretch; gap: var(--cur-space-2); }
+  .cur-navbar .cur-nav { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; padding-bottom: var(--cur-space-1); }
+  .cur-navbar__name { display: none; }
+}
+
 /* ---- Hexagones de compétences ---- */
 .cur-skillhex {
   position: relative;

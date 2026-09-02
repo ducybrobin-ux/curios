@@ -56,10 +56,11 @@
   </style>
 </head>
 <body>
+  <div id="cur-nav" data-nav-current="creer"></div>
   <header class="topbar">
     <img class="topbar-logo" src="img/logo.svg" alt="Curi🧭s">
     <h1>Curi🧭s — Atelier de packs</h1>
-    <button class="icon-btn" title="Éditeur de contenu" onclick="location.href='/editeur'">🖊️</button>
+    <button class="icon-btn" title="Éditeur de contenu" onclick="location.href='editeur.html'">🖊️</button>
     <button class="icon-btn" title="Recharger" onclick="location.reload()">🔄</button>
   </header>
 
@@ -78,7 +79,7 @@
       <button id="btn-check" class="btn btn-outline">🔎 Vérifier</button>
       <button id="btn-preview" class="btn btn-outline">👁️ Aperçu</button>
       <button id="btn-export" class="btn btn-outline">📥 Exporter le bundle</button>
-      <a class="btn btn-outline" href="./">👀 Aperçu app</a>
+      <a class="btn btn-outline" href="index.html">👀 Aperçu app</a>
     </div>
 
     <div id="pack-root"></div>
@@ -88,5 +89,6 @@
   </main>
 
   <script src="js/atelier.js"></script>
+  <script src="js/nav-shell.js"></script>
 </body>
 </html>

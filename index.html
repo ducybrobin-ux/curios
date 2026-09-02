@@ -33,6 +33,8 @@
   </script>
   <a class="skip-link" href="#app" data-i18n="skip_link">Aller au contenu</a>
 
+  <div id="cur-nav" data-nav-current="jouer"></div>
+
   <header id="topbar" class="topbar">
     <button id="btn-home" class="icon-btn" data-i18n-aria="btn_home" aria-label="Accueil">⌂</button>
     <img id="topbar-logo" class="topbar-logo" src="img/logo.svg" alt="Curi🧭s — Créez des expériences qui font apprendre">
@@ -133,10 +135,8 @@
       <div class="space-card">
         <p class="space-kicker"><img class="cur-icon" src="img/icons/settings.svg" alt=""> Administrer</p>
         <h2 class="space-title" data-i18n="admin_title">Piloter une session</h2>
-        <p class="space-lede" data-i18n="admin_lede">Outils pour préparer et animer : tableau de bord, éditeur, mode admin et réglages.</p>
+        <p class="space-lede" data-i18n="admin_lede">Mode admin et réglages de votre session. Les outils formateur (piloter) et concepteur (créer) sont dans la barre de navigation.</p>
         <div class="space-grid">
-          <button class="home-tile" data-go="dashboard"><span class="tile-ico">📊</span><span data-i18n="home_tile_dashboard">Tableau de bord</span></button>
-          <button class="home-tile" id="btn-admin-edit"><span class="tile-ico">🛠️</span><span data-i18n="admin_edit">Éditeur de parcours</span></button>
           <button class="home-tile" data-go="god"><span class="tile-ico">🗝️</span><span data-i18n="home_tile_god">Mode admin</span></button>
           <button class="home-tile" data-go="settings"><span class="tile-ico"><img class="cur-icon cur-icon--lg" src="img/icons/settings.svg" alt=""></span><span data-i18n="home_tile_settings">Réglages</span></button>
         </div>
@@ -645,5 +645,6 @@
   <script src="js/services/compass-ui.js"></script>
   <script src="js/catalogue-data.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/nav-shell.js"></script>
 </body>
 </html>

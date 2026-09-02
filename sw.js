@@ -4,9 +4,9 @@
    Source : packages/offline/src/{config,strategy}.js
    ========================================================= */
 
-const VERSION = "curios-v6";
-const CACHE = "curios-core-v6";
-const RUNTIME = "curios-runtime-v6";
+const VERSION = "curios-v7";
+const CACHE = "curios-core-v7";
+const RUNTIME = "curios-runtime-v7";
 
 const PRECACHE = [
   "./",
@@ -118,6 +118,7 @@ const PRECACHE = [
   "js/hub-shell.js",
   "js/i18n.js",
   "js/jsqr.js",
+  "js/nav-shell.js",
   "js/qr.js",
   "js/qrcode.js",
   "js/questionnaire.js",

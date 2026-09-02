@@ -100,12 +100,12 @@ Incohérences relevées : `cristaux-de-balto` & `tsle1-ornithologie` étaient ab
 | Surface | Système | Migré `cur-*` ? |
 |---|---|---|
 | `catalogue.html` | tokens + design-system + icons + catalogue.css | ✅ (seul) |
-| player & concepteur (`index`, `atelier`, `editeur`, `dashboard`, `questionnaire`) | `styles.css` (palette light propre + `body.night`) | ❌ (0 `cur-*`) |
-| `studio.html`, `debriefing.html` | palettes internes (`#0f172a`, `#64ffda`), **sans** design system | ❌ |
-| Hub (`hub/app.html`, `hub/login.html`) | `hub.css` (3ᵉ palette `hub-*`) | ❌ |
+| player & concepteur (`index`, `atelier`, `editeur`, `dashboard`, `questionnaire`) | `styles.css` (palette réalignée sur tokens `cur-*`, jour/nuit documentés) | ✅ (bloc nuit sur `var(--cur-*)`) |
+| `studio.html`, `debriefing.html` | tokens + design-system + icons, palettes internes → `var(--cur-*)` | ✅ |
+| Hub (`hub/app.html`, `hub/login.html`) | `hub.css` (3ᵉ palette `hub-*`) | ❌ (intentionnel, surface autonome) |
 
-### 4.2 Navigation fragmentée (4 mécanismes)
-Router SPA (`router.js` + `data-go`) × nav multi-fichiers `.html` × hash-router Hub (`#/page`) × boutons topbar concepteur. Séparation des rôles incohérente : le panneau « Administrer » du joueur (`index.html:127-140`) mélange formateur/concepteur ; pas de hub de navigation global Jouer ↔ Catalogue ↔ Hub ↔ Studio.
+### 4.2 Navigation fragmentée (4 mécanismes → shell unifié)
+Router SPA (`router.js` + `data-go`) × nav multi-fichiers `.html` × hash-router Hub (`#/page`) × boutons topbar concepteur. **Résolu (P2)** : shell nav partagé `js/nav-shell.js` injecté via l'ancre `#cur-nav[data-nav-current]` sur les 6 espaces — **JOUER** (`index.html`) / **PARCOURS** (`catalogue.html`) / **CRÉER** (`atelier.html`, `editeur.html`, `studio.html`) / **PILOTER** (`dashboard.html`) / **⚙ Hub** (`hub/app.html`), lien actif `cur-nav__link--active` + `aria-current`. Barre `.cur-navbar` dans `curios-design-system.css` (adaptative thème). Chemins harmonisés vers `.html` (app.js, topbars, alias serveur `/catalogue`, `/atelier`, `/studio`, `/hub`). Panneau « Administrer » du joueur resserré (Mode admin + Réglages). Reste : tableau de bord/carnet/stats à répartir dans les espaces appropriés.
 
 ### 4.3 Risques d'architecture & sécurité
 - **Offline/update** : `sw.js:88` `skipWaiting()` inconditionnel ; version de cache codée en dur `packages/offline/src/config.js:12-14` (bump manuel) ; `tools/build-sw.mjs:32` inclut vs `:40` exclut `docs/` (contradiction).
@@ -181,8 +181,8 @@ Scores attendus : technique /100, pédagogique /100, thématique /100, richesse 
   - `node tools/build-catalogue.mjs` régénéré : `js/catalogue-data.js` (11 packs, `packdemo` présent) ; suite complète **394/394** ; commits `3ac10c1` + `ad2cb4c` pusher sur `origin/main`.
 
 ### P2 — UX / architecture
-- [ ] Migrer player/concepteur/studio/debriefing/hub vers le design system unique (`cur-*`, palette officielle, `img/icons`).
-- [ ] Navigation unifiée **JOUER / PARCOURS / CRÉER / PILOTER / ⚙** (Optimisation.txt §2) ; tableau de bord/carnet/stats dans les espaces appropriés.
+- [x] **Design system unique (partiel)** : `styles.css` réaligné sur tokens `cur-*` (bloc nuit sur `var(--cur-*)`, bloc jour documenté, `--primary: var(--cur-blue)`), `studio.html` + `debriefing.html` migrés (liens tokens+icons+design-system, palettes en dur → `var(--cur-*)`), bug `--cur-line` corrigé (couleur, épaisseur renommée `--cur-line-md`). Reste : **Hub** (`hub.css` 3ᵉ palette, surface autonome intentionnelle) et reste du player/concepteur en `cur-*` fin.
+- [x] **Navigation unifiée** **JOUER / PARCOURS / CRÉER / PILOTER / ⚙** : shell partagé `js/nav-shell.js` (ancre `#cur-nav[data-nav-current]`) injecté sur les 6 espaces, barre `.cur-navbar` (design system), liens `.html` harmonisés (app.js + topbars + alias serveur), panneau « Administrer » restreint à Mode admin/Réglages. Reste : répartir tableau de bord/carnet/stats dans les espaces appropriés.
 - [x] **Maîtriser la mise à jour SW** : `skipWaiting()` **inconditionnel retiré** de l'`install` (`tools/build-sw.mjs`) — la nouvelle version reste `waiting`, l'ancienne reste active jusqu'au choix de l'utilisateur. Bandeau « Mise à jour disponible / 🔄 Redémarrer » (`#update-prompt` dans `index.html` + logique `updatefound`/`statechange` dans `js/app.js`) + bouton existant « Vérifier et mettre à jour » (`updateApp`). Bump `curios-v4` → `curios-v5` (`config.js`). Rechargement après prise de contrôle.
 - [x] **Packs (partiel)** : Pack Démo actif `packdemo` créé ; **normaliser catalogue/manifest/parcours (éliminer packs invisibles & doublons)** fait — les 2 orphelins (`cristaux-de-balto`, `tsle1-ornithologie`) déclarés dans le manifest, `tsle1-ornithologie` rendu conforme au schéma (16 fichiers), documents v1 générés, manifest/S1/S2 alignés sur **11 packs**. Reste : compléter les 9 packs restants + `npm run validate:packs` / `validate:all` (PACK_COMPLETENESS_SCHEMA).
 - [x] Hygiène : **réconcilier orphelins avec `manifest.json` fait** (2 packs déclarés + conformes) ; **`editorial-governance` branché au CI** (étape `Tests unitaires editorial-governance`, 41/41) — package complet et testé, sécurisé en continue sans integration produit ; `.gitignore` `content/bundles/` annulé — `content/bundles/` et `content/curios-parcours/` sont des **dépendances runtime** (fallback hors-ligne catalogue/atelier + API `/api/packs`) → ne pas gitignorer.
