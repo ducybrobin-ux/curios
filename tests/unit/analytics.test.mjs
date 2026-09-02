@@ -1,6 +1,6 @@
 /* analytics.test.mjs — Tests unitaires pour @curios/analytics
  *
- * Tests du tracker et du module d'adaptation.
+ * Tests du tracker, du module d'adaptation, et du bundle browser (js/analytics.js).
  */
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
@@ -236,5 +236,30 @@ describe("createAdaptation", () => {
 
     const adapt = createAdaptation(tracker);
     assert.equal(adapt.getSuggestedDifficulty("B1"), "facile");
+  });
+});
+
+describe("Bundle js/analytics.js", () => {
+  it("exposes window.CurAnalytics with createTracker and createAdaptation", async () => {
+    // Simulate browser-like environment
+    globalThis.window = {};
+    await import("../../js/analytics.js");
+
+    const api = window.CurAnalytics;
+    assert.ok(api, "window.CurAnalytics must be defined");
+    assert.equal(typeof api.createTracker, "function");
+    assert.equal(typeof api.createAdaptation, "function");
+
+    // Functional check: tracker round-trip
+    const tracker = api.createTracker();
+    tracker.startBalise("test");
+    assert.equal(tracker.getReport().summary.totalBalises, 1);
+
+    // Functional check: adaptation round-trip
+    const adapt = api.createAdaptation(tracker);
+    assert.equal(typeof adapt.shouldShowHint, "function");
+    assert.equal(typeof adapt.getSuggestedDifficulty, "function");
+
+    delete globalThis.window;
   });
 });

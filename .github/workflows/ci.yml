@@ -39,6 +39,9 @@ jobs:
       - name: Synchronisation packages/geolocation → js/geo.js
         run: node tools/build-geo.mjs --check
 
+      - name: Synchronisation packages/analytics → js/analytics.js
+        run: node tools/build-analytics.mjs --check
+
       - name: Synchronisation packages/offline → sw.js
         run: node tools/build-sw.mjs --check
 

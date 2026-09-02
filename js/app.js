@@ -82,6 +82,37 @@
     postFinish(Store.getActive());
   });
 
+  /* ---------- Analytics locales (window.CurAnalytics) ----------
+   * Collecte discrète des métriques de jeu dans le localStorage.
+   * Optionnel : si le module n'est pas chargé, tout est no-op. */
+  const analytics = (typeof window.CurAnalytics !== "undefined" && window.CurAnalytics.createTracker())
+    || { startBalise(){}, recordEnigmeAttempt(){}, recordHintUsed(){}, recordHintLevel(){}, startQuiz(){}, recordQuizAnswer(){}, completeQuiz(){}, completeBalise(){}, recordScreen(){}, getReport(){ return { summary: {} }; } };
+
+  function visibleBalise(b) { return (b && b.id) ? b.id : "?"; }
+
+  /* Balise découverte → démarre le tracking de la balise (timing). */
+  engine.on(BALISE_FOUND, (state, payload) => {
+    if (payload && payload.balise) analytics.startBalise(payload.balise.id);
+  });
+
+  /* Enigme résolue → 1ère tentative réussie. */
+  engine.on(RIDDLE_SOLVED, (state, payload) => {
+    if (payload && payload.balise) analytics.recordEnigmeAttempt(payload.balise.id, true);
+  });
+
+  /* Quiz terminé → enregistre la session et le score. */
+  engine.on(QUIZ_COMPLETED, (state, payload) => {
+    if (!payload || !payload.balise) return;
+    const bid = payload.balise.id;
+    analytics.completeQuiz(bid, payload.score || 0, payload.total || 0);
+  });
+
+  /* Course terminée → fige la balise en cours comme complétée. */
+  engine.on(RUN_FINISHED, (state, payload) => {
+    const t = currentTarget();
+    if (t) analytics.completeBalise(t.id, Store.getActive() ? Store.getActive().stars : 0);
+  });
+
   /* --- Sync : synchronise le gameState du moteur avec le Store --- */
   function syncGameState() {
     const p = Store.getActive();
@@ -147,7 +178,7 @@
       onIntro: applyIntroRules,
     },
   });
-  function showScreen(name) { router.navigate(name); }
+  function showScreen(name) { router.navigate(name); if (analytics && analytics.recordScreen) analytics.recordScreen(name); }
 
   /* Mode course / aléatoire : règles d'intro adaptées (pas de question ni de réponse). */
   function applyIntroRules() {
@@ -968,6 +999,7 @@
       $("riddle-status").textContent = "❌ Pas tout à fait… essaie encore ! (💡 indice si besoin)";
       $("riddle-status").style.color = "var(--err)";
       AudioSys.blip(220);
+      analytics.recordEnigmeAttempt(visibleBalise(b), false);
     }
   }
 
@@ -1066,6 +1098,7 @@
 
   function startQuiz(bird) {
     App.quiz = GF.createQuizSession({ bird, makeQuiz });
+    if (App.target) analytics.startQuiz(App.target.id, App.quiz.questions.length);
     showScreen("quiz");
     renderQuiz();
   }
@@ -1086,6 +1119,7 @@
       b.addEventListener("click", () => {
         const result = GF.answerQuizQuestion({ session: App.quiz, selectedIndex: +b.dataset.i });
         App.quiz = result.session;
+        if (App.target) analytics.recordQuizAnswer(App.target.id, result.correct);
         const fb = $("quiz-feedback");
         card.querySelectorAll(".quiz-opt").forEach((x) => x.disabled = true);
         b.classList.add(result.correct ? "good" : "bad");
@@ -2232,6 +2266,8 @@
         + `<button class="btn btn-ghost btn-mini" id="btn-hint-guide">🧠 ${  esc(I18N.t("guide_open"))  }</button>`;
       const gb = $("btn-hint-guide");
       if (gb) gb.addEventListener("click", () => openGuide("riddle"));
+      analytics.recordHintUsed(visibleBalise(b));
+      analytics.recordHintLevel(visibleBalise(b), 1);
     });
 
     // Palmarès

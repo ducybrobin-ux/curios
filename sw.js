@@ -4,9 +4,9 @@
    Source : packages/offline/src/{config,strategy}.js
    ========================================================= */
 
-const VERSION = "curios-v8";
-const CACHE = "curios-core-v8";
-const RUNTIME = "curios-runtime-v8";
+const VERSION = "curios-v9";
+const CACHE = "curios-core-v9";
+const RUNTIME = "curios-runtime-v9";
 
 const PRECACHE = [
   "./",
@@ -94,6 +94,7 @@ const PRECACHE = [
   "img/logo.svg",
   "img/qrcode-localhost.png",
   "index.html",
+  "js/analytics.js",
   "js/app.js",
   "js/atelier.js",
   "js/audio.js",

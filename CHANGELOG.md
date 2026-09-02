@@ -3,6 +3,23 @@
 Historique Curi🧭s (moteur universel) puis héritage Multi JDP.
 Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) — versionnement sémantique.
 
+## [Curi🧭s v2026.09.03] — 2026-09-02
+
+### Ajouté
+- **Branchement complet `@curios/analytics`** (player) :
+  - `tools/build-analytics.mjs` : bundler selon le pattern `build-game-flow.mjs` — concatène `tracker.js` + `adaptation.js` en un seul fichier `js/analytics.js` exposant `window.CurAnalytics` (`createTracker`, `createAdaptation`).
+  - **Hooks player non intrusifs** dans `js/app.js` : `engine.on(BALISE_FOUND)` → `startBalise`, `engine.on(RIDDLE_SOLVED)` → `recordEnigmeAttempt(true)`, tentatives échouées dans `submitRiddle` → `recordEnigmeAttempt(false)`, bouton indice → `recordHintUsed`, `startQuiz` → `startQuiz`, clic réponse quiz → `recordQuizAnswer`, `QUIZ_COMPLETED` → `completeQuiz`, `RUN_FINISHED` → `completeBalise`, transitions d'écran → `recordScreen`.
+  - **CI** : étape `Synchronisation packages/analytics → js/analytics.js` ajoutée à `.github/workflows/ci.yml`.
+  - **index.html** : `<script src="js/analytics.js"></script>` ajouté (après `game-flow.js`).
+  - **Tests** : `analytics.test.mjs` enrichi (21 tests : tracker + adaptation + bundle IIFE `window.CurAnalytics`).
+- **Bump SW jusqu'à `curios-v9`** (`packages/offline/src/config.js` + `sw.js` régénéré, 125 fichiers précachés incluant `analytics.js`).
+- **package.json** : scripts `build:game-flow` et `build:analytics` ajoutés.
+
+### Vérifié
+- **413/413** tests unitaires verts ; eslint **0 erreur** ; `build-analytics --check` + tous les `--check` CI verts ; `build --target all` OK ; dist vérifié : `analytics.js` présent, `sw.js` précaché, `index.html` avec script tag.
+
+---
+
 ## [Curi🧭s v2026.09.02] — 2026-09-02
 
 ### Modifié
